@@ -1,0 +1,16 @@
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DTO\bin\Debug\DTO.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DTO\bin\Debug\DTO.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DTO\obj\Debug\DTO.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DTO\obj\Debug\DTO.pdb
+D:\final_project\WEB_API\DTO\bin\Debug\DTO.dll
+D:\final_project\WEB_API\DTO\bin\Debug\DTO.pdb
+D:\final_project\WEB_API\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\final_project\WEB_API\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\final_project\WEB_API\DTO\obj\Debug\DTO.dll
+D:\final_project\WEB_API\DTO\obj\Debug\DTO.pdb
+E:\WEB_API\DTO\bin\Debug\DTO.dll
+E:\WEB_API\DTO\bin\Debug\DTO.pdb
+E:\WEB_API\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+E:\WEB_API\DTO\obj\Debug\DTO.dll
+E:\WEB_API\DTO\obj\Debug\DTO.pdb
