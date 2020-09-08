@@ -1,0 +1,13 @@
+.wrapper-cart {
+    border: solid;
+    /* border-width: thin; */
+    border: tomato;
+}
+
+.mat-card {
+    border: solid;
+    border-width: thin;
+    border-color: tomato;
+    width: 393px;
+    height: 105px;
+}

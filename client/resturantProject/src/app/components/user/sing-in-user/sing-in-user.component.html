@@ -1,22 +1,22 @@
 <mat-vertical-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>הזן שם </ng-template>
+            <ng-template matStepLabel> הזן שם </ng-template>
             <p>
                 <mat-form-field>
-                    <mat-label>שם פרטי</mat-label>
+                    <mat-label> שם פרטי </mat-label>
                     <input matInput placeholder="First name" formControlName="firstName" name="firstName">
                 </mat-form-field>
 
             </p>
             <p>
                 <mat-form-field>
-                    <mat-label>שם משפחה</mat-label>
+                    <mat-label> שם משפחה </mat-label>
                     <input matInput placeholder="Last name" formControlName="lastName" name="lastName">
                 </mat-form-field>
             </p>
             <div>
-                <button mat-button matStepperNext>הבא</button>
+                <button mat-button matStepperNext mat-stroked-button color="primary">הבא</button>
             </div>
         </form>
     </mat-step>
@@ -28,8 +28,8 @@
                 <input matInput formControlName="mail" placeholder="Mail" name="mail">
             </mat-form-field>
             <div>
-                <button mat-button matStepperPrevious>חזור</button>
-                <button mat-button matStepperNext>הבא</button>
+                <button mat-button matStepperPrevious mat-stroked-button color="primary">חזרה</button>
+                <button mat-button matStepperNext mat-stroked-button color="primary">הבא</button>
             </div>
         </form>
     </mat-step>
@@ -49,24 +49,23 @@
                 </mat-form-field>
             </p>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button matStepperPrevious mat-stroked-button color="primary">חזרה</button>
+                <button mat-button matStepperNext mat-stroked-button color="primary">הבא</button>
             </div>
         </form>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
+        <ng-template matStepLabel>סיום</ng-template>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-            <button mat-button (click)="signUp()">Sign up</button>
+            <button mat-button matStepperPrevious mat-stroked-button color="primary">חזור</button>
+            <button mat-button mat-stroked-button color="primary" (click)="stepper.reset()">איפוס</button>
+            <button mat-button mat-stroked-button color="primary" (click)="signUp()">הרשמה</button>
         </div>
     </mat-step>
 </mat-vertical-stepper>
-<div>
-    <p>Have an account?</p>
+<div style="position: relative;right: 66px;">
+    <p>יש לך חשבון ?</p>
     <a routerLink="/log-in" routerLinkActive='active'>
-        <button mat-stroked-button color="primary">Log in</button>
+        <button mat-stroked-button color="primary">התחברות</button>
     </a>
 </div>

@@ -45,6 +45,7 @@ import { GiftCardComponent } from './components/user/gift-card/gift-card.compone
 import { CateringComponent } from './components/user/catering/catering.component';
 import { BigOrdersComponent } from './components/user/big-orders/big-orders.component';
 import { BirthdayComponent } from './components/user/birthday/birthday.component';
+import { RemoveProductComponent } from './components/user/dialogs/remove-product/remove-product.component';
 
 
 
@@ -76,6 +77,7 @@ import { BirthdayComponent } from './components/user/birthday/birthday.component
     CateringComponent,
     BigOrdersComponent,
     BirthdayComponent,
+    RemoveProductComponent,
 
 
   ],

@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
 import { Menu } from 'src/app/shared/modals/menu';
 import { UserService } from 'src/app/shared/services/user.service';
-import { InventDose } from 'src/app/shared/modals/invent-dose';
 import { MenuService } from 'src/app/shared/services/menu.service';
+import {MatDialog} from '@angular/material/dialog';
+import { RemoveProductComponent } from '../dialogs/remove-product/remove-product.component';
+
 
 @Component({
   selector: 'app-mini-cart',
@@ -14,8 +16,11 @@ export class MiniCartComponent implements OnInit {
 
   cart: any[];
   menuDetails: Menu[] = [];
-  constructor(private visitersOrderManagementService: VisitersOrderManagementService,
-    private userService: UserService, private menu: MenuService) { } 
+  constructor(
+    private visitersOrderManagementService: VisitersOrderManagementService,
+    private userService: UserService, private menu: MenuService,
+    private dialog: MatDialog
+    ) { } 
 
   ngOnInit(): void {
     this.menu.getAllMenuDetails().subscribe(
@@ -37,6 +42,9 @@ export class MiniCartComponent implements OnInit {
       addInvent(){
         debugger;
         this.visitersOrderManagementService.addInvent()
+      }
+      openDialogRemove(){
+        this.dialog.open(RemoveProductComponent);
       }
 
 }
