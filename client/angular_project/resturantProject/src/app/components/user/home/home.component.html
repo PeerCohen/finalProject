@@ -1,0 +1,24 @@
+<mat-tab-group>
+    <!-- <a routerLink="/sign-in-user" routerLinkActive='active'></a> -->
+    <mat-tab>
+        <ng-template mat-tab-label>
+            התחברות לאתר
+            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+        </ng-template>
+        <app-sign-in-user></app-sign-in-user>
+    </mat-tab>
+    <mat-tab label="תפריט">
+        <app-menu></app-menu>
+    </mat-tab>
+    <mat-tab label="להתחיל הזמנה" (click)="open()">
+        להתחיל הזמנה
+    </mat-tab>
+    <mat-tab label=" יש לי קוד קופון ">
+        יש לי קוד קופון </mat-tab>
+    <mat-tab label="סל ההזמנות שלי ">
+        ההזמנות שלי
+        <app-previous-orders></app-previous-orders>
+    </mat-tab>
+</mat-tab-group>

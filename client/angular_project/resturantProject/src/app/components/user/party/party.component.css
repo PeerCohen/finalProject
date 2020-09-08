@@ -1,0 +1,25 @@
+.main-img-party {
+    max-width: 100%;
+    height: auto;
+    opacity: 50%;
+}
+
+.main_sidebar_right {
+    position: absolute;
+    top: 15%;
+    left: 90%;
+}
+
+.mat-list-option {
+    border-bottom: solid;
+    border-width: thin;
+    border-color: darkgray;
+}
+
+.mat-list-option .material-icons:last-of-type {
+    transition: .4s;
+}
+
+.mat-list-option:hover .material-icons:last-of-type {
+    transform: translateX(-7px);
+}

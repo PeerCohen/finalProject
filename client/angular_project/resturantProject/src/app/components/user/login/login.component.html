@@ -1,0 +1,35 @@
+<!-- <p>login works!</p>
+<form>
+    <input type="text" [(ngModel)]="password" placeholder="password" />
+    <input type="text" [(ngModel)]="userName" placeholder="userName" />
+    <mat-form-field>
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+    <button (click)="login()">login</button>
+</form>
+<a routerLink="sing-in-user" routerLinkActive='active'><button>למשתמש חדש לחץ כאן</button></a> -->
+
+
+
+
+
+
+<form [formGroup]="formGroupLogin">
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your username</mat-label>
+            <input matInput formControlName="username">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+        </mat-form-field>
+    </p>
+    <button mat-stroked-button color="primary" (click)="login()">Log in</button>
+</form>

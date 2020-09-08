@@ -1,0 +1,72 @@
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>הזן שם </ng-template>
+            <p>
+                <mat-form-field>
+                    <mat-label>שם פרטי</mat-label>
+                    <input matInput placeholder="First name" formControlName="firstName" name="firstName">
+                </mat-form-field>
+
+            </p>
+            <p>
+                <mat-form-field>
+                    <mat-label>שם משפחה</mat-label>
+                    <input matInput placeholder="Last name" formControlName="lastName" name="lastName">
+                </mat-form-field>
+            </p>
+            <div>
+                <button mat-button matStepperNext>הבא</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>הזן מייל</ng-template>
+            <mat-form-field>
+                <mat-label>מייל</mat-label>
+                <input matInput formControlName="mail" placeholder="Mail" name="mail">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>חזור</button>
+                <button mat-button matStepperNext>הבא</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup ">
+            <ng-template matStepLabel>הזן סיסמא & קוד משתמש </ng-template>
+            <p>
+                <mat-form-field>
+                    <mat-label>קוד משתמש</mat-label>
+                    <input matInput placeholder="Username" formControlName="username" name="username">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <mat-label>סיסמא</mat-label>
+                    <input matInput type="password" placeholder="Password" formControlName="password" name="password">
+                </mat-form-field>
+            </p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="signUp()">Sign up</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper>
+<div>
+    <p>Have an account?</p>
+    <a routerLink="/log-in" routerLinkActive='active'>
+        <button mat-stroked-button color="primary">Log in</button>
+    </a>
+</div>

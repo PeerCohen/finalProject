@@ -1,0 +1,32 @@
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\bin\Debug\DAL.dll.config
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\bin\Debug\DAL.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\bin\Debug\DAL.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\bin\Debug\EntityFramework.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\bin\Debug\EntityFramework.xml
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\obj\Debug\DAL.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\DAL\obj\Debug\DAL.pdb
+D:\final_project\WEB_API\DAL\bin\Debug\DAL.dll.config
+D:\final_project\WEB_API\DAL\bin\Debug\DAL.dll
+D:\final_project\WEB_API\DAL\bin\Debug\DAL.pdb
+D:\final_project\WEB_API\DAL\bin\Debug\EntityFramework.dll
+D:\final_project\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\final_project\WEB_API\DAL\bin\Debug\EntityFramework.xml
+D:\final_project\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\final_project\WEB_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\final_project\WEB_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\final_project\WEB_API\DAL\obj\Debug\DAL.dll
+D:\final_project\WEB_API\DAL\obj\Debug\DAL.pdb
+E:\WEB_API\DAL\bin\Debug\DAL.dll.config
+E:\WEB_API\DAL\bin\Debug\DAL.dll
+E:\WEB_API\DAL\bin\Debug\DAL.pdb
+E:\WEB_API\DAL\bin\Debug\EntityFramework.dll
+E:\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\WEB_API\DAL\bin\Debug\EntityFramework.xml
+E:\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\WEB_API\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\WEB_API\DAL\obj\Debug\DAL.dll
+E:\WEB_API\DAL\obj\Debug\DAL.pdb
+D:\final_project\WEB_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache

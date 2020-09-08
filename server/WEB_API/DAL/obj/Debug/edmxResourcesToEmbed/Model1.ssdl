@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="restaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="street" Type="varchar" MaxLength="50" />
+    <Property Name="NumHouse" Type="int" />
+    <Property Name="NumApartment" Type="int" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameCategory" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CurrentEmployee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmployee" Type="int" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Tz" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="50" />
+    <Property Name="IdEmployeeType" Type="int" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmployeesTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Position" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InventDetails">
+    <Key>
+      <PropertyRef Name="IdDose" />
+      <PropertyRef Name="IdMenu" />
+    </Key>
+    <Property Name="IdDose" Type="int" Nullable="false" />
+    <Property Name="IdMenu" Type="int" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InventDose">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateInvent" Type="datetime" Nullable="false" />
+    <Property Name="IdEmployee" Type="int" />
+    <Property Name="IdStatus" Type="int" />
+    <Property Name="IdTable" Type="int" />
+    <Property Name="HourInvention" Type="time" Precision="7" Nullable="false" />
+    <Property Name="IdVisiter" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" />
+    <Property Name="NameDose" Type="nvarchar" MaxLength="50" />
+    <Property Name="RateDose" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" />
+    <Property Name="doseId" Type="int" />
+    <Property Name="rate" Type="int" />
+  </EntityType>
+  <EntityType Name="StatusDose">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdServing" Type="int" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PlaceTable" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountPeople" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VipTables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTable" Type="int" />
+    <Property Name="IdVisiter" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="DateTimeStart" Type="time" Precision="7" />
+    <Property Name="IdServing" Type="int" />
+    <Property Name="CountPeople" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Visiters">
+    <Key>
+      <PropertyRef Name="ld" />
+    </Key>
+    <Property Name="ld" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="int" />
+    <Property Name="IdTable" Type="int" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="NameUser" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_CurrentEmployee_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CurrentEmployee">
+        <PropertyRef Name="IdEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_EmployeesTypes">
+    <End Role="EmployeesTypes" Type="Self.EmployeesTypes" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeesTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="IdEmployeeType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeesTypes_EmployeesTypes">
+    <End Role="EmployeesTypes" Type="Self.EmployeesTypes" Multiplicity="1" />
+    <End Role="EmployeesTypes1" Type="Self.EmployeesTypes" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeesTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeesTypes1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDetails_InventDose">
+    <End Role="InventDose" Type="Self.InventDose" Multiplicity="1" />
+    <End Role="InventDetails" Type="Self.InventDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventDose">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDetails">
+        <PropertyRef Name="IdDose" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDetails_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+    <End Role="InventDetails" Type="Self.InventDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDetails">
+        <PropertyRef Name="IdMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_StatusDose">
+    <End Role="StatusDose" Type="Self.StatusDose" Multiplicity="0..1" />
+    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDose">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_Tables">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="0..1" />
+    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdTable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_Visiters">
+    <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
+    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visiters">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdVisiter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="doseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VipTables_CurrentEmployee">
+    <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="0..1" />
+    <End Role="VipTables" Type="Self.VipTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CurrentEmployee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VipTables">
+        <PropertyRef Name="IdServing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VipTables_Employees">
+    <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="0..1" />
+    <End Role="VipTables" Type="Self.VipTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CurrentEmployee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VipTables">
+        <PropertyRef Name="IdServing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VipTables_Tables">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="0..1" />
+    <End Role="VipTables" Type="Self.VipTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VipTables">
+        <PropertyRef Name="IdTable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visiters_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="Visiters" Type="Self.Visiters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visiters">
+        <PropertyRef Name="Address" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visiters_Tables1">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="0..1" />
+    <End Role="Visiters" Type="Self.Visiters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visiters">
+        <PropertyRef Name="IdTable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="restaurantModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrentEmployee" EntityType="Self.CurrentEmployee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventDetails" EntityType="Self.InventDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventDose" EntityType="Self.InventDose" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusDose" EntityType="Self.StatusDose" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visiters" EntityType="Self.Visiters" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_EmployeesTypes" Association="Self.FK_Employees_EmployeesTypes">
+      <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesTypes_EmployeesTypes" Association="Self.FK_EmployeesTypes_EmployeesTypes">
+      <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
+      <End Role="EmployeesTypes1" EntitySet="EmployeesTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDetails_InventDose" Association="Self.FK_InventDetails_InventDose">
+      <End Role="InventDose" EntitySet="InventDose" />
+      <End Role="InventDetails" EntitySet="InventDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDetails_Menu" Association="Self.FK_InventDetails_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="InventDetails" EntitySet="InventDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_Employees" Association="Self.FK_InventDose_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_StatusDose" Association="Self.FK_InventDose_StatusDose">
+      <End Role="StatusDose" EntitySet="StatusDose" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_Tables" Association="Self.FK_InventDose_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_Visiters" Association="Self.FK_InventDose_Visiters">
+      <End Role="Visiters" EntitySet="Visiters" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_Category" Association="Self.FK_Menu_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Menu" EntitySet="Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Menu" Association="Self.FK_Rating_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VipTables_CurrentEmployee" Association="Self.FK_VipTables_CurrentEmployee">
+      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
+      <End Role="VipTables" EntitySet="VipTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VipTables_Employees" Association="Self.FK_VipTables_Employees">
+      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
+      <End Role="VipTables" EntitySet="VipTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VipTables_Tables" Association="Self.FK_VipTables_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="VipTables" EntitySet="VipTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visiters_Address" Association="Self.FK_Visiters_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Visiters" EntitySet="Visiters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visiters_Tables1" Association="Self.FK_Visiters_Tables1">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="Visiters" EntitySet="Visiters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
