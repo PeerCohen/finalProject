@@ -46,6 +46,12 @@ import { CateringComponent } from './components/user/catering/catering.component
 import { BigOrdersComponent } from './components/user/big-orders/big-orders.component';
 import { BirthdayComponent } from './components/user/birthday/birthday.component';
 import { RemoveProductComponent } from './components/user/dialogs/remove-product/remove-product.component';
+import { GiftcardContactComponent } from './components/user/contact-for-party/giftcard-contact/giftcard-contact.component';
+import { BirthdayContactComponent } from './components/user/contact-for-party/birthday-contact/birthday-contact.component';
+import { BigOrderContactComponent } from './components/user/contact-for-party/big-order-contact/big-order-contact.component';
+import { CateringContactComponent } from './components/user/contact-for-party/catering-contact/catering-contact.component';
+import { FormPartyPageComponent } from './components/user/form-party-page/form-party-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -78,6 +84,11 @@ import { RemoveProductComponent } from './components/user/dialogs/remove-product
     BigOrdersComponent,
     BirthdayComponent,
     RemoveProductComponent,
+    GiftcardContactComponent,
+    BirthdayContactComponent,
+    BigOrderContactComponent,
+    CateringContactComponent,
+    FormPartyPageComponent,
 
 
   ],
@@ -96,7 +107,8 @@ import { RemoveProductComponent } from './components/user/dialogs/remove-product
     MatIconModule,
     MatTabsModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
     
   ],
   providers: [],

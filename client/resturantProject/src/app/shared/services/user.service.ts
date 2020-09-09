@@ -4,6 +4,7 @@ import { SignUp } from '../modals/sign-up';
 import { Visiters } from '../modals/visiters';
 import { Observable } from 'rxjs';
 import { InventDose } from '../modals/invent-dose';
+import { InventDetails } from '../modals/invent-details';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class UserService {
     USER_KEY: "currentUser",
     INVENT_KEY: "currentInvent"
   }
+  invent :InventDose;
 
   URL: string = "http://localhost:51437/api/Visiters/";
 
@@ -32,7 +34,13 @@ export class UserService {
   get InventDose(): InventDose {
     return JSON.parse(localStorage.getItem(this.keys.INVENT_KEY));
   }
-
+  removeItem(){
+    localStorage.removeItem(this.keys.INVENT_KEY);
+  }
+  setInvetDetails(inventDetails : InventDetails[] ){
+   this.invent.inventDetails = inventDetails;
+   this.InventDose = this.invent; // update localStorage
+  }
   constructor(public httpClient: HttpClient) { }
 
   login(loginData): Observable<Visiters> {

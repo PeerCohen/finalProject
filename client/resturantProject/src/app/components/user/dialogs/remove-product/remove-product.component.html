@@ -1,5 +1,6 @@
-<h1 mat-dialog-title>לתשומת לב </h1>
-<div mat-dialog-content>הינך מוחק מוצר זה מרשימת ההזמנה</div>
+<h1 mat-dialog-title>לתשומת לבך </h1>
+<div mat-dialog-content>?להסיר את המוצר מההזמנה</div>
 <div mat-dialog-actions>
-    <button mat-button mat-dialog-close>מחק</button>
+    <button mat-button mat-dialog-close (click)="removeProduct()">כן,הסר</button>
+    <button mat-button mat-dialog-close>לא,חזור</button>
 </div>

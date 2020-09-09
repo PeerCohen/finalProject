@@ -31,8 +31,8 @@ export class DoseCategoryComponent implements OnInit {
     // this.nameCategory=this.categoryService.getNameCategoryById(this.InputIdCategory);
 
   }
-  addToCart(idMenu:number) {
-   if(this.visiterOrderManagment.addOrderToCart(idMenu)){
+  addToCart(item:Menu) {
+   if(this.visiterOrderManagment.addOrderToCart(item)){
      alert("הוסף מוצר בהצלחה")
    } 
    else 

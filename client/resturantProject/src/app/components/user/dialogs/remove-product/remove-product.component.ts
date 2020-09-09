@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-remove-product',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RemoveProductComponent implements OnInit {
 
-  constructor() { }
+  id: number = 0;
+  constructor(private visitersOrderManagementService: VisitersOrderManagementService,
+    @Inject(MAT_DIALOG_DATA) public data: number) {
+      this.id=data;
+     }
 
   ngOnInit(): void {
   }
 
+  removeProduct() {
+    this.visitersOrderManagementService.removeProduct(this.id);
+  }
 }

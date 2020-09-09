@@ -23,3 +23,15 @@
 .mat-list-option:hover .material-icons:last-of-type {
     transform: translateX(-7px);
 }
+
+h2.title {
+    text-align: right;
+    transition: .5s cubic-bezier(.35, 0, .25, 1);
+    position: relative;
+    right: 22px;
+    top: 32px;
+    width: 160px;
+    transform: translateX(15px);
+    width: fit-content;
+    font-size: 32px;
+}

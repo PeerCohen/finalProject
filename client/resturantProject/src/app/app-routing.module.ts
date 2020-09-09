@@ -8,6 +8,8 @@ import { MenuComponent } from './components/user/menu/menu.component';
 import { HomeComponent } from './components/user/home/home.component';
 import { StarComponent } from './components/user/star/star.component';
 import { PartyComponent } from './components/user/party/party.component';
+import { GiftCardComponent } from './components/user/gift-card/gift-card.component';
+import { FormPartyPageComponent } from './components/user/form-party-page/form-party-page.component';
 
 
 
@@ -47,8 +49,16 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "sign-in-user",
+    redirectTo: "home",
     pathMatch:"full"
+  },
+  {
+    path: "gift-card",
+    component : GiftCardComponent, 
+  },
+  {
+    path: "form-party",
+    component : FormPartyPageComponent, 
   }
 ];
 

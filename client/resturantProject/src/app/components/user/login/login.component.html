@@ -1,18 +1,18 @@
 <form [formGroup]="formGroupLogin">
-    <p>
-        <mat-form-field appearance="outline">
-            <mat-label>הזן קוד משתמש </mat-label>
-            <input matInput formControlName="username">
-        </mat-form-field>
-    </p>
-    <p>
-        <mat-form-field appearance="outline">
-            <mat-label>הזן סיסמא</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+
+    <mat-form-field appearance="outline">
+        <mat-label>הזן קוד משתמש </mat-label>
+        <input matInput formControlName="username">
+    </mat-form-field>
+
+    <br>
+    <mat-form-field appearance="outline">
+        <mat-label>הזן סיסמא</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
-        </mat-form-field>
-    </p>
+    </mat-form-field>
+
     <button mat-stroked-button color="primary" (click)="login()">התחבר</button>
 </form>

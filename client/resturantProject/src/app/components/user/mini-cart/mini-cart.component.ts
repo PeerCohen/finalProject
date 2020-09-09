@@ -23,28 +23,50 @@ export class MiniCartComponent implements OnInit {
     ) { } 
 
   ngOnInit(): void {
-    this.menu.getAllMenuDetails().subscribe(
-      (res: any) => {
-        this.menuDetails = res;
-        
-        this.cart = this.userService.InventDose.inventDetails.map(id => {
-          let m=this.menuDetails.find(item => item.id == id.idMenu)
-          return {
-            idDose: id.idDose,
-            menu: m.nameDose + '\n' +m.price +' ₪ ',           
-            amount: id.amount,
-           
+
+    this.visitersOrderManagementService.subjectCart.subscribe(res=>{
+      this.menu.getAllMenuDetails().subscribe(
+        (res: any) => {
+          this.menuDetails = res;
+          
+          this.cart = this.userService.InventDose.inventDetails.map(id => {
+            let m=this.menuDetails.find(item => item.id == id.idMenu)
+            return {
+              idDose: id.idDose,
+              menu: m.nameDose + '\n' +m.price +' ₪ ',           
+              amount: id.amount,
+             
+            }
           }
-        }
-        );
-      });
+          );
+        });
+    })
+
+    // this.menu.getAllMenuDetails().subscribe(
+    //   (res: any) => {
+    //     this.menuDetails = res;
+        
+    //     this.cart = this.userService.InventDose.inventDetails.map(id => {
+    //       let m=this.menuDetails.find(item => item.id == id.idMenu)
+    //       return {
+    //         idDose: id.idDose,
+    //         menu: m.nameDose + '\n' +m.price +' ₪ ',           
+    //         amount: id.amount,
+           
+    //       }
+    //     }
+    //     );
+    //   });
+  }
+  addProduct(item:Menu){
+    this.visitersOrderManagementService.addOrderToCart(item);
   }
       addInvent(){
         debugger;
         this.visitersOrderManagementService.addInvent()
       }
-      openDialogRemove(){
-        this.dialog.open(RemoveProductComponent);
+      openDialogRemove(id){
+        this.dialog.open(RemoveProductComponent,{data:id});
       }
 
 }

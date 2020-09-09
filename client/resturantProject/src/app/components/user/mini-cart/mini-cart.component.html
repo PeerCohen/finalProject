@@ -8,8 +8,8 @@
                 </mat-card-subtitle>
             </mat-card-header>
             <mat-card-actions>
-                <mat-icon>remove_circle_outline</mat-icon>
-                <mat-icon (click)="openDialogRemove()">add_circle_outline</mat-icon>
+                <mat-icon (click)="openDialogRemove(item.idDose)">remove_circle_outline</mat-icon>
+                <mat-icon (click)="addProduct(item.idDose)">add_circle_outline</mat-icon>
             </mat-card-actions>
         </mat-card>
     </div>
