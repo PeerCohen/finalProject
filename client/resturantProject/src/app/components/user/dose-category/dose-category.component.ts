@@ -44,7 +44,9 @@ export class DoseCategoryComponent implements OnInit {
 
     this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(
       (res: any) => {
+
         this.menuDetailsByCategory = res;
+        console.log(this.menuDetailsByCategory)
         this.menuDetailsByCategory.forEach(element => {
         for (let index = 0; index < element.rateDose; index++) {
          element.rateArray.push(index);        

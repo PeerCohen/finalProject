@@ -19,6 +19,10 @@ namespace BL.cast
                Price=item.Price,
                NameDose=item.NameDose,
                RateDose=item.RateDose,
+               Category=item.Category,
+               Description=item.Description,
+               image=item.image               
+
             };
         }
 
@@ -36,6 +40,9 @@ namespace BL.cast
                 Price = item.Price,
                 NameDose = item.NameDose,
                 RateDose = item.RateDose,
+                Category = item.Category,
+                Description = item.Description,
+                image = item.image
             };
         }
         //list to dal

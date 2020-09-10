@@ -6,5 +6,6 @@ export class Menu {
     rateArray:number[]=[]
     description:string;
     category:number;
-    amount:number;
+    image:string;
+    
 }

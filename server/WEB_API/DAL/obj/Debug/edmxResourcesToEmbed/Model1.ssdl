@@ -71,11 +71,12 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Price" Type="int" />
-    <Property Name="NameDose" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="NameDose" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="RateDose" Type="nvarchar" MaxLength="50" />
-    <Property Name="Category" Type="int" />
-    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="image" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Rating">
     <Key>
@@ -92,6 +93,16 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Tables">
     <Key>
@@ -238,7 +249,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Menu_Category">
-    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
     <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Category">
@@ -332,6 +343,7 @@
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusDose" EntityType="Self.StatusDose" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Visiters" EntityType="Self.Visiters" Schema="dbo" store:Type="Tables" />

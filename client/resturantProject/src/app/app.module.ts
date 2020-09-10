@@ -52,6 +52,7 @@ import { BigOrderContactComponent } from './components/user/contact-for-party/bi
 import { CateringContactComponent } from './components/user/contact-for-party/catering-contact/catering-contact.component';
 import { FormPartyPageComponent } from './components/user/form-party-page/form-party-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 
@@ -89,6 +90,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     BigOrderContactComponent,
     CateringContactComponent,
     FormPartyPageComponent,
+    LogoComponent,
 
 
   ],

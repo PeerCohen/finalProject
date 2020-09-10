@@ -36,16 +36,15 @@ export class VisitersOrderManagementService {
   }
 
   addOrderToCart(item: Menu) {
+    debugger;
     if (this.userService.CurrentUser) {
-      this.cart.push(this.castMenuToInvetDetails(item));
-      if (!this.userService.InventDose)
-        this.userService.InventDose = new InventDose();
-      this.userService.setInvetDetails(this.cart);
+      this.cart.push(this.castMenuToInvetDetails(item));  
+      this.userService.setInvetDetails(this.userService.InventDose, this.cart);
      // let dose: InventDose = { ...this.userService.InventDose };
      // dose.inventDetails.push({ idDose: 0, idMenu: itemId, amount: 0 });
       // this.userService.InventDose = dose;
       // this.subjectCart.next(this.cart);
-      // return this.cart;
+      return this.cart;
     }
     else
       return false;

@@ -21,11 +21,11 @@ namespace DAL
         }
     
         public int Id { get; set; }
-        public DateTime DateInvent { get; set; }
+        public System.DateTime DateInvent { get; set; }
         public Nullable<int> IdEmployee { get; set; }
         public Nullable<int> IdStatus { get; set; }
         public Nullable<int> IdTable { get; set; }
-        public TimeSpan HourInvention { get; set; }
+        public System.TimeSpan HourInvention { get; set; }
         public int IdVisiter { get; set; }
     
         public virtual Employees Employees { get; set; }

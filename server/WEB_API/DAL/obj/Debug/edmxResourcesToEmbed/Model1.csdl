@@ -89,11 +89,12 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="Price" Type="Int32" />
-    <Property Name="NameDose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="NameDose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="RateDose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Category" Type="Int32" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Category1" Relationship="Self.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
     <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
     <NavigationProperty Name="Rating" Relationship="Self.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
@@ -115,6 +116,16 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_StatusDose" FromRole="StatusDose" ToRole="InventDose" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Tables">
     <Key>
@@ -174,7 +185,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Menu_Category">
-    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
     <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Category">
@@ -364,6 +375,7 @@
     <EntitySet Name="Menu" EntityType="Self.Menu" />
     <EntitySet Name="Rating" EntityType="Self.Rating" />
     <EntitySet Name="StatusDose" EntityType="Self.StatusDose" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Tables" EntityType="Self.Tables" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" />
     <EntitySet Name="Visiters" EntityType="Self.Visiters" />

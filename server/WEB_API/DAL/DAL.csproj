@@ -103,6 +103,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="StatusDoseDAL.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Tables.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

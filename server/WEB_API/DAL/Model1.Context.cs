@@ -35,6 +35,7 @@ namespace DAL
         public virtual DbSet<Menu> Menu { get; set; }
         public virtual DbSet<Rating> Rating { get; set; }
         public virtual DbSet<StatusDose> StatusDose { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tables> Tables { get; set; }
         public virtual DbSet<VipTables> VipTables { get; set; }
         public virtual DbSet<Visiters> Visiters { get; set; }

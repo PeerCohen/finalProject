@@ -21,9 +21,9 @@
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <p>
-            <!-- <img [src]="'../../assets/images/'+item.image"> -->
-        </p>
+        <div>
+            <img class='image' [src]="'../../assets/images/products/'+item.category+'/'+item.image">
+        </div>
         <ng-container *ngFor="let star of item.rateArray">
             <app-star [starId]="star" [rating1]="hoverState||rating" (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)">
             </app-star>

@@ -14,3 +14,9 @@ E:\WEB_API\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 E:\WEB_API\DTO\obj\Debug\DTO.dll
 E:\WEB_API\DTO\obj\Debug\DTO.pdb
 D:\final_project\WEB_API\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\bin\Debug\DTO.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\bin\Debug\DTO.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.pdb
