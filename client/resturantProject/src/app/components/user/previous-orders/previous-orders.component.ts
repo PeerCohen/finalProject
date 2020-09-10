@@ -11,6 +11,9 @@ import { InventDose } from 'src/app/shared/modals/invent-dose';
 })
 export class PreviousOrdersComponent implements OnInit {
   preOrders:InventDose[]=[];
+  stars = [1, 2, 3, 4, 5];
+  rating = 1;
+  hoverState = 0;
 
   constructor(private visitersOrderManagementService:VisitersOrderManagementService,
     public userService:UserService) { }
@@ -21,6 +24,16 @@ export class PreviousOrdersComponent implements OnInit {
     this.visitersOrderManagementService.getAllOrder(userId).subscribe(res=>{
       this.preOrders=res;
     })
+  }
+  
+  onStarEnter(starId: number) {
+    this.hoverState = starId
+  }
+  onStarLeave() {
+    this.hoverState = 0;
+  }
+  onStarClicked(starId: number) {
+    this.rating = starId;
   }
 
 }

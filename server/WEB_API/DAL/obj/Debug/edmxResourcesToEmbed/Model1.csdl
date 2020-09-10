@@ -91,7 +91,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
     <Property Name="NameDose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RateDose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RateDose" Type="Double" />
     <Property Name="Category" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />

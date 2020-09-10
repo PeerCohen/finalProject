@@ -3,7 +3,11 @@
     <div *ngIf="order">
         <p>{{order.id}}</p>
         <ul>
-            <li *ngFor="let detail of order.inventDetails">{{detail.idDose}}</li>
+            <li *ngFor="let detail of order.inventDetails">
+                {{detail.idDose}}
+                <app-star [starId]="'star'+detail.idMenu" [rating1]="hoverState||rating" (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)">
+                </app-star>
+            </li>
         </ul>
     </div>
 </div>

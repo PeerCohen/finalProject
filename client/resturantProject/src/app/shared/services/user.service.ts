@@ -41,7 +41,7 @@ export class UserService {
     debugger;
     if (!this.InventDose)
       this.InventDose = new InventDose();
-    this.invent =  this.InventDose;
+   this.invent =  this.InventDose;
    this.invent.inventDetails = inventDetails;
    this.InventDose = this.invent; // update localStorage
   }

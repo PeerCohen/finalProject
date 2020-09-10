@@ -17,7 +17,6 @@ export class StarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
     // var user:Visiters= JSON.parse(localStorage.getItem("user"));
     // this.rating.userId=user.id;
     // // user.id

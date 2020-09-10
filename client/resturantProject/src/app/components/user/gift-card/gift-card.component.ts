@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GiftCardComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+     }
 
   ngOnInit(): void {
-  }
-
+  }  
+  
+  panelOpenState = false;
 }

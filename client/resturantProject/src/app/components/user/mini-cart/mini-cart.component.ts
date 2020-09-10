@@ -5,6 +5,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 import { MenuService } from 'src/app/shared/services/menu.service';
 import {MatDialog} from '@angular/material/dialog';
 import { RemoveProductComponent } from '../dialogs/remove-product/remove-product.component';
+import { InventDetails } from 'src/app/shared/modals/invent-details';
 
 
 @Component({
@@ -14,33 +15,26 @@ import { RemoveProductComponent } from '../dialogs/remove-product/remove-product
 })
 export class MiniCartComponent implements OnInit {
 
-  cart: any[];
+  cart: InventDetails[];
   menuDetails: Menu[] = [];
   constructor(
     private visitersOrderManagementService: VisitersOrderManagementService,
     private userService: UserService, private menu: MenuService,
     private dialog: MatDialog
     ) { } 
-
+ 
   ngOnInit(): void {
-
-    this.visitersOrderManagementService.subjectCart.subscribe(res=>{
-      this.menu.getAllMenuDetails().subscribe(
-        (res: any) => {
-          this.menuDetails = res;
+     this.cart = this.userService.InventDose.inventDetails;
+    // this.visitersOrderManagementService.subjectCart.subscribe(res=>{
+    //   this.menu.getAllMenuDetails().subscribe(
+    //     (res: any) => {
+    //       this.menuDetails = res;
           
-          this.cart = this.userService.InventDose.inventDetails.map(id => {
-            let m=this.menuDetails.find(item => item.id == id.idMenu)
-            return {
-              idDose: id.idDose,
-              menu: m.nameDose + '\n' +m.price +' ₪ ',           
-              amount: id.amount,
-             
-            }
-          }
-          );
-        });
-    })
+         
+    //       }
+    //       );
+    //     });
+    // })
 
     // this.menu.getAllMenuDetails().subscribe(
     //   (res: any) => {
@@ -58,6 +52,7 @@ export class MiniCartComponent implements OnInit {
     //     );
     //   });
   }
+ 
   addProduct(item:Menu){
     this.visitersOrderManagementService.addOrderToCart(item);
   }

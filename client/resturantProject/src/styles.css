@@ -1,47 +1,75 @@
- You can add global styles to this file,
- and also import other style files html,
- body,
- html {
-     height: 100%;
-     margin: 0;
-     font-family: Roboto, "Helvetica Neue", sans-serif;
- }
- 
- * {
-     direction: rtl;
-     text-align: right;
- }
- /* .mat-vertical-stepper-header .mat-step-icon {
-     margin-left: 12px;
- }
- 
- div.mat-tab-label {
-     visibility: hidden;
-     height: 5px;
- }
- 
- mat-ink-bar {
-     left: auto !important;
- }
- 
- .wrapper:hover .mat-tab-header {
-     padding-right: 70px;
- }
- 
- .mat-tab-header {
-     height: 45px;
-     transition: .5s cubic-bezier(.35, 0, .25, 1);
- }
- 
- .wrapper:hover h2.title {
-     padding-right: 70px;
- }
- 
- .mat-tab-group.mat-primary .mat-ink-bar,
- .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-     background-color: #fbc02d;
- }
- 
- .mat-tab-header-pagination {
-     display: none !important;
- } */
+             You can add global styles to this file,
+             and also import other style files html,
+             body,
+             html {
+                 height: 100%;
+                 margin: 0;
+                 font-family: Roboto, "Helvetica Neue", sans-serif;
+                 direction: rtl;
+                 text-align: right;
+                 -webkit-user-select: none;
+                 -moz-user-select: none;
+                 user-select: none;
+             }
+             
+             .mat-form-field {
+                 direction: ltr !important;
+                 text-align: left;
+             }
+             
+             .material-icons,
+             .mat-icon {
+                 -webkit-font-smoothing: antialiased;
+                 text-rendering: optimizeLegibility;
+                 -moz-osx-font-smoothing: grayscale;
+                 font-feature-settings: 'liga';
+                 font-family: 'Material Icons';
+             }
+             
+              ::-webkit-scrollbar-thumb {
+                 width: 8px;
+                 height: 8px;
+                 background-color: #dcdcdc;
+                 ;
+             }
+             
+              ::-webkit-scrollbar {
+                 width: 8px;
+                 height: 8px;
+                 background-color: whitesmoke;
+             }
+             /*      
+     .mat-vertical-stepper-header .mat-step-icon {
+         margin-left: 12px;
+     }
+     
+     div.mat-tab-label {
+         visibility: hidden;
+         height: 5px;
+     }
+     
+     mat-ink-bar {
+         left: auto !important;
+     }
+     
+     .wrapper:hover .mat-tab-header {
+         padding-right: 70px;
+     }
+     
+     .mat-tab-header {
+         height: 45px;
+         transition: .5s cubic-bezier(.35, 0, .25, 1);
+     }
+     
+     .wrapper:hover h2.title {
+         padding-right: 70px;
+     }
+     
+     .mat-tab-group.mat-primary .mat-ink-bar,
+     .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+         background-color: #fbc02d;
+     }
+     
+     .mat-tab-header-pagination {
+         display: none !important;
+     } */

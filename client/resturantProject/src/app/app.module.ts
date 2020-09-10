@@ -53,6 +53,13 @@ import { CateringContactComponent } from './components/user/contact-for-party/ca
 import { FormPartyPageComponent } from './components/user/form-party-page/form-party-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LogoComponent } from './components/logo/logo.component';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { ContactDetailsComponent } from './components/user/contact-for-party/contact-details/contact-details.component';
+import { OptionEnterComponent } from './components/user/option-enter/option-enter.component';
+import { PartyEventComponent } from './components/user/party-event/party-event.component';
+
+
 
 
 
@@ -91,6 +98,9 @@ import { LogoComponent } from './components/logo/logo.component';
     CateringContactComponent,
     FormPartyPageComponent,
     LogoComponent,
+    ContactDetailsComponent,
+    OptionEnterComponent,
+    PartyEventComponent,
 
 
   ],
@@ -110,7 +120,9 @@ import { LogoComponent } from './components/logo/logo.component';
     MatTabsModule,
     MatListModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTreeModule,
+    MatExpansionModule
     
   ],
   providers: [],

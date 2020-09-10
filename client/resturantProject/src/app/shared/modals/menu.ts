@@ -3,7 +3,6 @@ export class Menu {
     price: number;
     nameDose: string;
     rateDose: number;
-    rateArray:number[]=[]
     description:string;
     category:number;
     image:string;

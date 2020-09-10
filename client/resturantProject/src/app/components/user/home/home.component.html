@@ -1,6 +1,5 @@
 <app-logo></app-logo>
-<mat-tab-group>
-    <!-- <a routerLink="/sign-in-user" routerLinkActive='active'></a> -->
+<mat-tab-group mat-align-tabs="center">
     <mat-tab>
         <ng-template mat-tab-label>
             התחברות לאתר
@@ -13,7 +12,7 @@
     <mat-tab label="תפריט">
         <app-menu></app-menu>
     </mat-tab>
-    <mat-tab label="להתחיל הזמנה" (click)="open()">
+    <mat-tab label="להתחיל הזמנה">
         להתחיל הזמנה
     </mat-tab>
     <mat-tab label=" יש לי קוד קופון ">
@@ -21,5 +20,9 @@
     <mat-tab label="סל ההזמנות שלי ">
         ההזמנות שלי
         <app-previous-orders></app-previous-orders>
+    </mat-tab>
+    <mat-tab label="אירועים מיוחדים">
+        אירועים מיוחדים
+        <app-party-event></app-party-event>
     </mat-tab>
 </mat-tab-group>

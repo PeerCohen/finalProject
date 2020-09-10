@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-form-party-page',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class FormPartyPageComponent implements OnInit {
 
   constructor() { }
+  @Input() isEvent?:boolean=false;
 
   ngOnInit(): void {
+    
   }
 
 }

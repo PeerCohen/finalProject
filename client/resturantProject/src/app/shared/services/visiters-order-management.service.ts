@@ -43,7 +43,7 @@ export class VisitersOrderManagementService {
      // let dose: InventDose = { ...this.userService.InventDose };
      // dose.inventDetails.push({ idDose: 0, idMenu: itemId, amount: 0 });
       // this.userService.InventDose = dose;
-      // this.subjectCart.next(this.cart);
+      this.subjectCart.next(this.cart);
       return this.cart;
     }
     else
