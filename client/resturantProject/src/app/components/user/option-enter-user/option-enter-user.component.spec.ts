@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileComponent } from './profile.component';
+import { OptionEnterUserComponent } from './option-enter-user.component';
 
-describe('ProfileComponent', () => {
-  let component: ProfileComponent;
-  let fixture: ComponentFixture<ProfileComponent>;
+describe('OptionEnterUserComponent', () => {
+  let component: OptionEnterUserComponent;
+  let fixture: ComponentFixture<OptionEnterUserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      declarations: [ OptionEnterUserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileComponent);
+    fixture = TestBed.createComponent(OptionEnterUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

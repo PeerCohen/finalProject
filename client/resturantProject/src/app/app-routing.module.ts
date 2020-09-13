@@ -1,7 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SingInUserComponent } from './components/user/sing-in-user/sing-in-user.component';
-import { ProfileComponent } from './components/worker/profile/profile.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { MenuByCategotyComponent } from './components/user/menu-by-categoty/menu-by-categoty.component';
 import { MenuComponent } from './components/user/menu/menu.component';
@@ -22,10 +21,6 @@ const routes: Routes = [
   {
     path: "sign-in-user",
     component: SingInUserComponent,
-  },
-  {
-    path: "profile-user",
-    component: ProfileComponent,
   },
   {
     path: "log-in",

@@ -52,7 +52,6 @@ export class UserService {
   }
 
   signUp(newUser: SignUp): Observable<Visiters> {
-    debugger
     return this.httpClient.post<Visiters>(`${this.URL}SignUp`, newUser);
   }
 }

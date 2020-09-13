@@ -23,7 +23,6 @@ import { MyPresenceComponent } from './components/worker/my-presence/my-presence
 import { UpdatePresenceComponent } from './components/worker/update-presence/update-presence.component';
 import { ProfileUserComponent } from './components/user/profile-user/profile-user.component';
 import { SingInUserComponent } from './components/user/sing-in-user/sing-in-user.component';
-import { ProfileComponent } from './components/worker/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -56,8 +55,8 @@ import { LogoComponent } from './components/logo/logo.component';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ContactDetailsComponent } from './components/user/contact-for-party/contact-details/contact-details.component';
-import { OptionEnterComponent } from './components/user/option-enter/option-enter.component';
 import { PartyEventComponent } from './components/user/party-event/party-event.component';
+import { OptionEnterUserComponent } from './components/user/option-enter-user/option-enter-user.component';
 
 
 
@@ -70,7 +69,6 @@ import { PartyEventComponent } from './components/user/party-event/party-event.c
     AppComponent,
     MenuComponent,
     LoginComponent,
-    ProfileComponent,
     UserUpdateComponent,
     PreviousOrdersComponent,
     CouponsComponent,
@@ -99,8 +97,8 @@ import { PartyEventComponent } from './components/user/party-event/party-event.c
     FormPartyPageComponent,
     LogoComponent,
     ContactDetailsComponent,
-    OptionEnterComponent,
     PartyEventComponent,
+    OptionEnterUserComponent,
 
 
   ],

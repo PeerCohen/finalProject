@@ -28,14 +28,16 @@ export class LoginComponent implements OnInit {
   });
   }
   
+  
   login(){
+    console.log(this.loginData);
     this.userService.login(this.loginData).subscribe(res => {
       if (res == null) {
         alert("null")
       }
       else {
         this.userService.CurrentUser=res;
-        this.router.navigate(["/home"]);
+        alert("רשום במערכת")
       }
     });
   }
