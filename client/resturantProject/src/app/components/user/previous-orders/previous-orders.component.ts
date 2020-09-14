@@ -20,7 +20,7 @@ export class PreviousOrdersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    var userId=this.userService.CurrentUser.id;
+    var userId=JSON.parse( localStorage.getItem("currentUser")).ld;
     this.visitersOrderManagementService.getAllOrder(userId).subscribe(res=>{
       this.preOrders=res;
     })

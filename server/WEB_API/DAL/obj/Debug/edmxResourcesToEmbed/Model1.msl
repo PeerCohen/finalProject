@@ -51,15 +51,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="InventDetails">
-      <EntityTypeMapping TypeName="restaurantModel.InventDetails">
-        <MappingFragment StoreEntitySet="InventDetails">
-          <ScalarProperty Name="IdDose" ColumnName="IdDose" />
-          <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
-          <ScalarProperty Name="amount" ColumnName="amount" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="InventDose">
       <EntityTypeMapping TypeName="restaurantModel.InventDose">
         <MappingFragment StoreEntitySet="InventDose">
@@ -151,6 +142,16 @@
           <ScalarProperty Name="Mail" ColumnName="Mail" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventDetails">
+      <EntityTypeMapping TypeName="restaurantModel.InventDetails">
+        <MappingFragment StoreEntitySet="InventDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+          <ScalarProperty Name="IdDose" ColumnName="IdDose" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -3,6 +3,7 @@ import { Menu } from 'src/app/shared/modals/menu';
 import { MenuService } from 'src/app/shared/services/menu.service';
 import { CategoryService } from 'src/app/shared/services/category.service';
 import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dose-category',
@@ -11,14 +12,19 @@ import { VisitersOrderManagementService } from 'src/app/shared/services/visiters
 })
 export class DoseCategoryComponent implements OnInit {
 
+  isMiniCartOpen:boolean;
   InputIdCategory: number;
   nameCategory: string;
   error: any;
   menuDetailsByCategory: Menu[] = [];
 
   constructor(public menuService: MenuService,
+    config: NgbRatingConfig,
     public categoryService: CategoryService,
-    public visiterOrderManagment: VisitersOrderManagementService) { }
+    public visiterOrderManagment: VisitersOrderManagementService) {
+      config.max = 5;
+      config.readonly = true;
+     }
 
   ngOnInit(): void {
     this.menuService.subjectMenu.subscribe((res: number) => {
@@ -29,6 +35,8 @@ export class DoseCategoryComponent implements OnInit {
 
   }
   addToCart(item:Menu) {
+    // debugger;
+    // this.isMiniCartOpen=true;
    if(this.visiterOrderManagment.addOrderToCart(item)){
      alert("הוסף מוצר בהצלחה")
    } 

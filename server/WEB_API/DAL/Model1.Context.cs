@@ -30,7 +30,6 @@ namespace DAL
         public virtual DbSet<CurrentEmployee> CurrentEmployee { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<EmployeesTypes> EmployeesTypes { get; set; }
-        public virtual DbSet<InventDetails> InventDetails { get; set; }
         public virtual DbSet<InventDose> InventDose { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
         public virtual DbSet<Rating> Rating { get; set; }
@@ -39,5 +38,6 @@ namespace DAL
         public virtual DbSet<Tables> Tables { get; set; }
         public virtual DbSet<VipTables> VipTables { get; set; }
         public virtual DbSet<Visiters> Visiters { get; set; }
+        public virtual DbSet<InventDetails> InventDetails { get; set; }
     }
 }

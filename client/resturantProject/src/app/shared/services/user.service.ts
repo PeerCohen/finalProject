@@ -20,7 +20,6 @@ export class UserService {
   URL: string = "http://localhost:51437/api/Visiters/";
 
    set CurrentUser(v: Visiters) {
-     debugger;
     if (v)
       localStorage.setItem(this.keys.USER_KEY, JSON.stringify(v));
   }
@@ -38,7 +37,6 @@ export class UserService {
     localStorage.removeItem(this.keys.INVENT_KEY);
   }
   setInvetDetails(invent: InventDose,inventDetails : InventDetails[] ){
-    debugger;
     if (!this.InventDose)
       this.InventDose = new InventDose();
    this.invent =  this.InventDose;

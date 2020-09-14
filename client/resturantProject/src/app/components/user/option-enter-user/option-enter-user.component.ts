@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./option-enter-user.component.css']
 })
 export class OptionEnterUserComponent implements OnInit {
-
+  signInIsOpen = false;
+  loginIsOpen=false;
   constructor() { }
 
   ngOnInit(): void {

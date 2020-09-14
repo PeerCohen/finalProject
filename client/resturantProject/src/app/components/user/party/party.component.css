@@ -1,4 +1,4 @@
-.main-img-party {
+/* .main-img-party {
     max-width: 100%;
     height: auto;
     opacity: 50%;
@@ -23,6 +23,7 @@
 .mat-list-option:hover .material-icons:last-of-type {
     transform: translateX(-7px);
 }
+*/
 
 h2.title {
     text-align: right;
@@ -34,4 +35,8 @@ h2.title {
     transform: translateX(15px);
     width: fit-content;
     font-size: 32px;
+}
+
+.icon-party {
+    color: #8c0f29;
 }

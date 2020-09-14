@@ -47,12 +47,12 @@
   </EntityType>
   <EntityType Name="InventDetails">
     <Key>
-      <PropertyRef Name="IdDose" />
-      <PropertyRef Name="IdMenu" />
+      <PropertyRef Name="Id" />
     </Key>
     <Property Name="IdDose" Type="int" Nullable="false" />
     <Property Name="IdMenu" Type="int" Nullable="false" />
     <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="InventDose">
     <Key>

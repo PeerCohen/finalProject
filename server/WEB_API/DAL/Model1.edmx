@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="restaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="restaurantModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Address">
           <Key>
             <PropertyRef Name="Id" />
@@ -52,12 +52,12 @@
         </EntityType>
         <EntityType Name="InventDetails">
           <Key>
-            <PropertyRef Name="IdDose" />
-            <PropertyRef Name="IdMenu" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="IdDose" Type="int" Nullable="false" />
           <Property Name="IdMenu" Type="int" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="InventDose">
           <Key>
@@ -417,8 +417,7 @@
             <End Role="Visiters" EntitySet="Visiters" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="restaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -478,17 +477,6 @@
           <NavigationProperty Name="EmployeesTypes1" Relationship="Self.FK_EmployeesTypes_EmployeesTypes" FromRole="EmployeesTypes" ToRole="EmployeesTypes1" />
           <NavigationProperty Name="EmployeesTypes2" Relationship="Self.FK_EmployeesTypes_EmployeesTypes" FromRole="EmployeesTypes1" ToRole="EmployeesTypes" />
         </EntityType>
-        <EntityType Name="InventDetails">
-          <Key>
-            <PropertyRef Name="IdDose" />
-            <PropertyRef Name="IdMenu" />
-          </Key>
-          <Property Name="IdDose" Type="Int32" Nullable="false" />
-          <Property Name="IdMenu" Type="Int32" Nullable="false" />
-          <Property Name="amount" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDetails_InventDose" FromRole="InventDetails" ToRole="InventDose" />
-          <NavigationProperty Name="Menu" Relationship="Self.FK_InventDetails_Menu" FromRole="InventDetails" ToRole="Menu" />
-        </EntityType>
         <EntityType Name="InventDose">
           <Key>
             <PropertyRef Name="Id" />
@@ -501,10 +489,10 @@
           <Property Name="HourInvention" Type="Time" Nullable="false" Precision="7" />
           <Property Name="IdVisiter" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_InventDose_Employees" FromRole="InventDose" ToRole="Employees" />
-          <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_InventDose" FromRole="InventDose" ToRole="InventDetails" />
           <NavigationProperty Name="StatusDose" Relationship="Self.FK_InventDose_StatusDose" FromRole="InventDose" ToRole="StatusDose" />
           <NavigationProperty Name="Tables" Relationship="Self.FK_InventDose_Tables" FromRole="InventDose" ToRole="Tables" />
           <NavigationProperty Name="Visiters" Relationship="Self.FK_InventDose_Visiters" FromRole="InventDose" ToRole="Visiters" />
+          <NavigationProperty Name="InventDetails" Relationship="restaurantModel.FK_InventDetails_InventDose" FromRole="InventDose" ToRole="InventDetails" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -518,8 +506,8 @@
           <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Category1" Relationship="Self.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
-          <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
           <NavigationProperty Name="Rating" Relationship="Self.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
+          <NavigationProperty Name="InventDetails" Relationship="restaurantModel.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
         </EntityType>
         <EntityType Name="Rating">
           <Key>
@@ -690,30 +678,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_InventDetails_InventDose">
-          <End Role="InventDose" Type="Self.InventDose" Multiplicity="1" />
-          <End Role="InventDetails" Type="Self.InventDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="InventDose">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="InventDetails">
-              <PropertyRef Name="IdDose" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_InventDetails_Menu">
-          <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
-          <End Role="InventDetails" Type="Self.InventDetails" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Menu">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="InventDetails">
-              <PropertyRef Name="IdMenu" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_InventDose_StatusDose">
           <End Role="StatusDose" Type="Self.StatusDose" Multiplicity="0..1" />
           <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
@@ -792,7 +756,6 @@
           <EntitySet Name="CurrentEmployee" EntityType="Self.CurrentEmployee" />
           <EntitySet Name="Employees" EntityType="Self.Employees" />
           <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" />
-          <EntitySet Name="InventDetails" EntityType="Self.InventDetails" />
           <EntitySet Name="InventDose" EntityType="Self.InventDose" />
           <EntitySet Name="Menu" EntityType="Self.Menu" />
           <EntitySet Name="Rating" EntityType="Self.Rating" />
@@ -833,14 +796,6 @@
             <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
             <End Role="EmployeesTypes1" EntitySet="EmployeesTypes" />
           </AssociationSet>
-          <AssociationSet Name="FK_InventDetails_InventDose" Association="Self.FK_InventDetails_InventDose">
-            <End Role="InventDose" EntitySet="InventDose" />
-            <End Role="InventDetails" EntitySet="InventDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InventDetails_Menu" Association="Self.FK_InventDetails_Menu">
-            <End Role="Menu" EntitySet="Menu" />
-            <End Role="InventDetails" EntitySet="InventDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_InventDose_StatusDose" Association="Self.FK_InventDose_StatusDose">
             <End Role="StatusDose" EntitySet="StatusDose" />
             <End Role="InventDose" EntitySet="InventDose" />
@@ -865,7 +820,51 @@
             <End Role="Tables" EntitySet="Tables" />
             <End Role="Visiters" EntitySet="Visiters" />
           </AssociationSet>
+          <EntitySet Name="InventDetails" EntityType="restaurantModel.InventDetails" />
+          <AssociationSet Name="FK_InventDetails_InventDose" Association="restaurantModel.FK_InventDetails_InventDose">
+            <End Role="InventDose" EntitySet="InventDose" />
+            <End Role="InventDetails" EntitySet="InventDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventDetails_Menu" Association="restaurantModel.FK_InventDetails_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="InventDetails" EntitySet="InventDetails" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="InventDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="IdDose" Type="Int32" Nullable="false" />
+          <Property Name="IdMenu" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="InventDose" Relationship="restaurantModel.FK_InventDetails_InventDose" FromRole="InventDetails" ToRole="InventDose" />
+          <NavigationProperty Name="Menu" Relationship="restaurantModel.FK_InventDetails_Menu" FromRole="InventDetails" ToRole="Menu" />
+        </EntityType>
+        <Association Name="FK_InventDetails_InventDose">
+          <End Type="restaurantModel.InventDose" Role="InventDose" Multiplicity="1" />
+          <End Type="restaurantModel.InventDetails" Role="InventDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InventDose">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InventDetails">
+              <PropertyRef Name="IdDose" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InventDetails_Menu">
+          <End Type="restaurantModel.Menu" Role="Menu" Multiplicity="1" />
+          <End Type="restaurantModel.InventDetails" Role="InventDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InventDetails">
+              <PropertyRef Name="IdMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -919,15 +918,6 @@
               <MappingFragment StoreEntitySet="EmployeesTypes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Position" ColumnName="Position" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="InventDetails">
-            <EntityTypeMapping TypeName="restaurantModel.InventDetails">
-              <MappingFragment StoreEntitySet="InventDetails">
-                <ScalarProperty Name="IdDose" ColumnName="IdDose" />
-                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1022,6 +1012,16 @@
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventDetails">
+            <EntityTypeMapping TypeName="restaurantModel.InventDetails">
+              <MappingFragment StoreEntitySet="InventDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
+                <ScalarProperty Name="IdDose" ColumnName="IdDose" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

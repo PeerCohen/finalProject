@@ -1,5 +1,5 @@
 export class InventDetails {
-    idDose: number;
-    idMenu: number;
-    amount: number;
+    idDose?: number;
+    idMenu?: number;
+    amount?: number;
 }

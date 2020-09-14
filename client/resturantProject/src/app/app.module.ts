@@ -57,6 +57,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ContactDetailsComponent } from './components/user/contact-for-party/contact-details/contact-details.component';
 import { PartyEventComponent } from './components/user/party-event/party-event.component';
 import { OptionEnterUserComponent } from './components/user/option-enter-user/option-enter-user.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -120,7 +121,8 @@ import { OptionEnterUserComponent } from './components/user/option-enter-user/op
     MatCardModule,
     MatDialogModule,
     MatTreeModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgbModule
     
   ],
   providers: [],

@@ -32,19 +32,18 @@ namespace WEB_API.Controllers
         public bool AddDose([FromBody]InventDoseDTO InventDose)
         {
            return VisitersBL.AddDose(InventDose);
-        //https://material.io/resources/icons/?style=baseline
         }
 
 
 
         // GET: api/Visiters/5
         [HttpGet]
-        [Route("GetInvent")]
+        [Route("GetInvent/{id}")]
         public string Get(int id)
         {
             return "value";
         }
-
+        
         // POST: api/Visiters
         public void Post([FromBody]string value)
         {
@@ -53,6 +52,8 @@ namespace WEB_API.Controllers
         [Route("login")]
         public VisitersDTO Login([FromBody] LoginVisiters loginEmployee)
         {
+            if (loginEmployee.Password == null)
+                return null;
             return VisitersBL.Login(loginEmployee.Username, loginEmployee.Password);
         }
 

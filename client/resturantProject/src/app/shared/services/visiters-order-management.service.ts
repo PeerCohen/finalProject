@@ -12,23 +12,36 @@ import { InventDetails } from '../modals/invent-details';
 export class VisitersOrderManagementService {
 
 
-  URL: string = "http://localhost:51437/api/Visiters/";
+  URL: string = "http://localhost:51437/api/Visiters";
   subjectCart = new Subject();
   cart: InventDetails[] = [];
 
-  constructor(public httpClient: HttpClient, private userService: UserService) { }
+  constructor(public httpClient: HttpClient, private userService: UserService) {
+    this.cart = this.userService.InventDose.inventDetails;
+  }
 
-  idCurrentUser = this.userService.CurrentUser;
+  idCurrentUser = this.userService.CurrentUser.id;
 
   getAllOrder(idVisiter: number): Observable<InventDose[]> {
-    return this.httpClient.get<InventDose[]>(`${this.URL}/GetInvent${this.idCurrentUser}`);
+    return this.httpClient.get<InventDose[]>(`${this.URL}/GetInvent/${idVisiter}`);
   }
   addInvent() {
+    var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
+    var vis = new InventDose();
+    var user = JSON.parse(localStorage.getItem("currentUser")).ld;
+    vis.idVisiter = user;
+    vis.status = 1;
+    vis.inventDetails = [];
+
+    inventDetails.forEach(element => {
+      vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
+    });
+
     debugger;
-    return this.httpClient.post(`${this.URL}/AddDose${this.idCurrentUser}`, this.userService.InventDose);
+    return this.httpClient.post(`${this.URL}/AddDose`, vis);
 
   }
-  castMenuToInvetDetails(item: Menu){
+  castMenuToInvetDetails(item: Menu) {
     let invent = new InventDetails();
     invent.idMenu = item.id;
     invent.amount = 1;
@@ -36,12 +49,11 @@ export class VisitersOrderManagementService {
   }
 
   addOrderToCart(item: Menu) {
-    debugger;
     if (this.userService.CurrentUser) {
-      this.cart.push(this.castMenuToInvetDetails(item));  
+      this.cart.push(this.castMenuToInvetDetails(item));
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
-     // let dose: InventDose = { ...this.userService.InventDose };
-     // dose.inventDetails.push({ idDose: 0, idMenu: itemId, amount: 0 });
+      // let dose: InventDose = { ...this.userService.InventDose };
+      // dose.inventDetails.push({ idDose: 0, idMenu: itemId, amount: 0 });
       // this.userService.InventDose = dose;
       this.subjectCart.next(this.cart);
       return this.cart;
@@ -52,7 +64,17 @@ export class VisitersOrderManagementService {
   removeProduct(id) {
     var dos: InventDose[] = JSON.parse(localStorage.getItem("currentInvent"));
     dos = dos.filter(p => p.inventDetails.filter(pp => pp.idMenu != id).length > 0);
-    localStorage.setItem("currentInvent",JSON.stringify(dos));
+    localStorage.setItem("currentInvent", JSON.stringify(dos));
+  }
+  plusProductAmount(itemId) {
+    let item = this.cart.find(p => p.idMenu == itemId);
+    if (item) {
+      item.amount++;
+      this.userService.setInvetDetails(this.userService.InventDose, this.cart);
+    }
+  }
+  cartIsEmpty() {
+    return this.cart.length == 0;
   }
 }
 

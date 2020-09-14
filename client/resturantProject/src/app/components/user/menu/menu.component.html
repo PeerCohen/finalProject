@@ -6,6 +6,6 @@
         <app-dose-category></app-dose-category>
     </div>
     <div class="col">
-        <app-mini-cart></app-mini-cart>
+        <app-mini-cart *ngIf="!cartIsEmpty()"></app-mini-cart>
     </div>
 </div>

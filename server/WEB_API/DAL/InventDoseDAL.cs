@@ -33,8 +33,17 @@ namespace DAL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                inventDose = db.InventDose.Add(inventDose);
-                db.InventDetails.AddRange(db.InventDetails);
+                inventDose.DateInvent = DateTime.Now;
+               var inventDose1 = db.InventDose.Add(inventDose);
+                db.SaveChanges();
+                //foreach (var item in inventDose.InventDetails)
+                //{
+                //    item.InventDose = null;
+                //    item.IdDose = inventDose1.Id;
+                //    db.InventDetails.Add(item);
+                //    db.SaveChanges();
+                //}
+                //db.InventDetails.AddRange(db.InventDetails);
                 db.SaveChanges();
                 return inventDose;
             }

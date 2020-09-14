@@ -1,11 +1,8 @@
-<form [formGroup]="formGroupLogin">
-
+<form [formGroup]="formGroupLogin" style="display: inline-grid;">
     <mat-form-field appearance="outline">
         <mat-label>הזן קוד משתמש </mat-label>
         <input matInput formControlName="username">
     </mat-form-field>
-
-    <br>
     <mat-form-field appearance="outline">
         <mat-label>הזן סיסמא</mat-label>
         <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
@@ -14,5 +11,5 @@
     </button>
     </mat-form-field>
 
-    <button mat-stroked-button color="primary" (click)="login()">התחבר</button>
+    <button mat-stroked-button color="bordo" (click)="login()">התחבר</button>
 </form>

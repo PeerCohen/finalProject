@@ -13,5 +13,4 @@ export class GiftCardComponent implements OnInit {
   ngOnInit(): void {
   }  
   
-  panelOpenState = false;
 }
