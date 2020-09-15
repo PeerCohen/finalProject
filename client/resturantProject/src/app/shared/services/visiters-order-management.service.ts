@@ -11,7 +11,7 @@ import { InventDetails } from '../modals/invent-details';
 })
 export class VisitersOrderManagementService {
 
-
+BaseUrl= "http://localhost:51437/api";
   URL: string = "http://localhost:51437/api/Visiters";
   subjectCart = new Subject();
   cart: InventDetails[] = [];
@@ -23,24 +23,24 @@ export class VisitersOrderManagementService {
   idCurrentUser = this.userService.CurrentUser.id;
 
   getAllOrder(idVisiter: number): Observable<InventDose[]> {
-    return this.httpClient.get<InventDose[]>(`${this.URL}/GetInvent/${idVisiter}`);
+    return this.httpClient.get<InventDose[]>(`${this.BaseUrl}/InventDose/GetInvent/${idVisiter}`);
   }
-  addInvent() {
-    var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
-    var vis = new InventDose();
-    var user = JSON.parse(localStorage.getItem("currentUser")).ld;
-    vis.idVisiter = user;
-    vis.status = 1;
-    vis.inventDetails = [];
+   addInvent() {
+  //   var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
+  //   var vis = new InventDose();
+  //   var user = JSON.parse(localStorage.getItem("currentUser")).ld;
+  //   vis.idVisiter = user;
+  //   vis.status = 1;
+  //   vis.inventDetails = [];
 
-    inventDetails.forEach(element => {
-      vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
-    });
+  //   inventDetails.forEach(element => {
+  //     vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
+  //   });
 
-    debugger;
-    return this.httpClient.post(`${this.URL}/AddDose`, vis);
-
-  }
+  //   debugger;
+    //  return this.httpClient.post(`${this.URL}/AddDose`, vis);
+return null;
+   }
   castMenuToInvetDetails(item: Menu) {
     let invent = new InventDetails();
     invent.idMenu = item.id;
@@ -61,10 +61,12 @@ export class VisitersOrderManagementService {
     else
       return false;
   }
-  removeProduct(id) {
-    var dos: InventDose[] = JSON.parse(localStorage.getItem("currentInvent"));
-    dos = dos.filter(p => p.inventDetails.filter(pp => pp.idMenu != id).length > 0);
-    localStorage.setItem("currentInvent", JSON.stringify(dos));
+  MinusProductAmount(itemId) {
+    let item = this.cart.find(p => p.idMenu == itemId);
+    if (item) {
+      item.amount--;
+      this.userService.setInvetDetails(this.userService.InventDose, this.cart);
+    }
   }
   plusProductAmount(itemId) {
     let item = this.cart.find(p => p.idMenu == itemId);

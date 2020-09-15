@@ -11,13 +11,6 @@
             <img class='image' [src]="'../../assets/images/products/'+item.category+'/'+item.image">
         </div>
         <ngb-rating *ngIf="item" [rate]="item.rateDose"></ngb-rating>
-        <!-- <p>{{item.rateDose}}</p> -->
-        <!-- כאן אמור להיות הכוכבים -->
-        <app-star></app-star>
-        <!-- 
-        <ng-container *ngFor="let star of item.rateDose">
-            
-        </ng-container> -->
     </mat-card-content>
     <mat-card-actions>
         <button mat-button (click)="addToCart(item)" style="font-size: larger;">הוספה לסל

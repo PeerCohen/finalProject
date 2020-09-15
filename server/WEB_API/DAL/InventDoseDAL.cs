@@ -18,12 +18,12 @@ namespace DAL
             }
         }
         //get by id
-        public static InventDose GetById(int id)
+        public static List<InventDose> GetById(int id)
         {
 
             using (restaurantEntities db = new restaurantEntities())
             {
-                return db.InventDose.Find(id);
+                return db.InventDose.Where(v => v.Id == id).ToList();
             }
 
 

@@ -33,9 +33,9 @@ namespace BL
         {
             InventDoseDAL.Delete(InventDoseCast.ToDAL(InventDose));
         }
-        public static InventDoseDTO GetById(int id)
+        public static List<InventDoseDTO> GetById(int id)
         {
-            return InventDoseCast.ToDTO(InventDoseDAL.GetById(id));
+            return InventDoseCast.ListToDTO(InventDoseDAL.GetById(id));
         }
         public static void Add(InventDoseDTO InventDose)
         {

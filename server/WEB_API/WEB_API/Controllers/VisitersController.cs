@@ -37,12 +37,7 @@ namespace WEB_API.Controllers
 
 
         // GET: api/Visiters/5
-        [HttpGet]
-        [Route("GetInvent/{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        
         
         // POST: api/Visiters
         public void Post([FromBody]string value)

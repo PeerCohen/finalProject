@@ -9,8 +9,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class FormPartyPageComponent implements OnInit {
 
   constructor() { }
-  @Input() isDateEvent?: boolean = false;
-  @Input() iscountOfPeople?: boolean = false;
+  @Input() isDateEvent: boolean = false;
+  @Input() iscountOfPeople: boolean = false;
 
   
   formGroupParty: FormGroup;

@@ -9,16 +9,16 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class RemoveProductComponent implements OnInit {
 
-  id: number = 0;
+   id: number;
   constructor(private visitersOrderManagementService: VisitersOrderManagementService,
     @Inject(MAT_DIALOG_DATA) public data: number) {
-      this.id=data;
+       this.id=data;
      }
 
   ngOnInit(): void {
   }
 
-  removeProduct() {
-    this.visitersOrderManagementService.removeProduct(this.id);
+  MinusProductAmount() {
+    this.visitersOrderManagementService.MinusProductAmount(this.id);
   }
 }

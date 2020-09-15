@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-   public static class VisitersBL
+    public static class VisitersBL
     {
         public static List<VisitersDTO> GetAll()
         {
@@ -25,11 +25,11 @@ namespace BL
             VisitersDAL.Delete(VisitersCast.ToDAL(visiters));
         }
 
-        
 
-        public static VisitersDTO GetById(int id)
+
+        public static List<VisitersDTO> GetById(int id)
         {
-            return VisitersCast.ToDTO(VisitersDAL.GetById(id));
+            return VisitersCast.ListToDTO(VisitersDAL.GetById(id));
         }
         public static VisitersDTO Add(VisitersDTO visiters)
         {
@@ -41,16 +41,32 @@ namespace BL
                 VisitersDAL.GetAll().FirstOrDefault(p => p.Password == password && p.NameUser == username));
         }
 
-        public static VisitersDTO SignUp(string FirstName,string LastName, string Mail,string username, string password)
+        public static VisitersDTO SignUp(string FirstName, string LastName, string Mail, string username, string password)
         {
-            return Add(new VisitersDTO()
+            bool isVisiterSingUp = VisitersDAL.GetAll().Exists(p =>
+                   p.Password == password
+                  && p.NameUser == username
+                  && p.FirstName == FirstName
+                  && p.NameUser == username
+                  && p.LastName == LastName
+                  && p.Mail == Mail
+                );
+            if (isVisiterSingUp)
             {
-                FirstName = FirstName,
-                LastName = LastName,
-                Mail = Mail,
-                Password = password,
-                NameUser = username,
-            });
+                return null;
+            }
+            else
+            {
+                return Add(new VisitersDTO()
+                {
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Mail = Mail,
+                    Password = password,
+                    NameUser = username,
+                });
+            }
+
         }
         //מטרת הפונקציה להראות לכל לקוח את הסטוריית ההזמנות שלו
         public static bool AddDose(InventDoseDTO InventDose)
@@ -60,4 +76,3 @@ namespace BL
         }
     }
 }
- 

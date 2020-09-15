@@ -61,11 +61,11 @@ export class MiniCartComponent implements OnInit {
   }
   addInvent() {
     this.visitersOrderManagementService.addInvent().subscribe(res=>{
-      
+
     })
   }
-  openDialogRemove(id) {
-    this.dialog.open(RemoveProductComponent, { data: id });
+  openDialogRemove(itemId) {
+    this.dialog.open(RemoveProductComponent, { data:  itemId});
   }
 
 }

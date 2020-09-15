@@ -11,11 +11,11 @@
         <mat-label>מייל</mat-label>
         <input matInput formControlName="mail" name="mail">
     </mat-form-field>
-    <mat-form-field class="party-form-field " *ngIf="isDateEvent==true">
+    <mat-form-field class="party-form-field " *ngIf="isDateEvent">
         <mat-label>למתי האירוע</mat-label>
-        <input matInput formControlName="dateEevent" name="dateEvent">
+        <input matInput formControlName="dateEvent" name="dateEvent">
     </mat-form-field>
-    <mat-form-field class="party-form-field " *ngIf="iscountOfPeople==true">
+    <mat-form-field class="party-form-field " *ngIf="iscountOfPeople">
         <mat-label>מספר אנשים משוער</mat-label>
         <input matInput formControlName="countOfPeople" name="countOfPeople">
     </mat-form-field>

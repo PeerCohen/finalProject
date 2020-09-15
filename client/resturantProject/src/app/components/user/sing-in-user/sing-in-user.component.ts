@@ -43,7 +43,11 @@ export class SingInUserComponent implements OnInit {
     }).subscribe(
       res => {
         this.userService.CurrentUser = res;
-        alert("נרשמת בהצלחה לאתר")
+        debugger;
+        if( res == null)
+          alert("הנך משתמש רשום, אנא התחבר");
+        else
+          alert("נרשמת בהצלחה לאתר")
         //this.dialog.open();
       }
     )

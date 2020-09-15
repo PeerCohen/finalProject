@@ -24,7 +24,6 @@ export class MenuComponent implements OnInit {
    
   }
   cartIsEmpty(){
-    console.log( this.visitersOrderManagementService.cartIsEmpty());
     return this.visitersOrderManagementService.cartIsEmpty();
   }
 

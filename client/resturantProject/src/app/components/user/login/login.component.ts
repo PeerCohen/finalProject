@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.loginData.password = this.formGroupLogin.controls["password"].value;
     this.loginData.username = this.formGroupLogin.controls["username"].value;
     this.userService.login(this.loginData).subscribe(res => {
-      debugger;
+
       if (res == null) {
         alert("null")
       }
