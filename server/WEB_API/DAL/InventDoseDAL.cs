@@ -22,8 +22,9 @@ namespace DAL
         {
 
             using (restaurantEntities db = new restaurantEntities())
-            {
-                return db.InventDose.Where(v => v.Id == id).ToList();
+            {var a = db.InventDose.Where(v => v.IdVisiter == id).ToList();
+                a.ForEach(v =>v.InventDetails = v.InventDetails.ToList());
+                return a;
             }
 
 

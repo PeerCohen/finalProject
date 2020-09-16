@@ -1,0 +1,16 @@
+.star {
+    font-size: 1.5rem;
+    color: #e2d7a2
+}
+
+.filled {
+    color: gold;
+}
+
+.bad {
+    color: #d4cca5;
+}
+
+.filled.bad {
+    color: rgba(236, 222, 140, 0.863);
+}

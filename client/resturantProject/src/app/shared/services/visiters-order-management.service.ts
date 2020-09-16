@@ -11,7 +11,7 @@ import { InventDetails } from '../modals/invent-details';
 })
 export class VisitersOrderManagementService {
 
-BaseUrl= "http://localhost:51437/api";
+  BaseUrl = "http://localhost:51437/api";
   URL: string = "http://localhost:51437/api/Visiters";
   subjectCart = new Subject();
   cart: InventDetails[] = [];
@@ -25,22 +25,19 @@ BaseUrl= "http://localhost:51437/api";
   getAllOrder(idVisiter: number): Observable<InventDose[]> {
     return this.httpClient.get<InventDose[]>(`${this.BaseUrl}/InventDose/GetInvent/${idVisiter}`);
   }
-   addInvent() {
-  //   var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
-  //   var vis = new InventDose();
-  //   var user = JSON.parse(localStorage.getItem("currentUser")).ld;
-  //   vis.idVisiter = user;
-  //   vis.status = 1;
-  //   vis.inventDetails = [];
+  addInvent() {
+    var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
+    var vis = new InventDose();
+    var user = JSON.parse(localStorage.getItem("currentUser")).ld;
+    vis.idVisiter = user;
+    vis.status = 1;
+    vis.inventDetails = [];
 
-  //   inventDetails.forEach(element => {
-  //     vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
-  //   });
-
-  //   debugger;
-    //  return this.httpClient.post(`${this.URL}/AddDose`, vis);
-return null;
-   }
+    inventDetails.forEach(element => {
+      vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
+    });
+    return this.httpClient.post(`${this.URL}/AddDose`, vis);
+  }
   castMenuToInvetDetails(item: Menu) {
     let invent = new InventDetails();
     invent.idMenu = item.id;

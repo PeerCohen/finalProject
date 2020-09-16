@@ -33,12 +33,6 @@ namespace WEB_API.Controllers
         {
            return VisitersBL.AddDose(InventDose);
         }
-
-
-
-        // GET: api/Visiters/5
-        
-        
         // POST: api/Visiters
         public void Post([FromBody]string value)
         {

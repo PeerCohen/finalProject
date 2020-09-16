@@ -122,7 +122,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatDialogModule,
     MatTreeModule,
     MatExpansionModule,
-    NgbModule
+    NgbModule,
     
   ],
   providers: [],

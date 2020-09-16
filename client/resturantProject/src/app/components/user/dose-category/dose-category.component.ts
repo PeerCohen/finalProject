@@ -23,7 +23,7 @@ export class DoseCategoryComponent implements OnInit {
     public categoryService: CategoryService,
     public visiterOrderManagment: VisitersOrderManagementService) {
       config.max = 5;
-      config.readonly = true;
+      //config.readonly = true;
      }
 
   ngOnInit(): void {

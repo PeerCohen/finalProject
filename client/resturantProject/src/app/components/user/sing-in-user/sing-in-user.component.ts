@@ -43,7 +43,6 @@ export class SingInUserComponent implements OnInit {
     }).subscribe(
       res => {
         this.userService.CurrentUser = res;
-        debugger;
         if( res == null)
           alert("הנך משתמש רשום, אנא התחבר");
         else

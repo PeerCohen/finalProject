@@ -1,19 +1,25 @@
-<div>
-    <div class="wrapper-cart" *ngFor="let item of itemsInCart">
+<div class="wrapper-cart">
+    <p class="title-cart">סיכום הזמנה</p>
+    <p class="sub-title-cart">שם המזמין : {{userName}}</p>
+    <hr>
+    <div *ngFor="let item of itemsInCart">
         <mat-card>
             <mat-card-header>
                 <mat-card-title>{{item.idMenu}}</mat-card-title>
                 <mat-card-subtitle>
-                    {{item.amount}}
+                    כמות הזמנת מנה : {{item.amount}}
                 </mat-card-subtitle>
             </mat-card-header>
             <mat-card-actions>
+                <!-- <div class="minus-icon"> -->
                 <mat-icon (click)="openDialogRemove(item.idMenu)">remove_circle_outline</mat-icon>
+                <!-- </div> -->
+                <!-- <div class="plus-icon"> -->
                 <mat-icon (click)="addProduct(item.idMenu)">add_circle_outline</mat-icon>
+                <!-- </div> -->
+
             </mat-card-actions>
         </mat-card>
     </div>
-    <button mat-button (click)="addInvent()">
-            אשר הזמנה 
-</button>
+    <button mat-stroked-button color="primary" (click)="addInvent()"> אשר הזמנה</button>
 </div>

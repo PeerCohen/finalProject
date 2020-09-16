@@ -1,13 +1,26 @@
-<p>previous-orders works!</p>
-<!-- <div *ngFor="let order of preOrders">
-    <div *ngIf="order">
-        <p>{{order.id}}</p>
-        <ul>
-            <li *ngFor="let detail of order.inventDetails">
-                {{detail.idDose}}
-                 <app-star [starId]="'star'+detail.idMenu" [rating1]="hoverState||rating" (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)">
-                </app-star> 
-</li>
-</ul>
-</div>
-</div> -->
+<!-- <app-star [starId]="'star'+detail.idMenu" [rating1]="hoverState||rating" (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)"> -->
+<!-- </app-star> -->
+
+<mat-card *ngFor="let order of preOrders">
+    <mat-card-header>
+        <div *ngFor="let detail of order.inventDetails">
+            <mat-card-title>{{detail.idMenu}}</mat-card-title>
+            <mat-card-subtitle>
+                <p>כמות הזמנה: </p>
+                {{detail.amount}}
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <div>
+            <!-- <img class='image' [src]="'../../assets/images/products/'+order.+'/'+item.image"> -->
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <ngb-rating [(rate)]="currentRate">
+            <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index <2">&#9733;</span>
+            </ng-template>
+        </ngb-rating>
+    </mat-card-actions>
+</mat-card>

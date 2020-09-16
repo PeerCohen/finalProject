@@ -1,61 +1,66 @@
-             You can add global styles to this file,
-             and also import other style files html,
-             body,
-             html {
-                 height: 100%;
-                 margin: 0;
-                 font-family: Roboto, "Helvetica Neue", sans-serif;
-                 direction: rtl;
-                 text-align: right;
-                 -webkit-user-select: none;
-                 -moz-user-select: none;
-                 user-select: none;
-             }
-             
-             .mat-form-field {
-                 direction: ltr !important;
-                 text-align: right;
-             }
-             /* .form {
+                 You can add global styles to this file,
+                 and also import other style files html,
+                 body,
+                 html {
+                     height: 100%;
+                     margin: 0;
+                     font-family: Roboto, "Helvetica Neue", sans-serif;
+                     direction: rtl;
+                     text-align: right;
+                     -webkit-user-select: none;
+                     -moz-user-select: none;
+                     user-select: none;
+                 }
+                 
+                 .mat-tab-body-content {
+                     height: 100%;
+                     overflow-x: hidden;
+                 }
+                 
+                 .mat-form-field {
+                     direction: ltr !important;
+                     text-align: right;
+                 }
+                 /* .form {
                  display: inline-grid;
              } */
-             
-             .material-icons,
-             .mat-icon {
-                 -webkit-font-smoothing: antialiased;
-                 text-rendering: optimizeLegibility;
-                 -moz-osx-font-smoothing: grayscale;
-                 font-feature-settings: 'liga';
-                 font-family: 'Material Icons';
-             }
-             
-              ::-webkit-scrollbar-thumb {
-                 width: 8px;
-                 height: 8px;
-                 background-color: #dcdcdc;
-                 ;
-             }
-             
-              ::-webkit-scrollbar {
-                 width: 8px;
-                 height: 8px;
-                 background-color: whitesmoke;
-             }
-             
-             .title-party {
-                 margin-bottom: 2%;
-                 padding-bottom: 1%;
-                 color: #636262;
-                 border-bottom: solid;
-                 border-bottom-color: #8c0f29;
-                 width: 15%;
-                 border-width: 2px;
-             }
-             
-             .wrapper:hover .title-party {
-                 margin-right: 30px;
-             }
-             /*      
+                 
+                 .material-icons,
+                 .mat-icon {
+                     -webkit-font-smoothing: antialiased;
+                     text-rendering: optimizeLegibility;
+                     -moz-osx-font-smoothing: grayscale;
+                     font-feature-settings: 'liga';
+                     font-family: 'Material Icons';
+                 }
+                 
+                  ::-webkit-scrollbar-thumb {
+                     width: 8px;
+                     height: 8px;
+                     background-color: #dcdcdc;
+                     ;
+                 }
+                 
+                  ::-webkit-scrollbar {
+                     width: 8px;
+                     height: 8px;
+                     background-color: whitesmoke;
+                 }
+                 
+                 .title-party {
+                     margin-bottom: 2%;
+                     padding-bottom: 1%;
+                     color: #636262;
+                     border-bottom: solid;
+                     border-bottom-color: #8c0f29;
+                     width: 15%;
+                     border-width: 2px;
+                 }
+                 
+                 .wrapper:hover .title-party {
+                     margin-right: 30px;
+                 }
+                 /*      
      .mat-vertical-stepper-header .mat-step-icon {
          margin-left: 12px;
      }

@@ -6,3 +6,8 @@
 .image1 {
     border-radius: 28px;
 }
+
+.star-rating {
+    color: gold;
+    font-size: 1.5rem;
+}

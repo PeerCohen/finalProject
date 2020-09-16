@@ -10,6 +10,7 @@ using System.Web.Http.Cors;
 
 namespace WEB_API.Controllers
 {
+    [RoutePrefix("api/InventDose")]
     public class InventDoseController : ApiController
     {
         [EnableCors(origins: "*", headers: "*", methods: "*")]

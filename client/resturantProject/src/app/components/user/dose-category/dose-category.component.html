@@ -10,7 +10,8 @@
         <div>
             <img class='image' [src]="'../../assets/images/products/'+item.category+'/'+item.image">
         </div>
-        <ngb-rating *ngIf="item" [rate]="item.rateDose"></ngb-rating>
+        <hr>
+        <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>
     </mat-card-content>
     <mat-card-actions>
         <button mat-button (click)="addToCart(item)" style="font-size: larger;">הוספה לסל

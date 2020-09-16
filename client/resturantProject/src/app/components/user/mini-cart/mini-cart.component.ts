@@ -18,12 +18,16 @@ export class MiniCartComponent implements OnInit {
  
   itemsInCart: InventDetails[];
   menuDetails: Menu[] = [];
+  userName:string;
+
+
   constructor(
     private visitersOrderManagementService: VisitersOrderManagementService,
     private userService: UserService, private menu: MenuService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
   ) { }
 
+  
   ngOnInit(): void {
     this.visitersOrderManagementService.cart = this.userService.InventDose.inventDetails;
     this.itemsInCart = this.visitersOrderManagementService.cart;
@@ -52,7 +56,10 @@ export class MiniCartComponent implements OnInit {
     //       }
     //     }
     //     );
-    //   });
+  //   //   });
+   var currentUser= this.userService.CurrentUser;  
+   this.userName= currentUser.firstName+ " " +currentUser.lastName ;
+
   }
 
   addProduct(itemId) {
@@ -61,7 +68,6 @@ export class MiniCartComponent implements OnInit {
   }
   addInvent() {
     this.visitersOrderManagementService.addInvent().subscribe(res=>{
-
     })
   }
   openDialogRemove(itemId) {

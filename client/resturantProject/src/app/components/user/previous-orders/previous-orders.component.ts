@@ -1,3 +1,4 @@
+// import { Component, OnInit } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -10,10 +11,13 @@ import { InventDose } from 'src/app/shared/modals/invent-dose';
   styleUrls: ['./previous-orders.component.css']
 })
 export class PreviousOrdersComponent implements OnInit {
+  currentRate :number;
   preOrders: InventDose[] = [];
+  //-------------------
   stars = [1, 2, 3, 4, 5];
   rating = 1;
   hoverState = 0;
+  //-------------------
 
   constructor(private visitersOrderManagementService: VisitersOrderManagementService,
     public userService: UserService) { }
@@ -21,10 +25,12 @@ export class PreviousOrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.visitersOrderManagementService.getAllOrder(this.currentUser).subscribe(res => {
-    this.preOrders = res;
+   console.log(res);
+      this.preOrders = res;
     })
   }
 
+  //------------------------------
   onStarEnter(starId: number) {
     this.hoverState = starId
   }
@@ -34,5 +40,6 @@ export class PreviousOrdersComponent implements OnInit {
   onStarClicked(starId: number) {
     this.rating = starId;
   }
+  //-------------------------------
 
 }
