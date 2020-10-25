@@ -19,6 +19,6 @@ export class RemoveProductComponent implements OnInit {
   }
 
   MinusProductAmount() {
-    this.visitersOrderManagementService.MinusProductAmount(this.id);
+    this.visitersOrderManagementService.removeProduct(this.id);
   }
 }

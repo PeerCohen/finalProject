@@ -11,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./sing-in-user.component.css']
 })
 export class SingInUserComponent implements OnInit {
-
+  loginIsOpen=false;
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -42,12 +42,12 @@ export class SingInUserComponent implements OnInit {
       password: this.thirdFormGroup.controls.password.value
     }).subscribe(
       res => {
+        localStorage.clear();
         this.userService.CurrentUser = res;
         if( res == null)
           alert("הנך משתמש רשום, אנא התחבר");
         else
           alert("נרשמת בהצלחה לאתר")
-        //this.dialog.open();
       }
     )
   }

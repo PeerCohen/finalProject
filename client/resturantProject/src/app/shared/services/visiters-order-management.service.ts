@@ -17,10 +17,18 @@ export class VisitersOrderManagementService {
   cart: InventDetails[] = [];
 
   constructor(public httpClient: HttpClient, private userService: UserService) {
-    this.cart = this.userService.InventDose.inventDetails;
+    // if(this.userService.InventDose.inventDetails!=null)
+    // this.cart = this.userService.InventDose.inventDetails;
   }
 
   idCurrentUser = this.userService.CurrentUser.id;
+
+  removeProduct(idProduct){
+
+    let item = this.cart.find(p => p.idMenu == idProduct)
+    debugger;
+    //this.cart.remove(item);
+  }
 
   getAllOrder(idVisiter: number): Observable<InventDose[]> {
     return this.httpClient.get<InventDose[]>(`${this.BaseUrl}/InventDose/GetInvent/${idVisiter}`);
@@ -30,7 +38,7 @@ export class VisitersOrderManagementService {
     var vis = new InventDose();
     var user = JSON.parse(localStorage.getItem("currentUser")).ld;
     vis.idVisiter = user;
-    vis.status = 1;
+    vis.status = 3;
     vis.inventDetails = [];
 
     inventDetails.forEach(element => {
@@ -60,7 +68,7 @@ export class VisitersOrderManagementService {
   }
   MinusProductAmount(itemId) {
     let item = this.cart.find(p => p.idMenu == itemId);
-    if (item) {
+    if (item && item.amount > 0) {
       item.amount--;
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
     }

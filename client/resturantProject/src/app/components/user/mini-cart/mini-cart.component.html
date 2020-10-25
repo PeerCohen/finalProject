@@ -12,12 +12,12 @@
             </mat-card-header>
             <mat-card-actions>
                 <!-- <div class="minus-icon"> -->
-                <mat-icon (click)="openDialogRemove(item.idMenu)">remove_circle_outline</mat-icon>
+                <mat-icon (click)="lessProduct(item.idMenu)">remove_circle_outline</mat-icon>
                 <!-- </div> -->
                 <!-- <div class="plus-icon"> -->
                 <mat-icon (click)="addProduct(item.idMenu)">add_circle_outline</mat-icon>
                 <!-- </div> -->
-
+                <mat-icon (click)="openDialogRemove(item.idMenu)">delete</mat-icon>
             </mat-card-actions>
         </mat-card>
     </div>

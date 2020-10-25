@@ -9,11 +9,46 @@ import { StarComponent } from './components/user/star/star.component';
 import { PartyComponent } from './components/user/party/party.component';
 import { GiftCardComponent } from './components/user/gift-card/gift-card.component';
 import { FormPartyPageComponent } from './components/user/form-party-page/form-party-page.component';
-
+import { PaymentComponent } from './components/user/payment/payment.component';
+import { SelectedUserEntranceComponent } from './components/selected-user-entrance/selected-user-entrance.component';
+import { ManagerHomeComponent } from './components/management/manager-home/manager-home.component';
+import { WorkerHomeComponent } from './components/worker/worker-home/worker-home.component';
+import { FirstPageManagerComponent } from './components/management/first-page-manager/first-page-manager.component';
+import { MenuManagementComponent } from './components/management/menu-management/menu-management.component';
+import { FirstPageWorkerComponent } from './components/worker/first-page-worker/first-page-worker.component';
 
 
 
 const routes: Routes = [
+  {
+    path: "menuManagement",
+    component: MenuManagementComponent,
+  },
+  {
+    path: "firstPageWorker",
+    component: FirstPageWorkerComponent,
+  },
+  {
+    path: "firstPageManager",
+    component: FirstPageManagerComponent,
+  },
+  {
+    path: "workerHome",
+    component: WorkerHomeComponent,
+  },
+  {
+    path: "managerHome",
+    component: ManagerHomeComponent,
+  },
+  {
+    path: "selectedUserEntrance",
+    component: SelectedUserEntranceComponent,
+  },
+
+  {
+    path: "payment",
+    component: PaymentComponent,
+  },
   {
     path: "star",
     component: StarComponent,
@@ -23,7 +58,7 @@ const routes: Routes = [
     component: SingInUserComponent,
   },
   {
-    path: "log-in",
+    path: "login",
     component: LoginComponent,
   },
   {
@@ -44,7 +79,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "home",
+    redirectTo: "selectedUserEntrance",
     pathMatch:"full"
   },
   {

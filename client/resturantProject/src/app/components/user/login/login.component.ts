@@ -26,23 +26,26 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-  }
-
-
-  login() {
-    console.log(this.loginData);
     this.loginData.password = this.formGroupLogin.controls["password"].value;
     this.loginData.username = this.formGroupLogin.controls["username"].value;
-    this.userService.login(this.loginData).subscribe(res => {
-
-      if (res == null) {
-        alert("null")
-      }
-      else {
-        this.userService.CurrentUser = res;
-        alert("רשום במערכת")
-      }
-    });
   }
+
+
+  // login() {
+  //   console.log(this.loginData);
+  //   // this.loginData.password = this.formGroupLogin.controls["password"].value;
+  //   // this.loginData.username = this.formGroupLogin.controls["username"].value;
+  //   localStorage.clear();
+  //   this.userService.login(this.loginData).subscribe(res => {
+
+  //     if (res == null) {
+  //       alert("null")
+  //     }
+  //     else {
+  //       this.userService.CurrentUser = res;
+  //       alert("רשום במערכת")
+  //     }
+  //   });
+  // }
 
 }

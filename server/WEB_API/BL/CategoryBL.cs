@@ -18,21 +18,21 @@ namespace BL
             return CategoryCast.ListToDTO(CategoryDAL.GetAll());
         }
 
-        public static void Update(CategoryDTO employeesTypes)
+        public static void Update(CategoryDTO category)
         {
-            CategoryDAL.Update(CategoryCast.ToDAL(employeesTypes));
+            CategoryDAL.Update(CategoryCast.ToDAL(category));
         }
-        public static void Delete(CategoryDTO employeesTypes)
+        public static void Delete(CategoryDTO category)
         {
-            CategoryDAL.Delete(CategoryCast.ToDAL(employeesTypes));
+            CategoryDAL.Delete(CategoryCast.ToDAL(category));
         }
         public static CategoryDTO GetById(int id)
         {
             return CategoryCast.ToDTO(CategoryDAL.GetById(id));
         }
-        public static void Add(CategoryDTO employeesTypes)
+        public static void Add(CategoryDTO category)
         {
-            CategoryDAL.Add(CategoryCast.ToDAL(employeesTypes));
+            CategoryDAL.Add(CategoryCast.ToDAL(category));
         }
     }
 }

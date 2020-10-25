@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ManagerService } from 'src/app/shared/services/manager.service';
 
 @Component({
   selector: 'app-form-party-page',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class FormPartyPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public managerService:ManagerService) { }
   @Input() isDateEvent: boolean = false;
   @Input() iscountOfPeople: boolean = false;
 
@@ -24,7 +25,11 @@ export class FormPartyPageComponent implements OnInit {
       countOfPeople: new FormControl(),
     }
     )
-    this.formGroupParty.controls["name"].value;
+  }
+  onSubmit(customerData) {    
+    this.formGroupParty.reset();
+    this.managerService.setSpecialOrder(customerData);
+    console.warn('Your order has been submitted', customerData);
   }
 
 }

@@ -1,3 +1,4 @@
+<ng-container *ngIf="!loginIsOpen">
 <mat-vertical-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
@@ -65,7 +66,12 @@
 </mat-vertical-stepper>
 <div style="position: relative;right: 66px;">
     <p>יש לך חשבון ?</p>
-    <a routerLink="/log-in" routerLinkActive='active'>
-        <button mat-stroked-button color="primary">התחברות</button>
-    </a>
+    
+        <button mat-stroked-button color="primary" (click)="loginIsOpen=true">התחברות</button>
+  
 </div>
+</ng-container>
+
+<ng-container *ngIf="loginIsOpen">
+    <app-login></app-login>
+</ng-container>

@@ -1,0 +1,10 @@
+.option-entray{
+    border: solid;
+    border-color: #9a2d44;
+    border-width: thin;
+    width: max-content;
+   
+}
+.button-option-entray{
+        display: block;
+}

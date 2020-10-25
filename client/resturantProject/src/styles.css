@@ -11,7 +11,6 @@
                      -moz-user-select: none;
                      user-select: none;
                  }
-                 
                  .mat-tab-body-content {
                      height: 100%;
                      overflow-x: hidden;

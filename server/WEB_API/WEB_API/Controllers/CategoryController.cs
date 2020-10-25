@@ -27,18 +27,26 @@ namespace WEB_API.Controllers
         }
 
         // POST: api/Category
-        public void Post([FromBody]string value)
+        [HttpPost]
+        [Route("AddCategory")]
+        public void Post([FromBody]CategoryDTO category)
         {
+            CategoryBL.Add(category);
         }
 
-        // PUT: api/Category/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPost]
+        [Route("UpdateCategory")]
+        public void update([FromBody]CategoryDTO category)
         {
+            CategoryBL.Update(category);
         }
 
         // DELETE: api/Category/5
-        public void Delete(int id)
+        [HttpPost]
+        [Route("DeleteCategory")]
+        public void Delete([FromBody]CategoryDTO category)
         {
+            CategoryBL.Delete(category);
         }
     }
 }

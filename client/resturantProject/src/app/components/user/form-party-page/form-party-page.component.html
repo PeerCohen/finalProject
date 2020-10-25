@@ -1,4 +1,4 @@
-<form class="party-form" [formGroup]="formGroupParty">
+<form class="party-form" [formGroup]="formGroupParty" (ngSubmit)="onSubmit(formGroupParty.value)">
     <mat-form-field class="party-form-field">
         <mat-label>שם</mat-label>
         <input matInput formControlName="name" name="name">
@@ -19,4 +19,5 @@
         <mat-label>מספר אנשים משוער</mat-label>
         <input matInput formControlName="countOfPeople" name="countOfPeople">
     </mat-form-field>
+     <button mat-button color="primary" type="submit">שלח בקשה</button>
 </form>

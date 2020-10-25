@@ -47,6 +47,7 @@ export class UserService {
 
   login(loginData): Observable<Visiters> {
     return this.httpClient.post<Visiters>(`${this.URL}login`, loginData);
+    
   }
 
   signUp(newUser: SignUp): Observable<Visiters> {

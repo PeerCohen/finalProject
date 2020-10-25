@@ -1,0 +1,16 @@
+<p>category-management works!</p>
+<button mat-button color="primary" (click)="openAddCategoryDialog()">הוספת קטגוריה</button>
+<div class="main_sidebar">
+    <div *ngFor="let item of categoryList" class="nameCategory">
+        {{item.nameCategory}}
+        <div>
+            <button mat-button color="primary" (click)="openDeleteCategoryDialog(item.nameCategory)">מחיקה</button>
+        </div>
+        <div>
+            <button mat-button color="primary" (click)="openEditCategoryDialog(item.nameCategory)">עריכה</button>
+        </div>
+        <div>
+            <button mat-button color="primary" (click)="getDoseCategory(item.id)">הצגת תפריט</button>
+        </div>
+    </div>
+</div>

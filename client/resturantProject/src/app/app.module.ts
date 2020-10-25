@@ -30,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import {MatTableModule} from '@angular/material/table';
+
 
 import { MenuByCategotyComponent } from './components/user/menu-by-categoty/menu-by-categoty.component';
 import { StarComponent } from './components/user/star/star.component';
@@ -58,6 +60,23 @@ import { ContactDetailsComponent } from './components/user/contact-for-party/con
 import { PartyEventComponent } from './components/user/party-event/party-event.component';
 import { OptionEnterUserComponent } from './components/user/option-enter-user/option-enter-user.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaymentComponent } from './components/user/payment/payment.component';
+import { SelectedUserEntranceComponent } from './components/selected-user-entrance/selected-user-entrance.component';
+import { ManagerHomeComponent } from './components/management/manager-home/manager-home.component';
+import { WorkerHomeComponent } from './components/worker/worker-home/worker-home.component';
+import { FirstPageManagerComponent } from './components/management/first-page-manager/first-page-manager.component';
+import { MenuManagementComponent } from './components/management/menu-management/menu-management.component';
+import { CategoryManagementComponent } from './components/management/category-management/category-management.component';
+import { AddCategoryDialogComponent } from './components/management/add-category-dialog/add-category-dialog.component';
+import { DeleteCategoryDialogComponent } from './components/management/delete-category-dialog/delete-category-dialog.component';
+import { EditCategoryDialogComponent } from './components/management/edit-category-dialog/edit-category-dialog.component';
+import { FirstPageWorkerComponent } from './components/worker/first-page-worker/first-page-worker.component';
+import { SpecialOrderComponent } from './components/worker/special-order/special-order.component';
+import { LoginWorkerComponent } from './components/worker/login-worker/login-worker.component';
+import { LoginUserComponent } from './components/user/login-user/login-user.component';
+import { EditDoseCategoryComponent } from './components/management/edit-dose-category/edit-dose-category.component';
+// import { NgxPayPalModule } from 'ngx-paypal';
+
 
 
 
@@ -100,6 +119,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ContactDetailsComponent,
     PartyEventComponent,
     OptionEnterUserComponent,
+    PaymentComponent,
+    SelectedUserEntranceComponent,
+    ManagerHomeComponent,
+    WorkerHomeComponent,
+    FirstPageManagerComponent,
+    MenuManagementComponent,
+    CategoryManagementComponent,
+    AddCategoryDialogComponent,
+    DeleteCategoryDialogComponent,
+    EditCategoryDialogComponent,
+    FirstPageWorkerComponent,
+    SpecialOrderComponent,
+    LoginWorkerComponent,
+    LoginUserComponent,
+    EditDoseCategoryComponent,
 
 
   ],
@@ -123,6 +157,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTreeModule,
     MatExpansionModule,
     NgbModule,
+    MatTableModule,
+    //  NgxPayPalModule
     
   ],
   providers: [],

@@ -1,0 +1,19 @@
+<mat-card *ngFor="let item of menuCategoryList">
+    <mat-card-header>
+        <div mat-card-avatar ></div>
+        <mat-card-title>{{item.nameDose}}</mat-card-title>
+        <mat-card-subtitle>
+            {{item.description}} {{' ₪ '+item.price}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div>
+            <img class='image' [src]="'../../assets/images/products/'+item.category+'/'+item.image">
+        </div>
+        <hr>
+        <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>
+    </mat-card-content>
+    <mat-card-actions>
+        
+    </mat-card-actions>
+</mat-card>

@@ -31,44 +31,20 @@ export class MiniCartComponent implements OnInit {
   ngOnInit(): void {
     this.visitersOrderManagementService.cart = this.userService.InventDose.inventDetails;
     this.itemsInCart = this.visitersOrderManagementService.cart;
-    // this.visitersOrderManagementService.subjectCart.subscribe(res=>{
-    //   this.menu.getAllMenuDetails().subscribe(
-    //     (res: any) => {
-    //       this.menuDetails = res;
-
-
-    //       }
-    //       );
-    //     });
-    // })
-
-    // this.menu.getAllMenuDetails().subscribe(
-    //   (res: any) => {
-    //     this.menuDetails = res;
-
-    //     this.cart = this.userService.InventDose.inventDetails.map(id => {
-    //       let m=this.menuDetails.find(item => item.id == id.idMenu)
-    //       return {
-    //         idDose: id.idDose,
-    //         menu: m.nameDose + '\n' +m.price +' ₪ ',           
-    //         amount: id.amount,
-
-    //       }
-    //     }
-    //     );
-  //   //   });
    var currentUser= this.userService.CurrentUser;  
    this.userName= currentUser.firstName+ " " +currentUser.lastName ;
 
   }
 
   addProduct(itemId) {
-    // this.visitersOrderManagementService.addOrderToCart(item);
     this.visitersOrderManagementService.plusProductAmount(itemId);
   }
   addInvent() {
     this.visitersOrderManagementService.addInvent().subscribe(res=>{
     })
+  }
+  lessProduct(itemId) {
+  this.visitersOrderManagementService.MinusProductAmount(itemId);
   }
   openDialogRemove(itemId) {
     this.dialog.open(RemoveProductComponent, { data:  itemId});
