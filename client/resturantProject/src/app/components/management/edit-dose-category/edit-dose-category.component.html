@@ -1,6 +1,13 @@
+
+<div>
+    <button mat-button color="primary" (click)="AddDoseToCategory()">הוספת מנה לתפריט</button>
+</div>
+<ng-container>
+    <!-- <app-add-dose-category *ngIf=isOpenAddDose></app-add-dose-category> -->
+</ng-container>
 <mat-card *ngFor="let item of menuCategoryList">
     <mat-card-header>
-        <div mat-card-avatar ></div>
+        <div mat-card-avatar></div>
         <mat-card-title>{{item.nameDose}}</mat-card-title>
         <mat-card-subtitle>
             {{item.description}} {{' ₪ '+item.price}}
@@ -11,9 +18,17 @@
             <img class='image' [src]="'../../assets/images/products/'+item.category+'/'+item.image">
         </div>
         <hr>
-        <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>
     </mat-card-content>
     <mat-card-actions>
-        
+        <div class="delete-action">
+            <button mat-mini-fab (click)="deleteDose(item)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div class="edit-action" (click)="editDose(item)">
+            <button mat-mini-fab >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
     </mat-card-actions>
 </mat-card>

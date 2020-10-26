@@ -11,6 +11,8 @@ export class EditDoseCategoryComponent implements OnInit {
 
   idCategory: number;
   menuCategoryList: any;
+  isOpenAddDose:boolean=false;
+  succeeded;
   error;
   
   constructor(public managerService: ManagerService,public menuService:MenuService) { }
@@ -25,11 +27,25 @@ export class EditDoseCategoryComponent implements OnInit {
     return this.menuService.getMenuByCategory(this.idCategory).subscribe(
       (res: any) => {
         this.menuCategoryList = res;
-        debugger;
       },
       (err) => {
         this.error = err;
       });
+  }
+  deleteDose(Dose){
+    return this.menuService.removeDose(Dose).subscribe(
+      (res: any) => {
+        this.succeeded = res;
+      },
+      (err) => {
+        this.error = err;
+      });
+  }
+  editDose(idDose){
+
+  }
+  AddDoseToCategory(){
+    this.isOpenAddDose=true;
   }
 }
 

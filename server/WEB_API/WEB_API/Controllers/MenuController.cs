@@ -17,7 +17,7 @@ namespace WEB_API.Controllers
         [Route("GetAllMenuDetails")]
         public List<MenuDTO> GetAllMenuDetails()
         {
-            return MenuBL.GetAll(); 
+            return MenuBL.GetAll();
         }
         //קבלת רשימת תפריטים לפי שיוך קטגוריה
         [HttpGet]
@@ -43,8 +43,11 @@ namespace WEB_API.Controllers
         }
 
         // DELETE: api/Menu/5
-        public void Delete(int id)
+        [HttpPost]
+        [Route("DeleteDoseOfMenu")]
+        public void Delete([FromBody]MenuDTO menu)
         {
+            MenuBL.Delete(menu);
         }
     }
 }

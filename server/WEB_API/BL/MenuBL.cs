@@ -16,13 +16,13 @@ namespace BL
             return MenuCast.ListToDTO(MenuDAL.GetAll());
         }
 
-        public static void Update(MenuDTO employeesTypes)
+        public static void Update(MenuDTO menu)
         {
-            MenuDAL.Update(MenuCast.ToDAL(employeesTypes));
+            MenuDAL.Update(MenuCast.ToDAL(menu));
         }
-        public static void Delete(MenuDTO employeesTypes)
+        public static void Delete(MenuDTO menu)
         {
-            MenuDAL.Delete(MenuCast.ToDAL(employeesTypes));
+            MenuDAL.Delete(MenuCast.ToDAL(menu));
         }
         public static MenuDTO GetById(int id)
         {
@@ -32,9 +32,9 @@ namespace BL
         {
             return MenuCast.ListToDTO(MenuDAL.GetByCategory(id));
         }
-        public static void Add(MenuDTO employeesTypes)
+        public static void Add(MenuDTO menu)
         {
-            MenuDAL.Add(MenuCast.ToDAL(employeesTypes));
+            MenuDAL.Add(MenuCast.ToDAL(menu));
         }
     }
 }

@@ -9,15 +9,18 @@ import { Menu } from '../modals/menu';
 export class MenuService {
 
   subjectMenu:Subject<number>=new Subject();
-  url: string = "http://localhost:51437/api/Menu";
+  URL: string = "http://localhost:51437/api/Menu";
 
   constructor(private http: HttpClient) { }
 
-  getAllMenuDetails():Observable<Menu> {
-    return this.http.get<Menu>(`${this.url}/GetAllMenuDetails`);
-  }
+  // getAllMenuDetails():Observable<Menu> {
+  //   return this.http.get<Menu>(`${this.URL}/GetAllMenuDetails`);
+  // }
   getMenuByCategory(id:number):Observable<Menu[]> {
-    return this.http.get<Menu[]>(`${this.url}/GetMenuByCategory/${id}`);
+    return this.http.get<Menu[]>(`${this.URL}/GetMenuByCategory/${id}`);
+  }
+  removeDose(menu:Menu):Observable<any>{ 
+    return this.http.post<any>(`${this.URL}/DeleteDoseOfMenu/`,menu);
   }
   
 }

@@ -75,6 +75,7 @@ import { SpecialOrderComponent } from './components/worker/special-order/special
 import { LoginWorkerComponent } from './components/worker/login-worker/login-worker.component';
 import { LoginUserComponent } from './components/user/login-user/login-user.component';
 import { EditDoseCategoryComponent } from './components/management/edit-dose-category/edit-dose-category.component';
+import { AddDoseCategoryComponent } from './components/management/add-dose-category/add-dose-category.component';
 // import { NgxPayPalModule } from 'ngx-paypal';
 
 
@@ -134,6 +135,7 @@ import { EditDoseCategoryComponent } from './components/management/edit-dose-cat
     LoginWorkerComponent,
     LoginUserComponent,
     EditDoseCategoryComponent,
+    AddDoseCategoryComponent,
 
 
   ],
