@@ -10,19 +10,24 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 })
 export class EditCategoryDialogComponent implements OnInit {
 
-  categoryName: string = '';
+  category={
+    Id:0, 
+    nameCategory:"",
+  }
+  idCategory:number;
   Succeeded:any;
   error:any;
   constructor(public categoryService: CategoryService,
     @Inject(MAT_DIALOG_DATA) public data: any) { 
-      this.categoryName=data;
+      this.category.nameCategory=data.nameCategory;
+      this.category.Id=data.id;
     }
 
   ngOnInit(): void {   
   }
 
   editCategory() {
-    this.categoryService.editCategory(this.categoryName).subscribe(
+    this.categoryService.editCategory(this.category).subscribe(
       (res: any) => {
         this.Succeeded = res;
       },

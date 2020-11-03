@@ -31,10 +31,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 import { MenuByCategotyComponent } from './components/user/menu-by-categoty/menu-by-categoty.component';
-import { StarComponent } from './components/user/star/star.component';
 import { DoseCategoryComponent } from './components/user/dose-category/dose-category.component';
 import { HomeComponent } from './components/user/home/home.component';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -54,8 +56,8 @@ import { CateringContactComponent } from './components/user/contact-for-party/ca
 import { FormPartyPageComponent } from './components/user/form-party-page/form-party-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LogoComponent } from './components/logo/logo.component';
-import {MatTreeModule} from '@angular/material/tree';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { ContactDetailsComponent } from './components/user/contact-for-party/contact-details/contact-details.component';
 import { PartyEventComponent } from './components/user/party-event/party-event.component';
 import { OptionEnterUserComponent } from './components/user/option-enter-user/option-enter-user.component';
@@ -76,7 +78,18 @@ import { LoginWorkerComponent } from './components/worker/login-worker/login-wor
 import { LoginUserComponent } from './components/user/login-user/login-user.component';
 import { EditDoseCategoryComponent } from './components/management/edit-dose-category/edit-dose-category.component';
 import { AddDoseCategoryComponent } from './components/management/add-dose-category/add-dose-category.component';
-// import { NgxPayPalModule } from 'ngx-paypal';
+import { UpdateDoseDialogComponent } from './components/management/update-dose-dialog/update-dose-dialog.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { HeaderComponent } from './components/header/header.component';
+import { OptionOrderComponent } from './components/user/option-order/option-order.component';
+import { TakeAwayComponent } from './components/user/take-away/take-away.component';
+import { SendingComponent } from './components/user/sending/sending.component';
+import { TableOrderComponent } from './components/user/table-order/table-order.component';
+import { AddressSendingComponent } from './components/user/address-sending/address-sending.component';
+import { DisplayMenuComponent } from './components/user/display-menu/display-menu.component';
+import { DoseCategoryOrderComponent } from './components/user/dose-category-order/dose-category-order.component';
+import { MenuSwiperComponent } from './components/user/menu-swiper/menu-swiper.component';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 
 
@@ -101,7 +114,6 @@ import { AddDoseCategoryComponent } from './components/management/add-dose-categ
     ProfileUserComponent,
     SingInUserComponent,
     MenuByCategotyComponent,
-    StarComponent,
     DoseCategoryComponent,
     HomeComponent,
     MiniCartComponent,
@@ -136,6 +148,17 @@ import { AddDoseCategoryComponent } from './components/management/add-dose-categ
     LoginUserComponent,
     EditDoseCategoryComponent,
     AddDoseCategoryComponent,
+    UpdateDoseDialogComponent,
+    HeaderComponent,
+    OptionOrderComponent,
+    TakeAwayComponent,
+    SendingComponent,
+    TableOrderComponent,
+    AddressSendingComponent,
+    DisplayMenuComponent,
+    DoseCategoryOrderComponent,
+    MenuSwiperComponent,
+    
 
 
   ],
@@ -160,8 +183,10 @@ import { AddDoseCategoryComponent } from './components/management/add-dose-categ
     MatExpansionModule,
     NgbModule,
     MatTableModule,
-    //  NgxPayPalModule
-    
+    MatSidenavModule,
+    MatDatepickerModule,
+    NgxPayPalModule,
+    GooglePlaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

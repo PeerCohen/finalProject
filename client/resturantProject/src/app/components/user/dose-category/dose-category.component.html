@@ -8,7 +8,7 @@
     </mat-card-header>
     <mat-card-content>
         <div>
-            <img class='image' [src]="'../../assets/images/products/'+item.category+'/'+item.image">
+            <img class='image' [src]="'http://localhost:51437/src/images/products/'+item.category+'/'+item.image">
         </div>
         <hr>
         <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>

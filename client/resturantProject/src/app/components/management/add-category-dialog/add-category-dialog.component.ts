@@ -17,7 +17,6 @@ export class AddCategoryDialogComponent implements OnInit {
   ngOnInit(): void { }
 
   addNewCategory() {
-    debugger;
     this.categoryService.addNewCategory(this.categoryName).subscribe(
       (res: any) => {
         this.Succeeded = res;

@@ -16,7 +16,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
   getNameCategoryById(id:number){
-    return this.http.get(`${this.URL}/GetCategoryName`)
+    return this.http.get(`${this.URL}/GetCategoryName/${id}`)
   }
 
   getCategoryList():Observable<Category[]> {
@@ -24,18 +24,14 @@ export class CategoryService {
   }
 
   addNewCategory(categoryName):Observable<Category>{
-    debugger;
     this.category.nameCategory=categoryName
     return this.http.post<Category>(`${this.URL}/AddCategory`,this.category);
   }
-  deleteCategory(categoryName):Observable<Category>{
-    debugger;
-    this.category.nameCategory=categoryName
-    return this.http.post<Category>(`${this.URL}/DeleteCategory`,this.category);
+  deleteCategory(data):Observable<Category>{
+    return this.http.post<Category>(`${this.URL}/DeleteCategory`,data);
   }
-  editCategory(categoryName):Observable<Category>{
-    this.category.nameCategory=categoryName
-    return this.http.post<Category>(`${this.URL}/UpdateCategory`,this.category);
+  editCategory(data):Observable<Category>{
+    return this.http.post<Category>(`${this.URL}/UpdateCategory`,data);
   }
   
 }

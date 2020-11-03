@@ -22,5 +22,11 @@ export class MenuService {
   removeDose(menu:Menu):Observable<any>{ 
     return this.http.post<any>(`${this.URL}/DeleteDoseOfMenu/`,menu);
   }
-  
+  updateDose(menu:Menu):Observable<any>{ 
+    return this.http.post<any>(`${this.URL}/UpdateDoseOfMenu/`,menu);
+  }
+  addDose(menu:Menu):Observable<any>{ 
+    debugger;
+    return this.http.post<any>(`${this.URL}/AddDoseOfMenu/`,menu);
+  }
 }

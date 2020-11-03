@@ -1,0 +1,6 @@
+<button mat-button color="primary" (click)="setTakeAway()">איסוף מהסניף</button>
+<button mat-button color="primary" (click)="setSending()">מישלוח אלי</button>
+<button mat-button color="primary" (click)="setTableOrder()">הזמן שולחן</button>
+<ng-container>
+    <app-menu [option]="optionOrder" *ngIf=isOpen></app-menu>
+</ng-container>

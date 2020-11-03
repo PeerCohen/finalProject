@@ -15,6 +15,7 @@ import { VisitersOrderManagementService } from 'src/app/shared/services/visiters
 
 export class MenuComponent implements OnInit {
 
+  @Input()option : string;
   @Input()isMiniCartOpen : boolean= false;
 
   constructor(private visitersOrderManagementService:VisitersOrderManagementService){

@@ -12,7 +12,7 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DoseCategoryComponent implements OnInit {
 
-  isMiniCartOpen:boolean;
+  isMiniCartOpen: boolean;
   InputIdCategory: number;
   nameCategory: string;
   error: any;
@@ -22,9 +22,8 @@ export class DoseCategoryComponent implements OnInit {
     config: NgbRatingConfig,
     public categoryService: CategoryService,
     public visiterOrderManagment: VisitersOrderManagementService) {
-      config.max = 5;
-      //config.readonly = true;
-     }
+    config.max = 5;
+  }
 
   ngOnInit(): void {
     this.menuService.subjectMenu.subscribe((res: number) => {
@@ -34,15 +33,15 @@ export class DoseCategoryComponent implements OnInit {
     // this.nameCategory=this.categoryService.getNameCategoryById(this.InputIdCategory);
 
   }
-  addToCart(item:Menu) {
+  addToCart(item: Menu) {
     // debugger;
     // this.isMiniCartOpen=true;
-   if(this.visiterOrderManagment.addOrderToCart(item)){
-     alert("הוסף מוצר בהצלחה")
-   } 
-   else 
-   alert("אינך משתמש רשום")
-      
+    if (this.visiterOrderManagment.addOrderToCart(item)) {
+      alert("הוסף מוצר בהצלחה")
+    }
+    else
+      alert("אינך משתמש רשום")
+
   }
 
   getMenuDetails() {

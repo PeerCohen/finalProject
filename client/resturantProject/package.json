@@ -23,9 +23,12 @@
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
     "@ng-bootstrap/ng-bootstrap": "^6.2.0",
+    "@types/google-maps": "^3.2.2",
     "bootstrap": "^4.5.0",
-    "ngx-paypal": "^6.2.0",
+    "ngx-google-places-autocomplete": "^2.0.4",
+    "ngx-paypal": "^2.0.2",
     "rxjs": "~6.5.4",
+    "swiper": "^6.3.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

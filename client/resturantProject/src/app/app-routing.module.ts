@@ -5,7 +5,6 @@ import { LoginComponent } from './components/user/login/login.component';
 import { MenuByCategotyComponent } from './components/user/menu-by-categoty/menu-by-categoty.component';
 import { MenuComponent } from './components/user/menu/menu.component';
 import { HomeComponent } from './components/user/home/home.component';
-import { StarComponent } from './components/user/star/star.component';
 import { PartyComponent } from './components/user/party/party.component';
 import { GiftCardComponent } from './components/user/gift-card/gift-card.component';
 import { FormPartyPageComponent } from './components/user/form-party-page/form-party-page.component';
@@ -16,10 +15,34 @@ import { WorkerHomeComponent } from './components/worker/worker-home/worker-home
 import { FirstPageManagerComponent } from './components/management/first-page-manager/first-page-manager.component';
 import { MenuManagementComponent } from './components/management/menu-management/menu-management.component';
 import { FirstPageWorkerComponent } from './components/worker/first-page-worker/first-page-worker.component';
+import { SpecialOrderComponent } from './components/worker/special-order/special-order.component';
+import { AddressSendingComponent } from './components/user/address-sending/address-sending.component';
+import { OptionOrderComponent } from './components/user/option-order/option-order.component';
+import { MenuSwiperComponent } from './components/user/menu-swiper/menu-swiper.component';
 
 
 
 const routes: Routes = [
+  {
+    path: "swiper",
+    component: MenuSwiperComponent,
+  },
+  {
+    path: "option-order",
+    component: OptionOrderComponent,
+  },
+  {
+    path: "address-sending",
+    component: AddressSendingComponent,
+  },
+  {
+    path: "special-order",
+    component: SpecialOrderComponent,
+  },
+  {
+    path: "payment",
+    component: PaymentComponent,
+  },
   {
     path: "menuManagement",
     component: MenuManagementComponent,
@@ -43,15 +66,6 @@ const routes: Routes = [
   {
     path: "selectedUserEntrance",
     component: SelectedUserEntranceComponent,
-  },
-
-  {
-    path: "payment",
-    component: PaymentComponent,
-  },
-  {
-    path: "star",
-    component: StarComponent,
   },
   {
     path: "sign-in-user",
@@ -79,7 +93,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "selectedUserEntrance",
+    redirectTo: "home",
     pathMatch:"full"
   },
   {

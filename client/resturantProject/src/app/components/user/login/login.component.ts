@@ -18,9 +18,10 @@ export class LoginComponent implements OnInit {
 
   hide = true;
   formGroupLogin: FormGroup;
+  loginData: Login = new Login();
 
   constructor(public userService: UserService, public router: Router, private _formBuilder: FormBuilder) { }
-  loginData: Login = new Login();
+  
   ngOnInit(): void {
     this.formGroupLogin = this._formBuilder.group({
       username: ['', Validators.required],

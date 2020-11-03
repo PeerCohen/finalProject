@@ -4,10 +4,10 @@
     <div *ngFor="let item of categoryList" class="nameCategory">
         {{item.nameCategory}}
         <div>
-            <button mat-button color="primary" (click)="openDeleteCategoryDialog(item.nameCategory)">מחיקה</button>
+            <button mat-button color="primary" (click)="openDeleteCategoryDialog(item)">מחיקה</button>
         </div>
         <div>
-            <button mat-button color="primary" (click)="openEditCategoryDialog(item.nameCategory)">עריכה</button>
+            <button mat-button color="primary" (click)="openEditCategoryDialog(item)">עריכה</button>
         </div>
         <div>
             <button mat-button color="primary" (click)="getDoseCategory(item.id)">הצגת תפריט</button>

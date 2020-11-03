@@ -21,9 +21,11 @@ namespace WEB_API.Controllers
         }
 
         // GET: api/Category/5
-        public string Get(int id)
+        [HttpGet]
+        [Route("GetCategoryName/{id}")]
+        public CategoryDTO Get(int id)
         {
-            return "value";
+            return CategoryBL.GetById(id);
         }
 
         // POST: api/Category

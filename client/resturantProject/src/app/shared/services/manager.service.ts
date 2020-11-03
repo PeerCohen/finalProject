@@ -8,13 +8,13 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ManagerService {
 
-  specialOrder = [];
+  specialOrder = new Subject();
   subjectMenuManager:Subject<number>=new Subject();
   
   constructor(private http: HttpClient) { }
 
   setSpecialOrder(specialOrderFrom) {
-    this.specialOrder.push(specialOrderFrom)
+    this.specialOrder.next(specialOrderFrom)
     console.log(this.specialOrder);
   }
 }

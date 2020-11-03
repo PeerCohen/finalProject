@@ -33,10 +33,19 @@ namespace WEB_API.Controllers
         }
 
         // POST: api/Menu
-        public void Post([FromBody]string value)
+        [HttpPost]
+        [Route("UpdateDoseOfMenu")]
+        public void UpdateDoseOfMenu([FromBody]MenuDTO menu)
         {
+            MenuBL.Update(menu);
         }
 
+        [HttpPost]
+        [Route("AddDoseOfMenu")]
+        public void AddDoseOfMenu([FromBody]MenuDTO menu)
+        {
+            MenuBL.Add(menu);
+        }
         // PUT: api/Menu/5
         public void Put(int id, [FromBody]string value)
         {

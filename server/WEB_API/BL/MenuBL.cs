@@ -3,13 +3,14 @@ using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BL
 {
-   public static class MenuBL
+    public static class MenuBL
     {
         public static List<MenuDTO> GetAll()
         {
@@ -34,6 +35,17 @@ namespace BL
         }
         public static void Add(MenuDTO menu)
         {
+            int index = menu.ImageBase64.IndexOf(',');
+            if (index > 0)
+            {
+                menu.ImageBase64 = menu.ImageBase64.Substring(index+1);
+            }
+            var bytes = Convert.FromBase64String(menu.ImageBase64);
+            using (var imageFile = new FileStream(@"C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\src\images\products\" + menu.Category + @"\" + menu.image, FileMode.Create))
+            {
+                imageFile.Write(bytes, 0, bytes.Length);
+                imageFile.Flush();
+            }
             MenuDAL.Add(MenuCast.ToDAL(menu));
         }
     }

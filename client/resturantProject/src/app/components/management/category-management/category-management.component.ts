@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Subject } from 'rxjs';
 import { Category } from 'src/app/shared/modals/category';
 import { CategoryService } from 'src/app/shared/services/category.service';
 import { ManagerService } from 'src/app/shared/services/manager.service';
@@ -9,9 +8,6 @@ import { AddCategoryDialogComponent } from '../add-category-dialog/add-category-
 import { DeleteCategoryDialogComponent } from '../delete-category-dialog/delete-category-dialog.component';
 import { EditCategoryDialogComponent } from '../edit-category-dialog/edit-category-dialog.component';
 
-export interface DialogData {
-  name: '';
-}
 
 @Component({
   selector: 'app-category-management',
@@ -35,11 +31,11 @@ export class CategoryManagementComponent implements OnInit {
   openAddCategoryDialog() {
     this.dialog.open(AddCategoryDialogComponent);
   }
-  openDeleteCategoryDialog(nameCategory) {
-    this.dialog.open(DeleteCategoryDialogComponent, { data: nameCategory });
+  openDeleteCategoryDialog(dataCategory) {
+    this.dialog.open(DeleteCategoryDialogComponent, { data: dataCategory });
   }
-  openEditCategoryDialog(nameCategory) {
-    this.dialog.open(EditCategoryDialogComponent, { data: nameCategory });
+  openEditCategoryDialog(dataCategory) {
+    this.dialog.open(EditCategoryDialogComponent, { data: dataCategory });
   }
   getCategoryList() {
     return this.categoryService.getCategoryList().subscribe(
@@ -51,7 +47,6 @@ export class CategoryManagementComponent implements OnInit {
       });
   }
   getDoseCategory(idCategory: number) {
-    debugger;
     this.managerService.subjectMenuManager.next(idCategory);
   }
 

@@ -1,10 +1,10 @@
 <p>special-order works!</p>
-<mat-form-field>
+<!-- <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="חיפוש" #input>
-  </mat-form-field>
-  
-  <div>
+  </mat-form-field> -->
+  <p>{{orderList}}</p>
+  <!-- <div>
     <table mat-table [dataSource]="dataSource" matSort>
         
       <ng-container matColumnDef="name">
@@ -28,13 +28,12 @@
       </ng-container>
 
   
-      <!-- Row shown when there is no matching data. -->
-      <tr class="mat-row" *matNoDataRow>
+      Row shown when there is no matching data. -->
+      <!-- <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
       </tr>
-    </table>
+    </table> -->
   
     <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
-  </div>
-  
+  <!-- </div> -->
 

@@ -24,7 +24,7 @@
                             "src/assets",
                             {
                                 "glob": "**/*",
-                                "input": "../WEB_API/DAL/src/images",
+                                "input": "http://localhost:51437/WEB_API/DAL/src/images",
                                 "output": "./assets/images/"
                             },
                             {

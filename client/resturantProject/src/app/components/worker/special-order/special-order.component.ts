@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ManagerService } from 'src/app/shared/services/manager.service';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { AfterViewInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-special-order',
   templateUrl: './special-order.component.html',
@@ -11,17 +12,19 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class SpecialOrderComponent implements OnInit {
 
-  orderList=[];
+  orderList: any;
   dataSource: MatTableDataSource<[]>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(public managerService:ManagerService) { 
-    this.dataSource = new MatTableDataSource(this.orderList);
+  constructor(public managerService: ManagerService) {
+
   }
 
   ngOnInit(): void {
-    this.orderList=this.managerService.specialOrder;
+    this.managerService.specialOrder.subscribe((res: number) => {
+      this.orderList = res;
+    })
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
