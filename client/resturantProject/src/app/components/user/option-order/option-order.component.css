@@ -1,0 +1,51 @@
+    .option {
+        background-image: url(/assets/images/option.jpg);
+        height: 700px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .img {
+        z-index: 3;
+        position: absolute;
+        left: 21%;
+        top: 38%;
+        background-color: white;
+        text-align: center;
+        transform: rotate(-8deg);
+        width: 17%;
+    }
+    
+    .logo-img {
+        width: 40%;
+        transform: rotate(0deg);
+        display: block;
+        position: relative;
+        right: 28%;
+    }
+    
+    .title-img {
+        width: 70%;
+        transform: rotate(0deg);
+        display: block;
+        position: relative;
+        right: 13%;
+    }
+    
+    .inner-option-buttom {
+        background-color: #8c1829;
+        color: #f9ece3;
+        font-size: 20px;
+        font-weight: 700;
+        width: 28%;
+        height: 57px;
+        margin: 1%;
+    }
+    
+    .box-option {
+        position: relative;
+        top: 26%;
+        right: 12%;
+    }

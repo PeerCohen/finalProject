@@ -15,6 +15,7 @@ export class VisitersOrderManagementService {
   URL: string = "http://localhost:51437/api/Visiters";
   subjectCart = new Subject();
   cart: InventDetails[] = [];
+  fullCart:any[]=[];
 
   constructor(public httpClient: HttpClient, private userService: UserService) {
     // if(this.userService.InventDose.inventDetails!=null)
@@ -55,6 +56,7 @@ export class VisitersOrderManagementService {
 
   addOrderToCart(item: Menu) {
     if (this.userService.CurrentUser) {
+      this.fullCart.push(item,this.castMenuToInvetDetails(item));
       this.cart.push(this.castMenuToInvetDetails(item));
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
       // let dose: InventDose = { ...this.userService.InventDose };

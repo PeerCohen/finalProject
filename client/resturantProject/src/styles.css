@@ -2,6 +2,7 @@ You can add global styles to this file,
 and also import other style files html,
 body,
 html {
+    width: 100%;
     height: 100%;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -12,21 +13,13 @@ html {
     user-select: none;
 }
 
-button {
-    background-color: red;
+.icon-party {
+    display: inline;
+    color: #8c0f29;
 }
 
 button:focus {
     outline: none !important;
-}
-
-.btn-primary {
-    background-color: red;
-}
-
-.btn-primary-outline {
-    background-color: white;
-    border: red;
 }
 
 .mat-tab-body-content {
@@ -62,17 +55,25 @@ button:focus {
 }
 
 .title-party {
+    margin-right: 27%;
     margin-bottom: 2%;
     padding-bottom: 1%;
     color: #636262;
     border-bottom: solid;
     border-bottom-color: #8c0f29;
-    width: 15%;
+    width: 46%;
     border-width: 2px;
+    font-size: x-large;
 }
 
-.wrapper:hover .title-party {
-    margin-right: 30px;
+.Text-content-party {
+    font-size: 17px;
+}
+
+.contact {
+    margin-right: 21%;
+    margin-bottom: 2%;
+    margin-top: 1%;
 }
 
 button:focus {

@@ -33,6 +33,10 @@ import { MatButtonModule } from "@angular/material/button";
 import {MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -58,6 +62,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LogoComponent } from './components/logo/logo.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 import { ContactDetailsComponent } from './components/user/contact-for-party/contact-details/contact-details.component';
 import { PartyEventComponent } from './components/user/party-event/party-event.component';
 import { OptionEnterUserComponent } from './components/user/option-enter-user/option-enter-user.component';
@@ -66,7 +72,6 @@ import { PaymentComponent } from './components/user/payment/payment.component';
 import { SelectedUserEntranceComponent } from './components/selected-user-entrance/selected-user-entrance.component';
 import { ManagerHomeComponent } from './components/management/manager-home/manager-home.component';
 import { WorkerHomeComponent } from './components/worker/worker-home/worker-home.component';
-import { FirstPageManagerComponent } from './components/management/first-page-manager/first-page-manager.component';
 import { MenuManagementComponent } from './components/management/menu-management/menu-management.component';
 import { CategoryManagementComponent } from './components/management/category-management/category-management.component';
 import { AddCategoryDialogComponent } from './components/management/add-category-dialog/add-category-dialog.component';
@@ -75,7 +80,6 @@ import { EditCategoryDialogComponent } from './components/management/edit-catego
 import { FirstPageWorkerComponent } from './components/worker/first-page-worker/first-page-worker.component';
 import { SpecialOrderComponent } from './components/worker/special-order/special-order.component';
 import { LoginWorkerComponent } from './components/worker/login-worker/login-worker.component';
-import { LoginUserComponent } from './components/user/login-user/login-user.component';
 import { EditDoseCategoryComponent } from './components/management/edit-dose-category/edit-dose-category.component';
 import { AddDoseCategoryComponent } from './components/management/add-dose-category/add-dose-category.component';
 import { UpdateDoseDialogComponent } from './components/management/update-dose-dialog/update-dose-dialog.component';
@@ -90,6 +94,15 @@ import { DisplayMenuComponent } from './components/user/display-menu/display-men
 import { DoseCategoryOrderComponent } from './components/user/dose-category-order/dose-category-order.component';
 import { MenuSwiperComponent } from './components/user/menu-swiper/menu-swiper.component';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { OpenBottomSheetLoginComponent } from './components/user/open-bottom-sheet-login/open-bottom-sheet-login.component';
+import { OpenBottomSheetSigninComponent } from './components/user/open-bottom-sheet-signin/open-bottom-sheet-signin.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomePageComponent } from './components/user/home-page/home-page.component';
+import { ListWorkerComponent } from './components/management/list-worker/list-worker.component';
+import { ManagerWorkerComponent } from './components/management/manager-worker/manager-worker.component';
+import { AddWorkerComponent } from './components/management/add-worker/add-worker.component';
+import { EditWorkerDialogComponent } from './components/management/edit-worker-dialog/edit-worker-dialog.component';
+
 
 
 
@@ -136,7 +149,6 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     SelectedUserEntranceComponent,
     ManagerHomeComponent,
     WorkerHomeComponent,
-    FirstPageManagerComponent,
     MenuManagementComponent,
     CategoryManagementComponent,
     AddCategoryDialogComponent,
@@ -145,7 +157,6 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     FirstPageWorkerComponent,
     SpecialOrderComponent,
     LoginWorkerComponent,
-    LoginUserComponent,
     EditDoseCategoryComponent,
     AddDoseCategoryComponent,
     UpdateDoseDialogComponent,
@@ -158,6 +169,14 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     DisplayMenuComponent,
     DoseCategoryOrderComponent,
     MenuSwiperComponent,
+    OpenBottomSheetLoginComponent,
+    OpenBottomSheetSigninComponent,
+    FooterComponent,
+    HomePageComponent,
+    ListWorkerComponent,
+    ManagerWorkerComponent,
+    AddWorkerComponent,
+    EditWorkerDialogComponent,
     
 
 
@@ -185,6 +204,11 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     MatTableModule,
     MatSidenavModule,
     MatDatepickerModule,
+    MatButtonToggleModule,
+    MatBottomSheetModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatSelectModule,
     NgxPayPalModule,
     GooglePlaceModule
   ],

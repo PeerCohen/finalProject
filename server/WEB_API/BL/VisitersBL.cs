@@ -38,7 +38,7 @@ namespace BL
         public static VisitersDTO Login(string username, string password)
         {
             return VisitersCast.ToDTO(
-                VisitersDAL.GetAll().FirstOrDefault(p => p.Password == password && p.NameUser == username));
+                VisitersDAL.GetByPassword(username, password));
         }
 
         public static VisitersDTO SignUp(string FirstName, string LastName, string Mail, string username, string password)

@@ -6,11 +6,16 @@
     margin-bottom: 6%;
     width: 100%;
     height: 28%;
-    
 }
-.logoDiv .login{
+
+.logoDiv .login {
     position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 6%;
+    background-color: #9a2d44;
 }
+
 .logoImgDiv {
     width: fit-content;
     margin-right: 43%;
@@ -20,4 +25,5 @@
 .titleImgDiv {
     width: fit-content;
     margin-right: 39%;
+    margin-top: 5%;
 }

@@ -1,15 +1,136 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="restaurantModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="restaurantEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(restaurantModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(restaurantModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Address" EntityType="restaurantModel.Address" />
+    <EntitySet Name="Category" EntityType="restaurantModel.Category" />
+    <EntitySet Name="CurrentEmployee" EntityType="restaurantModel.CurrentEmployee" />
+    <EntitySet Name="Employees" EntityType="restaurantModel.Employees" />
+    <EntitySet Name="EmployeesTypes" EntityType="restaurantModel.EmployeesTypes" />
+    <EntitySet Name="InventDetails" EntityType="restaurantModel.InventDetails" />
+    <EntitySet Name="InventDose" EntityType="restaurantModel.InventDose" />
+    <EntitySet Name="Menu" EntityType="restaurantModel.Menu" />
+    <EntitySet Name="Rating" EntityType="restaurantModel.Rating" />
+    <EntitySet Name="StatusDose" EntityType="restaurantModel.StatusDose" />
+    <EntitySet Name="sysdiagrams" EntityType="restaurantModel.sysdiagrams" />
+    <EntitySet Name="Tables" EntityType="restaurantModel.Tables" />
+    <EntitySet Name="VipTables" EntityType="restaurantModel.VipTables" />
+    <EntitySet Name="Visiters" EntityType="restaurantModel.Visiters" />
+    <AssociationSet Name="FK_Visiters_Address" Association="restaurantModel.FK_Visiters_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Visiters" EntitySet="Visiters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_Category" Association="restaurantModel.FK_Menu_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Menu" EntitySet="Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CurrentEmployee_Employees" Association="restaurantModel.FK_CurrentEmployee_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VipTables_CurrentEmployee" Association="restaurantModel.FK_VipTables_CurrentEmployee">
+      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
+      <End Role="VipTables" EntitySet="VipTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VipTables_Employees" Association="restaurantModel.FK_VipTables_Employees">
+      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
+      <End Role="VipTables" EntitySet="VipTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_EmployeesTypes" Association="restaurantModel.FK_Employees_EmployeesTypes">
+      <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_Employees" Association="restaurantModel.FK_InventDose_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeesTypes_EmployeesTypes" Association="restaurantModel.FK_EmployeesTypes_EmployeesTypes">
+      <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
+      <End Role="EmployeesTypes1" EntitySet="EmployeesTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDetails_InventDose" Association="restaurantModel.FK_InventDetails_InventDose">
+      <End Role="InventDose" EntitySet="InventDose" />
+      <End Role="InventDetails" EntitySet="InventDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDetails_Menu" Association="restaurantModel.FK_InventDetails_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="InventDetails" EntitySet="InventDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_StatusDose" Association="restaurantModel.FK_InventDose_StatusDose">
+      <End Role="StatusDose" EntitySet="StatusDose" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_Tables" Association="restaurantModel.FK_InventDose_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_Visiters" Association="restaurantModel.FK_InventDose_Visiters">
+      <End Role="Visiters" EntitySet="Visiters" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Menu" Association="restaurantModel.FK_Rating_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VipTables_Tables" Association="restaurantModel.FK_VipTables_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="VipTables" EntitySet="VipTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visiters_Tables1" Association="restaurantModel.FK_Visiters_Tables1">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="Visiters" EntitySet="Visiters" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
   <EntityType Name="Address">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="NumHouse" Type="Int32" />
     <Property Name="NumApartment" Type="Int32" />
-    <NavigationProperty Name="Visiters" Relationship="Self.FK_Visiters_Address" FromRole="Address" ToRole="Visiters" />
+    <NavigationProperty Name="Visiters" Relationship="restaurantModel.FK_Visiters_Address" FromRole="Address" ToRole="Visiters" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -17,7 +138,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nameCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Menu" Relationship="Self.FK_Menu_Category" FromRole="Category" ToRole="Menu" />
+    <NavigationProperty Name="Menu" Relationship="restaurantModel.FK_Menu_Category" FromRole="Category" ToRole="Menu" />
   </EntityType>
   <EntityType Name="CurrentEmployee">
     <Key>
@@ -26,25 +147,25 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdEmployee" Type="Int32" />
     <Property Name="Date" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Employees" Relationship="Self.FK_CurrentEmployee_Employees" FromRole="CurrentEmployee" ToRole="Employees" />
-    <NavigationProperty Name="VipTables" Relationship="Self.FK_VipTables_CurrentEmployee" FromRole="CurrentEmployee" ToRole="VipTables" />
-    <NavigationProperty Name="VipTables1" Relationship="Self.FK_VipTables_Employees" FromRole="CurrentEmployee" ToRole="VipTables" />
+    <NavigationProperty Name="Employees" Relationship="restaurantModel.FK_CurrentEmployee_Employees" FromRole="CurrentEmployee" ToRole="Employees" />
+    <NavigationProperty Name="VipTables" Relationship="restaurantModel.FK_VipTables_CurrentEmployee" FromRole="CurrentEmployee" ToRole="VipTables" />
+    <NavigationProperty Name="VipTables1" Relationship="restaurantModel.FK_VipTables_Employees" FromRole="CurrentEmployee" ToRole="VipTables" />
   </EntityType>
   <EntityType Name="Employees">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Tz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Tz" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="IdEmployeeType" Type="Int32" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="CurrentEmployee" Relationship="Self.FK_CurrentEmployee_Employees" FromRole="Employees" ToRole="CurrentEmployee" />
-    <NavigationProperty Name="EmployeesTypes" Relationship="Self.FK_Employees_EmployeesTypes" FromRole="Employees" ToRole="EmployeesTypes" />
-    <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Employees" FromRole="Employees" ToRole="InventDose" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CurrentEmployee" Relationship="restaurantModel.FK_CurrentEmployee_Employees" FromRole="Employees" ToRole="CurrentEmployee" />
+    <NavigationProperty Name="EmployeesTypes" Relationship="restaurantModel.FK_Employees_EmployeesTypes" FromRole="Employees" ToRole="EmployeesTypes" />
+    <NavigationProperty Name="InventDose" Relationship="restaurantModel.FK_InventDose_Employees" FromRole="Employees" ToRole="InventDose" />
   </EntityType>
   <EntityType Name="EmployeesTypes">
     <Key>
@@ -52,9 +173,20 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_EmployeesTypes" FromRole="EmployeesTypes" ToRole="Employees" />
-    <NavigationProperty Name="EmployeesTypes1" Relationship="Self.FK_EmployeesTypes_EmployeesTypes" FromRole="EmployeesTypes" ToRole="EmployeesTypes1" />
-    <NavigationProperty Name="EmployeesTypes2" Relationship="Self.FK_EmployeesTypes_EmployeesTypes" FromRole="EmployeesTypes1" ToRole="EmployeesTypes" />
+    <NavigationProperty Name="Employees" Relationship="restaurantModel.FK_Employees_EmployeesTypes" FromRole="EmployeesTypes" ToRole="Employees" />
+    <NavigationProperty Name="EmployeesTypes1" Relationship="restaurantModel.FK_EmployeesTypes_EmployeesTypes" FromRole="EmployeesTypes" ToRole="EmployeesTypes1" />
+    <NavigationProperty Name="EmployeesTypes2" Relationship="restaurantModel.FK_EmployeesTypes_EmployeesTypes" FromRole="EmployeesTypes1" ToRole="EmployeesTypes" />
+  </EntityType>
+  <EntityType Name="InventDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IdDose" Type="Int32" Nullable="false" />
+    <Property Name="IdMenu" Type="Int32" Nullable="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="InventDose" Relationship="restaurantModel.FK_InventDetails_InventDose" FromRole="InventDetails" ToRole="InventDose" />
+    <NavigationProperty Name="Menu" Relationship="restaurantModel.FK_InventDetails_Menu" FromRole="InventDetails" ToRole="Menu" />
   </EntityType>
   <EntityType Name="InventDose">
     <Key>
@@ -67,26 +199,26 @@
     <Property Name="IdTable" Type="Int32" />
     <Property Name="HourInvention" Type="Time" Nullable="false" Precision="7" />
     <Property Name="IdVisiter" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Employees" Relationship="Self.FK_InventDose_Employees" FromRole="InventDose" ToRole="Employees" />
-    <NavigationProperty Name="StatusDose" Relationship="Self.FK_InventDose_StatusDose" FromRole="InventDose" ToRole="StatusDose" />
-    <NavigationProperty Name="Tables" Relationship="Self.FK_InventDose_Tables" FromRole="InventDose" ToRole="Tables" />
-    <NavigationProperty Name="Visiters" Relationship="Self.FK_InventDose_Visiters" FromRole="InventDose" ToRole="Visiters" />
+    <NavigationProperty Name="Employees" Relationship="restaurantModel.FK_InventDose_Employees" FromRole="InventDose" ToRole="Employees" />
     <NavigationProperty Name="InventDetails" Relationship="restaurantModel.FK_InventDetails_InventDose" FromRole="InventDose" ToRole="InventDetails" />
+    <NavigationProperty Name="StatusDose" Relationship="restaurantModel.FK_InventDose_StatusDose" FromRole="InventDose" ToRole="StatusDose" />
+    <NavigationProperty Name="Tables" Relationship="restaurantModel.FK_InventDose_Tables" FromRole="InventDose" ToRole="Tables" />
+    <NavigationProperty Name="Visiters" Relationship="restaurantModel.FK_InventDose_Visiters" FromRole="InventDose" ToRole="Visiters" />
   </EntityType>
   <EntityType Name="Menu">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Price" Type="Int32" Nullable="false" />
-    <Property Name="NameDose" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NameDose" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="RateDose" Type="Double" />
     <Property Name="Category" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Category1" Relationship="Self.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
-    <NavigationProperty Name="Rating" Relationship="Self.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
+    <NavigationProperty Name="Category1" Relationship="restaurantModel.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
     <NavigationProperty Name="InventDetails" Relationship="restaurantModel.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
+    <NavigationProperty Name="Rating" Relationship="restaurantModel.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
   </EntityType>
   <EntityType Name="Rating">
     <Key>
@@ -96,7 +228,7 @@
     <Property Name="userId" Type="Int32" />
     <Property Name="doseId" Type="Int32" />
     <Property Name="rate" Type="Int32" />
-    <NavigationProperty Name="Menu" Relationship="Self.FK_Rating_Menu" FromRole="Rating" ToRole="Menu" />
+    <NavigationProperty Name="Menu" Relationship="restaurantModel.FK_Rating_Menu" FromRole="Rating" ToRole="Menu" />
   </EntityType>
   <EntityType Name="StatusDose">
     <Key>
@@ -104,13 +236,13 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_StatusDose" FromRole="StatusDose" ToRole="InventDose" />
+    <NavigationProperty Name="InventDose" Relationship="restaurantModel.FK_InventDose_StatusDose" FromRole="StatusDose" ToRole="InventDose" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="principal_id" Type="Int32" Nullable="false" />
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
@@ -122,12 +254,12 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdServing" Type="Int32" Nullable="false" />
-    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PlaceTable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlaceTable" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CountPeople" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Tables" FromRole="Tables" ToRole="InventDose" />
-    <NavigationProperty Name="VipTables" Relationship="Self.FK_VipTables_Tables" FromRole="Tables" ToRole="VipTables" />
-    <NavigationProperty Name="Visiters" Relationship="Self.FK_Visiters_Tables1" FromRole="Tables" ToRole="Visiters" />
+    <NavigationProperty Name="InventDose" Relationship="restaurantModel.FK_InventDose_Tables" FromRole="Tables" ToRole="InventDose" />
+    <NavigationProperty Name="VipTables" Relationship="restaurantModel.FK_VipTables_Tables" FromRole="Tables" ToRole="VipTables" />
+    <NavigationProperty Name="Visiters" Relationship="restaurantModel.FK_Visiters_Tables1" FromRole="Tables" ToRole="Visiters" />
   </EntityType>
   <EntityType Name="VipTables">
     <Key>
@@ -140,30 +272,30 @@
     <Property Name="DateTimeStart" Type="Time" Precision="7" />
     <Property Name="IdServing" Type="Int32" />
     <Property Name="CountPeople" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="CurrentEmployee" Relationship="Self.FK_VipTables_CurrentEmployee" FromRole="VipTables" ToRole="CurrentEmployee" />
-    <NavigationProperty Name="CurrentEmployee1" Relationship="Self.FK_VipTables_Employees" FromRole="VipTables" ToRole="CurrentEmployee" />
-    <NavigationProperty Name="Tables" Relationship="Self.FK_VipTables_Tables" FromRole="VipTables" ToRole="Tables" />
+    <NavigationProperty Name="CurrentEmployee" Relationship="restaurantModel.FK_VipTables_CurrentEmployee" FromRole="VipTables" ToRole="CurrentEmployee" />
+    <NavigationProperty Name="CurrentEmployee1" Relationship="restaurantModel.FK_VipTables_Employees" FromRole="VipTables" ToRole="CurrentEmployee" />
+    <NavigationProperty Name="Tables" Relationship="restaurantModel.FK_VipTables_Tables" FromRole="VipTables" ToRole="Tables" />
   </EntityType>
   <EntityType Name="Visiters">
     <Key>
       <PropertyRef Name="ld" />
     </Key>
     <Property Name="ld" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Address" Type="Int32" />
     <Property Name="IdTable" Type="Int32" />
-    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="NameUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Address1" Relationship="Self.FK_Visiters_Address" FromRole="Visiters" ToRole="Address" />
-    <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Visiters" FromRole="Visiters" ToRole="InventDose" />
-    <NavigationProperty Name="Tables" Relationship="Self.FK_Visiters_Tables1" FromRole="Visiters" ToRole="Tables" />
+    <Property Name="Mail" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NameUser" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Address1" Relationship="restaurantModel.FK_Visiters_Address" FromRole="Visiters" ToRole="Address" />
+    <NavigationProperty Name="InventDose" Relationship="restaurantModel.FK_InventDose_Visiters" FromRole="Visiters" ToRole="InventDose" />
+    <NavigationProperty Name="Tables" Relationship="restaurantModel.FK_Visiters_Tables1" FromRole="Visiters" ToRole="Tables" />
   </EntityType>
   <Association Name="FK_Visiters_Address">
-    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
-    <End Role="Visiters" Type="Self.Visiters" Multiplicity="*" />
+    <End Type="restaurantModel.Address" Role="Address" Multiplicity="0..1" />
+    <End Type="restaurantModel.Visiters" Role="Visiters" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Address">
         <PropertyRef Name="Id" />
@@ -174,8 +306,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Menu_Category">
-    <End Role="Category" Type="Self.Category" Multiplicity="1" />
-    <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+    <End Type="restaurantModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="restaurantModel.Menu" Role="Menu" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Category">
         <PropertyRef Name="Id" />
@@ -186,8 +318,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CurrentEmployee_Employees">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
-    <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="*" />
+    <End Type="restaurantModel.Employees" Role="Employees" Multiplicity="0..1" />
+    <End Type="restaurantModel.CurrentEmployee" Role="CurrentEmployee" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
         <PropertyRef Name="Id" />
@@ -198,8 +330,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_VipTables_CurrentEmployee">
-    <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="0..1" />
-    <End Role="VipTables" Type="Self.VipTables" Multiplicity="*" />
+    <End Type="restaurantModel.CurrentEmployee" Role="CurrentEmployee" Multiplicity="0..1" />
+    <End Type="restaurantModel.VipTables" Role="VipTables" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CurrentEmployee">
         <PropertyRef Name="Id" />
@@ -210,8 +342,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_VipTables_Employees">
-    <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="0..1" />
-    <End Role="VipTables" Type="Self.VipTables" Multiplicity="*" />
+    <End Type="restaurantModel.CurrentEmployee" Role="CurrentEmployee" Multiplicity="0..1" />
+    <End Type="restaurantModel.VipTables" Role="VipTables" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CurrentEmployee">
         <PropertyRef Name="Id" />
@@ -222,8 +354,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Employees_EmployeesTypes">
-    <End Role="EmployeesTypes" Type="Self.EmployeesTypes" Multiplicity="0..1" />
-    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <End Type="restaurantModel.EmployeesTypes" Role="EmployeesTypes" Multiplicity="0..1" />
+    <End Type="restaurantModel.Employees" Role="Employees" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EmployeesTypes">
         <PropertyRef Name="Id" />
@@ -234,8 +366,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_InventDose_Employees">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
-    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
+    <End Type="restaurantModel.Employees" Role="Employees" Multiplicity="0..1" />
+    <End Type="restaurantModel.InventDose" Role="InventDose" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
         <PropertyRef Name="Id" />
@@ -246,8 +378,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_EmployeesTypes_EmployeesTypes">
-    <End Role="EmployeesTypes" Type="Self.EmployeesTypes" Multiplicity="1" />
-    <End Role="EmployeesTypes1" Type="Self.EmployeesTypes" Multiplicity="0..1" />
+    <End Type="restaurantModel.EmployeesTypes" Role="EmployeesTypes" Multiplicity="1" />
+    <End Type="restaurantModel.EmployeesTypes" Role="EmployeesTypes1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="EmployeesTypes">
         <PropertyRef Name="Id" />
@@ -257,169 +389,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_InventDose_StatusDose">
-    <End Role="StatusDose" Type="Self.StatusDose" Multiplicity="0..1" />
-    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="StatusDose">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="InventDose">
-        <PropertyRef Name="IdStatus" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_InventDose_Tables">
-    <End Role="Tables" Type="Self.Tables" Multiplicity="0..1" />
-    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tables">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="InventDose">
-        <PropertyRef Name="IdTable" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_InventDose_Visiters">
-    <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
-    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Visiters">
-        <PropertyRef Name="ld" />
-      </Principal>
-      <Dependent Role="InventDose">
-        <PropertyRef Name="IdVisiter" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Rating_Menu">
-    <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
-    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Menu">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Rating">
-        <PropertyRef Name="doseId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_VipTables_Tables">
-    <End Role="Tables" Type="Self.Tables" Multiplicity="0..1" />
-    <End Role="VipTables" Type="Self.VipTables" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tables">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="VipTables">
-        <PropertyRef Name="IdTable" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Visiters_Tables1">
-    <End Role="Tables" Type="Self.Tables" Multiplicity="0..1" />
-    <End Role="Visiters" Type="Self.Visiters" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tables">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Visiters">
-        <PropertyRef Name="IdTable" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="restaurantEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Address" EntityType="Self.Address" />
-    <EntitySet Name="Category" EntityType="Self.Category" />
-    <EntitySet Name="CurrentEmployee" EntityType="Self.CurrentEmployee" />
-    <EntitySet Name="Employees" EntityType="Self.Employees" />
-    <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" />
-    <EntitySet Name="InventDose" EntityType="Self.InventDose" />
-    <EntitySet Name="Menu" EntityType="Self.Menu" />
-    <EntitySet Name="Rating" EntityType="Self.Rating" />
-    <EntitySet Name="StatusDose" EntityType="Self.StatusDose" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <EntitySet Name="Tables" EntityType="Self.Tables" />
-    <EntitySet Name="VipTables" EntityType="Self.VipTables" />
-    <EntitySet Name="Visiters" EntityType="Self.Visiters" />
-    <AssociationSet Name="FK_Visiters_Address" Association="Self.FK_Visiters_Address">
-      <End Role="Address" EntitySet="Address" />
-      <End Role="Visiters" EntitySet="Visiters" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Menu_Category" Association="Self.FK_Menu_Category">
-      <End Role="Category" EntitySet="Category" />
-      <End Role="Menu" EntitySet="Menu" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
-      <End Role="Employees" EntitySet="Employees" />
-      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
-    </AssociationSet>
-    <AssociationSet Name="FK_VipTables_CurrentEmployee" Association="Self.FK_VipTables_CurrentEmployee">
-      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
-      <End Role="VipTables" EntitySet="VipTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_VipTables_Employees" Association="Self.FK_VipTables_Employees">
-      <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
-      <End Role="VipTables" EntitySet="VipTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Employees_EmployeesTypes" Association="Self.FK_Employees_EmployeesTypes">
-      <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
-      <End Role="Employees" EntitySet="Employees" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InventDose_Employees" Association="Self.FK_InventDose_Employees">
-      <End Role="Employees" EntitySet="Employees" />
-      <End Role="InventDose" EntitySet="InventDose" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EmployeesTypes_EmployeesTypes" Association="Self.FK_EmployeesTypes_EmployeesTypes">
-      <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
-      <End Role="EmployeesTypes1" EntitySet="EmployeesTypes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InventDose_StatusDose" Association="Self.FK_InventDose_StatusDose">
-      <End Role="StatusDose" EntitySet="StatusDose" />
-      <End Role="InventDose" EntitySet="InventDose" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InventDose_Tables" Association="Self.FK_InventDose_Tables">
-      <End Role="Tables" EntitySet="Tables" />
-      <End Role="InventDose" EntitySet="InventDose" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InventDose_Visiters" Association="Self.FK_InventDose_Visiters">
-      <End Role="Visiters" EntitySet="Visiters" />
-      <End Role="InventDose" EntitySet="InventDose" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Rating_Menu" Association="Self.FK_Rating_Menu">
-      <End Role="Menu" EntitySet="Menu" />
-      <End Role="Rating" EntitySet="Rating" />
-    </AssociationSet>
-    <AssociationSet Name="FK_VipTables_Tables" Association="Self.FK_VipTables_Tables">
-      <End Role="Tables" EntitySet="Tables" />
-      <End Role="VipTables" EntitySet="VipTables" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Visiters_Tables1" Association="Self.FK_Visiters_Tables1">
-      <End Role="Tables" EntitySet="Tables" />
-      <End Role="Visiters" EntitySet="Visiters" />
-    </AssociationSet>
-    <EntitySet Name="InventDetails" EntityType="restaurantModel.InventDetails" />
-    <AssociationSet Name="FK_InventDetails_InventDose" Association="restaurantModel.FK_InventDetails_InventDose">
-      <End Role="InventDose" EntitySet="InventDose" />
-      <End Role="InventDetails" EntitySet="InventDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InventDetails_Menu" Association="restaurantModel.FK_InventDetails_Menu">
-      <End Role="Menu" EntitySet="Menu" />
-      <End Role="InventDetails" EntitySet="InventDetails" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="InventDetails">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="IdDose" Type="Int32" Nullable="false" />
-    <Property Name="IdMenu" Type="Int32" Nullable="false" />
-    <Property Name="amount" Type="Int32" Nullable="false" />
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="InventDose" Relationship="restaurantModel.FK_InventDetails_InventDose" FromRole="InventDetails" ToRole="InventDose" />
-    <NavigationProperty Name="Menu" Relationship="restaurantModel.FK_InventDetails_Menu" FromRole="InventDetails" ToRole="Menu" />
-  </EntityType>
   <Association Name="FK_InventDetails_InventDose">
     <End Type="restaurantModel.InventDose" Role="InventDose" Multiplicity="1" />
     <End Type="restaurantModel.InventDetails" Role="InventDetails" Multiplicity="*" />
@@ -441,6 +410,78 @@
       </Principal>
       <Dependent Role="InventDetails">
         <PropertyRef Name="IdMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_StatusDose">
+    <End Type="restaurantModel.StatusDose" Role="StatusDose" Multiplicity="0..1" />
+    <End Type="restaurantModel.InventDose" Role="InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusDose">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_Tables">
+    <End Type="restaurantModel.Tables" Role="Tables" Multiplicity="0..1" />
+    <End Type="restaurantModel.InventDose" Role="InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdTable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_Visiters">
+    <End Type="restaurantModel.Visiters" Role="Visiters" Multiplicity="1" />
+    <End Type="restaurantModel.InventDose" Role="InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visiters">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdVisiter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Menu">
+    <End Type="restaurantModel.Menu" Role="Menu" Multiplicity="0..1" />
+    <End Type="restaurantModel.Rating" Role="Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="doseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VipTables_Tables">
+    <End Type="restaurantModel.Tables" Role="Tables" Multiplicity="0..1" />
+    <End Type="restaurantModel.VipTables" Role="VipTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VipTables">
+        <PropertyRef Name="IdTable" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visiters_Tables1">
+    <End Type="restaurantModel.Tables" Role="Tables" Multiplicity="0..1" />
+    <End Type="restaurantModel.Visiters" Role="Visiters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visiters">
+        <PropertyRef Name="IdTable" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

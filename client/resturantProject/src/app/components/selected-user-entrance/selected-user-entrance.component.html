@@ -1,14 +1,18 @@
-<!-- <div class="option-entray">
-    <button class="button-option-entray" mat-button color="primary">
-        <a routerLink="/firstPageManager" routerLinkActive="active">כניסת מנהל</a>
-    </button>
-    <button class="button-option-entray" mat-button color="primary">
-        <a routerLink="/firstPageWorker" routerLinkActive="active">כניסת עובד</a>
-    </button>
-    <button class="button-option-entray" mat-button color="primary">
-        <a routerLink="/home" routerLinkActive="active"> כניסת משתמש </a>
-    </button>
-</div> -->
-
-<button class="try" mat-button color="accent">התחבר</button>
-<p>להזמנת שולחן טלפונית חייגו :&nbsp;<a href="tel: 072-3929858">072-392-9858</a></p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span class="search"> 
+            <mat-form-field>
+                <input matInput type="text" [(ngModel)]="value" >
+                <mat-icon matSuffix *ngIf="!value">search</mat-icon>
+                <button mat-button *ngIf="value" matSuffix mat-icon-button (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </span>
+        <mat-icon>account_box</mat-icon>
+        <button mat-button class="user-enter" (click)="openBottomSheetSignin()">הרשם</button>
+        <button mat-button class="user-enter" (click)="openBottomSheetLogin()">התחבר</button>
+        <span><a></a></span>
+        <span><a></a></span>
+    </mat-toolbar-row>
+</mat-toolbar>

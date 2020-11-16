@@ -38,6 +38,7 @@ export class DoseCategoryOrderComponent implements OnInit {
   }
 
   goToOptionOrder() {
+    // detach()
     this.router.navigateByUrl('/option-order')
   }
 }

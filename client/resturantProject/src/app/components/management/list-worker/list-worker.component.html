@@ -1,0 +1,22 @@
+<mat-card *ngFor="let worker of listWorker">
+    <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="delete-action">
+            <button mat-button color="primary" (click)="deleteWorker(worker)">
+              הסרת עובד
+            </button>
+        </div>
+        <div class="edit-action">
+            <button mat-button color="primary" (click)="editWorker(worker)">
+                 עריכה
+            </button>
+        </div>
+    </mat-card-actions>
+</mat-card>

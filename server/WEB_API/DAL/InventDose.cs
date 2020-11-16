@@ -29,10 +29,10 @@ namespace DAL
         public int IdVisiter { get; set; }
     
         public virtual Employees Employees { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InventDetails> InventDetails { get; set; }
         public virtual StatusDose StatusDose { get; set; }
         public virtual Tables Tables { get; set; }
         public virtual Visiters Visiters { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InventDetails> InventDetails { get; set; }
     }
 }

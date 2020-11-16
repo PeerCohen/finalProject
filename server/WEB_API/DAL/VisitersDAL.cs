@@ -18,6 +18,14 @@ namespace DAL
                 return db.Visiters.ToList();
             }
         }
+
+        public static Visiters GetByPassword(string username,string password)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                return db.Visiters.FirstOrDefault(p=>p.Password==password&&p.NameUser==username);
+            }
+        }
         //get by id
         public static List<Visiters> GetById(int id)
         {

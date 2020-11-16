@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Swiper } from 'swiper/bundle';
 import { Navigation, Pagination } from 'swiper';
+import { MenuService } from 'src/app/shared/services/menu.service';
+import { CategoryService } from 'src/app/shared/services/category.service';
 Swiper.use([Navigation, Pagination]);
 
 
@@ -10,30 +12,67 @@ Swiper.use([Navigation, Pagination]);
   styleUrls: ['./menu-swiper.component.css', './swiper-bundle.min.css']
 })
 export class MenuSwiperComponent implements OnInit {
+  URL_IMG: string = "'../../assets/images/menu/'"
+  InputIdCategory: any;
+  nameCategory: string
+  menuDetailsByCategory: any;
+  error: any;
 
-  constructor() { }
+  constructor(public menuService: MenuService, public categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    try {
+      this.menuService.subjectMenu.subscribe((res: number) => {
+        this.InputIdCategory = res;
+        this.getNameCategory()
+        this.getMenuDetails();
+      })
+    } catch (err) { console.log(err); }
   }
-  ngAfterViewInit() {
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1.2,
-      loop: true,
-      spaceBetween: 0,
-      centeredSlides: true,
-      autoplay: {
-        delay: 7500,
-        disableOnInteraction: false,
+  getMenuDetails() {
+    this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(
+      (res: any) => {
+        this.menuDetailsByCategory = res;
+        console.log(this.menuDetailsByCategory)
       },
-      speed: 1000,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    });
+      (err) => {
+        this.error = err;
+      });
   }
+  getNameCategory() {
+    this.categoryService.getNameCategoryById(this.InputIdCategory).subscribe(
+      (res: any) => {
+        this.nameCategory = res.nameCategory;
+        console.log(this.nameCategory)
+      },
+      (err) => {
+        this.error = err;
+      });
+  }
+  getImageByCategory() {
+    console.log(this.URL_IMG + this.nameCategory + '.jpg');    
+   return this.URL_IMG + this.nameCategory + '.jpg';
+  }
+  // }
+  // ngAfterViewInit() {
+  //   var swiper = new Swiper('.swiper-container', {
+  //     slidesPerView: 1.2,
+  //     loop: true,
+  //     spaceBetween: 0,
+  //     centeredSlides: true,
+  //     autoplay: {
+  //       delay: 7500,
+  //       disableOnInteraction: false,
+  //     },
+  //     speed: 1000,
+  //     pagination: {
+  //       el: '.swiper-pagination',
+  //       clickable: true,
+  //     },
+  //     navigation: {
+  //       nextEl: '.swiper-button-next',
+  //       prevEl: '.swiper-button-prev',
+  //     }
+  //   });
+
 }

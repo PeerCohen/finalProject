@@ -34,7 +34,7 @@ export class AddDoseCategoryComponent implements OnInit {
   onFileChanged(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
-    this.doseData.image =file.name;
+    this.doseData.image = file.name;
     reader.addEventListener('load', (event: any) => {
       debugger;
       this.doseData.ImageBase64 = event.target.result;
@@ -45,8 +45,7 @@ export class AddDoseCategoryComponent implements OnInit {
   addDoseToCategory() {
     this.doseData.nameDose = this.formGroupAddDose.controls.nameDose.value;
     this.doseData.price = this.formGroupAddDose.controls.price.value;
-    this.doseData.category=this.idCategory;
-   // this.doseData.image = this.formGroupAddDose.controls.image.value;
+    this.doseData.category = this.idCategory;
     this.doseData.description = this.formGroupAddDose.controls.description.value;
     debugger;
     return this.menuService.addDose(this.doseData).subscribe(

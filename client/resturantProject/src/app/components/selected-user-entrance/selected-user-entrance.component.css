@@ -1,13 +1,9 @@
-.option-entray{
-    border: solid;
-    border-color: #9a2d44;
-    border-width: thin;
-    width: max-content;
-   
+.search {
+    position: absolute;
+    left: 3%;
 }
-.button-option-entray{
-        display: block;
-}
-.try{
-    outline: none !important;
+
+.user-enter {
+    font-size: 17px;
+    font-weight: 600;
 }

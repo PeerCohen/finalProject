@@ -1,0 +1,23 @@
+.kind-option {
+    width: 100%;
+    background: #8c1829;
+    color: white;
+    height: 60px;
+    padding: 2%;
+    font-size: 17px;
+}
+
+.tooltip {
+    font-size: large;
+}
+
+.in-kind-option {
+    display: inline;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.contact {
+    color: white;
+    margin-right: 0%
+}

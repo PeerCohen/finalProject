@@ -5,22 +5,25 @@
     <div *ngFor="let item of itemsInCart">
         <mat-card>
             <mat-card-header>
-                <mat-card-title>{{item.idMenu}}</mat-card-title>
+                <mat-card-title>{{item.nameDose}}</mat-card-title>
                 <mat-card-subtitle>
-                    כמות הזמנת מנה : {{item.amount}}
+                    <div> כמות הזמנת מנה : {{item.amount}} </div>
+                    <div>{{' ₪ '+item.price}}</div>
                 </mat-card-subtitle>
             </mat-card-header>
             <mat-card-actions>
-                <!-- <div class="minus-icon"> -->
-                <mat-icon (click)="lessProduct(item.idMenu)">remove_circle_outline</mat-icon>
-                <!-- </div> -->
-                <!-- <div class="plus-icon"> -->
-                <mat-icon (click)="addProduct(item.idMenu)">add_circle_outline</mat-icon>
-                <!-- </div> -->
-                <mat-icon (click)="openDialogRemove(item.idMenu)">delete</mat-icon>
+                <button mat-icon-button color="primary" class="minus-icon">
+                    <mat-icon (click)="lessProduct(item.idMenu)">remove_circle_outline</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" class="plus-icon">
+                    <mat-icon (click)="addProduct(item.idMenu)">add_circle_outline</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" class="delete-icon">
+                    <mat-icon (click)="openDialogRemove(item.idMenu)">delete</mat-icon>
+                </button>
             </mat-card-actions>
         </mat-card>
     </div>
-    <button mat-stroked-button color="primary" (click)="addInvent()"> אשר הזמנה</button>
-    <
+    <button mat-flat-button color="primary" (click)="addInvent()"> אשר הזמנה</button>
+
 </div>

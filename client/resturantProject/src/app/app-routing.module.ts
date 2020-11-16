@@ -12,13 +12,12 @@ import { PaymentComponent } from './components/user/payment/payment.component';
 import { SelectedUserEntranceComponent } from './components/selected-user-entrance/selected-user-entrance.component';
 import { ManagerHomeComponent } from './components/management/manager-home/manager-home.component';
 import { WorkerHomeComponent } from './components/worker/worker-home/worker-home.component';
-import { FirstPageManagerComponent } from './components/management/first-page-manager/first-page-manager.component';
 import { MenuManagementComponent } from './components/management/menu-management/menu-management.component';
-import { FirstPageWorkerComponent } from './components/worker/first-page-worker/first-page-worker.component';
 import { SpecialOrderComponent } from './components/worker/special-order/special-order.component';
 import { AddressSendingComponent } from './components/user/address-sending/address-sending.component';
 import { OptionOrderComponent } from './components/user/option-order/option-order.component';
 import { MenuSwiperComponent } from './components/user/menu-swiper/menu-swiper.component';
+import { AppComponent } from './app.component';
 
 
 
@@ -46,14 +45,6 @@ const routes: Routes = [
   {
     path: "menuManagement",
     component: MenuManagementComponent,
-  },
-  {
-    path: "firstPageWorker",
-    component: FirstPageWorkerComponent,
-  },
-  {
-    path: "firstPageManager",
-    component: FirstPageManagerComponent,
   },
   {
     path: "workerHome",
@@ -91,11 +82,15 @@ const routes: Routes = [
     path: "home",
     component: HomeComponent,
   },
-  {
-    path: "",
-    redirectTo: "home",
-    pathMatch:"full"
-  },
+  // {
+  //   path:"main",
+  //   component:AppComponent
+  // },
+  // {
+  //   path: "",
+  //   redirectTo: "main",
+  //   pathMatch:"full"
+  // },
   {
     path: "gift-card",
     component : GiftCardComponent, 

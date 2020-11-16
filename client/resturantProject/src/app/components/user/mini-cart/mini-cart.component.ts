@@ -30,7 +30,7 @@ export class MiniCartComponent implements OnInit {
   
   ngOnInit(): void {
     this.visitersOrderManagementService.cart = this.userService.InventDose.inventDetails;
-    this.itemsInCart = this.visitersOrderManagementService.cart;
+    this.itemsInCart = this.visitersOrderManagementService.fullCart;
    var currentUser= this.userService.CurrentUser;  
    this.userName= currentUser.firstName+ " " +currentUser.lastName ;
 

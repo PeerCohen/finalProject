@@ -17,8 +17,7 @@
 }
 
 .title-cart {
-    background-color: #8c1829;
-    color: white;
+    color: #8c1829;
     font-size: xx-large;
     height: 46px;
     text-align: center;
@@ -32,9 +31,13 @@
 }
 
 .minus-icon {
-    width: max-content;
+    display: inline;
 }
 
 .plus-icon {
-    width: max-content;
+    display: inline;
+}
+
+.delete-icon {
+    display: inline;
 }

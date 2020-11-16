@@ -1,38 +1,49 @@
 <mat-tab-group mat-align-tabs="center">
-    <mat-tab label="התחברות לאתר">
-        <ng-template mat-tab-label>
-            התחברות לאתר
-            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-              </svg>
-        </ng-template>
-        <div class="row justify-content-md-center">
-            <app-option-enter-user></app-option-enter-user>
-        </div>
-    </mat-tab>
-
     <mat-tab label="תפריט">
         <ng-template mat-tab-label>
-            תפריט
+            <mat-icon>home</mat-icon>
+            דף הבית
+        </ng-template>
+
+        <app-home-page></app-home-page>
+    </mat-tab>
+    <mat-tab label="תפריט">
+        <ng-template mat-tab-label>
             <mat-icon>menu</mat-icon>
+            תפריט
         </ng-template>
         <app-display-menu></app-display-menu>
     </mat-tab>
 
     <mat-tab label="להתחיל הזמנה">
-        להתחיל הזמנה
+        <ng-template mat-tab-label>
+            <mat-icon>restaurant</mat-icon>
+            להתחיל הזמנה
+        </ng-template>
         <app-option-order></app-option-order>
     </mat-tab>
 
     <mat-tab label=" יש לי קוד קופון ">
-        יש לי קוד קופון
+        <ng-template mat-tab-label>
+            <mat-icon>local_offer </mat-icon>
+            יש לי קוד קופון
+        </ng-template>
     </mat-tab>
 
     <mat-tab label="סל ההזמנות שלי ">
+        <ng-template mat-tab-label>
+            <mat-icon>shopping_cart</mat-icon>
+            הסל ההזמנות שלי
+        </ng-template>
         <app-previous-orders></app-previous-orders>
     </mat-tab>
 
     <mat-tab label="אירועים מיוחדים">
+        <ng-template mat-tab-label>
+            <mat-icon>card_giftcard</mat-icon>
+            אירועים מיוחדים
+        </ng-template>
+
         <app-party-event></app-party-event>
     </mat-tab>
 </mat-tab-group>

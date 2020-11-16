@@ -33,10 +33,18 @@ namespace WEB_API.Controllers
         }
 
         // POST: api/Employees
-        public void Post([FromBody]string value)
+        [HttpPost]
+        [Route("AddNewWorker")]
+        public void AddNewWorker([FromBody]EmployeesDTO employeesDTO)
         {
+            EmployeesBL.Add(employeesDTO);
         }
-
+        [HttpPost]
+        [Route("RemoveWorker")]
+        public void RemoveWorker([FromBody]EmployeesDTO employeesDTO)
+        {
+            EmployeesBL.Delete(employeesDTO);
+        }
         // PUT: api/Employees/5
         public void Put(int id, [FromBody]string value)
         {
