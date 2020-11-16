@@ -8,14 +8,6 @@
     height: 28%;
 }
 
-.logoDiv .login {
-    position: absolute;
-    top: 0%;
-    width: 100%;
-    height: 6%;
-    background-color: #9a2d44;
-}
-
 .logoImgDiv {
     width: fit-content;
     margin-right: 43%;

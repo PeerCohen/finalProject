@@ -1,9 +1,11 @@
 <div>
-    <app-menu-by-categoty></app-menu-by-categoty>
+    <div class="menu-by-categoty" (click)=openDetalis()>
+        <app-menu-by-categoty style="display: inline;"></app-menu-by-categoty>
+    </div>
+    <div class="menu-swiper" *ngIf="open">
+        <app-menu-swiper style="display: inline;"></app-menu-swiper>
+    </div>
 </div>
-<div>
-    <app-menu-swiper></app-menu-swiper>
-</div>
-<div>
-    <app-dose-category-order></app-dose-category-order>
+<div class="dose-category-order" *ngIf="open">
+    <app-dose-category-order style="display: inline;"></app-dose-category-order>
 </div>

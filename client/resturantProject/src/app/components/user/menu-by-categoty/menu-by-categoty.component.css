@@ -4,3 +4,8 @@
     border-color: darkgray;
     /* border-bottom-color: #8c0f29; */
 }
+
+.main_sidebar {
+    width: 12%;
+    display: inline-block;
+}

@@ -12,7 +12,7 @@ Swiper.use([Navigation, Pagination]);
   styleUrls: ['./menu-swiper.component.css', './swiper-bundle.min.css']
 })
 export class MenuSwiperComponent implements OnInit {
-  URL_IMG: string = "'../../assets/images/menu/'"
+  URL_IMG: string = "../../assets/images/menu/"
   InputIdCategory: any;
   nameCategory: string
   menuDetailsByCategory: any;

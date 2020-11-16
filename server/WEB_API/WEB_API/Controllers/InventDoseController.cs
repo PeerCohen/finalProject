@@ -15,6 +15,7 @@ namespace WEB_API.Controllers
     {
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         // GET: api/InventDose
+
         public List<InventDoseDTO> GetCurrentInvents()
         {
             return InventDoseBL.GetCurrentInvents();
@@ -25,6 +26,12 @@ namespace WEB_API.Controllers
         public List<InventDoseDTO> Get(int id)
         {
             return InventDoseBL.GetById(id);
+        }
+        [HttpGet]
+        [Route("GetAllInventDose")]
+        public List<InventDoseDTO> GetAllInventDose()
+        {
+            return InventDoseBL.GetAll();
         }
 
         // POST: api/InventDose

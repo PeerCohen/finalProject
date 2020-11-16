@@ -1,17 +1,23 @@
-
+<div class="tool-up"></div>
+<app-logo></app-logo>
 <mat-tab-group mat-align-tabs="center">
-        <mat-tab label="ניהול הזמנות">
+    <mat-tab label="ניהול הזמנות">
         <ng-template mat-tab-label>
-            ניהול הזמנת לקוחות 
-            <mat-icon>menu</mat-icon>
+            <mat-icon>playlist_add_check</mat-icon>
+            ניהול הזמנות לקוחות
         </ng-template>
         <app-customers-order></app-customers-order>
     </mat-tab>
     <mat-tab label="הפרופיל שלי ">
-        פרופיל שלי
+        <ng-template mat-tab-label>
+            <mat-icon>account_circle</mat-icon>
+            פרופיל שלי
+        </ng-template>
     </mat-tab>
-    <mat-tab label="הפרופיל שלי ">
-        הזמנות מיוחדות לטיפול 
+    <mat-tab label=" הזמנות מיוחדות לטיפול ">
+        <app-special-order></app-special-order>
+    </mat-tab>
+    <mat-tab label=" סידור משמרת שלי">
         <app-special-order></app-special-order>
     </mat-tab>
 </mat-tab-group>
