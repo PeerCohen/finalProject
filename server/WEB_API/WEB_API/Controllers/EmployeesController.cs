@@ -14,10 +14,10 @@ namespace WEB_API.Controllers
     public class EmployeesController : ApiController
     {
         // GET: api/Employees
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
         [HttpPost]
         [Route("login")]
@@ -27,10 +27,10 @@ namespace WEB_API.Controllers
         }
 
         // GET: api/Employees/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST: api/Employees
         [HttpPost]
@@ -45,9 +45,12 @@ namespace WEB_API.Controllers
         {
             EmployeesBL.Delete(employeesDTO);
         }
-        // PUT: api/Employees/5
-        public void Put(int id, [FromBody]string value)
+       
+        [HttpPut]
+        [Route("SineOut/{id}")]
+        public IHttpActionResult PutGetOut(int id, [FromBody]DateTime date)
         {
+            return Ok( EmployeesBL.SingOut(id, date));
         }
 
         // DELETE: api/Employees/5

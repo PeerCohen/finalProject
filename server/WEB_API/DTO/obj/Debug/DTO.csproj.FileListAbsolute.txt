@@ -20,3 +20,15 @@ C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.c
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.dll
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DTO\obj\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\bin\Debug\DTO.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\bin\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\obj\Debug\DTO.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\obj\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\bin\Debug\DAL.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\bin\Debug\EntityFramework.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\bin\Debug\DAL.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\bin\Debug\DAL.dll.config
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\bin\Debug\EntityFramework.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DTO\obj\Debug\DTO.csproj.CopyComplete

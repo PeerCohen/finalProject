@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { AuthService } from 'src/app/Auth/auth.service';
+import { UserService } from 'src/app/shared/services/user.service';
 import { OpenBottomSheetLoginComponent } from '../user/open-bottom-sheet-login/open-bottom-sheet-login.component';
 import { OpenBottomSheetSigninComponent } from '../user/open-bottom-sheet-signin/open-bottom-sheet-signin.component';
 
@@ -11,16 +13,63 @@ import { OpenBottomSheetSigninComponent } from '../user/open-bottom-sheet-signin
 })
 export class SelectedUserEntranceComponent implements OnInit {
 
-  constructor(private _bottomSheet: MatBottomSheet) { }
+  constructor(private _bottomSheet: MatBottomSheet,
+    private userService: UserService,
+    private authService: AuthService,
+  ) { }
   value = '';
+  userName = '';
+  singIn = false;
 
   ngOnInit(): void {
+    // אם כבר היתה כניסה היום או לא
+    if (localStorage.getItem('isManager') === 'true' ||
+      localStorage.getItem('isEmployee') === 'true' || localStorage.getItem('isManager') === 'true') { 
+        this.singIn = true;
+      }
+    // שמירת שם משתמש כדי להציג את שמו למעלה 
+    if (this.userService.CurrentUser.hasOwnProperty('idEmployeeType')) {
+      this.userName = this.userService.CurrentUser.firstName;
+    } else {
+      this.userName = this.userService.CurrentUser.firstName;
+    }
   }
-  openBottomSheetSignin(){
+  openBottomSheetSignin() {
     this._bottomSheet.open(OpenBottomSheetSigninComponent);
   }
-  openBottomSheetLogin(){
+  openBottomSheetLogin() {
     this._bottomSheet.open(OpenBottomSheetLoginComponent);
+  }
+  getOut() {
+    this.userService.getOut(new Date()).subscribe(
+      res => {
+        let ans = res;
+        console.log('יצאה בשעה');
+        localStorage.setItem('isManager', 'false');
+        localStorage.setItem('isEmployee', 'false');
+        localStorage.setItem('isVisiter', 'false');
+      }
+    );
   }
 
 }
+
+
+// if (propaty.hasOwnProperty('idEmployeeType')) {
+//   // אם המשתמש הואא מסוג מנהל
+//   if ((propaty as Employee).IdEmployeeType === 1) {
+//     this.router.navigate(['/managerHome']);
+//     this.AuthService.Employee = true;
+//   }
+//   // אם המשתמש הוא מסוג עובד
+//   if ((propaty as Employee).IdEmployeeType === 2) {
+//     this.AuthService.Employee = true;
+//     this.router.navigate(['/workerHome']);
+//   }
+//   this.userService.CurrentUser = propaty;
+//   console.log('taht is  Employee');
+// }
+// // מאם המשתמש לא קיים במרכת
+// if (res === null) {
+//   alert('משתמש זה אינו קיים במערכת נא בידקו אם אם שם משתמש או סיסמא תקינים ....');
+// }

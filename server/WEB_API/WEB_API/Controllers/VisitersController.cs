@@ -15,10 +15,10 @@ namespace WEB_API.Controllers
     {
        
         // GET: api/Visiters
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
         //רישום לקוח חדש למאגר הלקוחות
         [HttpPost]
         [Route("SignUp")]
@@ -45,7 +45,11 @@ namespace WEB_API.Controllers
                 return null;
             return VisitersBL.Login(loginEmployee.Username, loginEmployee.Password);
         }
-
+        [Route("SingeIn/{name}/{password}")]
+        public IHttpActionResult GETSingeIn(string name, string password)
+        {
+            return Ok(EmployeesBL.SineIn(name, password));
+        }
         // PUT: api/Visiters/5
         public void Put(int id, [FromBody]string value)
         {

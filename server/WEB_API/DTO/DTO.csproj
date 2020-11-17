@@ -51,8 +51,15 @@
     <Compile Include="RatingDTO.cs" />
     <Compile Include="StatusDoseDTO.cs" />
     <Compile Include="TablesDTO.cs" />
+    <Compile Include="UserCalandarDTO.cs" />
     <Compile Include="VipTablesDTO.cs" />
     <Compile Include="VisitersDTO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{3b6236d6-ed8e-4fa3-b1da-b471d85a130c}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

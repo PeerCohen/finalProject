@@ -4,37 +4,37 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99998cb7566b4753b413940da9bbb40e" Name="Diagram1" ZoomLevel="85">
-        <EntityTypeShape EntityType="restaurantModel.Address" Width="1.5" PointX="3.75" PointY="9.875" />
-        <EntityTypeShape EntityType="restaurantModel.Category" Width="1.5" PointX="3.75" PointY="14.125" />
-        <EntityTypeShape EntityType="restaurantModel.CurrentEmployee" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="restaurantModel.Employees" Width="1.5" PointX="1.5" PointY="9.375" />
-        <EntityTypeShape EntityType="restaurantModel.EmployeesTypes" Width="1.5" PointX="1.5" PointY="13.875" />
-        <EntityTypeShape EntityType="restaurantModel.InventDetails" Width="1.5" PointX="8.25" PointY="5.875" />
-        <EntityTypeShape EntityType="restaurantModel.InventDose" Width="1.5" PointX="3" PointY="5.25" />
-        <EntityTypeShape EntityType="restaurantModel.Menu" Width="1.5" PointX="6" PointY="13.5" />
-        <EntityTypeShape EntityType="restaurantModel.Rating" Width="1.5" PointX="8.25" PointY="13.875" />
-        <EntityTypeShape EntityType="restaurantModel.StatusDose" Width="1.5" PointX="0.75" PointY="16.625" />
-        <EntityTypeShape EntityType="restaurantModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="restaurantModel.Tables" Width="1.5" PointX="0.75" PointY="5.625" />
-        <EntityTypeShape EntityType="restaurantModel.VipTables" Width="1.5" PointX="3" PointY="1.5" />
-        <EntityTypeShape EntityType="restaurantModel.Visiters" Width="1.5" PointX="6" PointY="5.25" />
-        <AssociationConnector Association="restaurantModel.FK_Visiters_Address" />
-        <AssociationConnector Association="restaurantModel.FK_Menu_Category" />
-        <AssociationConnector Association="restaurantModel.FK_CurrentEmployee_Employees" />
-        <AssociationConnector Association="restaurantModel.FK_VipTables_CurrentEmployee" />
-        <AssociationConnector Association="restaurantModel.FK_VipTables_Employees" />
-        <AssociationConnector Association="restaurantModel.FK_Employees_EmployeesTypes" />
-        <AssociationConnector Association="restaurantModel.FK_InventDose_Employees" />
-        <AssociationConnector Association="restaurantModel.FK_EmployeesTypes_EmployeesTypes" />
-        <AssociationConnector Association="restaurantModel.FK_InventDetails_InventDose" />
-        <AssociationConnector Association="restaurantModel.FK_InventDetails_Menu" />
-        <AssociationConnector Association="restaurantModel.FK_InventDose_StatusDose" />
-        <AssociationConnector Association="restaurantModel.FK_InventDose_Tables" />
-        <AssociationConnector Association="restaurantModel.FK_InventDose_Visiters" />
-        <AssociationConnector Association="restaurantModel.FK_Rating_Menu" />
-        <AssociationConnector Association="restaurantModel.FK_VipTables_Tables" />
-        <AssociationConnector Association="restaurantModel.FK_Visiters_Tables1" />
+      <Diagram DiagramId="ecb7c095c870497da274dd4eeeb1e3b1" Name="Diagram1">
+        <EntityTypeShape EntityType="restaurantModel.Address" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.Category" Width="1.5" PointX="3.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.CurrentEmployee" Width="1.5" PointX="3.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.Employees" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.EmployeesTypes" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.InventDetails" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.InventDose" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.Menu" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.Rating" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.StatusDose" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.Tables" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.VipTables" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.Visiters" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="restaurantModel.FK_Visiters_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_Menu_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_CurrentEmployee_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_VipTables_CurrentEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_VipTables_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_Employees_EmployeesTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_InventDose_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_EmployeesTypes_EmployeesTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_InventDetails_InventDose" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_InventDetails_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_InventDose_StatusDose" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_InventDose_Tables" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_InventDose_Visiters" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_Rating_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_VipTables_Tables" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurantModel.FK_Visiters_Tables1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="restaurantModel.UserCalandar" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

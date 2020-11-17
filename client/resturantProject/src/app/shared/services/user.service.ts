@@ -5,6 +5,7 @@ import { Visiters } from '../modals/visiters';
 import { Observable } from 'rxjs';
 import { InventDose } from '../modals/invent-dose';
 import { InventDetails } from '../modals/invent-details';
+import { UserCalandar } from '../modals/UserCalandar';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +15,16 @@ export class UserService {
   keys = {
     USER_KEY: "currentUser",
     INVENT_KEY: "currentInvent"
-  }
+  };
   invent :InventDose;
 
   URL: string = "http://localhost:51437/api/Visiters/";
-
-   set CurrentUser(v: Visiters) {
+  URLEm="http://localhost:51437/api/Employees/";
+   set CurrentUser(v: any) {
     if (v)
       localStorage.setItem(this.keys.USER_KEY, JSON.stringify(v));
   }
-   get CurrentUser(): Visiters {
+   get CurrentUser(): any {
     return JSON.parse(localStorage.getItem(this.keys.USER_KEY));
   }
    set InventDose(invent: InventDose) {
@@ -47,9 +48,14 @@ export class UserService {
 
   login(loginData): Observable<Visiters> {
     return this.httpClient.post<Visiters>(`${this.URL}login`, loginData);
-    
+  }
+  SingIn(loginData): Observable<object>{
+    return this.httpClient.get<object>(this.URL + 'SingeIn/' + loginData.username + '/' + loginData.password + '/' );
   }
   signUp(newUser: SignUp): Observable<Visiters> {
     return this.httpClient.post<Visiters>(`${this.URL}SignUp`, newUser);
+  }
+  getOut(date){
+    return this.httpClient.put<UserCalandar>(this.URLEm + 'SineOut/' + this.CurrentUser.id + '/', date);
   }
 }

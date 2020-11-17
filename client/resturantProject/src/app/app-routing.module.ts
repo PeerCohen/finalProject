@@ -18,6 +18,7 @@ import { AddressSendingComponent } from './components/user/address-sending/addre
 import { OptionOrderComponent } from './components/user/option-order/option-order.component';
 import { MenuSwiperComponent } from './components/user/menu-swiper/menu-swiper.component';
 import { AppComponent } from './app.component';
+import { EmployeeGuard } from './Auth/auth.guard';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {
     path: "swiper",
     component: MenuSwiperComponent,
+
   },
   {
     path: "option-order",
@@ -53,6 +55,7 @@ const routes: Routes = [
   {
     path: "managerHome",
     component: ManagerHomeComponent,
+    canActivate: [EmployeeGuard],
   },
   {
     path: "selectedUserEntrance",

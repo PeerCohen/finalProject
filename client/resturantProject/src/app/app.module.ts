@@ -102,13 +102,7 @@ import { ListWorkerComponent } from './components/management/list-worker/list-wo
 import { ManagerWorkerComponent } from './components/management/manager-worker/manager-worker.component';
 import { AddWorkerComponent } from './components/management/add-worker/add-worker.component';
 import { EditWorkerDialogComponent } from './components/management/edit-worker-dialog/edit-worker-dialog.component';
-
-
-
-
-
-
-
+import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
 
 
 @NgModule({
@@ -212,7 +206,9 @@ import { EditWorkerDialogComponent } from './components/management/edit-worker-d
     NgxPayPalModule,
     GooglePlaceModule
   ],
-  providers: [],
+  providers: [VisitersGuard , EmployeeGuard ,ManagerGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
