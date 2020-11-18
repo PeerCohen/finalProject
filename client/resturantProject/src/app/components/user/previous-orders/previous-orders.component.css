@@ -1,16 +1,45 @@
-.star {
-    font-size: 1.5rem;
-    color: #e2d7a2
-}
-
-.filled {
-    color: gold;
-}
-
-.bad {
-    color: #d4cca5;
-}
-
-.filled.bad {
-    color: rgba(236, 222, 140, 0.863);
-}
+    .star {
+        font-size: 1.5rem;
+        color: #e2d7a2
+    }
+    
+    .filled {
+        color: gold;
+    }
+    
+    .bad {
+        color: #d4cca5;
+    }
+    
+    .filled.bad {
+        color: rgba(236, 222, 140, 0.863);
+    }
+    
+    .comment {
+        position: relative;
+        right: 77%;
+        border: solid;
+        border-color: #9a2d44;
+        font-size: larger;
+        width: max-content;
+        padding: 2%;
+        text-align: center;
+    }
+    
+    mat-form-field {
+        width: 250px;
+    }
+    
+    .sent-comment {
+        font-size: 17px;
+    }
+    
+    .title {
+        position: relative;
+        display: inline;
+        top: -39px;
+        background-color: white;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 6%;
+    }

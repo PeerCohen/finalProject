@@ -102,6 +102,8 @@ import { ListWorkerComponent } from './components/management/list-worker/list-wo
 import { ManagerWorkerComponent } from './components/management/manager-worker/manager-worker.component';
 import { AddWorkerComponent } from './components/management/add-worker/add-worker.component';
 import { EditWorkerDialogComponent } from './components/management/edit-worker-dialog/edit-worker-dialog.component';
+import { CategoryMenuSwiperComponent } from './components/user/category-menu-swiper/category-menu-swiper.component';
+import { WorkerComponent } from './components/management/worker/worker.component';
 
 
 
@@ -177,6 +179,8 @@ import { EditWorkerDialogComponent } from './components/management/edit-worker-d
     ManagerWorkerComponent,
     AddWorkerComponent,
     EditWorkerDialogComponent,
+    CategoryMenuSwiperComponent,
+    WorkerComponent,
     
 
 

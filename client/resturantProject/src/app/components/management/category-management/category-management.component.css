@@ -25,6 +25,7 @@
 }
 
 button {
+    font-weight: 600;
     font-size: 17px;
 }
 
@@ -45,7 +46,7 @@ button {
 }
 
 .category {
-    width: 83%;
+    width: 87%;
     border-bottom: solid;
     border-color: #8c0f29;
     border-bottom-width: thin;
