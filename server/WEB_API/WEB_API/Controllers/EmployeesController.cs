@@ -23,7 +23,7 @@ namespace WEB_API.Controllers
         [Route("login")]
         public EmployeesDTO Login([FromBody] LoginEmployee loginEmployee)
         {
-            return EmployeesBL.login(loginEmployee.Username,loginEmployee.Password);
+            return EmployeesBL.login(loginEmployee.Username, loginEmployee.Password);
         }
 
         // GET: api/Employees/5
@@ -35,24 +35,41 @@ namespace WEB_API.Controllers
         // POST: api/Employees
         [HttpPost]
         [Route("AddNewWorker")]
-        public void AddNewWorker([FromBody]EmployeesDTO employeesDTO)
+        public void AddNewWorker([FromBody] EmployeesDTO employeesDTO)
         {
             EmployeesBL.Add(employeesDTO);
         }
         [HttpPost]
         [Route("RemoveWorker")]
-        public void RemoveWorker([FromBody]EmployeesDTO employeesDTO)
+        public void RemoveWorker([FromBody] EmployeesDTO employeesDTO)
         {
             EmployeesBL.Delete(employeesDTO);
         }
-       
+
         [HttpPut]
         [Route("SineOut/{id}")]
-        public IHttpActionResult PutGetOut(int id, [FromBody]DateTime date)
+        public IHttpActionResult PutGetOut(int id, [FromBody] DateTime date)
         {
-            return Ok( EmployeesBL.SingOut(id, date));
+            return Ok(EmployeesBL.SingOut(id, date));
         }
-
+        [HttpPost]
+        [Route("AddShiftToNextWeekEmployee/{userId}")]
+        public IHttpActionResult PostShifttoNextWeekEmployee([FromBody] List<calandar> listCalandar, int userId)
+        {
+            return Ok(EmployeesBL.AddShifttoNextWeekEmployee(listCalandar, userId));
+        }
+        [Route("GetEmloyeesCalandarToManger")]
+        [HttpPut]
+        public IHttpActionResult PUTEmloyeesCalandarToManger([FromBody] DateTime startOfWeek)
+        {
+            return Ok(EmployeesBL.GetEmloyeesCalandarToManger(startOfWeek));
+        }
+        [HttpPost]
+        [Route("PutShiftToEmployee/{IdUser}")]
+        public IHttpActionResult POSTShiftToEmployee([FromBody] DateTime date, int IdUser)
+        {
+            return Ok(EmployeesBL.PutShiftToEmployee(date, IdUser));
+        }
         // DELETE: api/Employees/5
         public void Delete(int id)
         {

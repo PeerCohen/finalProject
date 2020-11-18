@@ -1,0 +1,32 @@
+<input type="date" #date  (change)="getCalandr(date.value)" name="" id="">
+<table>
+    <tr>
+        <th></th>
+        <th>ראשון</th>
+        <th>שני</th>
+        <th>שלישי</th>
+        <th>רביעי</th>
+        <th>חמישי</th>
+        <th>שישי</th>
+    </tr>
+    <tr>
+        <td><b>בוקר</b></td>
+        <td *ngFor="let item of listMorning; ">
+            <label >
+                <div *ngFor="let item1 of item.employeeName;let i = index;">{{item1}}
+                    <button *ngIf="item1!=''" (click)='editShirt(i,item)'> החלף </button>
+                </div>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td><b>ערב</b></td>
+        <td *ngFor="let item of listEvening; ">
+            <label >
+                <div *ngFor="let item1 of item.employeeName; let i = index;">{{item1}}
+                    <button *ngIf="item1!=''" (click)='editShirt(i,item)'> החלף </button>
+                </div>
+            </label>
+        <td>
+    </tr>
+</table>

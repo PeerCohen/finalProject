@@ -1,0 +1,25 @@
+<table>
+    <tr>
+        <th></th>
+        <th>ראשון</th>
+        <th>שני</th>
+        <th>שלישי</th>
+        <th>רביעי</th>
+        <th>חמישי</th>
+        <th>שישי</th>
+    </tr>
+    <tr>
+        <td><b>בוקר</b></td>
+        <td *ngFor="let item of calandar; let i = index;">
+        <div (click)="cangeShift('morningTrue', i)" *ngIf="item.shift==='morning' ">V</div>
+        <div (click)="cangeShift('morningTrue', i)" *ngIf="item.shift==='' || item.shift==='evening'">X</div>
+
+    </tr>
+    <tr>
+        <td><b>ערב</b></td>
+        <td *ngFor="let item of calandar; let i = index;">
+            <div *ngIf="item.shift==='evening'" (click)="cangeShift('eveningTrue', i)">V</div>
+            <div *ngIf="item.shift===''|| item.shift==='morning'" (click)="cangeShift('eveningTrue', i)">X</div>
+    </tr>
+</table>
+<button (click)='SendCalandar()'> סימתי לסמן </button>

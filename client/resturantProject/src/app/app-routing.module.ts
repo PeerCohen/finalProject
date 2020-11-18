@@ -19,6 +19,8 @@ import { OptionOrderComponent } from './components/user/option-order/option-orde
 import { MenuSwiperComponent } from './components/user/menu-swiper/menu-swiper.component';
 import { AppComponent } from './app.component';
 import { EmployeeGuard } from './Auth/auth.guard';
+import { CalandarToEmployeeComponent } from './components/Calandar/calandar-to-employee/calandar-to-employee.component';
+import { CalandarToManagerComponent } from './components/Calandar/calandar-to-manager/calandar-to-manager.component';
 
 
 
@@ -100,7 +102,15 @@ const routes: Routes = [
   },
   {
     path: "form-party",
-    component : FormPartyPageComponent, 
+    component : FormPartyPageComponent,
+  },
+  {
+    path: "CalandarToEmployee",
+    component : CalandarToEmployeeComponent,
+  },
+  {
+   path: "CalandarToManager",
+   component : CalandarToManagerComponent,
   }
 ];
 

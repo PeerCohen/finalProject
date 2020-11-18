@@ -103,7 +103,8 @@ import { ManagerWorkerComponent } from './components/management/manager-worker/m
 import { AddWorkerComponent } from './components/management/add-worker/add-worker.component';
 import { EditWorkerDialogComponent } from './components/management/edit-worker-dialog/edit-worker-dialog.component';
 import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
-
+import { CalandarToEmployeeComponent } from './components/Calandar/calandar-to-employee/calandar-to-employee.component';
+import { CalandarToManagerComponent } from './components/Calandar/calandar-to-manager/calandar-to-manager.component';
 
 @NgModule({
   declarations: [
@@ -171,6 +172,8 @@ import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
     ManagerWorkerComponent,
     AddWorkerComponent,
     EditWorkerDialogComponent,
+    CalandarToEmployeeComponent,
+    CalandarToManagerComponent,
     
 
 

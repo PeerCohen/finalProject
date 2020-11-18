@@ -45,6 +45,8 @@ export class SelectedUserEntranceComponent implements OnInit {
       res => {
         let ans = res;
         console.log('יצאה בשעה');
+        this.singIn = true;
+        this.userName = '';
         localStorage.setItem('isManager', 'false');
         localStorage.setItem('isEmployee', 'false');
         localStorage.setItem('isVisiter', 'false');
@@ -54,22 +56,3 @@ export class SelectedUserEntranceComponent implements OnInit {
 
 }
 
-
-// if (propaty.hasOwnProperty('idEmployeeType')) {
-//   // אם המשתמש הואא מסוג מנהל
-//   if ((propaty as Employee).IdEmployeeType === 1) {
-//     this.router.navigate(['/managerHome']);
-//     this.AuthService.Employee = true;
-//   }
-//   // אם המשתמש הוא מסוג עובד
-//   if ((propaty as Employee).IdEmployeeType === 2) {
-//     this.AuthService.Employee = true;
-//     this.router.navigate(['/workerHome']);
-//   }
-//   this.userService.CurrentUser = propaty;
-//   console.log('taht is  Employee');
-// }
-// // מאם המשתמש לא קיים במרכת
-// if (res === null) {
-//   alert('משתמש זה אינו קיים במערכת נא בידקו אם אם שם משתמש או סיסמא תקינים ....');
-// }

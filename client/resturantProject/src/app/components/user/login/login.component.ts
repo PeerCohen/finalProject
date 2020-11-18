@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
   loginData: Login = new Login();
 
   constructor(private _bottomSheet: MatBottomSheet, public userService: UserService, public router: Router, private _formBuilder: FormBuilder,
-    public AuthService: AuthService) { }
+    public AuthService: AuthService, 
+    ) { }
 
   ngOnInit(): void {
     this.formGroupLogin = this._formBuilder.group({
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.loginData.password = this.formGroupLogin.controls["password"].value;
     this.loginData.username = this.formGroupLogin.controls["username"].value;
     localStorage.clear();
-    this.userService.SingIn(this.loginData).subscribe(res => {
+    this.userService.SingIn(this.loginData).subscribe(async res => {
       const propaty = res;
       console.log(propaty)
       // אם המשתמש הוא מסוג עובד
@@ -73,6 +74,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       }
       console.log(this.userService.CurrentUser);
+      this.router.navigate(['/selectedUserEntrance']);
     });
   }
 
