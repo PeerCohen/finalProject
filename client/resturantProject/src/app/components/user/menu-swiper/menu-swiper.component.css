@@ -1,4 +1,29 @@
-body {
+.category-img {
+    width: 80%;
+}
+
+.container {
+    display: inline;
+    text-align: left;
+    position: absolute;
+}
+
+.name {
+    display: inline;
+    position: absolute;
+    top: 58px;
+    left: 25%;
+    color: white;
+    font-size: 115px;
+    font-weight: 700;
+}
+
+.image {
+    display: inline;
+}
+
+
+/* body {
     position: relative;
     height: 100%;
   }
@@ -23,7 +48,6 @@ body {
     font-size: 18px;
     background: #fff;
 
-    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -36,4 +60,4 @@ body {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-  }
+  } */

@@ -87,15 +87,11 @@ const routes: Routes = [
     path: "home",
     component: HomeComponent,
   },
-  // {
-  //   path:"main",
-  //   component:AppComponent
-  // },
-  // {
-  //   path: "",
-  //   redirectTo: "main",
-  //   pathMatch:"full"
-  // },
+  {
+    path: "",
+    redirectTo: "home",
+    pathMatch:"full"
+  },
   {
     path: "gift-card",
     component : GiftCardComponent, 

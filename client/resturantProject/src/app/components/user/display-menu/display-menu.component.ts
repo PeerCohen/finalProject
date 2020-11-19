@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayMenuComponent implements OnInit {
 
+  open: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  openDetalis() {
+    this.open = true;
   }
 
 }

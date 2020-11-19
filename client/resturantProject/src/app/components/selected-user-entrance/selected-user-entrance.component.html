@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
+<<<<<<< HEAD
         <span class="search"> 
             <mat-form-field>
                 <input matInput type="text" [(ngModel)]="value" >
@@ -16,5 +17,10 @@
         <button *ngIf='!singIn' mat-button class="user-enter" (click)="getOut()">יציאה</button>
         <span><a></a></span>
         <span><a></a></span>
+=======
+        <mat-icon>account_box</mat-icon>
+        <button mat-button class="user-enter" (click)="openBottomSheetSignin()">הרשם</button>
+        <button mat-button class="user-enter" (click)="openBottomSheetLogin()">התחבר</button>
+>>>>>>> af2a3cef50936a9b4adbd2427b4ba2d52459980f
     </mat-toolbar-row>
 </mat-toolbar>

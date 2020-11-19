@@ -102,9 +102,22 @@ import { ListWorkerComponent } from './components/management/list-worker/list-wo
 import { ManagerWorkerComponent } from './components/management/manager-worker/manager-worker.component';
 import { AddWorkerComponent } from './components/management/add-worker/add-worker.component';
 import { EditWorkerDialogComponent } from './components/management/edit-worker-dialog/edit-worker-dialog.component';
+<<<<<<< HEAD
 import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
 import { CalandarToEmployeeComponent } from './components/Calandar/calandar-to-employee/calandar-to-employee.component';
 import { CalandarToManagerComponent } from './components/Calandar/calandar-to-manager/calandar-to-manager.component';
+=======
+import { CategoryMenuSwiperComponent } from './components/user/category-menu-swiper/category-menu-swiper.component';
+import { WorkerComponent } from './components/management/worker/worker.component';
+
+
+
+
+
+
+
+
+>>>>>>> af2a3cef50936a9b4adbd2427b4ba2d52459980f
 
 @NgModule({
   declarations: [
@@ -172,8 +185,13 @@ import { CalandarToManagerComponent } from './components/Calandar/calandar-to-ma
     ManagerWorkerComponent,
     AddWorkerComponent,
     EditWorkerDialogComponent,
+<<<<<<< HEAD
     CalandarToEmployeeComponent,
     CalandarToManagerComponent,
+=======
+    CategoryMenuSwiperComponent,
+    WorkerComponent,
+>>>>>>> af2a3cef50936a9b4adbd2427b4ba2d52459980f
     
 
 

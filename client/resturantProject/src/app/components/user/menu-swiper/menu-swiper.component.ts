@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Swiper } from 'swiper/bundle';
-import { Navigation, Pagination } from 'swiper';
 import { MenuService } from 'src/app/shared/services/menu.service';
 import { CategoryService } from 'src/app/shared/services/category.service';
-Swiper.use([Navigation, Pagination]);
+
 
 
 @Component({
@@ -12,7 +10,7 @@ Swiper.use([Navigation, Pagination]);
   styleUrls: ['./menu-swiper.component.css', './swiper-bundle.min.css']
 })
 export class MenuSwiperComponent implements OnInit {
-  URL_IMG: string = "'../../assets/images/menu/'"
+  URL_IMG: string = "../../assets/images/menu/"
   InputIdCategory: any;
   nameCategory: string
   menuDetailsByCategory: any;

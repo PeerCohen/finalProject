@@ -1,0 +1,55 @@
+.main-sidebar {
+    width: 150%;
+}
+
+.categoryName {
+    font-size: 20px;
+    margin: 5%;
+    display: inline;
+}
+
+.delete {
+    display: inline;
+}
+
+.edit {
+    display: inline;
+}
+
+.categorydetails {
+    display: inline;
+}
+
+.new-category {
+    width: 130%;
+}
+
+button {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.addCategory {
+    width: 97%;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10%;
+}
+
+.image-div {
+    display: inline;
+}
+
+.image {
+    border-radius: 50%;
+    width: 40%;
+}
+
+.category {
+    width: 87%;
+    border-bottom: solid;
+    border-color: #8c0f29;
+    border-bottom-width: thin;
+    padding-bottom: 1%;
+    margin-bottom: 10%;
+}

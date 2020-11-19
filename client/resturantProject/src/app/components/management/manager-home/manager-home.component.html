@@ -1,35 +1,40 @@
+<div class="tool-up"></div>
 <app-logo></app-logo>
 <mat-tab-group mat-align-tabs="center">
     <mat-tab label="תפריט">
         <ng-template mat-tab-label>
-            ניהול תפריט
             <mat-icon>menu</mat-icon>
-        </ng-template>
-        <app-menu-management></app-menu-management>
-    </mat-tab>
-    <mat-tab label="תפריט">
-        <ng-template mat-tab-label>
             ניהול תפריט
-            <mat-icon>menu</mat-icon>
         </ng-template>
         <app-menu-management></app-menu-management>
     </mat-tab>
     <mat-tab label="עובדים">
         <ng-template mat-tab-label>
+            <mat-icon>groups</mat-icon>
             ניהול עובדים
-            <mat-icon>menu</mat-icon>
+        </ng-template>
+        <app-worker></app-worker>
+    </mat-tab>
+    <mat-tab label="עובדים">
+        <ng-template mat-tab-label>
+            סידור משמרות עובדים
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="עובדים">
+        <ng-template mat-tab-label>
+            נוכחות עובדים
         </ng-template>
     </mat-tab>
     <mat-tab label="תפריט">
         <ng-template mat-tab-label>
+            <mat-icon>favorite</mat-icon>
             מנות מומלצות
-            <mat-icon>menu</mat-icon>
         </ng-template>
     </mat-tab>
     <mat-tab label="תפריט">
         <ng-template mat-tab-label>
+            <mat-icon>thumb_up</mat-icon>
             חווית גולשים
-            <mat-icon>menu</mat-icon>
         </ng-template>
     </mat-tab>
 </mat-tab-group>

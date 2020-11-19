@@ -24,3 +24,14 @@
         </ngb-rating>
     </mat-card-actions>
 </mat-card>
+<div class="comment">
+    <div class="title">הוספת תגובה למערכת </div>
+    <div class="textarea">
+        <mat-form-field appearance="outline">
+            <mat-label>תוכן</mat-label>
+            <textarea matInput [(ngModel)]="commentContent"></textarea>
+        </mat-form-field>
+    </div>
+    <button class="sent-comment" mat-flat-button color="primary"> שלח תגובה </button>
+
+</div>

@@ -2,5 +2,44 @@
     border-bottom: solid;
     border-width: thin;
     border-color: darkgray;
-    /* border-bottom-color: #8c0f29; */
+}
+
+.text {
+    display: inline;
+    margin: 7%;
+    font-size: 20px;
+}
+
+.category-div {
+    border-bottom: solid;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    border-bottom-color: #9a2d44;
+}
+
+.category-div:hover {
+    background-color: #f4f4f4;
+    ;
+}
+
+.main_sidebar {
+    display: inline-block;
+    width: 18%;
+}
+
+.image-div {
+    display: inline;
+}
+
+.image {
+    border-radius: 50%;
+    width: 30%;
+}
+
+.cats_list {
+    height: 95px;
+}
+
+mat-list-option {
+    height: 95px;
 }

@@ -41,6 +41,8 @@ export class CategoryManagementComponent implements OnInit {
     return this.categoryService.getCategoryList().subscribe(
       (res: any) => {
         this.categoryList = res;
+        console.log(this.categoryList);
+        
       },
       (err) => {
         this.error = err;
