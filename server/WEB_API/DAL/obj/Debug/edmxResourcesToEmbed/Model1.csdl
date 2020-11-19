@@ -39,12 +39,13 @@
     <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Tz" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="IdEmployeeType" Type="Int32" />
     <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="CurrentEmployee" Relationship="Self.FK_CurrentEmployee_Employees" FromRole="Employees" ToRole="CurrentEmployee" />
     <NavigationProperty Name="EmployeesTypes" Relationship="Self.FK_Employees_EmployeesTypes" FromRole="Employees" ToRole="EmployeesTypes" />
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Employees" FromRole="Employees" ToRole="InventDose" />
+    <NavigationProperty Name="UserCalander" Relationship="Self.FK_UserCalander_Employees" FromRole="Employees" ToRole="UserCalander" />
   </EntityType>
   <EntityType Name="EmployeesTypes">
     <Key>
@@ -95,6 +96,7 @@
     <Property Name="Category" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDelete" Type="Boolean" />
     <NavigationProperty Name="Category1" Relationship="Self.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
     <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
     <NavigationProperty Name="Rating" Relationship="Self.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
@@ -117,6 +119,16 @@
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_StatusDose" FromRole="StatusDose" ToRole="InventDose" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Tables">
     <Key>
       <PropertyRef Name="Id" />
@@ -129,6 +141,19 @@
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Tables" FromRole="Tables" ToRole="InventDose" />
     <NavigationProperty Name="VipTables" Relationship="Self.FK_VipTables_Tables" FromRole="Tables" ToRole="VipTables" />
     <NavigationProperty Name="Visiters" Relationship="Self.FK_Visiters_Tables1" FromRole="Tables" ToRole="Visiters" />
+  </EntityType>
+  <EntityType Name="UserCalander">
+    <Key>
+      <PropertyRef Name="idUserCalandar" />
+    </Key>
+    <Property Name="idUserCalandar" Type="Int32" Nullable="false" />
+    <Property Name="IdUser" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="EntranceTime" Type="DateTime" Precision="3" />
+    <Property Name="LeavingTime" Type="DateTime" Precision="3" />
+    <Property Name="NumWorkingHours" Type="Int32" />
+    <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_UserCalander_Employees" FromRole="UserCalander" ToRole="Employees" />
   </EntityType>
   <EntityType Name="VipTables">
     <Key>
@@ -243,6 +268,18 @@
       </Principal>
       <Dependent Role="InventDose">
         <PropertyRef Name="IdEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCalander_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="UserCalander" Type="Self.UserCalander" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserCalander">
+        <PropertyRef Name="IdUser" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -365,7 +402,9 @@
     <EntitySet Name="Menu" EntityType="Self.Menu" />
     <EntitySet Name="Rating" EntityType="Self.Rating" />
     <EntitySet Name="StatusDose" EntityType="Self.StatusDose" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Tables" EntityType="Self.Tables" />
+    <EntitySet Name="UserCalander" EntityType="Self.UserCalander" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" />
     <EntitySet Name="Visiters" EntityType="Self.Visiters" />
     <AssociationSet Name="FK_Visiters_Address" Association="Self.FK_Visiters_Address">
@@ -395,6 +434,10 @@
     <AssociationSet Name="FK_InventDose_Employees" Association="Self.FK_InventDose_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCalander_Employees" Association="Self.FK_UserCalander_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="UserCalander" EntitySet="UserCalander" />
     </AssociationSet>
     <AssociationSet Name="FK_EmployeesTypes_EmployeesTypes" Association="Self.FK_EmployeesTypes_EmployeesTypes">
       <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
@@ -432,18 +475,46 @@
       <End Role="Tables" EntitySet="Tables" />
       <End Role="Visiters" EntitySet="Visiters" />
     </AssociationSet>
-    <EntitySet Name="UserCalandar" EntityType="restaurantModel.UserCalandar" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(restaurantModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(restaurantModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
-  <EntityType Name="UserCalandar">
-    <Key>
-      <PropertyRef Name="idUserCalandar" />
-    </Key>
-    <Property Name="idUserCalandar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdUser" Type="Int32" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
-    <Property Name="EntranceTime" Type="DateTime" Precision="3" />
-    <Property Name="LeavingTime" Type="DateTime" Precision="3" />
-    <Property Name="NumWorkingHours" Type="Int32" />
-    <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

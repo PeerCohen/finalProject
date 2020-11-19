@@ -51,7 +51,7 @@ namespace BL
                     (e => e.FirstName.Equals(name) && e.Password.Equals(password));
                 if (employees != null)
                 {
-                    UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
+                    UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                      u.IdUser == employees.Id && u.Date.Value.Year == DateTime.Today.Year &&
                      u.Date.Value.Month == DateTime.Today.Month && u.Date.Value.Day == DateTime.Today.Day);
                     // עם יש למשתמש יום ביומן בתאריך של היום רק לעדכן את שעת הכניסה 
@@ -64,11 +64,11 @@ namespace BL
                     // אם אין לו יום ביומן בתאריך של היום מוסיך תאריך חדש 
                     else
                     {
-                        UserCalandar userC = new UserCalandar();
+                        UserCalander userC = new UserCalander();
                         userC.IdUser = employees.Id;
                         userC.Date = DateTime.Today;
                         userC.EntranceTime = DateTime.Now;
-                        db.UserCalandar.Add(userC);
+                        db.UserCalander.Add(userC);
                         db.SaveChanges();
                     }
                     return EmployeesDTO.ConvertDonationToDTO(employees);
@@ -88,7 +88,7 @@ namespace BL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                      u.IdUser == id && u.Date.Value.Year == date.Year &&
                      u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
                 if (userCalandar != null)
@@ -109,7 +109,7 @@ namespace BL
             {
                 foreach (var item in calandarList)
                 {
-                    UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
+                    UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                                   u.IdUser == userID && u.Date.Value.Year == item.date.Year &&
                                   u.Date.Value.Month == item.date.Month && u.Date.Value.Day == item.date.Day);
                     if (userCalandar != null)
@@ -120,11 +120,11 @@ namespace BL
                     }
                     else
                     {
-                        UserCalandar userC = new UserCalandar();
+                        UserCalander userC = new UserCalander();
                         userC.IdUser = userID;
                         userC.Date =item.date;
                         userC.Shift = item.shift;
-                        db.UserCalandar.Add(userC);
+                        db.UserCalander.Add(userC);
                         db.SaveChanges();
                     }
 
@@ -138,7 +138,7 @@ namespace BL
             using (restaurantEntities db = new restaurantEntities())
             {
                 DateTime endOfWeek = startOfWeek.AddDays(6);
-                List<UserCalandar> lc = db.UserCalandar.Where(c => c.Date >= startOfWeek && c.Date <= endOfWeek ).ToList();
+                List<UserCalander> lc = db.UserCalander.Where(c => c.Date >= startOfWeek && c.Date <= endOfWeek ).ToList();
                 List<CalandarToManager> LCTM = new List<CalandarToManager>();
                 foreach (var item in lc)
                 {
@@ -201,7 +201,7 @@ namespace BL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                             u.IdUser == IdUser && u.Date.Value.Year == date.Year &&
                             u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
                 if (userCalandar != null)
