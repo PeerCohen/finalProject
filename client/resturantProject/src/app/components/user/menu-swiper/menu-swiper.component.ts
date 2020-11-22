@@ -12,7 +12,7 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 export class MenuSwiperComponent implements OnInit {
   URL_IMG: string = "../../assets/images/menu/"
   InputIdCategory: any;
-  nameCategory: string
+  nameCategory: string="תפריטי הבית"
   menuDetailsByCategory: any;
   error: any;
 

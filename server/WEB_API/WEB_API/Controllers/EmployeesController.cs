@@ -13,11 +13,12 @@ namespace WEB_API.Controllers
     [RoutePrefix("api/Employees")]
     public class EmployeesController : ApiController
     {
-        // GET: api/Employees
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        [HttpGet]
+        [Route("GetAllWorker")]
+        public List<EmployeesDTO> GetAll()
+        {
+            return EmployeesBL.GetAll();
+        }
 
         [HttpPost]
         [Route("login")]

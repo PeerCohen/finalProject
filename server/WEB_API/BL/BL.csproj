@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cast\CategoryCast.cs" />
+    <Compile Include="cast\CommentVisiterCast.cs" />
     <Compile Include="cast\CurrentEmployeeCast.cs" />
     <Compile Include="cast\EmployeesCast.cs" />
     <Compile Include="cast\EmployeesTypesCast.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="cast\VipTablesCast.cs" />
     <Compile Include="cast\VisitersCast.cs" />
     <Compile Include="CategoryBL.cs" />
+    <Compile Include="CommentVisiterBL.cs" />
     <Compile Include="CurrentEmployeeBL.cs" />
     <Compile Include="EmployeesBL.cs" />
     <Compile Include="EmployeesTypesBL.cs" />

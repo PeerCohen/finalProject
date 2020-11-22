@@ -37,6 +37,8 @@
         <AssociationConnector Association="restaurantModel.FK_Rating_Menu" ManuallyRouted="false" />
         <AssociationConnector Association="restaurantModel.FK_VipTables_Tables" ManuallyRouted="false" />
         <AssociationConnector Association="restaurantModel.FK_Visiters_Tables1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="restaurantModel.CommentVisiter" Width="1.5" PointX="8.25" PointY="13.125" />
+        <AssociationConnector Association="restaurantModel.FK_CommentVisiter_Visiters" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

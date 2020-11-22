@@ -22,7 +22,7 @@ export class VisitersOrderManagementService {
     // this.cart = this.userService.InventDose.inventDetails;
   }
 
-  idCurrentUser = this.userService.CurrentUser.id;
+  idCurrentUser = this.userService.CurrentUser?.id;
 
   removeProduct(idProduct){
 
@@ -37,7 +37,7 @@ export class VisitersOrderManagementService {
   addInvent() {
     var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
     var vis = new InventDose();
-    var user = JSON.parse(localStorage.getItem("currentUser")).ld;
+    var user = JSON.parse(localStorage.getItem("currentUser")).id;
     vis.idVisiter = user;
     vis.status = 3;
     vis.inventDetails = [];
@@ -56,7 +56,8 @@ export class VisitersOrderManagementService {
 
   addOrderToCart(item: Menu) {
     if (this.userService.CurrentUser) {
-      this.fullCart.push(item,this.castMenuToInvetDetails(item));
+      item.amount=0;
+      this.fullCart.push(item);
       this.cart.push(this.castMenuToInvetDetails(item));
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
       // let dose: InventDose = { ...this.userService.InventDose };
@@ -76,7 +77,7 @@ export class VisitersOrderManagementService {
     }
   }
   plusProductAmount(itemId) {
-    let item = this.cart.find(p => p.idMenu == itemId);
+    let item = this.fullCart.find(p => p.idMenu == itemId);
     if (item) {
       item.amount++;
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);

@@ -77,7 +77,8 @@ namespace BL
                 Visiters visiter = db.Visiters.FirstOrDefault(v => v.NameUser.Equals(name) && v.Password.Equals(password));
                 if (visiter != null)
                 {
-                    return visiter;
+                    
+                    return VisitersCast.ToDTO(visiter);
                 }
                 // אם המשתמש לא רשום במערכתת 
                 return null;
@@ -86,20 +87,28 @@ namespace BL
         // יציאה של עובד שומר במסד נתונים ת שעת היציאה של העובד 
         public static UserCalandarDTO SingOut(int id, DateTime date)
         {
+         
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
-                     u.IdUser == id && u.Date.Value.Year == date.Year &&
-                     u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
-                if (userCalandar != null)
+                Employees emm = db.Employees.FirstOrDefault(e => e.Id == id);
+                if(emm!= null)
                 {
-                    userCalandar.LeavingTime = date;
-                    db.Entry(userCalandar).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                    return UserCalandarC.ToDTO(userCalandar);
+                    UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
+                       u.IdUser == id && u.Date.Value.Year == date.Year &&
+                       u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
+                    if (userCalandar != null)
+                    {
+                        userCalandar.LeavingTime = date;
+                        db.Entry(userCalandar).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                        return UserCalandarC.ToDTO(userCalandar);
+                    }
+                    else
+                        return null;
+
                 }
-                else
-                    return null;
+                return null;
+               
             }
         }
         // שמירת המשמרות של עובד לתאריך מסוים 

@@ -56,6 +56,10 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CategoryDAL.cs" />
+    <Compile Include="CommentVisiter.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommentVisiterDAL.cs" />
     <Compile Include="CurrentEmployee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

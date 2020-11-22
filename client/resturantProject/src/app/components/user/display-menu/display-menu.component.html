@@ -2,7 +2,10 @@
     <div class="menu-by-categoty" (click)=openDetalis()>
         <app-menu-by-categoty style="display: inline;"></app-menu-by-categoty>
     </div>
-    <div class="menu-swiper" *ngIf="open">
+    <div class="div-display">
+        <img class="img-display" [src]="'../../assets/images/menu-swiper.jpg'" />
+    </div>
+    <div class="menu-swiper">
         <app-menu-swiper style="display: inline;"></app-menu-swiper>
     </div>
 </div>

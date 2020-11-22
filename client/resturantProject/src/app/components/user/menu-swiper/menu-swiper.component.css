@@ -4,21 +4,31 @@
 
 .container {
     display: inline;
-    text-align: left;
+    text-align: right;
     position: absolute;
+    top: 269px;
+    left: -7%;
 }
 
 .name {
-    display: inline;
-    position: absolute;
-    top: 58px;
-    left: 25%;
-    color: white;
-    font-size: 115px;
-    font-weight: 700;
+    display: block;
+    color: #414143;
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.img-logo {
+    width: 8%;
+}
+
+.img-title {
+    width: 10%;
 }
 
 .image {
+    position: relative;
+    left: 7%;
+    top: 61px;
     display: inline;
 }
 

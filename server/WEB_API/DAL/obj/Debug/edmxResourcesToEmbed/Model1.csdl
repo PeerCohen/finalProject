@@ -180,12 +180,13 @@
     <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Address" Type="Int32" />
     <Property Name="IdTable" Type="Int32" />
-    <Property Name="Mail" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="NameUser" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Address1" Relationship="Self.FK_Visiters_Address" FromRole="Visiters" ToRole="Address" />
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Visiters" FromRole="Visiters" ToRole="InventDose" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_Visiters_Tables1" FromRole="Visiters" ToRole="Tables" />
+    <NavigationProperty Name="CommentVisiter" Relationship="restaurantModel.FK_CommentVisiter_Visiters" FromRole="Visiters" ToRole="CommentVisiter" />
   </EntityType>
   <Association Name="FK_Visiters_Address">
     <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
@@ -505,6 +506,11 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="CommentVisiter" EntityType="restaurantModel.CommentVisiter" />
+    <AssociationSet Name="FK_CommentVisiter_Visiters" Association="restaurantModel.FK_CommentVisiter_Visiters">
+      <End Role="Visiters" EntitySet="Visiters" />
+      <End Role="CommentVisiter" EntitySet="CommentVisiter" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -517,4 +523,25 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="CommentVisiter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Comment" Type="String" MaxLength="4000" FixedLength="true" Unicode="true" />
+    <Property Name="idvisiter" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Visiters" Relationship="restaurantModel.FK_CommentVisiter_Visiters" FromRole="CommentVisiter" ToRole="Visiters" />
+  </EntityType>
+  <Association Name="FK_CommentVisiter_Visiters">
+    <End Type="restaurantModel.Visiters" Role="Visiters" Multiplicity="0..1" />
+    <End Type="restaurantModel.CommentVisiter" Role="CommentVisiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visiters">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="CommentVisiter">
+        <PropertyRef Name="idvisiter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -15,10 +15,10 @@ import { InventDetails } from 'src/app/shared/modals/invent-details';
 })
 export class MiniCartComponent implements OnInit {
 
- 
+
   itemsInCart: InventDetails[];
   menuDetails: Menu[] = [];
-  userName:string;
+  userName: string;
 
 
   constructor(
@@ -27,27 +27,30 @@ export class MiniCartComponent implements OnInit {
     private dialog: MatDialog,
   ) { }
 
-  
+
   ngOnInit(): void {
     this.visitersOrderManagementService.cart = this.userService.InventDose.inventDetails;
     this.itemsInCart = this.visitersOrderManagementService.fullCart;
-   var currentUser= this.userService.CurrentUser;  
-   this.userName= currentUser.firstName+ " " +currentUser.lastName ;
+    var currentUser = this.userService.CurrentUser;
+    this.userName = currentUser.firstName + " " + currentUser.lastName;
 
   }
 
-  addProduct(itemId) {
-    this.visitersOrderManagementService.plusProductAmount(itemId);
+  addProduct(item) {
+    item.amount++;
+    this.visitersOrderManagementService.plusProductAmount(item.idMenu);
   }
   addInvent() {
-    this.visitersOrderManagementService.addInvent().subscribe(res=>{
+    this.visitersOrderManagementService.addInvent().subscribe(res => {
     })
   }
-  lessProduct(itemId) {
-  this.visitersOrderManagementService.MinusProductAmount(itemId);
+  lessProduct(item) {
+    item.amount--;
+    this.visitersOrderManagementService.MinusProductAmount(item.idMenu);
   }
-  openDialogRemove(itemId) {
-    this.dialog.open(RemoveProductComponent, { data:  itemId});
+  openDialogRemove(itemId, index) {
+    var dialog = this.dialog.open(RemoveProductComponent, { data: itemId });
+    this.itemsInCart.splice(index, 1);
   }
 
 }

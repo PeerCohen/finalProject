@@ -118,6 +118,7 @@ import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
 
 @NgModule({
   declarations: [
+    WorkerComponent,
     AppComponent,
     MenuComponent,
     LoginComponent,

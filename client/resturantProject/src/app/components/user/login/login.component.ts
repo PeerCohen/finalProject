@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   loginData: Login = new Login();
 
   constructor(private _bottomSheet: MatBottomSheet, public userService: UserService, public router: Router, private _formBuilder: FormBuilder,
-    public AuthService: AuthService, 
-    ) { }
+    public AuthService: AuthService,
+  ) { }
 
   ngOnInit(): void {
     this.formGroupLogin = this._formBuilder.group({
@@ -46,19 +46,22 @@ export class LoginComponent implements OnInit {
     this.userService.SingIn(this.loginData).subscribe(async res => {
       const propaty = res;
       console.log(propaty)
+      debugger
       // אם המשתמש הוא מסוג עובד
       if (propaty.hasOwnProperty('idEmployeeType')) {
         // אם המשתמש הואא מסוג מנהל
-        if ((propaty as Employee).IdEmployeeType === 1) {
-        localStorage.setItem('isManager', 'true');
+        if ((propaty as Employee).idEmployeeType === 1) {
+          localStorage.setItem('isManager', 'true');
           this.router.navigate(['/managerHome']);
           this.AuthService.Employee = true;
+          return;
         }
         // אם המשתמש הוא מסוג עובד 
-        if ((propaty as Employee).IdEmployeeType === 2) {
+        if ((propaty as Employee).idEmployeeType === 2) {
           this.AuthService.Employee = true;
           localStorage.setItem('isEmployee', 'true');
           this.router.navigate(['/workerHome']);
+          return;
         }
         this.userService.CurrentUser = propaty;
         console.log('taht is  Employee');
@@ -74,7 +77,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       }
       console.log(this.userService.CurrentUser);
-      this.router.navigate(['/selectedUserEntrance']);
+      this.userService.ifSingIn();
+      window.location.reload();
     });
   }
 

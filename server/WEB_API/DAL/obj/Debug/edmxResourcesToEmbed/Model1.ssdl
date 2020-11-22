@@ -17,6 +17,14 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nameCategory" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="CommentVisiter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Comment" Type="nchar" MaxLength="4000" />
+    <Property Name="idvisiter" Type="int" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
   <EntityType Name="CurrentEmployee">
     <Key>
       <PropertyRef Name="Id" />
@@ -119,7 +127,7 @@
     <Key>
       <PropertyRef Name="idUserCalandar" />
     </Key>
-    <Property Name="idUserCalandar" Type="int" Nullable="false" />
+    <Property Name="idUserCalandar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdUser" Type="int" />
     <Property Name="Date" Type="date" />
     <Property Name="EntranceTime" Type="datetime" />
@@ -149,10 +157,22 @@
     <Property Name="Phone" Type="nchar" MaxLength="10" />
     <Property Name="Address" Type="int" />
     <Property Name="IdTable" Type="int" />
-    <Property Name="Mail" Type="nchar" MaxLength="10" />
+    <Property Name="Mail" Type="nchar" MaxLength="100" />
     <Property Name="Password" Type="nchar" MaxLength="10" />
     <Property Name="NameUser" Type="nchar" MaxLength="10" />
   </EntityType>
+  <Association Name="FK_CommentVisiter_Visiters">
+    <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />
+    <End Role="CommentVisiter" Type="Self.CommentVisiter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visiters">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="CommentVisiter">
+        <PropertyRef Name="idvisiter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_CurrentEmployee_Employees">
     <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
     <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="*" />
@@ -391,6 +411,7 @@
   <EntityContainer Name="restaurantModelStoreContainer">
     <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentVisiter" EntityType="Self.CommentVisiter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CurrentEmployee" EntityType="Self.CurrentEmployee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" Schema="dbo" store:Type="Tables" />
@@ -404,6 +425,10 @@
     <EntitySet Name="UserCalander" EntityType="Self.UserCalander" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Visiters" EntityType="Self.Visiters" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CommentVisiter_Visiters" Association="Self.FK_CommentVisiter_Visiters">
+      <End Role="Visiters" EntitySet="Visiters" />
+      <End Role="CommentVisiter" EntitySet="CommentVisiter" />
+    </AssociationSet>
     <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />

@@ -193,5 +193,14 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="restaurantModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="restaurantModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="CommentVisiter">
+      <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
+        <MappingFragment StoreEntitySet="CommentVisiter">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idvisiter" ColumnName="idvisiter" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

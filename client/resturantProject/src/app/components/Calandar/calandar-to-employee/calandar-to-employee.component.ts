@@ -35,7 +35,7 @@ export class CalandarToEmployeeComponent implements OnInit {
   ngOnInit(): void {
     var date = this.get_next_week_start();
     //  מילוי 6 ימים בשבוע כולל התארכם שלהם
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
       var newCalandar = new calanadar();
       newCalandar.date = date;
       date = moment(date).add(1, 'days').toDate();
