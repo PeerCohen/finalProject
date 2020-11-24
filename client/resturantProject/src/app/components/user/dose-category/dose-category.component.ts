@@ -33,6 +33,9 @@ export class DoseCategoryComponent implements OnInit {
     // this.nameCategory=this.categoryService.getNameCategoryById(this.InputIdCategory);
 
   }
+  checkChooseDose() {
+    return false;
+  }
   addToCart(item: Menu) {
     // debugger;
     // this.isMiniCartOpen=true;

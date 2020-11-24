@@ -7,7 +7,7 @@ html {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     direction: rtl;
-    text-align: right;
+    text-align: right !important;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
@@ -101,4 +101,14 @@ button:focus {
 
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 4px;
+}
+
+app-display-menu app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 18%;
+}
+
+app-menu app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 80%;
 }

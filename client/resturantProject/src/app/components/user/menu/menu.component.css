@@ -1,6 +1,6 @@
 .kind-option {
     width: 100%;
-    background: #8c1829;
+    background: #9a2d44;
     color: white;
     height: 60px;
     padding: 2%;
@@ -20,4 +20,13 @@
 .contact {
     color: white;
     margin-right: 0%
+}
+
+app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 80%;
+}
+
+.menu-by-categoty {
+    width: 24%;
 }

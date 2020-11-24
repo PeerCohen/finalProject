@@ -24,6 +24,7 @@ export class PreviousOrdersComponent implements OnInit {
   ngOnInit(): void {
     if(this.currentUser)
     {
+      debugger;
       this.visitersOrderManagementService.getAllOrder(this.currentUser).subscribe(res => {
         console.log(res);
            this.preOrders = res;

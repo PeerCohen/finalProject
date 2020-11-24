@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Menu } from 'src/app/shared/modals/menu';
 import { MenuService } from 'src/app/shared/services/menu.service';
@@ -10,8 +10,10 @@ import { MenuService } from 'src/app/shared/services/menu.service';
 })
 export class AddDoseCategoryComponent implements OnInit {
 
+  @Output() closeform = new EventEmitter();
   @Input() nameCategory: string;
   @Input() idCategory: number;
+  close: boolean = false;
   doseData: Menu = new Menu();
   formGroupAddDose: FormGroup;
   succeeded: any;
@@ -41,6 +43,9 @@ export class AddDoseCategoryComponent implements OnInit {
     });
 
     reader.readAsDataURL(file);
+  }
+  closeformAddDose(){
+      this.closeform.emit(this.close);
   }
   addDoseToCategory() {
     this.doseData.nameDose = this.formGroupAddDose.controls.nameDose.value;

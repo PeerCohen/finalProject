@@ -1,4 +1,4 @@
-<div class="wrapper-cart">
+<div *ngIf=!disableInvent class="wrapper-cart">
     <p class="title-cart">סיכום הזמנה</p>
     <p class="sub-title-cart">שם המזמין : {{userName}}</p>
     <hr>
@@ -25,5 +25,4 @@
         </mat-card>
     </div>
     <button mat-flat-button color="primary" (click)="addInvent()"> אשר הזמנה</button>
-
 </div>

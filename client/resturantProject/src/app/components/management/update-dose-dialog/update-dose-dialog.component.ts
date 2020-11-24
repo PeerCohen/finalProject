@@ -20,7 +20,7 @@ export class UpdateDoseDialogComponent implements OnInit {
     category: 0,
     image: "",
     ImageBase64:"",
-     amount:0
+     amount:1
   }
   Succeeded: any;
   error: any;

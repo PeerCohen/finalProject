@@ -9,16 +9,24 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class RemoveProductComponent implements OnInit {
 
-   id: number;
+  id: number;
+  index: number;
+  itemsInCart: any[];
   constructor(private visitersOrderManagementService: VisitersOrderManagementService,
-    @Inject(MAT_DIALOG_DATA) public data: number) {
-       this.id=data;
-     }
+    @Inject(MAT_DIALOG_DATA) public data: { itemId: number, index: number, close: boolean }) {
+    this.id = data.itemId;
+    this.index = data.index;
+  }
 
   ngOnInit(): void {
+    this.itemsInCart = this.visitersOrderManagementService.fullCart;
   }
 
   MinusProductAmount() {
-    this.visitersOrderManagementService.removeProduct(this.id);
+
+    this.itemsInCart.splice(this.index, 1);
+    this.visitersOrderManagementService.removeProduct(this.id);    
+    if (this.itemsInCart.length == 1)
+    this.data.close = true;
   }
 }

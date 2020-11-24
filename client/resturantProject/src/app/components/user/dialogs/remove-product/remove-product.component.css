@@ -1,0 +1,24 @@
+h1 {
+    display: inline;
+}
+
+mat-icon {
+    position: relative;
+    top: 6px;
+}
+
+.button-option {
+    position: relative;
+    left: 15%;
+}
+
+button {
+    margin: 5%;
+    height: 45px;
+    width: 58%;
+}
+
+.dialog {
+    text-align: center;
+    height: 212px;
+}

@@ -1,6 +1,26 @@
-.delete-action{
+.delete-action {
+    display: inline;
+    margin-left: 5%;
+}
+
+.edit-action {
     display: inline;
 }
-.edit-action{
-    display: inline;
+
+.delete-action button,
+.edit-action button {
+    font-weight: 600;
+}
+
+.action-button {
+    text-align: center;
+}
+
+.addDoseToCategory button {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+mat-card {
+    margin-top: 5%;
 }

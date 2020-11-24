@@ -1,6 +1,3 @@
-<!-- <app-star [starId]="'star'+detail.idMenu" [rating1]="hoverState||rating" (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)"> -->
-<!-- </app-star> -->
-
 <mat-card *ngFor="let order of preOrders">
     <mat-card-header>
         <div *ngFor="let detail of order.inventDetails">
@@ -13,7 +10,7 @@
     </mat-card-header>
     <mat-card-content>
         <div>
-            <!-- <img class='image' [src]="'../../assets/images/products/'+order.+'/'+item.image"> -->
+            <!-- <img class='image' [src]="'../../assets/images/products/'+order.+'/'+order.image"> -->
         </div>
     </mat-card-content>
     <mat-card-actions>

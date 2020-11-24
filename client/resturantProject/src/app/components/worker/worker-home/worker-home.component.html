@@ -15,9 +15,17 @@
         </ng-template>
     </mat-tab>
     <mat-tab label=" הזמנות מיוחדות לטיפול ">
+        <ng-template mat-tab-label>
+            <mat-icon>content_paste</mat-icon>
+            הזמנות מיוחדות לטיפול
+        </ng-template>
         <app-special-order></app-special-order>
     </mat-tab>
     <mat-tab label=" סידור משמרת שלי">
+        <ng-template mat-tab-label>
+            <mat-icon>book_online</mat-icon>
+            סידור המשמרות שלי
+        </ng-template>
         <app-calandar-to-employee></app-calandar-to-employee>
     </mat-tab>
 </mat-tab-group>

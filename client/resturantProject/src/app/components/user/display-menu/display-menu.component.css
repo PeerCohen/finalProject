@@ -19,3 +19,8 @@
     border-color: #8c1829;
     border-width: 17px;
 }
+
+app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 18%;
+}
