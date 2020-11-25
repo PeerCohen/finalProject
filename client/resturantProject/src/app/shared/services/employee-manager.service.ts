@@ -14,4 +14,5 @@ export class EmployeeManagerService {
   getAllVisiterOrder():Observable<InventDose[]>{
   return this.http.get<InventDose[]>(`${this.URL}/GetAllInventDose`);
 }
+
 }

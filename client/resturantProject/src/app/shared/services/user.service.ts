@@ -47,6 +47,9 @@ export class UserService {
     this.InventDose = this.invent; // update localStorage
   }
   constructor(public httpClient: HttpClient) { }
+  getVisiterById(idVisiter){
+    return this.httpClient.get<Visiters>(`${this.URL}GetVisiterById/${idVisiter}`)
+  }
 
   login(loginData): Observable<Visiters> {
     return this.httpClient.post<Visiters>(`${this.URL}login`, loginData);

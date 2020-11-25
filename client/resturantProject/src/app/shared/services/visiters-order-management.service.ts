@@ -5,6 +5,7 @@ import { Menu } from '../modals/menu';
 import { Subject, Observable } from 'rxjs';
 import { InventDose } from '../modals/invent-dose';
 import { InventDetails } from '../modals/invent-details';
+import { Comment } from '../modals/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,12 @@ export class VisitersOrderManagementService {
     let item = this.cart.find(p => p.idMenu == idProduct)
     debugger;
     //this.cart.remove(item);
+  }
+  addComment(comment:string): Observable<any>{
+    var newComment=new Comment();
+    newComment.Comment=comment;
+    newComment.idvisiter=this.idCurrentUser ;
+    return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,newComment);
   }
 
   getAllOrder(idVisiter: number): Observable<InventDose[]> {

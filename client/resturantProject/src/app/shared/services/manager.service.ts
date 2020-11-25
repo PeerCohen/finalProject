@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Employee } from '../modals/employee';
+import { UserCalandar } from '../modals/UserCalandar';
 
 
 @Injectable({
@@ -21,9 +22,13 @@ export class ManagerService {
   }
   addNewWorker(worker:Employee):Observable<Employee>{
     return this.http.post<Employee>(`${this.URL}/AddNewWorker/`,worker);
+    debugger;
   }
   getWorker():Observable<Employee[]>{
     return this.http.get<Employee[]>(`${this.URL}/GetAllWorker`);
+  }
+  getDailyWorker():Observable<UserCalandar[]>{
+    return this.http.get<UserCalandar[]>(`${this.URL}/GetDailyWorker`);
   }
   removeWorker(worker: Employee):Observable<Employee> {
     return this.http.post<Employee>(`${this.URL}/RemoveWorker/`,worker);

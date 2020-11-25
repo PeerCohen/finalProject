@@ -19,6 +19,12 @@ namespace WEB_API.Controllers
         {
             return EmployeesBL.GetAll();
         }
+        [HttpGet]
+        [Route("GetDailyWorker")]
+        public object GetDailyWorker()
+        {
+            return EmployeesBL.getDailyWorker();
+        }
 
         [HttpPost]
         [Route("login")]

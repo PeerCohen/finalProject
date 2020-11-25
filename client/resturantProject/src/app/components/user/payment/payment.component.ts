@@ -2,6 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   IPayPalConfig,
   ICreateOrderRequest
@@ -14,6 +15,8 @@ import {
 })
 
 export class PaymentComponent implements OnInit {
+  constructor(public router:Router){}
+    
 
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean;
@@ -61,4 +64,11 @@ export class PaymentComponent implements OnInit {
     };
   }
 
+  backHome(){
+    this.router.navigate(['/home'])
+  }
+  payment(){
+    alert("בוצע בהצלחה")
+    this.router.navigate(['/home'])
+  }
 }

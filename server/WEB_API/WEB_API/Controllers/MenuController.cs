@@ -27,9 +27,11 @@ namespace WEB_API.Controllers
             return MenuBL.GetByCategory(id);
         }
         // GET: api/Menu/5
-        public string Get(int id)
+        [HttpGet]
+        [Route("GetMenuById/{id}")]
+        public MenuDTO GetById(int id)
         {
-            return "value";
+            return MenuBL.GetById(id);
         }
 
         // POST: api/Menu

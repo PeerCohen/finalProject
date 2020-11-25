@@ -28,7 +28,7 @@ namespace WEB_API.Controllers
 
         // POST: api/CommentVisiter
         [HttpPost]
-        [Route("AddCommentbyId")]
+        [Route("AddComment")]
         public void AddComment([FromBody]CommentVisiterDTO commentVisiter)
         {
             CommentVisiterBL.Add(commentVisiter);

@@ -27,12 +27,12 @@ namespace DAL
             }
         }
         //get by id
-        public static List<Visiters> GetById(int id)
+        public static Visiters GetById(int id)
         {
 
             using (restaurantEntities db = new restaurantEntities())
             {
-                return db.Visiters.Where(v => v.ld == id).ToList();
+                return db.Visiters.FirstOrDefault(v => v.ld == id);
             }
 
 

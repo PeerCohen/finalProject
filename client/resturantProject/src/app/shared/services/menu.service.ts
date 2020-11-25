@@ -16,6 +16,9 @@ export class MenuService {
   // getAllMenuDetails():Observable<Menu> {
   //   return this.http.get<Menu>(`${this.URL}/GetAllMenuDetails`);
   // }
+  getMenuById(id:number):Observable<Menu> {
+    return this.http.get<Menu>(`${this.URL}/GetMenuById/${id}`);
+  }
   getMenuByCategory(id:number):Observable<Menu[]> {
     return this.http.get<Menu[]>(`${this.URL}/GetMenuByCategory/${id}`);
   }

@@ -17,21 +17,34 @@
             <td class="shift1"><b>משמרת א'</b></td>
             <td *ngFor="let item of listMorning; ">
                 <label>
-                <div *ngFor="let item1 of item.employeeName;let i = index;">{{item1}}
-                    <button mat-flat-button color="primary" *ngIf="item1!=''" (click)='editShirt(i,item)'><mat-icon>vertical_align_bottom</mat-icon> החלף </button>
-                </div>
-            </label>
+                    <div *ngFor="let item1 of item.employeeName;let i = index;">{{item1}}
+                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='deleteShirt()'>
+                            <mat-icon>clear</mat-icon> בטל
+                        </button>
+                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='editShirt(i,item)'>
+                            <mat-icon>vertical_align_bottom</mat-icon> החלף
+                        </button>
+                    </div>
+                </label>
             </td>
         </tr>
         <tr>
             <td class="shift2"><b>משמרת ב'</b></td>
             <td *ngFor="let item of listEvening; ">
                 <label>
-                <div *ngFor="let item1 of item.employeeName; let i = index;">{{item1}}
-                    <button mat-flat-button color="primary" *ngIf="item1!=''" (click)='editShirt(i,item)'><mat-icon>vertical_align_top</mat-icon> החלף </button>
-                </div>
-            </label>
+                    <div *ngFor="let item1 of item.employeeName; let i = index;">{{item1}}
+                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='deleteShirt()'>
+                            <mat-icon>clear</mat-icon> בטל
+                        </button>
+                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='editShirt(i,item)'>
+                            <mat-icon>vertical_align_top</mat-icon> החלף
+                        </button>
+                    </div>
+                </label>
                 <td>
         </tr>
     </table>
+    <button class="finish" mat-flat-button color="primary" (click)='finish()'>
+        הנפקת דוח שעות שבועי , סיום
+    </button>
 </div>

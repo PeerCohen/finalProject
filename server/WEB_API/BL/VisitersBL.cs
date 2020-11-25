@@ -27,9 +27,9 @@ namespace BL
 
 
 
-        public static List<VisitersDTO> GetById(int id)
+        public static VisitersDTO GetById(int id)
         {
-            return VisitersCast.ListToDTO(VisitersDAL.GetById(id));
+            return VisitersCast.ToDTO(VisitersDAL.GetById(id));
         }
         public static VisitersDTO Add(VisitersDTO visiters)
         {
