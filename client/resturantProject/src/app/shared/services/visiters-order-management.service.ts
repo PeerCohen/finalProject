@@ -35,6 +35,7 @@ export class VisitersOrderManagementService {
     var newComment=new Comment();
     newComment.Comment=comment;
     newComment.idvisiter=this.idCurrentUser ;
+    debugger;
     return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,newComment);
   }
 

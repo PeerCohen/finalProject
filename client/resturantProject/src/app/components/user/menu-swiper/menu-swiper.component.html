@@ -1,9 +1,21 @@
+<div *ngIf="isNameCategory" class="name">{{nameCategory}}
+    <img class="img-category" [src]="' ../../assets/images/display-menu/'+nameCategory+'.jpg'">
+</div>
+<div *ngIf="!isNameCategory" class="name-menu">
+    <div class="menu">התפריט שלנו</div>
+    <img class="img-menu" [src]="' ../../assets/images/display-menu/תפריט.png'">
+    <div class="galery"> <button mat-flat-button color=primary>
+        <mat-icon>photo_library</mat-icon>לגלריה שלנו
+    </button>
+    </div>
+
+</div>
 <!-- <div class="container">
     <div>
         <div class="image">
-            <img class="img-title" [src]="'../../assets/images/caption/captionImg.PNG'" />
+            
         </div> 
-<div class="name">{{nameCategory}}</div>
+
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">

@@ -41,8 +41,9 @@ export class CustomersOrderComponent implements OnInit {
   getVisiterName(idVisiter){
     this.userService.getVisiterById(idVisiter).subscribe(
       (res: any) => {
+        debugger;
         this.visiterOrder = res;
-        console.log(this.visiterOrder);        
+        return this.visiterOrder.name;     
       },
       (err) => {
         this.error = err;

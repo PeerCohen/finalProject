@@ -28,6 +28,7 @@ namespace DAL
 
 
         }
+
         //add
         public static void Add(Category Category)
         {

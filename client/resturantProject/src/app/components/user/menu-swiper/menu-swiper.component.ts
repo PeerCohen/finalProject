@@ -12,7 +12,8 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 export class MenuSwiperComponent implements OnInit {
   URL_IMG: string = "../../assets/images/menu/"
   InputIdCategory: any;
-  nameCategory: string="תפריטי הבית"
+  nameCategory: string;
+  isNameCategory:boolean=false;
   menuDetailsByCategory: any;
   error: any;
 
@@ -41,6 +42,7 @@ export class MenuSwiperComponent implements OnInit {
     this.categoryService.getNameCategoryById(this.InputIdCategory).subscribe(
       (res: any) => {
         this.nameCategory = res.nameCategory;
+        this.isNameCategory=true;
         console.log(this.nameCategory)
       },
       (err) => {

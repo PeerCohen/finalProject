@@ -11,10 +11,59 @@
 }
 
 .name {
+    position: absolute;
+    top: 252px;
+    left: 40%;
     display: block;
     color: #414143;
     font-size: 56px;
     font-weight: 600;
+}
+
+mat-icon {
+    margin-left: 5%;
+}
+
+.menu {
+    position: relative;
+    text-align: center;
+    left: 28%;
+    top: -13px;
+    height: 53px;
+    background-color: #363638;
+    color: #f1f1f3;
+    width: 130%;
+    padding: 5%;
+}
+
+.galery {
+    position: relative;
+    top: 260px;
+    left: 2%;
+}
+
+.galery button {
+    width: 80%;
+    font-size: 20px;
+    color: #ededef;
+    font-weight: 600;
+}
+
+.name-menu {
+    position: absolute;
+    top: 252px;
+    left: 40%;
+    display: block;
+    color: #414143;
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.img-menu {
+    width: 128%;
+    position: absolute;
+    top: 40px;
+    left: -2px;
 }
 
 .img-logo {

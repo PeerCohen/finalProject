@@ -29,6 +29,11 @@ namespace BL
         {
             return MenuCast.ToDTO(MenuDAL.GetById(id));
         }
+        public static List<MenuDTO> GetByCategoryBestRating(int id)
+        {
+            var listCategoryMenu = GetByCategory(id);
+            return listCategoryMenu.Where(r => r.RateDose == 5).ToList();
+        }
         public static List<MenuDTO> GetByCategory(int id)
         {
             return MenuCast.ListToDTO(MenuDAL.GetByCategory(id));
@@ -38,7 +43,7 @@ namespace BL
             int index = menu.ImageBase64.IndexOf(',');
             if (index > 0)
             {
-                menu.ImageBase64 = menu.ImageBase64.Substring(index+1);
+                menu.ImageBase64 = menu.ImageBase64.Substring(index + 1);
             }
             var bytes = Convert.FromBase64String(menu.ImageBase64);
             using (var imageFile = new FileStream(@"C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\src\images\products\" + menu.Category + @"\" + menu.image, FileMode.Create))

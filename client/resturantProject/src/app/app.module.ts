@@ -107,6 +107,9 @@ import { WorkerComponent } from './components/management/worker/worker.component
 import { CalandarToEmployeeComponent } from './components/Calandar/calandar-to-employee/calandar-to-employee.component';
 import { CalandarToManagerComponent } from './components/Calandar/calandar-to-manager/calandar-to-manager.component';
 import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
+import { FavoriteDoseComponent } from './components/management/favorite-dose/favorite-dose.component';
+import { DialogSendingComponent } from './components/user/dialog-sending/dialog-sending.component';
+import { DialogSaveTableComponent } from './components/user/dialog-save-table/dialog-save-table.component';
 
 
 
@@ -185,6 +188,9 @@ import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
     EditWorkerDialogComponent,
     CalandarToEmployeeComponent,
     CalandarToManagerComponent,
+    FavoriteDoseComponent,
+    DialogSendingComponent,
+    DialogSaveTableComponent,
     
 
 

@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('isManager', 'true');
           this.router.navigate(['/managerHome']);
           this.AuthService.Employee = true;
+          this.userService.CurrentUser = propaty;
           return;
         }
         // אם המשתמש הוא מסוג עובד 
@@ -61,6 +62,7 @@ export class LoginComponent implements OnInit {
           this.AuthService.Employee = true;
           localStorage.setItem('isEmployee', 'true');
           this.router.navigate(['/workerHome']);
+          this.userService.CurrentUser = propaty;
           return;
         }
         this.userService.CurrentUser = propaty;

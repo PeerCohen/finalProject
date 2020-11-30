@@ -26,6 +26,13 @@ namespace WEB_API.Controllers
         {
             return MenuBL.GetByCategory(id);
         }
+        // קבלת מנות ממומלצות לפי קטגוריה
+        [HttpGet]
+        [Route("GetMenuByRating/{id}")]
+        public List<MenuDTO> GetBestRating(int id)
+        {
+            return MenuBL.GetByCategoryBestRating(id);
+        }
         // GET: api/Menu/5
         [HttpGet]
         [Route("GetMenuById/{id}")]

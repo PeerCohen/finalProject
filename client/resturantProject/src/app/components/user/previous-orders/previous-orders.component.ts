@@ -19,11 +19,10 @@ export class PreviousOrdersComponent implements OnInit {
 
   constructor(private visitersOrderManagementService: VisitersOrderManagementService,
     public userService: UserService) { }
-  currentUser = JSON.parse(localStorage.getItem("currentUser"))?.ld;
+  currentUser = JSON.parse(localStorage.getItem("currentUser"))?.id;
 
   ngOnInit(): void {
     if (this.currentUser) {
-      debugger;
       this.visitersOrderManagementService.getAllOrder(this.currentUser).subscribe(res => {
         console.log(res);
         this.preOrders = res;
