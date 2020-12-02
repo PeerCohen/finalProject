@@ -29,7 +29,10 @@ export class CategoryManagementComponent implements OnInit {
     this.getCategoryList()
   }
   openAddCategoryDialog() {
-    this.dialog.open(AddCategoryDialogComponent);
+   var dialog= this.dialog.open(AddCategoryDialogComponent);
+   dialog.afterClosed().subscribe(res=>{
+     this.getCategoryList();
+   })
   }
   openDeleteCategoryDialog(dataCategory) {
     this.dialog.open(DeleteCategoryDialogComponent, { data: dataCategory });

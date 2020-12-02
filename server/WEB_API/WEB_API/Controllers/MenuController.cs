@@ -26,10 +26,19 @@ namespace WEB_API.Controllers
         {
             return MenuBL.GetByCategory(id);
         }
-        // GET: api/Menu/5
-        public string Get(int id)
+        // קבלת מנות ממומלצות לפי קטגוריה
+        [HttpGet]
+        [Route("GetMenuByRating/{id}")]
+        public List<MenuDTO> GetBestRating(int id)
         {
-            return "value";
+            return MenuBL.GetByCategoryBestRating(id);
+        }
+        // GET: api/Menu/5
+        [HttpGet]
+        [Route("GetMenuById/{id}")]
+        public MenuDTO GetById(int id)
+        {
+            return MenuBL.GetById(id);
         }
 
         // POST: api/Menu

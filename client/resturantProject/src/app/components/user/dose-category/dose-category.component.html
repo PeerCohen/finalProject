@@ -14,7 +14,7 @@
         <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button (click)="addToCart(item)" class="add-to-cart">הוספה לסל
+        <button mat-flat-button (click)="addToCart(item)" class="add-to-cart" [disabled]="checkChooseDose()">הוספה לסל
            </button>
     </mat-card-actions>
 </mat-card>

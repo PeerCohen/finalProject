@@ -57,6 +57,7 @@ export class SingInUserComponent implements OnInit {
           alert("הנך משתמש רשום, אנא התחבר");
         else
           alert("נרשמת בהצלחה לאתר")
+          window.location.reload();
       }
     )
     this._bottomSheet.dismiss()

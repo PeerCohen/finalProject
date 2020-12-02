@@ -9,3 +9,18 @@
 .dose-category-order {
     display: inline;
 }
+
+.img-display {
+    width: 71%;
+    position: absolute;
+    top: 100px;
+    left: 3%;
+    border: solid;
+    border-color: #8c1829;
+    border-width: 17px;
+}
+
+app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 18%;
+}

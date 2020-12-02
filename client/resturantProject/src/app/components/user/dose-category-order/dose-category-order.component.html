@@ -1,18 +1,41 @@
-<mat-card *ngFor="let item of menuDetailsByCategory">
-    <mat-card-header>
-        <mat-card-title>{{item.nameDose}}</mat-card-title>
-        <mat-card-subtitle>
-            {{item.description}} {{' ₪ '+item.price}}
-        </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <div>
-            <img class='image' [src]="'http://localhost:51437/src/images/products/'+item.category+'/'+item.image">
-        </div>
-        <hr>
-        <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-flat-button color="primary" (click)="goToOptionOrder()">הזמן כעת </button>
-    </mat-card-actions>
-</mat-card>
+<!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div> -->
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" *ngFor="let item of menuDetailsByCategory">
+    <div class="carousel-inner">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{item.nameDose}}</mat-card-title>
+                <mat-card-subtitle>
+                    {{item.description}} {{' ₪ '+item.price}}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <img class='image' [src]="'http://localhost:51437/src/images/products/'+item.category+'/'+item.image">
+                </div>
+                <hr>
+                <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="primary" (click)="goToOptionOrder()">הזמן כעת </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

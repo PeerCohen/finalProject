@@ -13,7 +13,7 @@ namespace BL.cast
     class UserCalandarC
     {
         //one to dto
-        public static UserCalandarDTO ToDTO(UserCalandar item)
+        public static UserCalandarDTO ToDTO(UserCalander item)
         {
             return new UserCalandarDTO()
             {
@@ -28,14 +28,14 @@ namespace BL.cast
         }
 
         //list to dto
-        public static List<UserCalandarDTO> ListToDTO(List<UserCalandar> list)
+        public static List<UserCalandarDTO> ListToDTO(List<UserCalander> list)
         {
             return list.Select(x => ToDTO(x)).ToList();
         }
         //one to dal
-        public static UserCalandar ToDAL(UserCalandarDTO item)
+        public static UserCalander ToDAL(UserCalandarDTO item)
         {
-            return new UserCalandar()
+            return new UserCalander()
             {
                 idUserCalandar = item.idUserCalandar,
                 IdUser = item.IdUser,
@@ -47,7 +47,7 @@ namespace BL.cast
             };
         }
         //list to dal
-        public static List<UserCalandar> ListToDAL(List<UserCalandarDTO> list)
+        public static List<UserCalander> ListToDAL(List<UserCalandarDTO> list)
         {
             return list.Select(x => ToDAL(x)).ToList();
         }

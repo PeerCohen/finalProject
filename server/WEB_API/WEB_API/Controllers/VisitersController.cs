@@ -13,12 +13,14 @@ namespace WEB_API.Controllers
     [RoutePrefix("api/Visiters")]
     public class VisitersController : ApiController
     {
-       
-        // GET: api/Visiters
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+
+        //GET: api/Visiters
+        [HttpGet]
+        [Route("GetVisiterById/{id}")]
+        public VisitersDTO Get(int id)
+        {
+            return VisitersBL.GetById(id);
+        }
         //רישום לקוח חדש למאגר הלקוחות
         [HttpPost]
         [Route("SignUp")]
@@ -59,5 +61,6 @@ namespace WEB_API.Controllers
         public void Delete(int id)
         {
         }
+
     }
 }

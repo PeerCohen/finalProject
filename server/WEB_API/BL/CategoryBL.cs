@@ -30,6 +30,7 @@ namespace BL
         {
             return CategoryCast.ToDTO(CategoryDAL.GetById(id));
         }
+     
         public static void Add(CategoryDTO category)
         {
             CategoryDAL.Add(CategoryCast.ToDAL(category));

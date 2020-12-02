@@ -16,6 +16,12 @@ export class MenuService {
   // getAllMenuDetails():Observable<Menu> {
   //   return this.http.get<Menu>(`${this.URL}/GetAllMenuDetails`);
   // }
+  getRatingByCategory(id:number):Observable<Menu[]> {
+    return this.http.get<Menu[]>(`${this.URL}/GetMenuByRating/${id}`);
+  }
+  getMenuById(id:number):Observable<Menu> {
+    return this.http.get<Menu>(`${this.URL}/GetMenuById/${id}`);
+  }
   getMenuByCategory(id:number):Observable<Menu[]> {
     return this.http.get<Menu[]>(`${this.URL}/GetMenuByCategory/${id}`);
   }

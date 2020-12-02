@@ -1,9 +1,14 @@
-.search {
+.user-enter {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.userName {
     position: absolute;
     left: 3%;
 }
 
-.user-enter {
-    font-size: 17px;
-    font-weight: 600;
+.userName mat-icon {
+    position: relative;
+    top: 6px;
 }

@@ -1,22 +1,58 @@
-<mat-card *ngFor="let worker of listWorker">
-    <mat-card-header>
-        <div mat-card-avatar class="img-profile"></div>
-        <mat-card-title></mat-card-title>
-        <mat-card-subtitle>
-        </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-    </mat-card-content>
-    <mat-card-actions>
-        <div class="delete-action">
-            <button mat-button color="primary" (click)="deleteWorker(worker)">
-              הסרת עובד
-            </button>
+<div class="wapper">
+    <div class="new-worker">
+        <button mat-flat-button color="primary" *ngIf="!isOpenNewAddWorkerForm" (click)="openNewAddWorkerForm()">
+            הוספת עובד חדש
+            <mat-icon>person_add</mat-icon>
+        </button>
+        <div *ngIf="isOpenNewAddWorkerForm">
+            <app-add-worker (closeform)="getEmit($event)"></app-add-worker>
         </div>
-        <div class="edit-action">
-            <button mat-button color="primary" (click)="editWorker(worker)">
-                 עריכה
-            </button>
-        </div>
-    </mat-card-actions>
-</mat-card>
+    </div>
+    <table>
+        <tr class="title">
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>ת.ז</th>
+            <th>פלאפון</th>
+            <th>כתובת</th>
+            <th>דרג</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let worker of listWorker">
+            <td>
+                <div>{{worker.firstName}}</div>
+            </td>
+            <td>
+                <div>{{worker.lastName}}</div>
+            </td>
+            <td>
+                <div>{{worker.tz}}</div>
+            </td>
+            <td>
+                <div>{{worker.phone}}</div>
+            </td>
+            <td>
+                <div>{{worker.address}}</div>
+            </td>
+            <td>
+                <div>{{worker.idEmployeeType}}</div>
+            </td>
+
+            <td>
+                <div class="delete-action">
+                    <button mat-flat-button color="primary" (click)="deleteWorker(worker)">
+                        הסרה
+                    </button>
+                </div>
+            </td>
+            <td>
+                <div class="edit-action">
+                    <button mat-flat-button color="primary" (click)="editWorker(worker)">
+                        עריכה
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

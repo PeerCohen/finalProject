@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Address } from 'ngx-google-places-autocomplete/objects/address';
+import { DialogSaveTableComponent } from '../dialog-save-table/dialog-save-table.component';
+import { DialogSendingComponent } from '../dialog-sending/dialog-sending.component';
 
 @Component({
   selector: 'app-option-order',
@@ -8,22 +12,34 @@ import { Component, OnInit } from '@angular/core';
 export class OptionOrderComponent implements OnInit {
   optionOrder: string;
   isOpen: boolean = false;
+  addressVisiter: any;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   setTableOrder() {
-    this.optionOrder = "הזמנת שולחן";
-    this.isOpen = true;
+    const dialogRef = this.dialog.open(DialogSaveTableComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      this.addressVisiter = result
+      this.optionOrder = "הזמנת שולחן";
+      this.isOpen = true;
+    });
+
   }
   setSending() {
-    this.optionOrder = "משלוח";
-    this.isOpen = true;
+    const dialogRef = this.dialog.open(DialogSendingComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      this.addressVisiter = result
+      this.optionOrder = "משלוח";
+      this.isOpen = true;
+    });
+
 
   }
   setTakeAway() {
+
     this.optionOrder = "איסוף מהסניף";
     this.isOpen = true;
   }

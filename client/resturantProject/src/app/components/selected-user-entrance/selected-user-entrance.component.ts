@@ -14,25 +14,15 @@ import { OpenBottomSheetSigninComponent } from '../user/open-bottom-sheet-signin
 export class SelectedUserEntranceComponent implements OnInit {
 
   constructor(private _bottomSheet: MatBottomSheet,
-    private userService: UserService,
+    public userService: UserService,
     private authService: AuthService,
   ) { }
   value = '';
-  userName = '';
-  singIn = false;
 
   ngOnInit(): void {
+   this.userService.singIn=this.userService.CurrentUser?true:false;
     // אם כבר היתה כניסה היום או לא
-    if (localStorage.getItem('isManager') === 'true' ||
-      localStorage.getItem('isEmployee') === 'true' || localStorage.getItem('isManager') === 'true') { 
-        this.singIn = true;
-      }
-    // שמירת שם משתמש כדי להציג את שמו למעלה 
-    if (this.userService.CurrentUser.hasOwnProperty('idEmployeeType')) {
-      this.userName = this.userService.CurrentUser.firstName;
-    } else {
-      this.userName = this.userService.CurrentUser.firstName;
-    }
+ this.userService.ifSingIn();
   }
   openBottomSheetSignin() {
     this._bottomSheet.open(OpenBottomSheetSigninComponent);
@@ -41,15 +31,18 @@ export class SelectedUserEntranceComponent implements OnInit {
     this._bottomSheet.open(OpenBottomSheetLoginComponent);
   }
   getOut() {
+    debugger
     this.userService.getOut(new Date()).subscribe(
       res => {
         let ans = res;
         console.log('יצאה בשעה');
-        this.singIn = true;
-        this.userName = '';
+        this.userService.singIn = true;
+        this.userService.userName = '';
         localStorage.setItem('isManager', 'false');
         localStorage.setItem('isEmployee', 'false');
         localStorage.setItem('isVisiter', 'false');
+        localStorage.clear();
+        window.location.reload();
       }
     );
   }

@@ -11,21 +11,29 @@ import { InventDose } from 'src/app/shared/modals/invent-dose';
   styleUrls: ['./previous-orders.component.css']
 })
 export class PreviousOrdersComponent implements OnInit {
-  currentRate :number;
+  currentRate: number;
   preOrders: InventDose[] = [];
-  commentContent:string;
+  commentContent: string;
 
 
 
   constructor(private visitersOrderManagementService: VisitersOrderManagementService,
     public userService: UserService) { }
-    currentUser = JSON.parse(localStorage.getItem("currentUser")).ld;
+  currentUser = JSON.parse(localStorage.getItem("currentUser"))?.id;
 
   ngOnInit(): void {
-    this.visitersOrderManagementService.getAllOrder(this.currentUser).subscribe(res => {
-   console.log(res);
-      this.preOrders = res;
+    if (this.currentUser) {
+      this.visitersOrderManagementService.getAllOrder(this.currentUser).subscribe(res => {
+        console.log(res);
+        this.preOrders = res;
+      })
+    }
+
+
+  }
+  sendComment() {
+    this.visitersOrderManagementService.addComment(this.commentContent).subscribe(res => {
+      console.log(res);
     })
   }
-
 }

@@ -1,5 +1,5 @@
 <div class="container">
-    <ng-container *ngIf=!isOpen>
+    <ng-container *ngIf="!isOpen">
         <div class="option">
             <div class="img">
                 <img class="title-img" [src]="'../../assets/images/logo/title.PNG'" />
@@ -16,6 +16,6 @@
         </div>
     </ng-container>
     <ng-container>
-        <app-menu [option]="optionOrder" *ngIf=isOpen></app-menu>
+        <app-menu [option]="optionOrder" *ngIf="isOpen"></app-menu>
     </ng-container>
 </div>

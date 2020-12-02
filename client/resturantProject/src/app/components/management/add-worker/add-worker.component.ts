@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
+import { Address } from 'ngx-google-places-autocomplete/objects/address';
 import { Employee } from 'src/app/shared/modals/employee';
 import { ManagerService } from 'src/app/shared/services/manager.service';
 
@@ -10,11 +12,15 @@ import { ManagerService } from 'src/app/shared/services/manager.service';
 })
 export class AddWorkerComponent implements OnInit {
 
+  close: boolean = false;
+  @Output() closeform = new EventEmitter();
+
+
   formGroupAddWorker: FormGroup;
   workerData: Employee;
   succeeded: any;
   error: any;
-  constructor(public managerService:ManagerService) { }
+  constructor(public managerService: ManagerService) { }
 
   ngOnInit(): void {
 
@@ -41,4 +47,12 @@ export class AddWorkerComponent implements OnInit {
         this.error = err;
       });
   }
+  closeformAddWorker() {
+    this.closeform.emit(this.close);
+  }
+  @ViewChild("placesRef") placesRef : GooglePlaceDirective;
+    
+  public handleAddressChange(address: Address) {
+  // Do some stuff
+}
 }

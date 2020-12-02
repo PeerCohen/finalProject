@@ -26,7 +26,7 @@ export class CalandarToManagerComponent implements OnInit {
    getMonday(d) {
     d = new Date(d);
     const day = d.getDay();
-    const diff = d.getDate() - day - 1 ;
+    const diff = d.getDate() - day ;
     return new Date(d.setDate(diff));
   }
  
@@ -34,7 +34,13 @@ export class CalandarToManagerComponent implements OnInit {
   console.log(i, calandarToManager);
   const idUser = calandarToManager.employeeID[i];
   this.emloyeeService.PutShiftToEmployee(idUser, calandarToManager.date).
-    subscribe(res => {console.log('gggg'); this.getCalandr(calandarToManager.date)});
+    subscribe(res => {console.log(this.LCalandarToManager); this.getCalandr(calandarToManager.date)});
+  }
+  deleteShirt(){
+
+  }
+  finish(){
+    
   }
 
 }

@@ -1,9 +1,12 @@
 <ng-container *ngIf=isOpen>
-    <div>
-        <button mat-button color="primary" (click)="AddDoseToCategory()">הוספת מנה לתפריט</button>
+    <div *ngIf="!isOpenNewAddDoseForm" class="addDoseToCategory">
+        <button mat-flat-button color="primary" (click)="AddDoseToCategory()">הוספת מנה לתפריט</button>
     </div>
     <ng-container>
-        <app-add-dose-category *ngIf=isOpenAddDose [idCategory]="idCategory" [nameCategory]="nameCategory"></app-add-dose-category>
+        <div>
+            <app-add-dose-category *ngIf="isOpenNewAddDoseForm" (closeform)="getEmit($event)" [idCategory]="idCategory" [nameCategory]="nameCategory">
+            </app-add-dose-category>
+        </div>
     </ng-container>
     <mat-card *ngFor="let item of menuCategoryList">
         <mat-card-header>
@@ -20,15 +23,19 @@
             <hr>
         </mat-card-content>
         <mat-card-actions>
-            <div class="delete-action">
-                <button mat-mini-fab (click)="deleteDose(item)">
-              <mat-icon>delete</mat-icon>
-            </button>
-            </div>
-            <div class="edit-action" (click)="editDose(item)">
-                <button mat-mini-fab>
-              <mat-icon>edit</mat-icon>
-            </button>
+            <div class="action-button">
+                <div class="delete-action">
+                    <button mat-stroked-button color="primary" (click)="deleteDose(item)">
+                        מחיקת מנה
+                        <mat-icon color="primary">delete</mat-icon>
+                    </button>
+                </div>
+                <div class="edit-action" (click)="editDose(item)">
+                    <button mat-stroked-button color="primary">
+                        עריכת מנה
+                        <mat-icon color="primary">edit</mat-icon>
+                    </button>
+                </div>
             </div>
         </mat-card-actions>
     </mat-card>

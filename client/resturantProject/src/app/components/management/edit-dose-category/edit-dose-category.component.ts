@@ -20,6 +20,7 @@ export class EditDoseCategoryComponent implements OnInit {
   isOpen: boolean = false;
   succeeded;
   error;
+  isOpenNewAddDoseForm: boolean;
 
   constructor(
     public managerService: ManagerService,
@@ -70,7 +71,11 @@ export class EditDoseCategoryComponent implements OnInit {
     this.dialog.open(UpdateDoseDialogComponent, { data: Dose });
   }
   AddDoseToCategory() {
-    this.isOpenAddDose = true;
+    this.isOpenNewAddDoseForm = true;
+  }
+  
+  getEmit(close:boolean){
+    this.isOpenNewAddDoseForm=close;
   }
 }
 

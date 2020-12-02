@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDTO.cs" />
+    <Compile Include="CommentVisiterDTO.cs" />
     <Compile Include="CurrentEmployeeDTO.cs" />
     <Compile Include="EmployeesDTO.cs" />
     <Compile Include="EmployeesTypesDTO.cs" />

@@ -10,16 +10,13 @@
 namespace DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class UserCalandar
+    public partial class sp_helpdiagrams_Result
     {
-        public int idUserCalandar { get; set; }
-        public Nullable<int> IdUser { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<System.DateTime> EntranceTime { get; set; }
-        public Nullable<System.DateTime> LeavingTime { get; set; }
-        public Nullable<int> NumWorkingHours { get; set; }
-        public string Shift { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

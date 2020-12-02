@@ -40,6 +40,15 @@ namespace BL
         {
             return EmployeesCast.ToDTO(EmployeesDAL.Login(username, password));
         }
+        public static object getDailyWorker()
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>u.Date == DateTime.Today);
+               
+                return UserCalandarC.ToDTO(userCalandar);
+            }
+        }
         // פונקצית כניסה עובד או לקוח אם הןא עובד נוסף עוד יום ביון העובד עם שעת הכניסה הנוכחי  
         public static object SineIn(string name, string password)
         {
@@ -51,7 +60,7 @@ namespace BL
                     (e => e.FirstName.Equals(name) && e.Password.Equals(password));
                 if (employees != null)
                 {
-                    UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
+                    UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                      u.IdUser == employees.Id && u.Date.Value.Year == DateTime.Today.Year &&
                      u.Date.Value.Month == DateTime.Today.Month && u.Date.Value.Day == DateTime.Today.Day);
                     // עם יש למשתמש יום ביומן בתאריך של היום רק לעדכן את שעת הכניסה 
@@ -64,11 +73,11 @@ namespace BL
                     // אם אין לו יום ביומן בתאריך של היום מוסיך תאריך חדש 
                     else
                     {
-                        UserCalandar userC = new UserCalandar();
+                        UserCalander userC = new UserCalander();
                         userC.IdUser = employees.Id;
                         userC.Date = DateTime.Today;
                         userC.EntranceTime = DateTime.Now;
-                        db.UserCalandar.Add(userC);
+                        db.UserCalander.Add(userC);
                         db.SaveChanges();
                     }
                     return EmployeesDTO.ConvertDonationToDTO(employees);
@@ -77,7 +86,8 @@ namespace BL
                 Visiters visiter = db.Visiters.FirstOrDefault(v => v.NameUser.Equals(name) && v.Password.Equals(password));
                 if (visiter != null)
                 {
-                    return visiter;
+
+                    return VisitersCast.ToDTO(visiter);
                 }
                 // אם המשתמש לא רשום במערכתת 
                 return null;
@@ -86,20 +96,28 @@ namespace BL
         // יציאה של עובד שומר במסד נתונים ת שעת היציאה של העובד 
         public static UserCalandarDTO SingOut(int id, DateTime date)
         {
+
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
-                     u.IdUser == id && u.Date.Value.Year == date.Year &&
-                     u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
-                if (userCalandar != null)
+                Employees emm = db.Employees.FirstOrDefault(e => e.Id == id);
+                if (emm != null)
                 {
-                    userCalandar.LeavingTime = date;
-                    db.Entry(userCalandar).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                    return UserCalandarC.ToDTO(userCalandar);
+                    UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
+                       u.IdUser == id && u.Date.Value.Year == date.Year &&
+                       u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
+                    if (userCalandar != null)
+                    {
+                        userCalandar.LeavingTime = date;
+                        db.Entry(userCalandar).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                        return UserCalandarC.ToDTO(userCalandar);
+                    }
+                    else
+                        return null;
+
                 }
-                else
-                    return null;
+                return null;
+
             }
         }
         // שמירת המשמרות של עובד לתאריך מסוים 
@@ -109,7 +127,7 @@ namespace BL
             {
                 foreach (var item in calandarList)
                 {
-                    UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
+                    UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                                   u.IdUser == userID && u.Date.Value.Year == item.date.Year &&
                                   u.Date.Value.Month == item.date.Month && u.Date.Value.Day == item.date.Day);
                     if (userCalandar != null)
@@ -120,11 +138,11 @@ namespace BL
                     }
                     else
                     {
-                        UserCalandar userC = new UserCalandar();
+                        UserCalander userC = new UserCalander();
                         userC.IdUser = userID;
-                        userC.Date =item.date;
+                        userC.Date = item.date;
                         userC.Shift = item.shift;
-                        db.UserCalandar.Add(userC);
+                        db.UserCalander.Add(userC);
                         db.SaveChanges();
                     }
 
@@ -138,7 +156,7 @@ namespace BL
             using (restaurantEntities db = new restaurantEntities())
             {
                 DateTime endOfWeek = startOfWeek.AddDays(6);
-                List<UserCalandar> lc = db.UserCalandar.Where(c => c.Date >= startOfWeek && c.Date <= endOfWeek ).ToList();
+                List<UserCalander> lc = db.UserCalander.Where(c => c.Date >= startOfWeek && c.Date <= endOfWeek).ToList();
                 List<CalandarToManager> LCTM = new List<CalandarToManager>();
                 foreach (var item in lc)
                 {
@@ -146,7 +164,7 @@ namespace BL
                     CalandarToManager calandarToManager = new CalandarToManager();
                     if (em.IdEmployeeType != 1)
                     {
-                        if (LCTM.Find(t => t.date==item.Date && t.shift == item.Shift) != null)
+                        if (LCTM.Find(t => t.date == item.Date && t.shift == item.Shift) != null)
                         {
                             int i = LCTM.FindIndex(t => t.date == item.Date);
                             LCTM[i].employeeName.Add(em.FirstName);
@@ -168,7 +186,7 @@ namespace BL
                 {
                     CalandarToManager calandarToManager = new CalandarToManager();
                     if (LCTM.Find(t => t.date.Year == date.Year &&
-                    t.date.Month == date.Month &&  t.date.Day==date.Day && t.shift == "evening") == null)
+                    t.date.Month == date.Month && t.date.Day == date.Day && t.shift == "evening") == null)
                     {
                         calandarToManager.date = date;
                         calandarToManager.employeeID.Add(0);
@@ -177,7 +195,7 @@ namespace BL
                         LCTM.Add(calandarToManager);
                     }
                     if (LCTM.Find(t => t.date.Year == date.Year &&
-                    t.date.Month == date.Month && t.date.Day == date.Day &&  t.shift == "morning") == null)
+                    t.date.Month == date.Month && t.date.Day == date.Day && t.shift == "morning") == null)
                     {
                         calandarToManager.date = date;
                         calandarToManager.employeeID.Add(0);
@@ -186,8 +204,8 @@ namespace BL
                         LCTM.Add(calandarToManager);
                     }
                 }
-    // כאן אני יעבור ל המעך של ימי השבוע ויבדוק אם אין ערך רעק ליום מסוים אם שי ערך ריק להוסים לי אוביקט ללא שם 
-                return LCTM.OrderBy(r=> r.date).ToList();
+                // כאן אני יעבור ל המעך של ימי השבוע ויבדוק אם אין ערך רעק ליום מסוים אם שי ערך ריק להוסים לי אוביקט ללא שם 
+                return LCTM.OrderBy(r => r.date).ToList();
             }
         }
         // פומקציה שמחזירה הפרש בין 2 תאריכים
@@ -201,7 +219,7 @@ namespace BL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalandar userCalandar = db.UserCalandar.FirstOrDefault(u =>
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                             u.IdUser == IdUser && u.Date.Value.Year == date.Year &&
                             u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
                 if (userCalandar != null)
@@ -219,10 +237,10 @@ namespace BL
 
     }
 }
-public  class calandar
+public class calandar
 {
-   public DateTime date { get; set; }
-   public  string shift { get; set; }
+    public DateTime date { get; set; }
+    public string shift { get; set; }
 }
 public class CalandarToManager
 {

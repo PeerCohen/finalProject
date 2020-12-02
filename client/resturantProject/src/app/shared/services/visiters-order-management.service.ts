@@ -5,6 +5,7 @@ import { Menu } from '../modals/menu';
 import { Subject, Observable } from 'rxjs';
 import { InventDose } from '../modals/invent-dose';
 import { InventDetails } from '../modals/invent-details';
+import { Comment } from '../modals/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +23,20 @@ export class VisitersOrderManagementService {
     // this.cart = this.userService.InventDose.inventDetails;
   }
 
-  idCurrentUser = this.userService.CurrentUser.id;
+  idCurrentUser = this.userService.CurrentUser?.id;
 
   removeProduct(idProduct){
 
     let item = this.cart.find(p => p.idMenu == idProduct)
     debugger;
     //this.cart.remove(item);
+  }
+  addComment(comment:string): Observable<any>{
+    var newComment=new Comment();
+    newComment.Comment=comment;
+    newComment.idvisiter=this.idCurrentUser ;
+    debugger;
+    return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,newComment);
   }
 
   getAllOrder(idVisiter: number): Observable<InventDose[]> {
@@ -37,7 +45,7 @@ export class VisitersOrderManagementService {
   addInvent() {
     var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
     var vis = new InventDose();
-    var user = JSON.parse(localStorage.getItem("currentUser")).ld;
+    var user = JSON.parse(localStorage.getItem("currentUser")).id;
     vis.idVisiter = user;
     vis.status = 3;
     vis.inventDetails = [];
@@ -56,7 +64,8 @@ export class VisitersOrderManagementService {
 
   addOrderToCart(item: Menu) {
     if (this.userService.CurrentUser) {
-      this.fullCart.push(item,this.castMenuToInvetDetails(item));
+      item.amount=1;
+      this.fullCart.push(item);
       this.cart.push(this.castMenuToInvetDetails(item));
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
       // let dose: InventDose = { ...this.userService.InventDose };
@@ -76,7 +85,7 @@ export class VisitersOrderManagementService {
     }
   }
   plusProductAmount(itemId) {
-    let item = this.cart.find(p => p.idMenu == itemId);
+    let item = this.fullCart.find(p => p.idMenu == itemId);
     if (item) {
       item.amount++;
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);

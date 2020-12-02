@@ -14,6 +14,7 @@ export class ListWorkerComponent implements OnInit {
   listWorker: Employee[] = [];
   error: any;
   succeeded: any;
+  isOpenNewAddWorkerForm:boolean=false;
   constructor(
     public managerService: ManagerService,
     public dialog: MatDialog,
@@ -22,10 +23,18 @@ export class ListWorkerComponent implements OnInit {
   ngOnInit(): void {
     this.getWorker()
   }
+  openNewAddWorkerForm(){
+    this.isOpenNewAddWorkerForm=true;
+  }
+  getEmit(close:boolean){
+    this.isOpenNewAddWorkerForm=close;
+  }
   getWorker() {
     return this.managerService.getWorker().subscribe(
       (res: any) => {
         this.listWorker = res;
+        console.log(this.listWorker);
+        
       },
       (err) => {
         this.error = err;

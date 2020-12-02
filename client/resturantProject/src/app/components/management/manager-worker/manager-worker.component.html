@@ -1,1 +1,23 @@
-<p>manager-worker works!</p>
+<div class="talbe">
+    <table>
+        <tr>
+            <th class="headTitle">נוחכות עובדים ליום : {{today | date}} </th>
+        </tr>
+        <tr class="title">
+            <th>שם עובד</th>
+            <th>שעת כניסה</th>
+            <th>שעת יציאה</th>
+            <th>משמרת</th>
+            <th>סה"כ שעות עבודה יומי</th>
+        </tr>
+        <tr *ngFor="let w of listDailtWorker">
+            <td>w.IdUser</td>
+            <td>{{w.EntranceTime| date:'mm:ss' }} </td>
+            <td>w.LeavingTime</td>
+            <td>w.Shift</td>
+            <td>w.NumWorkingHours</td>
+
+        </tr>
+
+    </table>
+</div>

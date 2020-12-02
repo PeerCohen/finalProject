@@ -1,5 +1,6 @@
-<div class="tool-up"></div>
-<app-logo></app-logo>
+<!-- <div class="tool-up"></div>
+<app-logo></app-logo> -->
+<app-header></app-header>
 <mat-tab-group mat-align-tabs="center">
     <mat-tab label="ניהול הזמנות">
         <ng-template mat-tab-label>
@@ -15,9 +16,17 @@
         </ng-template>
     </mat-tab>
     <mat-tab label=" הזמנות מיוחדות לטיפול ">
+        <ng-template mat-tab-label>
+            <mat-icon>content_paste</mat-icon>
+            הזמנות מיוחדות לטיפול
+        </ng-template>
         <app-special-order></app-special-order>
     </mat-tab>
     <mat-tab label=" סידור משמרת שלי">
-        <app-special-order></app-special-order>
+        <ng-template mat-tab-label>
+            <mat-icon>book_online</mat-icon>
+            סידור המשמרות שלי
+        </ng-template>
+        <app-calandar-to-employee></app-calandar-to-employee>
     </mat-tab>
 </mat-tab-group>

@@ -1,0 +1,15 @@
+<div>
+    <h1 mat-dialog-title>{{name}}: הזמנה משלוח עבור </h1>
+    <div mat-dialog-content>
+        <p>הזן כתובת יעד </p>
+        <app-address-sending></app-address-sending>
+        <mat-form-field>
+            <mat-label>שעת הגעה יעודה</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">ביטול</button>
+        <button mat-button (click)="onOkClick()" cdkFocusInitial>אישור ,המשך</button>
+    </div>
+</div>
