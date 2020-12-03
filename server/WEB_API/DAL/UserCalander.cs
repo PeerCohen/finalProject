@@ -21,7 +21,5 @@ namespace DAL
         public Nullable<System.DateTime> LeavingTime { get; set; }
         public Nullable<int> NumWorkingHours { get; set; }
         public string Shift { get; set; }
-    
-        public virtual Employees Employees { get; set; }
     }
 }

@@ -234,7 +234,22 @@ namespace BL
                 return "עודכן משמרת  ";
             }
         }
-
+        // מחיקת עובד ממשרת מסוימת ע" מנהל
+        public static string DeleteEmployeeShirt(DateTime date, int IdUser)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
+                            u.IdUser == IdUser && u.Date.Value.Year == date.Year &&
+                            u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
+                if (userCalandar != null)
+                {
+                    db.UserCalander.Remove(userCalandar);
+                    db.SaveChanges();
+                }
+                return "משמרת העובד הוסרה מהמערכת!! ";
+            }
+        }
     }
 }
 public class calandar

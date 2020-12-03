@@ -202,6 +202,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CommentVisiterController.cs" />
     <Compile Include="Controllers\CurrentEmployeeController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\EmployeesTypesController.cs" />
     <Compile Include="Controllers\InventDoseController.cs" />

@@ -18,7 +18,7 @@
             <td *ngFor="let item of listMorning; ">
                 <label>
                     <div *ngFor="let item1 of item.employeeName;let i = index;">{{item1}}
-                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='deleteShirt()'>
+                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='deleteShirt(i, item)'>
                             <mat-icon>clear</mat-icon> בטל
                         </button>
                         <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='editShirt(i,item)'>
@@ -33,7 +33,7 @@
             <td *ngFor="let item of listEvening; ">
                 <label>
                     <div *ngFor="let item1 of item.employeeName; let i = index;">{{item1}}
-                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='deleteShirt()'>
+                        <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='deleteShirt(i, item)'>
                             <mat-icon>clear</mat-icon> בטל
                         </button>
                         <button mat-stroked-button color="primary" *ngIf="item1!=''" (click)='editShirt(i,item)'>

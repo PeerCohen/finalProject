@@ -77,9 +77,12 @@ namespace WEB_API.Controllers
         {
             return Ok(EmployeesBL.PutShiftToEmployee(date, IdUser));
         }
-        // DELETE: api/Employees/5
-        public void Delete(int id)
+[HttpPost]
+[Route("DeleteEmployeeShirt/{IdUser}")]
+public IHttpActionResult POSTDeleteEmployeeShirt([FromBody] DateTime date, int IdUser)
         {
+            return Ok(EmployeesBL.DeleteEmployeeShirt(date, IdUser));
+
         }
     }
 }
