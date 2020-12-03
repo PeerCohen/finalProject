@@ -20,6 +20,10 @@ AddShiftToNextWeekEmployee(calandar) {
 getEmloyeesCalandarToManger(date): Observable<Array<CalandarToManager>>  {
   return this.httpClient.put<Array<CalandarToManager>> (this.URL + 'GetEmloyeesCalandarToManger' , date );
 }
+getEmloyeesCalandarByManaer(date): Observable<Array<CalandarToManager>>  {
+  console.log(date, this.userService.CurrentUser.id)
+  return this.httpClient.put<Array<CalandarToManager>> (this.URL + 'GetEmloyeesCalandarByManaer/'+ this.userService.CurrentUser.id + '/', date );
+}
 PutShiftToEmployee( idUser: number, date: Date){
   console.log(new Date(date))
   return this.httpClient.post(this.URL + 'PutShiftToEmployee/' + idUser , moment(new Date(date)).add(1, 'days').toDate());
@@ -28,12 +32,8 @@ deleteEmployeeShirt(idUser: number, date: Date){
   console.log(new Date(date))
   return this.httpClient.post(this.URL + 'DeleteEmployeeShirt/' + idUser , moment(new Date(date)).add(1, 'days').toDate());
 }
-email:Emailc=  new Emailc();
 sendMail(e)
 {
-    // this.email.Subject = "try";
-    // this.email.email = "shira4146152@gmail.com";
-    // this.email.Body = 'lllll';
   return this.httpClient.post('http://localhost:51437/api/Email/send' , e);
 }
 }

@@ -1,0 +1,42 @@
+<div class="talbe">
+    <!-- <div class="Calandar">
+        <label> יש לבחור תחילת שבוע הרצוי להצגת המשמרות השבועית</label>
+        <input type="date" #date (change)="getCalandr(date.value)" name="" id="">
+    </div> -->
+    <table>
+        <tr class="day">
+            <th></th>
+            <th>ראשון</th>
+            <th>שני</th>
+            <th>שלישי</th>
+            <th>רביעי</th>
+            <th>חמישי</th>
+            <th>שישי</th>
+        </tr>
+        <tr>
+            <td class="shift1"><b>משמרת א'</b></td>
+            <td *ngFor="let item of listMorning; ">
+                <label>
+                    <div *ngFor="let item1 of item.employeeName;let i = index;">
+                            <mat-icon  *ngIf="item1!='' " color="primary">check_box</mat-icon>
+                    </div>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td class="shift2"><b>משמרת ב'</b></td>
+            <td *ngFor="let item of listEvening; ">
+                <label>
+                    <div *ngFor="let item1 of item.employeeName; let i = index;">
+
+                            <mat-icon *ngIf="item1!='' " color="primary">check_box</mat-icon>
+                     
+                    </div>
+                </label>
+                <td>
+        </tr>
+    </table>
+    <!-- <button class="finish" mat-flat-button color="primary" (click)='finish()'>
+        הנפקת דוח שעות שבועי , סיום
+    </button> -->
+</div>

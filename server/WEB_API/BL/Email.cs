@@ -21,14 +21,16 @@ namespace BL
                     mail.From = new MailAddress("2meatrestaurant@gmail.com");
                     mail.To.Add(email.email);
                     mail.Subject =email.Subject;
-                    mail.Body = String.Format(
-            "<h3>: " +email .Body+ "</h3>" +
-            @"<img src=""../../../ ""cid:3698327.jpg"" />"); ;
-                    SmtpServer.Port = 587;
+                    mail.IsBodyHtml = true;
+                mail.Body = "<br />" +
+                 "<b>" + email.Body + "</b>" +
+              @"<img src="" title.png""cid:"" />";
+                   
+                SmtpServer.Port = 587;
                     SmtpServer.Credentials = new System.Net.NetworkCredential("2meatrestaurant@gmail.com", "prcn8531");
                     SmtpServer.EnableSsl = true;
-
-                    SmtpServer.Send(mail);
+                
+                SmtpServer.Send(mail);
                     //MessageBox.Show("mail Send");
                 }
                 catch (Exception ex)
