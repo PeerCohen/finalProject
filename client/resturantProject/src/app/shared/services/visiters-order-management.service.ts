@@ -53,6 +53,7 @@ export class VisitersOrderManagementService {
     inventDetails.forEach(element => {
       vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
     });
+    this.httpClient.get(`${this.URL}/sendMail`);
     return this.httpClient.post(`${this.URL}/AddDose`, vis);
   }
   castMenuToInvetDetails(item: Menu) {

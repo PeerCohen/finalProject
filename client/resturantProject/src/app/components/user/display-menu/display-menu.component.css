@@ -8,6 +8,9 @@
 
 .dose-category-order {
     display: inline;
+    position: absolute;
+    top: 255px;
+    left: 14%;
 }
 
 .img-display {

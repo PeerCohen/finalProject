@@ -7,6 +7,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WEB_API.Models;
+using System.Net.Mail;
+using Microsoft.AspNet.SignalR.Messaging;
 
 namespace WEB_API.Controllers
 {
@@ -34,6 +36,32 @@ namespace WEB_API.Controllers
         public bool AddDose([FromBody]InventDoseDTO InventDose)
         {
            return VisitersBL.AddDose(InventDose);
+        }
+        [HttpGet]
+        [Route("sendMail")]
+        public void sendMail(string mailAddress)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+
+                mail.From = new MailAddress("2meatRestaurant.gmail.com");
+                mail.To.Add("pcohen853@gmail.com");
+                mail.Subject = "Test Mail";
+                mail.Body = "This is for testing SMTP mail from GMAIL";
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("username", "password");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+               
+            }
         }
         // POST: api/Visiters
         public void Post([FromBody]string value)

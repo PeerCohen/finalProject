@@ -1,5 +1,10 @@
-.category-img {
-    width: 80%;
+.img-category {
+    width: 93%;
+    position: relative;
+    top: 39px;
+    left: 13%;
+    border: solid;
+    border-width: 11px;
 }
 
 .container {
@@ -40,6 +45,13 @@ mat-icon {
     position: relative;
     top: 260px;
     left: 2%;
+}
+
+#carouselExampleFade {
+    width: 23%;
+    position: absolute;
+    top: 250px;
+    left: 218px;
 }
 
 .galery button {

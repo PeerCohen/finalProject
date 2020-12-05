@@ -16,6 +16,7 @@ export class MenuSwiperComponent implements OnInit {
   isNameCategory:boolean=false;
   menuDetailsByCategory: any;
   error: any;
+  showGaleryImg: boolean=false;
 
   constructor(public menuService: MenuService, public categoryService: CategoryService) { }
 
@@ -52,6 +53,9 @@ export class MenuSwiperComponent implements OnInit {
   getImageByCategory() {
     console.log(this.URL_IMG + this.nameCategory + '.jpg');    
    return this.URL_IMG + this.nameCategory + '.jpg';
+  }
+  showGalery(){
+    this.showGaleryImg=true;
   }
   // }
   // ngAfterViewInit() {
