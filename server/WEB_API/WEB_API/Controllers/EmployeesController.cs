@@ -71,15 +71,24 @@ namespace WEB_API.Controllers
         {
             return Ok(EmployeesBL.GetEmloyeesCalandarToManger(startOfWeek));
         }
+        [Route("GetEmloyeesCalandarByManaer/{idE}")]
+        [HttpPut]
+        public IHttpActionResult PUTEmloyeesCalandarByManaer([FromBody] DateTime startOfWeek, int idE)
+        {
+            return Ok(EmployeesBL.GetEmloyeesCalandarByManaer(startOfWeek , idE));
+        }
         [HttpPost]
         [Route("PutShiftToEmployee/{IdUser}")]
         public IHttpActionResult POSTShiftToEmployee([FromBody] DateTime date, int IdUser)
         {
             return Ok(EmployeesBL.PutShiftToEmployee(date, IdUser));
         }
-        // DELETE: api/Employees/5
-        public void Delete(int id)
+[HttpPost]
+[Route("DeleteEmployeeShirt/{IdUser}")]
+public IHttpActionResult POSTDeleteEmployeeShirt([FromBody] DateTime date, int IdUser)
         {
+            return Ok(EmployeesBL.DeleteEmployeeShirt(date, IdUser));
+
         }
     }
 }

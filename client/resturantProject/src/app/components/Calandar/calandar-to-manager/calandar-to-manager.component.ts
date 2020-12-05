@@ -36,8 +36,10 @@ export class CalandarToManagerComponent implements OnInit {
   this.emloyeeService.PutShiftToEmployee(idUser, calandarToManager.date).
     subscribe(res => {console.log(this.LCalandarToManager); this.getCalandr(calandarToManager.date)});
   }
-  deleteShirt(){
-
+  deleteShirt(i , calandarToManager){
+    const idUser = calandarToManager.employeeID[i];
+    this.emloyeeService.deleteEmployeeShirt(idUser, calandarToManager.date).
+      subscribe(res => {console.log(this.LCalandarToManager); this.getCalandr(calandarToManager.date)});
   }
   finish(){
     

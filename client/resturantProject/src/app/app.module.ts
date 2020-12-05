@@ -110,6 +110,7 @@ import { EmployeeGuard, ManagerGuard, VisitersGuard } from './Auth/auth.guard';
 import { FavoriteDoseComponent } from './components/management/favorite-dose/favorite-dose.component';
 import { DialogSendingComponent } from './components/user/dialog-sending/dialog-sending.component';
 import { DialogSaveTableComponent } from './components/user/dialog-save-table/dialog-save-table.component';
+import { CalandarEmployeeByManagerComponent } from './components/Calandar/calandar-employee-by-manager/calandar-employee-by-manager.component';
 
 
 
@@ -191,6 +192,7 @@ import { DialogSaveTableComponent } from './components/user/dialog-save-table/di
     FavoriteDoseComponent,
     DialogSendingComponent,
     DialogSaveTableComponent,
+    CalandarEmployeeByManagerComponent,
     
 
 

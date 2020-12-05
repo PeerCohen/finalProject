@@ -234,7 +234,80 @@ namespace BL
                 return "עודכן משמרת  ";
             }
         }
+        // קבלת דוח עובד 
+     public static List<CalandarToManager>   GetEmloyeesCalandarByManaer(DateTime startOfWeek ,int idE)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                DateTime endOfWeek = startOfWeek.AddDays(6);
+                List<UserCalander> lc = db.UserCalander.Where(c => c.Date >= startOfWeek && c.Date <= endOfWeek && c.IdUser == idE).ToList();
+                List<CalandarToManager> LCTM = new List<CalandarToManager>();
+                foreach (var item in lc)
+                {
+                    Employees em = db.Employees.FirstOrDefault(c => c.Id == item.IdUser);
+                    CalandarToManager calandarToManager = new CalandarToManager();
+                    if (em.IdEmployeeType != 1)
+                    {
+                        if (LCTM.Find(t => t.date == item.Date && t.shift == item.Shift) != null)
+                        {
+                            int i = LCTM.FindIndex(t => t.date == item.Date);
+                            LCTM[i].employeeName.Add(em.FirstName);
+                            LCTM[i].employeeID.Add(em.Id);
+                        }
+                        else
+                        {
+                            calandarToManager.date = item.Date.Value;
+                            calandarToManager.employeeID.Add(em.Id);
+                            calandarToManager.employeeName.Add(em.FirstName);
+                            calandarToManager.shift = item.Shift;
+                            LCTM.Add(calandarToManager);
+                        }
 
+                    }
+                }
+                IEnumerable<DateTime> lD = DateRange(startOfWeek.AddDays(1), endOfWeek);
+                foreach (var date in lD)
+                {
+                    CalandarToManager calandarToManager = new CalandarToManager();
+                    if (LCTM.Find(t => t.date.Year == date.Year &&
+                    t.date.Month == date.Month && t.date.Day == date.Day && t.shift == "evening") == null)
+                    {
+                        calandarToManager.date = date;
+                        calandarToManager.employeeID.Add(0);
+                        calandarToManager.employeeName.Add("");
+                        calandarToManager.shift = "evening";
+                        LCTM.Add(calandarToManager);
+                    }
+                    if (LCTM.Find(t => t.date.Year == date.Year &&
+                    t.date.Month == date.Month && t.date.Day == date.Day && t.shift == "morning") == null)
+                    {
+                        calandarToManager.date = date;
+                        calandarToManager.employeeID.Add(0);
+                        calandarToManager.employeeName.Add("");
+                        calandarToManager.shift = "morning";
+                        LCTM.Add(calandarToManager);
+                    }
+                }
+                // כאן אני יעבור ל המעך של ימי השבוע ויבדוק אם אין ערך רעק ליום מסוים אם שי ערך ריק להוסים לי אוביקט ללא שם 
+                return LCTM.OrderBy(r => r.date).ToList();
+            }
+        }
+        // מחיקת עובד ממשרת מסוימת ע" מנהל
+        public static string DeleteEmployeeShirt(DateTime date, int IdUser)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
+                            u.IdUser == IdUser && u.Date.Value.Year == date.Year &&
+                            u.Date.Value.Month == date.Month && u.Date.Value.Day == date.Day);
+                if (userCalandar != null)
+                {
+                    db.UserCalander.Remove(userCalandar);
+                    db.SaveChanges();
+                }
+                return "משמרת העובד הוסרה מהמערכת!! ";
+            }
+        }
     }
 }
 public class calandar

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { EmloyeeService } from 'src/app/shared/services/emloyee.service';
+import { CalandarToManager } from '../calandar-to-manager/calandar-to-manager.component';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { EmloyeeService } from 'src/app/shared/services/emloyee.service';
 })
 export class CalandarToEmployeeComponent implements OnInit {
   calandar: calanadar[] = new Array();
-
+  
   constructor(private emloyeeService: EmloyeeService) { }
   cangeShift(shift, index) {
     if (shift === 'eveningTrue') {

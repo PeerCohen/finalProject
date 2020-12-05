@@ -14,13 +14,13 @@ namespace WEB_API.Controllers
         // GET: api/CommentVisiter
         [HttpGet]
         [Route("GetAllComment")]
-        public List<CommentVisiterDTO> GetAllComment()
-        {
-            return CommentVisiterBL.GetAll();
-        }
+        //public List<CommentVisiterDTO> GetAllComment()
+        //{
+        //    //return CommentVisiterBL.GetAll();
+        //}
 
         // GET: api/CommentVisiter/5
-      
+
         public string Get(int id)
         {
             return "value";
@@ -31,7 +31,7 @@ namespace WEB_API.Controllers
         [Route("AddComment")]
         public void AddComment([FromBody]CommentVisiterDTO commentVisiter)
         {
-            CommentVisiterBL.Add(commentVisiter);
+            //CommentVisiterBL.Add(commentVisiter);
         }
 
         // PUT: api/CommentVisiter/5

@@ -22,6 +22,7 @@ import { EmployeeGuard } from './Auth/auth.guard';
 import { CalandarToEmployeeComponent } from './components/Calandar/calandar-to-employee/calandar-to-employee.component';
 import { CalandarToManagerComponent } from './components/Calandar/calandar-to-manager/calandar-to-manager.component';
 import { TableOrderComponent } from './components/user/table-order/table-order.component';
+import { CalandarEmployeeByManagerComponent } from './components/Calandar/calandar-employee-by-manager/calandar-employee-by-manager.component';
 
 
 
@@ -112,7 +113,12 @@ const routes: Routes = [
   {
     path: "table-order",
     component : TableOrderComponent,
+   },
+   {
+    path: "CalandarEmployeeByManager",
+    component : CalandarEmployeeByManagerComponent,
    }
+   
 ];
 
 @NgModule({

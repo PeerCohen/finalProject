@@ -61,6 +61,7 @@
     <Compile Include="cast\VipTablesCast.cs" />
     <Compile Include="cast\VisitersCast.cs" />
     <Compile Include="CategoryBL.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="CommentVisiterBL.cs" />
     <Compile Include="CurrentEmployeeBL.cs" />
     <Compile Include="EmployeesBL.cs" />
@@ -84,6 +85,8 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="title.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
