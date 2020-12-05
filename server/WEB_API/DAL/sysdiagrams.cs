@@ -12,16 +12,12 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class UserCalander
+    public partial class sysdiagrams
     {
-        public int idUserCalandar { get; set; }
-        public Nullable<int> IdUser { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<System.DateTime> EntranceTime { get; set; }
-        public Nullable<System.DateTime> LeavingTime { get; set; }
-        public Nullable<int> NumWorkingHours { get; set; }
-        public string Shift { get; set; }
-    
-        public virtual Employees Employees { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

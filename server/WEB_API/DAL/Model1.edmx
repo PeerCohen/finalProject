@@ -22,6 +22,14 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameCategory" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="CommentVisiter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Comment" Type="nchar" MaxLength="4000" />
+          <Property Name="idvisiter" Type="int" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="CurrentEmployee">
           <Key>
             <PropertyRef Name="Id" />
@@ -39,7 +47,7 @@
           <Property Name="LastName" Type="nchar" MaxLength="10" />
           <Property Name="Tz" Type="nchar" MaxLength="10" />
           <Property Name="Phone" Type="nchar" MaxLength="10" />
-          <Property Name="address" Type="nchar" MaxLength="10" />
+          <Property Name="address" Type="nchar" MaxLength="50" />
           <Property Name="IdEmployeeType" Type="int" />
           <Property Name="Password" Type="nchar" MaxLength="10" />
         </EntityType>
@@ -82,6 +90,7 @@
           <Property Name="Category" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="2000" />
           <Property Name="image" Type="varchar(max)" />
+          <Property Name="IsDelete" Type="bit" />
         </EntityType>
         <EntityType Name="Rating">
           <Key>
@@ -98,6 +107,16 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Tables">
           <Key>
@@ -143,10 +162,22 @@
           <Property Name="Phone" Type="nchar" MaxLength="10" />
           <Property Name="Address" Type="int" />
           <Property Name="IdTable" Type="int" />
-          <Property Name="Mail" Type="nchar" MaxLength="10" />
+          <Property Name="Mail" Type="nchar" MaxLength="100" />
           <Property Name="Password" Type="nchar" MaxLength="10" />
           <Property Name="NameUser" Type="nchar" MaxLength="10" />
         </EntityType>
+        <Association Name="FK_CommentVisiter_Visiters">
+          <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />
+          <End Role="CommentVisiter" Type="Self.CommentVisiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiters">
+              <PropertyRef Name="ld" />
+            </Principal>
+            <Dependent Role="CommentVisiter">
+              <PropertyRef Name="idvisiter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CurrentEmployee_Employees">
           <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
           <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="*" />
@@ -279,6 +310,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserCalander_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="UserCalander" Type="Self.UserCalander" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCalander">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VipTables_CurrentEmployee">
           <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="0..1" />
           <End Role="VipTables" Type="Self.VipTables" Multiplicity="*" />
@@ -339,9 +382,41 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="restaurantModelStoreContainer">
           <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommentVisiter" EntityType="Self.CommentVisiter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurrentEmployee" EntityType="Self.CurrentEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" Schema="dbo" store:Type="Tables" />
@@ -350,10 +425,15 @@
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusDose" EntityType="Self.StatusDose" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserCalander" EntityType="Self.UserCalander" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Visiters" EntityType="Self.Visiters" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CommentVisiter_Visiters" Association="Self.FK_CommentVisiter_Visiters">
+            <End Role="Visiters" EntitySet="Visiters" />
+            <End Role="CommentVisiter" EntitySet="CommentVisiter" />
+          </AssociationSet>
           <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
             <End Role="Employees" EntitySet="Employees" />
             <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
@@ -397,6 +477,10 @@
           <AssociationSet Name="FK_Rating_Menu" Association="Self.FK_Rating_Menu">
             <End Role="Menu" EntitySet="Menu" />
             <End Role="Rating" EntitySet="Rating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCalander_Employees" Association="Self.FK_UserCalander_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="UserCalander" EntitySet="UserCalander" />
           </AssociationSet>
           <AssociationSet Name="FK_VipTables_CurrentEmployee" Association="Self.FK_VipTables_CurrentEmployee">
             <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
@@ -443,6 +527,15 @@
           <Property Name="nameCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Menu" Relationship="Self.FK_Menu_Category" FromRole="Category" ToRole="Menu" />
         </EntityType>
+        <EntityType Name="CommentVisiter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Comment" Type="String" MaxLength="4000" FixedLength="true" Unicode="true" />
+          <Property Name="idvisiter" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Visiters" Relationship="Self.FK_CommentVisiter_Visiters" FromRole="CommentVisiter" ToRole="Visiters" />
+        </EntityType>
         <EntityType Name="CurrentEmployee">
           <Key>
             <PropertyRef Name="Id" />
@@ -463,12 +556,13 @@
           <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Tz" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="IdEmployeeType" Type="Int32" />
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="CurrentEmployee" Relationship="Self.FK_CurrentEmployee_Employees" FromRole="Employees" ToRole="CurrentEmployee" />
           <NavigationProperty Name="EmployeesTypes" Relationship="Self.FK_Employees_EmployeesTypes" FromRole="Employees" ToRole="EmployeesTypes" />
           <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Employees" FromRole="Employees" ToRole="InventDose" />
+          <NavigationProperty Name="UserCalander" Relationship="Self.FK_UserCalander_Employees" FromRole="Employees" ToRole="UserCalander" />
         </EntityType>
         <EntityType Name="EmployeesTypes">
           <Key>
@@ -519,6 +613,7 @@
           <Property Name="Category" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsDelete" Type="Boolean" />
           <NavigationProperty Name="Category1" Relationship="Self.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
           <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
           <NavigationProperty Name="Rating" Relationship="Self.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
@@ -540,6 +635,16 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_StatusDose" FromRole="StatusDose" ToRole="InventDose" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Tables">
           <Key>
@@ -565,6 +670,7 @@
           <Property Name="LeavingTime" Type="DateTime" Precision="3" />
           <Property Name="NumWorkingHours" Type="Int32" />
           <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_UserCalander_Employees" FromRole="UserCalander" ToRole="Employees" />
         </EntityType>
         <EntityType Name="VipTables">
           <Key>
@@ -591,10 +697,11 @@
           <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Address" Type="Int32" />
           <Property Name="IdTable" Type="Int32" />
-          <Property Name="Mail" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="NameUser" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Address1" Relationship="Self.FK_Visiters_Address" FromRole="Visiters" ToRole="Address" />
+          <NavigationProperty Name="CommentVisiter" Relationship="Self.FK_CommentVisiter_Visiters" FromRole="Visiters" ToRole="CommentVisiter" />
           <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Visiters" FromRole="Visiters" ToRole="InventDose" />
           <NavigationProperty Name="Tables" Relationship="Self.FK_Visiters_Tables1" FromRole="Visiters" ToRole="Tables" />
         </EntityType>
@@ -619,6 +726,18 @@
             </Principal>
             <Dependent Role="Menu">
               <PropertyRef Name="Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentVisiter_Visiters">
+          <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />
+          <End Role="CommentVisiter" Type="Self.CommentVisiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiters">
+              <PropertyRef Name="ld" />
+            </Principal>
+            <Dependent Role="CommentVisiter">
+              <PropertyRef Name="idvisiter" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -679,6 +798,18 @@
             </Principal>
             <Dependent Role="InventDose">
               <PropertyRef Name="IdEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserCalander_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="UserCalander" Type="Self.UserCalander" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserCalander">
+              <PropertyRef Name="IdUser" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -793,6 +924,7 @@
         <EntityContainer Name="restaurantEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Address" EntityType="Self.Address" />
           <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="CommentVisiter" EntityType="Self.CommentVisiter" />
           <EntitySet Name="CurrentEmployee" EntityType="Self.CurrentEmployee" />
           <EntitySet Name="Employees" EntityType="Self.Employees" />
           <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" />
@@ -801,6 +933,7 @@
           <EntitySet Name="Menu" EntityType="Self.Menu" />
           <EntitySet Name="Rating" EntityType="Self.Rating" />
           <EntitySet Name="StatusDose" EntityType="Self.StatusDose" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tables" EntityType="Self.Tables" />
           <EntitySet Name="UserCalander" EntityType="Self.UserCalander" />
           <EntitySet Name="VipTables" EntityType="Self.VipTables" />
@@ -812,6 +945,10 @@
           <AssociationSet Name="FK_Menu_Category" Association="Self.FK_Menu_Category">
             <End Role="Category" EntitySet="Category" />
             <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentVisiter_Visiters" Association="Self.FK_CommentVisiter_Visiters">
+            <End Role="Visiters" EntitySet="Visiters" />
+            <End Role="CommentVisiter" EntitySet="CommentVisiter" />
           </AssociationSet>
           <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
             <End Role="Employees" EntitySet="Employees" />
@@ -832,6 +969,10 @@
           <AssociationSet Name="FK_InventDose_Employees" Association="Self.FK_InventDose_Employees">
             <End Role="Employees" EntitySet="Employees" />
             <End Role="InventDose" EntitySet="InventDose" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserCalander_Employees" Association="Self.FK_UserCalander_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="UserCalander" EntitySet="UserCalander" />
           </AssociationSet>
           <AssociationSet Name="FK_EmployeesTypes_EmployeesTypes" Association="Self.FK_EmployeesTypes_EmployeesTypes">
             <End Role="EmployeesTypes" EntitySet="EmployeesTypes" />
@@ -869,7 +1010,48 @@
             <End Role="Tables" EntitySet="Tables" />
             <End Role="Visiters" EntitySet="Visiters" />
           </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(restaurantModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(restaurantModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -892,6 +1074,15 @@
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="nameCategory" ColumnName="nameCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentVisiter">
+            <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
+              <MappingFragment StoreEntitySet="CommentVisiter">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="idvisiter" ColumnName="idvisiter" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -959,6 +1150,7 @@
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -977,6 +1169,17 @@
               <MappingFragment StoreEntitySet="StatusDose">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="restaurantModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1032,6 +1235,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="restaurantModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="restaurantModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="restaurantModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="restaurantModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="restaurantModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="restaurantModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="restaurantModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="restaurantModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="restaurantModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
