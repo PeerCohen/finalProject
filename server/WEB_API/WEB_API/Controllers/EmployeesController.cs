@@ -90,5 +90,12 @@ public IHttpActionResult POSTDeleteEmployeeShirt([FromBody] DateTime date, int I
             return Ok(EmployeesBL.DeleteEmployeeShirt(date, IdUser));
 
         }
+        [HttpPost]
+        [Route("SendManagerMassegeToEmloyee")]
+        public IHttpActionResult PostManagerMassegeToEmloyee([FromBody] managerMessageDTO Messege)
+        {
+            return Ok(EmployeesBL.SendManagerMassegeToEmloyee(Messege));
+
+        }
     }
 }

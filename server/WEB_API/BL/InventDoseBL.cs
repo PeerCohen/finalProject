@@ -25,7 +25,7 @@ namespace BL
         {
             StatusDoseDTO status = StatusDoseBL.GetByDescription("הוזמן");
             List<InventDose> invents = InventDoseDAL.GetAll().
-                Where(invent => invent.IdStatus == status.IdDose).ToList();
+                Where(invent => invent.IdStatusDose == status.IdDose).ToList();
             return InventDoseCast.ListToDTO(invents);
         }
 

@@ -12,12 +12,16 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class managerMessage
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> IdEmployee { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public string message { get; set; }
+        public string subject { get; set; }
+        public string fromEmloyeeId { get; set; }
+        public string fromEmloyeeName { get; set; }
+    
+        public virtual Employees Employees { get; set; }
     }
 }

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { Employee } from 'src/app/shared/modals/employee';
 import { ManagerService } from 'src/app/shared/services/manager.service';
+import { UserService } from 'src/app/shared/services/user.service';
 import { EditWorkerDialogComponent } from '../edit-worker-dialog/edit-worker-dialog.component';
+import { ManagerMassegeComponent } from '../manager-massege/manager-massege.component';
 
 @Component({
   selector: 'app-list-worker',
@@ -18,6 +21,8 @@ export class ListWorkerComponent implements OnInit {
   constructor(
     public managerService: ManagerService,
     public dialog: MatDialog,
+    private _bottomSheet: MatBottomSheet,
+    private userService: UserService
     ) { }
 
   ngOnInit(): void {
@@ -40,6 +45,15 @@ export class ListWorkerComponent implements OnInit {
         this.error = err;
       });
   }
+  openMessege(worker)
+  {
+this.managerService.EmloyeeToMesseg.IdEmployee= worker.id;
+this.managerService.EmloyeeToMesseg.fromEmloyeeId= this.userService.CurrentUser.id;
+this.managerService.EmloyeeToMesseg.fromEmloyeeId= this.userService.CurrentUser.firstName;
+
+    this._bottomSheet.open(ManagerMassegeComponent);
+  }
+
   deleteWorker(worker: Employee) {
     return this.managerService.removeWorker(worker).subscribe(
       (res: any) => {

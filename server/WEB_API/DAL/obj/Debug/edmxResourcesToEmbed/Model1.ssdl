@@ -69,10 +69,23 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DateInvent" Type="datetime" Nullable="false" />
     <Property Name="IdEmployee" Type="int" />
-    <Property Name="IdStatus" Type="int" />
+    <Property Name="IdStatusDose" Type="int" />
     <Property Name="IdTable" Type="int" />
     <Property Name="HourInvention" Type="time" Precision="7" Nullable="false" />
     <Property Name="IdVisiter" Type="int" Nullable="false" />
+    <Property Name="IdStatusInvent" Type="int" />
+  </EntityType>
+  <EntityType Name="managerMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdEmployee" Type="int" />
+    <Property Name="Date" Type="date" />
+    <Property Name="message" Type="nvarchar(max)" />
+    <Property Name="subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="fromEmloyeeId" Type="nvarchar" MaxLength="50" />
+    <Property Name="fromEmloyeeName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Menu">
     <Key>
@@ -96,6 +109,16 @@
     <Property Name="doseId" Type="int" />
     <Property Name="rate" Type="int" />
   </EntityType>
+  <EntityType Name="SpecialInvent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdVisiter" Type="int" Nullable="false" />
+    <Property Name="KindRequest" Type="nchar" MaxLength="10" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="CountOfPeople" Type="int" />
+  </EntityType>
   <EntityType Name="StatusDose">
     <Key>
       <PropertyRef Name="Id" />
@@ -103,15 +126,12 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
+  <EntityType Name="StatusInvent">
     <Key>
-      <PropertyRef Name="diagram_id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kind" Type="nchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Tables">
     <Key>
@@ -245,6 +265,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_InventDose_InventDose">
+    <End Role="InventDose" Type="Self.InventDose" Multiplicity="1" />
+    <End Role="InventDose1" Type="Self.InventDose" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="InventDose">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDose1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_InventDose_StatusDose">
     <End Role="StatusDose" Type="Self.StatusDose" Multiplicity="0..1" />
     <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
@@ -253,7 +285,19 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="InventDose">
-        <PropertyRef Name="IdStatus" />
+        <PropertyRef Name="IdStatusDose" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventDose_StatusInvent">
+    <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="0..1" />
+    <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusInvent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventDose">
+        <PropertyRef Name="IdStatusInvent" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -281,6 +325,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_managerMessage_managerMessage">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="managerMessage" Type="Self.managerMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="managerMessage">
+        <PropertyRef Name="IdEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Menu_Category">
     <End Role="Category" Type="Self.Category" Multiplicity="1" />
     <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
@@ -302,6 +358,30 @@
       </Principal>
       <Dependent Role="Rating">
         <PropertyRef Name="doseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpecialInvent_Visiters">
+    <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
+    <End Role="SpecialInvent" Type="Self.SpecialInvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visiters">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="SpecialInvent">
+        <PropertyRef Name="IdVisiter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusInvent_StatusInvent">
+    <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
+    <End Role="StatusInvent1" Type="Self.StatusInvent" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="StatusInvent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StatusInvent1">
+        <PropertyRef Name="Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -377,37 +457,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="restaurantModelStoreContainer">
     <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
@@ -417,10 +466,12 @@
     <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventDetails" EntityType="Self.InventDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventDose" EntityType="Self.InventDose" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="managerMessage" EntityType="Self.managerMessage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpecialInvent" EntityType="Self.SpecialInvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusDose" EntityType="Self.StatusDose" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusInvent" EntityType="Self.StatusInvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserCalander" EntityType="Self.UserCalander" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
@@ -453,8 +504,16 @@
       <End Role="Employees" EntitySet="Employees" />
       <End Role="InventDose" EntitySet="InventDose" />
     </AssociationSet>
+    <AssociationSet Name="FK_InventDose_InventDose" Association="Self.FK_InventDose_InventDose">
+      <End Role="InventDose" EntitySet="InventDose" />
+      <End Role="InventDose1" EntitySet="InventDose" />
+    </AssociationSet>
     <AssociationSet Name="FK_InventDose_StatusDose" Association="Self.FK_InventDose_StatusDose">
       <End Role="StatusDose" EntitySet="StatusDose" />
+      <End Role="InventDose" EntitySet="InventDose" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventDose_StatusInvent" Association="Self.FK_InventDose_StatusInvent">
+      <End Role="StatusInvent" EntitySet="StatusInvent" />
       <End Role="InventDose" EntitySet="InventDose" />
     </AssociationSet>
     <AssociationSet Name="FK_InventDose_Tables" Association="Self.FK_InventDose_Tables">
@@ -465,6 +524,10 @@
       <End Role="Visiters" EntitySet="Visiters" />
       <End Role="InventDose" EntitySet="InventDose" />
     </AssociationSet>
+    <AssociationSet Name="FK_managerMessage_managerMessage" Association="Self.FK_managerMessage_managerMessage">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="managerMessage" EntitySet="managerMessage" />
+    </AssociationSet>
     <AssociationSet Name="FK_Menu_Category" Association="Self.FK_Menu_Category">
       <End Role="Category" EntitySet="Category" />
       <End Role="Menu" EntitySet="Menu" />
@@ -472,6 +535,14 @@
     <AssociationSet Name="FK_Rating_Menu" Association="Self.FK_Rating_Menu">
       <End Role="Menu" EntitySet="Menu" />
       <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecialInvent_Visiters" Association="Self.FK_SpecialInvent_Visiters">
+      <End Role="Visiters" EntitySet="Visiters" />
+      <End Role="SpecialInvent" EntitySet="SpecialInvent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusInvent_StatusInvent" Association="Self.FK_StatusInvent_StatusInvent">
+      <End Role="StatusInvent" EntitySet="StatusInvent" />
+      <End Role="StatusInvent1" EntitySet="StatusInvent" />
     </AssociationSet>
     <AssociationSet Name="FK_UserCalander_Employees" Association="Self.FK_UserCalander_Employees">
       <End Role="Employees" EntitySet="Employees" />

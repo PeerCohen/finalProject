@@ -19,6 +19,7 @@ namespace DAL
         {
             this.CommentVisiter = new HashSet<CommentVisiter>();
             this.InventDose = new HashSet<InventDose>();
+            this.SpecialInvent = new HashSet<SpecialInvent>();
         }
     
         public int ld { get; set; }
@@ -36,6 +37,8 @@ namespace DAL
         public virtual ICollection<CommentVisiter> CommentVisiter { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InventDose> InventDose { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SpecialInvent> SpecialInvent { get; set; }
         public virtual Tables Tables { get; set; }
     }
 }

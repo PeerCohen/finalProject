@@ -9,6 +9,7 @@ using BL.cast;
 using System.Runtime.Remoting.Messaging;
 using System.Data;
 using System.Runtime.CompilerServices;
+using System.Data.Entity.Core.Objects;
 
 namespace BL
 {
@@ -44,8 +45,8 @@ namespace BL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>u.Date == DateTime.Today);
-               
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u => u.Date == DateTime.Today);
+
                 return UserCalandarC.ToDTO(userCalandar);
             }
         }
@@ -235,7 +236,7 @@ namespace BL
             }
         }
         // קבלת דוח עובד 
-     public static List<CalandarToManager>   GetEmloyeesCalandarByManaer(DateTime startOfWeek ,int idE)
+        public static List<CalandarToManager> GetEmloyeesCalandarByManaer(DateTime startOfWeek, int idE)
         {
             using (restaurantEntities db = new restaurantEntities())
             {
@@ -308,17 +309,27 @@ namespace BL
                 return "משמרת העובד הוסרה מהמערכת!! ";
             }
         }
+        // הוספת הודעה 
+        public static managerMessageDTO SendManagerMassegeToEmloyee(managerMessageDTO messege)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                db.managerMessage.Add(managerMessageDTO.ConvertDonationToTabel(messege));
+                db.SaveChanges();
+                return messege;
+            }
+        }
     }
-}
-public class calandar
-{
-    public DateTime date { get; set; }
-    public string shift { get; set; }
-}
-public class CalandarToManager
-{
-    public DateTime date { get; set; }
-    public string shift { get; set; }
-    public List<int> employeeID { get; set; } = new List<int>();
-    public List<string> employeeName { get; set; } = new List<string>();
+    public class calandar
+    {
+        public DateTime date { get; set; }
+        public string shift { get; set; }
+    }
+    public class CalandarToManager
+    {
+        public DateTime date { get; set; }
+        public string shift { get; set; }
+        public List<int> employeeID { get; set; } = new List<int>();
+        public List<string> employeeName { get; set; } = new List<string>();
+    }
 }
