@@ -105,12 +105,13 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="IdEmployee" Type="Int32" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
     <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Employees" Relationship="Self.FK_managerMessage_managerMessage" FromRole="managerMessage" ToRole="Employees" />
     <Property Name="subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="fromEmloyeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fromEmloyeeId" Type="Int32" />
     <Property Name="fromEmloyeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AlreadyRead" Type="Boolean" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK_managerMessage_managerMessage" FromRole="managerMessage" ToRole="Employees" />
   </EntityType>
   <EntityType Name="Menu">
     <Key>

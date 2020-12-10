@@ -19,7 +19,7 @@ massegeManager: ManagerMessege= new ManagerMessege();
   constructor(private _bottomSheet: MatBottomSheet, 
      public router: Router, 
      private _formBuilder: FormBuilder,
-     private managerService: ManagerService
+     public managerService: ManagerService
 
   ) { }
   ngOnInit(): void {
@@ -33,11 +33,11 @@ massegeManager: ManagerMessege= new ManagerMessege();
   send()
   {
     debugger
-    this.managerService.EmloyeeToMesseg.subject= this.massegeManager.subject;
-    this.managerService.EmloyeeToMesseg.message= this.massegeManager.message;
+    this.managerService.EmloyeeToMesseg.AlreadyRead= false;
     this.managerService.EmloyeeToMesseg.Date= new Date();
-    this.managerService.sendManagerMassegeToEmloyee().subscribe(res =>
-    this.managerService.EmloyeeToMesseg= res
+    this.managerService.sendManagerMassegeToEmloyee().subscribe(res =>{
+    this.managerService.EmloyeeToMesseg= res;
+   this.hide = false}
 )
   }
 }

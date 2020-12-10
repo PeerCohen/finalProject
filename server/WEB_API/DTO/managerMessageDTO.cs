@@ -14,8 +14,10 @@ namespace DTO
         public Nullable<System.DateTime> Date { get; set; }
         public string message { get; set; }
         public string subject { get; set; }
-        public string fromEmloyeeId { get; set; }
+        public Nullable<int> fromEmloyeeId { get; set; }
         public string fromEmloyeeName { get; set; }
+        public Nullable<bool> AlreadyRead { get; set; }
+      
         public static managerMessage ConvertDonationToTabel(managerMessageDTO e)
         {
             var res = new managerMessage
@@ -27,8 +29,30 @@ namespace DTO
                 subject = e.subject,
                 fromEmloyeeId=e.fromEmloyeeId,
                 fromEmloyeeName= e.fromEmloyeeName,
+                AlreadyRead= e.AlreadyRead,
             };
             return res;
+        }
+        public static managerMessageDTO ConvertDonationToDTO(managerMessage e)
+
+        {
+            var res = new managerMessageDTO
+            {
+                Id = e.Id,
+                IdEmployee = e.IdEmployee,
+                Date = e.Date,
+                message = e.message,
+                subject = e.subject,
+                fromEmloyeeId = e.fromEmloyeeId,
+                fromEmloyeeName = e.fromEmloyeeName,
+                AlreadyRead = e.AlreadyRead,
+            };
+            return res;
+        }
+    //list to dto
+    public static List<managerMessageDTO> ListToDTO(List<managerMessage> list)
+        {
+            return list.Select(x => ConvertDonationToDTO(x)).ToList();
         }
     }
 }

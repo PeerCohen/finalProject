@@ -6,4 +6,5 @@ export class ManagerMessege{
    public  subject:string;
    public  fromEmloyeeId: number;
    public  fromEmloyeeName:string;
+   public AlreadyRead: boolean;
 }

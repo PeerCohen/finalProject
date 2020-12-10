@@ -47,9 +47,11 @@ export class ListWorkerComponent implements OnInit {
   }
   openMessege(worker)
   {
+    console.log(this. userService.CurrentUser)
 this.managerService.EmloyeeToMesseg.IdEmployee= worker.id;
 this.managerService.EmloyeeToMesseg.fromEmloyeeId= this.userService.CurrentUser.id;
-this.managerService.EmloyeeToMesseg.fromEmloyeeId= this.userService.CurrentUser.firstName;
+this.managerService.EmloyeeToMesseg.fromEmloyeeName= this.userService.CurrentUser.firstName;
+console.log(this.managerService.EmloyeeToMesseg)
 
     this._bottomSheet.open(ManagerMassegeComponent);
   }

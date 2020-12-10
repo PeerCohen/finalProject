@@ -81,11 +81,12 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="IdEmployee" Type="int" />
-    <Property Name="Date" Type="date" />
+    <Property Name="Date" Type="datetime" />
     <Property Name="message" Type="nvarchar(max)" />
     <Property Name="subject" Type="nvarchar" MaxLength="50" />
-    <Property Name="fromEmloyeeId" Type="nvarchar" MaxLength="50" />
+    <Property Name="fromEmloyeeId" Type="int" />
     <Property Name="fromEmloyeeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AlreadyRead" Type="bit" />
   </EntityType>
   <EntityType Name="Menu">
     <Key>

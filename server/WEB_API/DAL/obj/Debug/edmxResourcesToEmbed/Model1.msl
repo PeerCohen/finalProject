@@ -87,13 +87,14 @@
     <EntitySetMapping Name="managerMessage">
       <EntityTypeMapping TypeName="restaurantModel.managerMessage">
         <MappingFragment StoreEntitySet="managerMessage">
-          <ScalarProperty Name="fromEmloyeeName" ColumnName="fromEmloyeeName" />
-          <ScalarProperty Name="fromEmloyeeId" ColumnName="fromEmloyeeId" />
-          <ScalarProperty Name="subject" ColumnName="subject" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="fromEmloyeeId" ColumnName="fromEmloyeeId" />
+          <ScalarProperty Name="fromEmloyeeName" ColumnName="fromEmloyeeName" />
+          <ScalarProperty Name="AlreadyRead" ColumnName="AlreadyRead" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

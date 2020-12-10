@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BL.cast;
 using DAL;
 using DTO;
-using BL.cast;
-using System.Runtime.Remoting.Messaging;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Runtime.CompilerServices;
-using System.Data.Entity.Core.Objects;
+using System.Linq;
 
 namespace BL
 {
@@ -314,9 +309,26 @@ namespace BL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                db.managerMessage.Add(managerMessageDTO.ConvertDonationToTabel(messege));
+                managerMessage m = managerMessageDTO.ConvertDonationToTabel(messege);
+                db.managerMessage.Add(m);
                 db.SaveChanges();
                 return messege;
+            }
+        }
+        public static int GetNumberMessege(int IdUser)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                List<managerMessage> L = db.managerMessage.Where(m => m.AlreadyRead == false && m.IdEmployee == IdUser).ToList();
+                return L.Count();
+            }
+        }
+        public static List<managerMessageDTO> GetAllMessege(int IdUser)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                List<managerMessage> L = db.managerMessage.Where(m =>  m.IdEmployee == IdUser).ToList();
+                return managerMessageDTO.ListToDTO(L);
             }
         }
     }
