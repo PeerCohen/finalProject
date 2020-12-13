@@ -88,4 +88,8 @@ export class UserService {
     return this.httpClient.get<Array<ManagerMessege>>(this.URLEm + 'GetAllMessege/' + this.CurrentUser.id + '/');
 
   }
+  EditReadMessege(m)
+  {
+    return this.httpClient.put<ManagerMessege>(this.URLEm + 'EditReadMessege/' , m);
+  }
 }

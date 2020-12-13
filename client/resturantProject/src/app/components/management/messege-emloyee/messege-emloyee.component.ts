@@ -12,6 +12,7 @@ import { ManagerMassegeComponent } from '../manager-massege/manager-massege.comp
   styleUrls: ['./messege-emloyee.component.css']
 })
 export class MessegeEmloyeeComponent implements OnInit {
+  show: {[key: number]: boolean} = {};
 
   constructor(public userService: UserService , private managerService: ManagerService, 
     public dialog: MatDialog,
@@ -32,6 +33,12 @@ this.managerService.EmloyeeToMesseg.fromEmloyeeName= this.userService.CurrentUse
 console.log(this.managerService.EmloyeeToMesseg)
 
     this._bottomSheet.open(ManagerMassegeComponent);
+  }
+  showAllMessege(m, index)
+  {
+    this.show[index] = true;
+
+    this.userService.EditReadMessege(m).subscribe(res=> console.log("sucsess!!"))
   }
 
 }

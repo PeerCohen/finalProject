@@ -10,13 +10,25 @@
             <th>תאריך </th>
             <th>נושא</th>
             <th>הודעה</th>
+            <th></th>
         </tr>
-        <tr *ngFor="let m of listMessege" >
+        <tr *ngFor="let m of listMessege; index as i;" >
             <!-- <div > -->
             <td [ngClass]="m.alreadyRead==true ? 'bordered': 'greyedOut'">{{m.fromEmloyeeName}}</td>
             <td [ngClass]="m.alreadyRead ? 'bordered': 'greyedOut'">{{m.date |date :' h:mm  , d/M/yy '}}</td>
             <td [ngClass]="m.alreadyRead==true ? 'bordered': 'greyedOut'">{{m.subject}}</td>
             <td [ngClass]="m.alreadyRead==true ? 'bordered': 'greyedOut'">{{m.message}}</td>
+            <td (click)="showAllMessege(m, i)">+</td>
+            <div *ngIf="show[i]">
+                
+                <mat-card>
+                    <strong>{{m.subject}}</strong>
+                    <p>{{m.message}}</p>
+                </mat-card>
+                    
+ 
+
+            </div>
         <!-- </div> -->
         </tr>
     </table>

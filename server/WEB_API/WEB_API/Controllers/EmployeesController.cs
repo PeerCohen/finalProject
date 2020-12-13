@@ -107,5 +107,10 @@ public IHttpActionResult POSTDeleteEmployeeShirt([FromBody] DateTime date, int I
         {
             return Ok(EmployeesBL.GetAllMessege(IdUser));
         }
+        [Route("EditReadMessege")]
+        public IHttpActionResult PutAReadMessege([FromBody] managerMessageDTO messege)
+        {
+            return Ok(EmployeesBL.EditReadMessege(messege));
+        }
     }
 }

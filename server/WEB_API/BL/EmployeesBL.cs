@@ -315,6 +315,18 @@ namespace BL
                 return messege;
             }
         }
+        public static managerMessageDTO EditReadMessege(managerMessageDTO messege)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                messege.AlreadyRead = true;
+                managerMessage m = managerMessageDTO.ConvertDonationToTabel(messege);
+
+                db.Entry(m).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return messege;
+            }
+        }
         public static int GetNumberMessege(int IdUser)
         {
             using (restaurantEntities db = new restaurantEntities())
