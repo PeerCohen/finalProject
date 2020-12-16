@@ -46,7 +46,10 @@ namespace BL
                 menu.ImageBase64 = menu.ImageBase64.Substring(index + 1);
             }
             var bytes = Convert.FromBase64String(menu.ImageBase64);
-            using (var imageFile = new FileStream(@"C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\src\images\products\" + menu.Category + @"\" + menu.image, FileMode.Create))
+            using (var imageFile = new FileStream(
+                @"C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\src\images\products\"
+                + menu.Category + @"\" + menu.image, FileMode.Create
+                ))
             {
                 imageFile.Write(bytes, 0, bytes.Length);
                 imageFile.Flush();

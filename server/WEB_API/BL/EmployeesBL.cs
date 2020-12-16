@@ -150,7 +150,7 @@ namespace BL
                 return "השינויים נשמרו";
             }
         }
-        // שליפת כל היומ שהם לא נהלים 
+        // שליפת כל היומ שהם לא מנהלים 
         public static List<CalandarToManager> GetEmloyeesCalandarToManger(DateTime startOfWeek)
         {
             using (restaurantEntities db = new restaurantEntities())
@@ -204,7 +204,7 @@ namespace BL
                         LCTM.Add(calandarToManager);
                     }
                 }
-                // כאן אני יעבור ל המעך של ימי השבוע ויבדוק אם אין ערך רעק ליום מסוים אם שי ערך ריק להוסים לי אוביקט ללא שם 
+                // מעבר על המערך של ימות השבוע ובדיקה אם אין ערך ריק ליום מסוים אם יש ערך ריק להוסיף אוביקט ללא שם 
                 return LCTM.OrderBy(r => r.date).ToList();
             }
         }
@@ -214,7 +214,7 @@ namespace BL
             return Enumerable.Range(0, toDate.Subtract(fromDate).Days + 1)
                              .Select(d => fromDate.AddDays(d));
         }
-        //שינוי משמרות לפי תאריךלעובד מסוים ע"י מנהל 
+        //שינוי משמרות לפי תאריך לעובד מסוים ע"י מנהל 
         public static string PutShiftToEmployee(DateTime date, int IdUser)
         {
             using (restaurantEntities db = new restaurantEntities())

@@ -32,9 +32,10 @@ namespace BL
         {
             RatingDAL.Add(RatingCast.ToDAL(Rating));
         }
-        public static int CalcRate(int doseId)
+        public static int CalcRate(RatingDTO Rating)
         {
-          return  RatingDAL.GetRate(doseId);
+            
+         return  RatingDAL.GetRate(Rating.doseId);
         }
     }
 }

@@ -1,12 +1,17 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <div *ngIf='userService.singIn' class="userName">
+        <div *ngIf='isEmployee()'>
+            <p>
+                <mat-icon matBadge="15" matBadgeColor="warn">chat_bubble</mat-icon>
+            </p>
+        </div>
+        <div *ngIf='userService.singIn ' class="userName">
             <mat-icon>account_circle </mat-icon>
             שלום {{userService.userName}}
         </div>
-        <button mat-button class="user-enter" *ngIf='!userService.singIn' (click)="openBottomSheetSignin()">הרשם</button>
-        <button *ngIf='!userService.singIn' mat-button class="user-enter" (click)="openBottomSheetLogin()">התחבר</button>
-        <button *ngIf='userService.singIn' mat-button class="user-enter" (click)="getOut()">
+        <button mat-button class="user-enter" *ngIf='!userService.singIn ' (click)="openBottomSheetSignin()">הרשם</button>
+        <button *ngIf='!userService.singIn ' mat-button class="user-enter" (click)="openBottomSheetLogin()">התחבר</button>
+        <button *ngIf='userService.singIn ' mat-button class="user-enter" (click)="getOut()">
             <mat-icon>exit_to_app</mat-icon>
             יציאה
         </button>

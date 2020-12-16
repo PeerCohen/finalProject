@@ -24,9 +24,11 @@ namespace WEB_API.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]RatingDTO rating)
+        [HttpPost]
+        [Route("RatingDoseByVisiter")]
+        public void RatingDoseByVisiter([FromBody]RatingDTO rating)
         {
-             RatingBL.Add(rating);
+             RatingBL.CalcRate(rating);
         }
 
         // PUT api/<controller>/5

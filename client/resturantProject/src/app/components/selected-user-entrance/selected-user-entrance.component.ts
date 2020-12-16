@@ -20,15 +20,20 @@ export class SelectedUserEntranceComponent implements OnInit {
   value = '';
 
   ngOnInit(): void {
-   this.userService.singIn=this.userService.CurrentUser?true:false;
+    this.userService.singIn = this.userService.CurrentUser ? true : false;
     // אם כבר היתה כניסה היום או לא
- this.userService.ifSingIn();
+    this.userService.ifSingIn();
   }
   openBottomSheetSignin() {
     this._bottomSheet.open(OpenBottomSheetSigninComponent);
   }
   openBottomSheetLogin() {
     this._bottomSheet.open(OpenBottomSheetLoginComponent);
+  }
+  isEmployee() {
+    if (localStorage.getItem('isEmployee') === 'true')
+      return true;
+    return false;
   }
   getOut() {
     debugger

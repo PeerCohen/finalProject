@@ -52,7 +52,12 @@ namespace WEB_API.Controllers
         {
             EmployeesBL.Delete(employeesDTO);
         }
-
+        [HttpPost]
+        [Route("UpdateWorker")]
+        public void UpdateWorker([FromBody] EmployeesDTO employeesDTO)
+        {
+            EmployeesBL.Update(employeesDTO);
+        }
         [HttpPut]
         [Route("SineOut/{id}")]
         public IHttpActionResult PutGetOut(int id, [FromBody] DateTime date)

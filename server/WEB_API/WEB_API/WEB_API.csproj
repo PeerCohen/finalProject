@@ -208,6 +208,7 @@
     <Compile Include="Controllers\InventDoseController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\RatingController.cs" />
+    <Compile Include="Controllers\SpecialInventController.cs" />
     <Compile Include="Controllers\StatusDoseController.cs" />
     <Compile Include="Controllers\TablesController.cs" />
     <Compile Include="Controllers\VipTablesController.cs" />

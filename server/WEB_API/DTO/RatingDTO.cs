@@ -8,8 +8,8 @@ namespace DTO
 {
    public class RatingDTO
     {
-        public int? userId { get; set; }
-        public int? doseId { get; set; }
-        public int? rate { get; set; }
+        public int userId { get; set; }
+        public int doseId { get; set; }
+        public int rate { get; set; }
     }
 }

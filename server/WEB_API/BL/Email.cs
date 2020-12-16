@@ -22,16 +22,14 @@ namespace BL
                     mail.To.Add(email.email);
                     mail.Subject =email.Subject;
                     mail.IsBodyHtml = true;
-                mail.Body = "<br />" +
-                 "<b>" + email.Body + "</b>" +
-              @"<img src="" title.png""cid:"" />";
+                    mail.Body = "<br />" + "<b>" + email.Body + "</b>"
+                    + "<img src=@'C:\\Users\\user-pc\\Documents\\GitHub\\finalPoject\\server\\WEB_API\\BL\\title.png'/>";
                    
-                SmtpServer.Port = 587;
+                    SmtpServer.Port = 587;
                     SmtpServer.Credentials = new System.Net.NetworkCredential("2meatrestaurant@gmail.com", "prcn8531");
                     SmtpServer.EnableSsl = true;
                 
                 SmtpServer.Send(mail);
-                    //MessageBox.Show("mail Send");
                 }
                 catch (Exception ex)
                 {

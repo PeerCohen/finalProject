@@ -50,6 +50,7 @@
     <Compile Include="MenuDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingDTO.cs" />
+    <Compile Include="SpecialInvent.cs" />
     <Compile Include="StatusDoseDTO.cs" />
     <Compile Include="TablesDTO.cs" />
     <Compile Include="UserCalandarDTO.cs" />

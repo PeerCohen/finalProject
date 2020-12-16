@@ -35,6 +35,8 @@ namespace WEB_API.Controllers
         }
 
         // POST: api/InventDose
+        [HttpPost]
+        [Route("")]
         public void Post([FromBody]InventDoseDTO inventDose)
         {
             InventDoseBL.Add(inventDose);

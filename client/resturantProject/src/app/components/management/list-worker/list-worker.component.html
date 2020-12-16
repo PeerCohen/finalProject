@@ -1,4 +1,8 @@
 <div class="wapper">
+    <!-- <div>
+        <input id="address" type="textbox" value="Sydney, NSW">
+
+    </div> -->
     <div class="new-worker">
         <button mat-flat-button color="primary" *ngIf="!isOpenNewAddWorkerForm" (click)="openNewAddWorkerForm()">
             הוספת עובד חדש
@@ -33,7 +37,7 @@
                 <div>{{worker.phone}}</div>
             </td>
             <td>
-                <div>{{worker.address}}</div>
+                <div (click)="codeAddress(worker.address)">{{worker.address}}</div>
             </td>
             <td>
                 <div>{{worker.idEmployeeType}}</div>

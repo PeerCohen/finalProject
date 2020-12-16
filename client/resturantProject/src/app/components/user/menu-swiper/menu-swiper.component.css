@@ -35,8 +35,8 @@ mat-icon {
     left: 28%;
     top: -13px;
     height: 53px;
-    background-color: #363638;
-    color: #f1f1f3;
+    /* background-color: #363638; */
+    color: #9a2d44;
     width: 130%;
     padding: 5%;
 }
@@ -72,10 +72,13 @@ mat-icon {
 }
 
 .img-menu {
-    width: 128%;
+    width: 129%;
     position: absolute;
     top: 40px;
-    left: -2px;
+    left: -3px;
+    border: solid;
+    border-color: #343436;
+    border-width: 23px;
 }
 
 .img-logo {

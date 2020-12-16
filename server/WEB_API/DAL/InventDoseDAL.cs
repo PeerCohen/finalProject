@@ -20,14 +20,12 @@ namespace DAL
         //get by id
         public static List<InventDose> GetById(int id)
         {
-
             using (restaurantEntities db = new restaurantEntities())
-            {var a = db.InventDose.Where(v => v.IdVisiter == id).Include("InventDetails").ToList();
-                a.ForEach(v =>v.InventDetails = v.InventDetails.ToList());
-                return a;
+            {
+                var invents = db.InventDose.Where(v => v.IdVisiter == id).Include("InventDetails").ToList();
+                invents.ForEach(v =>v.InventDetails = v.InventDetails.ToList());
+                return invents;
             }
-
-
         }
         //add
         public static InventDose Add(InventDose inventDose)
