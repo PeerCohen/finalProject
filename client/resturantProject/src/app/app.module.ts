@@ -111,7 +111,9 @@ import { FavoriteDoseComponent } from './components/management/favorite-dose/fav
 import { DialogSendingComponent } from './components/user/dialog-sending/dialog-sending.component';
 import { DialogSaveTableComponent } from './components/user/dialog-save-table/dialog-save-table.component';
 import { CalandarEmployeeByManagerComponent } from './components/Calandar/calandar-employee-by-manager/calandar-employee-by-manager.component';
-
+import { ManagerMassegeComponent } from './components/management/manager-massege/manager-massege.component';
+import { MessegeEmloyeeComponent } from './components/management/messege-emloyee/messege-emloyee.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -193,11 +195,14 @@ import { CalandarEmployeeByManagerComponent } from './components/Calandar/caland
     DialogSendingComponent,
     DialogSaveTableComponent,
     CalandarEmployeeByManagerComponent,
+    ManagerMassegeComponent,
+    MessegeEmloyeeComponent,
     
 
 
   ],
   imports: [
+    MatBadgeModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

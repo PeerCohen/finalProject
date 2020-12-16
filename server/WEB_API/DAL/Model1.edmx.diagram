@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="51145ef1fb5f4608a05c907a1431fae2" Name="Diagram1">
+      <Diagram DiagramId="d21586438c18447c84ba30dcaba17720" Name="Diagram1">
         <EntityTypeShape EntityType="restaurantModel.Address" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.Category" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.CommentVisiter" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
@@ -13,13 +13,12 @@
         <EntityTypeShape EntityType="restaurantModel.EmployeesTypes" Width="1.5" PointX="1.5" PointY="15.625" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.InventDetails" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.InventDose" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="restaurantModel.managerMessage" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurantModel.managerMessage" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.Menu" Width="1.5" PointX="6" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.Rating" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.SpecialInvent" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.StatusDose" Width="1.5" PointX="0.75" PointY="19.125" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.StatusInvent" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="restaurantModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.Tables" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.UserCalander" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
         <EntityTypeShape EntityType="restaurantModel.VipTables" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />

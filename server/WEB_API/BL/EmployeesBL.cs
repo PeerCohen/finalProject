@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BL.cast;
 using DAL;
 using DTO;
-using BL.cast;
-using System.Runtime.Remoting.Messaging;
+using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Runtime.CompilerServices;
+using System.Linq;
 
 namespace BL
 {
@@ -44,8 +40,8 @@ namespace BL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>u.Date == DateTime.Today);
-               
+                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u => u.Date == DateTime.Today);
+
                 return UserCalandarC.ToDTO(userCalandar);
             }
         }
@@ -235,7 +231,7 @@ namespace BL
             }
         }
         // קבלת דוח עובד 
-     public static List<CalandarToManager>   GetEmloyeesCalandarByManaer(DateTime startOfWeek ,int idE)
+        public static List<CalandarToManager> GetEmloyeesCalandarByManaer(DateTime startOfWeek, int idE)
         {
             using (restaurantEntities db = new restaurantEntities())
             {
@@ -308,17 +304,56 @@ namespace BL
                 return "משמרת העובד הוסרה מהמערכת!! ";
             }
         }
+        // הוספת הודעה 
+        public static managerMessageDTO SendManagerMassegeToEmloyee(managerMessageDTO messege)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                managerMessage m = managerMessageDTO.ConvertDonationToTabel(messege);
+                db.managerMessage.Add(m);
+                db.SaveChanges();
+                return messege;
+            }
+        }
+        public static managerMessageDTO EditReadMessege(managerMessageDTO messege)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                messege.AlreadyRead = true;
+                managerMessage m = managerMessageDTO.ConvertDonationToTabel(messege);
+
+                db.Entry(m).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return messege;
+            }
+        }
+        public static int GetNumberMessege(int IdUser)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                List<managerMessage> L = db.managerMessage.Where(m => m.AlreadyRead == false && m.IdEmployee == IdUser).ToList();
+                return L.Count();
+            }
+        }
+        public static List<managerMessageDTO> GetAllMessege(int IdUser)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                List<managerMessage> L = db.managerMessage.Where(m =>  m.IdEmployee == IdUser).ToList();
+                return managerMessageDTO.ListToDTO(L);
+            }
+        }
     }
-}
-public class calandar
-{
-    public DateTime date { get; set; }
-    public string shift { get; set; }
-}
-public class CalandarToManager
-{
-    public DateTime date { get; set; }
-    public string shift { get; set; }
-    public List<int> employeeID { get; set; } = new List<int>();
-    public List<string> employeeName { get; set; } = new List<string>();
+    public class calandar
+    {
+        public DateTime date { get; set; }
+        public string shift { get; set; }
+    }
+    public class CalandarToManager
+    {
+        public DateTime date { get; set; }
+        public string shift { get; set; }
+        public List<int> employeeID { get; set; } = new List<int>();
+        public List<string> employeeName { get; set; } = new List<string>();
+    }
 }

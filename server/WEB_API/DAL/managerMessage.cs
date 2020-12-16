@@ -19,6 +19,7 @@ namespace DAL
         public Nullable<System.DateTime> Date { get; set; }
         public string message { get; set; }
         public string subject { get; set; }
+        public Nullable<int> fromEmloyeeId { get; set; }
         public string fromEmloyeeName { get; set; }
         public Nullable<bool> AlreadyRead { get; set; }
     

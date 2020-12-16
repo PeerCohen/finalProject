@@ -36,4 +36,5 @@ sendMail(e)
 {
   return this.httpClient.post('http://localhost:51437/api/Email/send' , e);
 }
+
 }

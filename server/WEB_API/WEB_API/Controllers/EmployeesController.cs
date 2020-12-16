@@ -95,5 +95,27 @@ public IHttpActionResult POSTDeleteEmployeeShirt([FromBody] DateTime date, int I
             return Ok(EmployeesBL.DeleteEmployeeShirt(date, IdUser));
 
         }
+        [HttpPost]
+        [Route("SendManagerMassegeToEmloyee")]
+        public IHttpActionResult PostManagerMassegeToEmloyee([FromBody] managerMessageDTO Messege)
+        {
+            return Ok(EmployeesBL.SendManagerMassegeToEmloyee(Messege));
+
+        }
+        [Route("GetNumberMessege/{IdUser}")]
+        public IHttpActionResult GetNumberMessege (int IdUser )
+        {
+            return Ok(EmployeesBL.GetNumberMessege(IdUser));
+        }
+        [Route("GetAllMessege/{IdUser}")]
+        public IHttpActionResult GetAllMessege(int IdUser)
+        {
+            return Ok(EmployeesBL.GetAllMessege(IdUser));
+        }
+        [Route("EditReadMessege")]
+        public IHttpActionResult PutAReadMessege([FromBody] managerMessageDTO messege)
+        {
+            return Ok(EmployeesBL.EditReadMessege(messege));
+        }
     }
 }

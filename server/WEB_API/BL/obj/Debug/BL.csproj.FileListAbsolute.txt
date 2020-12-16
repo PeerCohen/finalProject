@@ -56,3 +56,15 @@ C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.dll
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\BL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\BL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DAL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DTO.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DAL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DAL.dll.config
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.pdb

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { InventDose } from '../modals/invent-dose';
 import { InventDetails } from '../modals/invent-details';
 import { UserCalandar } from '../modals/UserCalandar';
+import { ManagerMessege } from '../modals/ManagerMessege';
 
 @Injectable({
   providedIn: 'root'
@@ -76,5 +77,19 @@ export class UserService {
     } else {
       this.userName = this.CurrentUser?.firstName;
     }
+  }
+  getNumberMessege()
+  {
+    return this.httpClient.get<number>(this.URLEm + 'GetNumberMessege/' + this.CurrentUser.id + '/');
+
+  }
+  getAllMessege(): Observable<Array<ManagerMessege>>
+  {
+    return this.httpClient.get<Array<ManagerMessege>>(this.URLEm + 'GetAllMessege/' + this.CurrentUser.id + '/');
+
+  }
+  EditReadMessege(m)
+  {
+    return this.httpClient.put<ManagerMessege>(this.URLEm + 'EditReadMessege/' , m);
   }
 }

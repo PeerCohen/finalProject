@@ -23,6 +23,8 @@ import { CalandarToEmployeeComponent } from './components/Calandar/calandar-to-e
 import { CalandarToManagerComponent } from './components/Calandar/calandar-to-manager/calandar-to-manager.component';
 import { TableOrderComponent } from './components/user/table-order/table-order.component';
 import { CalandarEmployeeByManagerComponent } from './components/Calandar/calandar-employee-by-manager/calandar-employee-by-manager.component';
+import { ListWorkerComponent } from './components/management/list-worker/list-worker.component';
+import { ManagerMassegeComponent } from './components/management/manager-massege/manager-massege.component';
 
 
 
@@ -117,7 +119,17 @@ const routes: Routes = [
    {
     path: "CalandarEmployeeByManager",
     component : CalandarEmployeeByManagerComponent,
-   }
+   },
+  {
+    path: "ListWorker",
+    component : ListWorkerComponent,
+    
+  },
+  {
+    path: "ManagerMassege",
+    component : ManagerMassegeComponent,
+  },
+  
    
 ];
 

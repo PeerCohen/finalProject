@@ -39,7 +39,6 @@ namespace DAL
         public virtual DbSet<SpecialInvent> SpecialInvent { get; set; }
         public virtual DbSet<StatusDose> StatusDose { get; set; }
         public virtual DbSet<StatusInvent> StatusInvent { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tables> Tables { get; set; }
         public virtual DbSet<UserCalander> UserCalander { get; set; }
         public virtual DbSet<VipTables> VipTables { get; set; }
