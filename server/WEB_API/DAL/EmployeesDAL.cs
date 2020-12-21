@@ -12,7 +12,7 @@ namespace DAL
         //get all
         public static List<Employees> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Employees.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
         public static Employees GetById(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Employees.Find(id);
             }
@@ -31,7 +31,7 @@ namespace DAL
         //add
         public static void Add(Employees employees)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Employees.Add(employees);
                 db.SaveChanges();
@@ -40,7 +40,7 @@ namespace DAL
 
         public static Employees Login(string username,string password)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                return db.Employees.FirstOrDefault(p=>p.Password == password && p.LastName==username);
             }
@@ -49,7 +49,7 @@ namespace DAL
         public static void Update(Employees employees)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Entry(employees).State = EntityState.Modified;
                 db.SaveChanges();
@@ -58,7 +58,7 @@ namespace DAL
         //delete
         public static void Delete(Employees employees)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Employees.Remove(employees);
                 db.SaveChanges();

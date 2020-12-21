@@ -13,7 +13,7 @@ namespace DAL
         //get all
         public static List<Visiters> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Visiters.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
 
         public static Visiters GetByPassword(string username,string password)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Visiters.FirstOrDefault(p=>p.Password==password&&p.NameUser==username);
             }
@@ -30,7 +30,7 @@ namespace DAL
         public static Visiters GetById(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Visiters.FirstOrDefault(v => v.ld == id);
             }
@@ -41,7 +41,7 @@ namespace DAL
 
         public static Visiters Add(Visiters visiters)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 visiters = db.Visiters.Add(visiters);
                 db.SaveChanges();
@@ -52,7 +52,7 @@ namespace DAL
         public static void Update(Visiters visiters)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Entry(visiters).State = EntityState.Modified;
                 db.SaveChanges();
@@ -61,7 +61,7 @@ namespace DAL
         //delete
         public static void Delete(Visiters visiters)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Visiters.Remove(visiters);
                 db.SaveChanges();

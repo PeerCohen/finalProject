@@ -12,7 +12,7 @@ namespace DAL
         //get all
         public static List<CurrentEmployee> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.CurrentEmployee.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
         public static CurrentEmployee GetById(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.CurrentEmployee.Find(id);
             }
@@ -31,7 +31,7 @@ namespace DAL
         //add
         public static void Add(CurrentEmployee currentEmployee)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.CurrentEmployee.Add(currentEmployee);
                 db.SaveChanges();
@@ -41,7 +41,7 @@ namespace DAL
         public static void Update(CurrentEmployee currentEmployee)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Entry(currentEmployee).State = EntityState.Modified;
                 db.SaveChanges();
@@ -50,7 +50,7 @@ namespace DAL
         //delete
         public static void Delete(CurrentEmployee currentEmployee)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.CurrentEmployee.Remove(currentEmployee);
                 db.SaveChanges();

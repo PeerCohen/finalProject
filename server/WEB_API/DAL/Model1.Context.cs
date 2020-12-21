@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class restaurantEntities : DbContext
+    public partial class restaurantEntities1 : DbContext
     {
-        public restaurantEntities()
-            : base("name=restaurantEntities")
+        public restaurantEntities1()
+            : base("name=restaurantEntities1")
         {
         }
     
@@ -39,6 +39,7 @@ namespace DAL
         public virtual DbSet<SpecialInvent> SpecialInvent { get; set; }
         public virtual DbSet<StatusDose> StatusDose { get; set; }
         public virtual DbSet<StatusInvent> StatusInvent { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tables> Tables { get; set; }
         public virtual DbSet<UserCalander> UserCalander { get; set; }
         public virtual DbSet<VipTables> VipTables { get; set; }

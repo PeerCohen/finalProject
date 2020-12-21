@@ -13,7 +13,7 @@ namespace DAL
         //get all
         public static List<Menu> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Menu.ToList();
             }
@@ -22,7 +22,7 @@ namespace DAL
         public static Menu GetById(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Menu.Find(id);
             }
@@ -32,7 +32,7 @@ namespace DAL
         public static List<Menu> GetByCategory(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 
                 return db.Menu.Where(item => item.Category ==id).ToList();
@@ -42,7 +42,7 @@ namespace DAL
         //add
         public static void Add(Menu menu)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Menu.Add(menu);
                 db.SaveChanges();
@@ -52,7 +52,7 @@ namespace DAL
         public static void Update(Menu menu)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 var m = db.Menu.FirstOrDefault(p => p.Id == menu.Id);
                 m.NameDose = menu.NameDose;
@@ -64,7 +64,7 @@ namespace DAL
         //delete
         public static void Delete(Menu menu)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 var m = db.Menu.FirstOrDefault(p => p.Id == menu.Id);
                 db.Menu.Remove(m);

@@ -25,6 +25,9 @@ import { TableOrderComponent } from './components/user/table-order/table-order.c
 import { CalandarEmployeeByManagerComponent } from './components/Calandar/calandar-employee-by-manager/calandar-employee-by-manager.component';
 import { ListWorkerComponent } from './components/management/list-worker/list-worker.component';
 import { ManagerMassegeComponent } from './components/management/manager-massege/manager-massege.component';
+import { RestaurantHomeComponent } from './components/in-resuarant/restaurant-home/restaurant-home.component';
+import { RestauranTableComponent } from './components/in-resuarant/restauran-table/restauran-table.component';
+import { PaymentInRestaurantComponent } from './components/in-resuarant/payment-in-restaurant/payment-in-restaurant.component';
 
 
 
@@ -112,6 +115,18 @@ const routes: Routes = [
    path: "CalandarToManager",
    component : CalandarToManagerComponent,
   },
+  {
+    path: "in-restaurant",
+    component : RestaurantHomeComponent,
+   },
+   {
+    path: "paymentInRes",
+    component : PaymentInRestaurantComponent,
+   },
+   {
+    path: "in-restaurant-table",
+    component : RestauranTableComponent,
+   },
   {
     path: "table-order",
     component : TableOrderComponent,

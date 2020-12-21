@@ -12,7 +12,7 @@ namespace DAL
         //get all
         public static List<StatusDose> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.StatusDose.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
         public static StatusDose GetById(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.StatusDose.Find(id);
             }
@@ -31,7 +31,7 @@ namespace DAL
         //add
         public static void Add(StatusDose statusDose)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.StatusDose.Add(statusDose);
                 db.SaveChanges();
@@ -41,7 +41,7 @@ namespace DAL
         public static void Update(StatusDose statusDose)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Entry(statusDose).State = EntityState.Modified;
                 db.SaveChanges();
@@ -50,7 +50,7 @@ namespace DAL
         //delete
         public static void Delete(StatusDose statusDose)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.StatusDose.Remove(statusDose);
                 db.SaveChanges();

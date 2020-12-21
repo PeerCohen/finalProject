@@ -12,7 +12,7 @@ namespace DAL
         //get all
         public static List<EmployeesTypes> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
             return db.EmployeesTypes.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
         public static EmployeesTypes GetById(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.EmployeesTypes.Find(id);
             }
@@ -31,7 +31,7 @@ namespace DAL
         //add
         public static void Add(EmployeesTypes employeesTypes)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.EmployeesTypes.Add(employeesTypes);
                 db.SaveChanges();
@@ -41,7 +41,7 @@ namespace DAL
         public static void Update(EmployeesTypes employeesTypes)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Entry(employeesTypes).State = EntityState.Modified;
                 db.SaveChanges();
@@ -50,7 +50,7 @@ namespace DAL
         //delete
         public static void Delete(EmployeesTypes employeesTypes)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.EmployeesTypes.Remove(employeesTypes);
                 db.SaveChanges();

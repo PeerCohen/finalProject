@@ -22,8 +22,8 @@ export class AppComponent  implements OnInit{
   }
   ngOnInit(){
     this.email.Subject = "try";
-    this.email.email = "shira4146152@gmail.com";
+    this.email.email = "pcohen853@gmail.com";
     this.email.Body = 'ההזמנה שלך בוצעה בהצלחה !!!';
-    this.ser2.sendMail(this.email).subscribe(res => console.log('שליחת המייל הצליחה '));
+   // this.ser2.sendMail(this.email).subscribe(res => console.log('שליחת המייל הצליחה '));
   }
 }

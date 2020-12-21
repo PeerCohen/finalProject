@@ -12,15 +12,22 @@ namespace DAL
         //get all
         public static List<InventDose> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.InventDose.Include("InventDetails").ToList();
+            }
+        }
+        public static List<SpecialInvent> GetAllSpecialInvent()
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                return db.SpecialInvent.ToList();
             }
         }
         //get by id
         public static List<InventDose> GetById(int id)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 var invents = db.InventDose.Where(v => v.IdVisiter == id).Include("InventDetails").ToList();
                 invents.ForEach(v =>v.InventDetails = v.InventDetails.ToList());
@@ -30,7 +37,7 @@ namespace DAL
         //add
         public static InventDose Add(InventDose inventDose)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 inventDose.DateInvent = DateTime.Now;
                var inventDose1 = db.InventDose.Add(inventDose);
@@ -51,7 +58,7 @@ namespace DAL
         public static void Update(InventDose inventDose)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Entry(inventDose).State = EntityState.Modified;
                 db.SaveChanges();
@@ -60,7 +67,7 @@ namespace DAL
         //delete
         public static void Delete(InventDose inventDose)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.InventDose.Remove(inventDose);
                 db.SaveChanges();

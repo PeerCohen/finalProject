@@ -35,7 +35,7 @@ namespace BL
         public static int CalcRate(RatingDTO Rating)
         {
             
-         return  RatingDAL.GetRate(Rating.doseId);
+         return RatingDAL.GetRate(Rating.doseId);
         }
     }
 }

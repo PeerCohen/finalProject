@@ -1,0 +1,19 @@
+mat-icon {
+    color: greenyellow;
+    font-size: 360%;
+    text-align: center;
+}
+
+.approval {
+    width: 250px;
+    height: 180px;
+    text-align: center;
+}
+
+.p {
+    font-size: x-large;
+}
+
+p {
+    font-size: large;
+}

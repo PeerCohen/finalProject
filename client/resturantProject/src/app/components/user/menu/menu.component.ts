@@ -15,12 +15,15 @@ import { VisitersOrderManagementService } from 'src/app/shared/services/visiters
 
 export class MenuComponent implements OnInit {
 
+  @Input() IsInRestaurant: boolean=false;
   @Input() option: string;
   @Input() isMiniCartOpen: boolean = false;
   optionDetails: string;
+  InRestaurant:boolean;
+
 
   constructor(private visitersOrderManagementService: VisitersOrderManagementService) {
-
+  this.InRestaurant=this.IsInRestaurant
   }
   ngOnInit(): void {
 

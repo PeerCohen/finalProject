@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Menu } from 'src/app/shared/modals/menu';
 import { MenuService } from 'src/app/shared/services/menu.service';
 import { CategoryService } from 'src/app/shared/services/category.service';
 import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import { InRestaurantService } from 'src/app/shared/services/in-restaurant.service';
 
 @Component({
   selector: 'app-dose-category',
@@ -12,6 +13,7 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DoseCategoryComponent implements OnInit {
 
+  @Input() Restaurant:boolean;
   isMiniCartOpen: boolean;
   InputIdCategory: number;
   nameCategory: string;
@@ -21,7 +23,8 @@ export class DoseCategoryComponent implements OnInit {
   constructor(public menuService: MenuService,
     config: NgbRatingConfig,
     public categoryService: CategoryService,
-    public visiterOrderManagment: VisitersOrderManagementService) {
+    public visiterOrderManagment: VisitersOrderManagementService,
+    public inRestaurant :InRestaurantService) {
     config.max = 5;
   }
 
@@ -37,16 +40,19 @@ export class DoseCategoryComponent implements OnInit {
     return false;
   }
   addToCart(item: Menu) {
-    // debugger;
+     debugger;
+     if(this.Restaurant){
+      alert("הוסף מוצר בהצלחה")
+      this.inRestaurant.addToCartInRestaurant(item)
+     }     
     // this.isMiniCartOpen=true;
-    if (this.visiterOrderManagment.addOrderToCart(item)) {
+    else if (this.visiterOrderManagment.addOrderToCart(item)) {
       alert("הוסף מוצר בהצלחה")
     }
     else
       alert("אינך משתמש רשום")
 
   }
-
   getMenuDetails() {
 
     this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(

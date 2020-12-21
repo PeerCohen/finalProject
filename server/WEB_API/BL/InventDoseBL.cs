@@ -15,7 +15,10 @@ namespace BL
         {
             return InventDoseCast.ListToDTO(InventDoseDAL.GetAll());
         }
-
+        public static List<SpecialInventDTO> GetAllSpecialInvent()
+        {
+            return InventDoseCast.ListToDTOSpecial(InventDoseDAL.GetAllSpecialInvent());
+        }
         public static void Update(InventDoseDTO InventDose)
         {
             InventDoseDAL.Update(InventDoseCast.ToDAL(InventDose));

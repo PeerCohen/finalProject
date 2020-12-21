@@ -1,0 +1,15 @@
+<div class="tool-up"></div>
+<app-logo></app-logo>
+<div class="wrapper">
+    <div>
+        <div #paypal1></div>
+    </div>
+    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+    <div><button mat-flat-button color="primary" (click)="payment()">
+            <mat-icon> payments</mat-icon>
+            שולם
+        </button>
+    </div>
+    <button mat-flat-button color="primary" (click)="paymentWithCash()">לתשלום במזומן לחץ כאן</button>
+</div>

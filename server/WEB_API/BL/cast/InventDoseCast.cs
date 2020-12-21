@@ -24,11 +24,28 @@ namespace BL.cast
                 InventDetails = InventDetailsCast.ListToDTO(item.InventDetails.ToList())
             };
         }
+        //for special
+        public static SpecialInventDTO ToDTOSpecial(SpecialInvent item)
+        {
+            return new SpecialInventDTO()
+            {
+                KindRequest = item.KindRequest,
+                CountOfPeople=item.CountOfPeople,
+                Date=item.Date,
+                Id=item.Id,
+                IdVisiter=item.IdVisiter
 
+            };
+        }
         //list to dto
         public static List<InventDoseDTO> ListToDTO(List<InventDose> list)
         {
             return list.Select(x => ToDTO(x)).ToList();
+        }
+        //for special
+        public static List<SpecialInventDTO> ListToDTOSpecial(List<SpecialInvent> list)
+        {
+            return list.Select(x => ToDTOSpecial(x)).ToList();
         }
         //one to dal
         public static InventDose ToDAL(InventDoseDTO item)

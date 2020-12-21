@@ -12,7 +12,7 @@ namespace DAL
         //get all
         public static List<Rating> GetAll()
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Rating.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
         public static Rating GetById(int id)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 return db.Rating.Find(id);
             }
@@ -31,7 +31,7 @@ namespace DAL
         //add
         public static void Add(Rating Rating)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Rating.Add(Rating);
                 db.SaveChanges();
@@ -41,7 +41,7 @@ namespace DAL
         public static void Update(Rating Rating)
         {
 
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Entry(Rating).State = EntityState.Modified;
                 db.SaveChanges();
@@ -50,16 +50,16 @@ namespace DAL
         //delete
         public static void Delete(Rating Rating)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.Rating.Remove(Rating);
                 db.SaveChanges();
             }
         }
 
-        public static int GetRate(int doseId)
+        public static int GetRate(int? doseId)
         {
-            using (restaurantEntities db = new restaurantEntities())
+            using (restaurantEntities1 db = new restaurantEntities1())
             {
                 var d = db.Rating.Where(p => p.doseId == doseId).ToList();
                 var sum = d.Sum(p => p.rate);

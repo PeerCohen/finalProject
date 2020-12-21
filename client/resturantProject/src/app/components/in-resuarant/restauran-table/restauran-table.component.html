@@ -1,0 +1,15 @@
+<app-logo-head [num]="numberOfTable"></app-logo-head>
+<ng-container *ngIf="!startOrder">
+    <div class="body">
+        <div class="body-text">
+            <p>ברוכים הבאים</p>
+            <p>בתאבון !</p>
+        </div>
+        <img class="img" [src]="'../../assets/images/table.jpg'" />
+        <br />
+        <button mat-raised-button color="primary" (click)="getOrder()">להזמנת תפריט</button>
+    </div>
+</ng-container>
+<ng-container *ngIf="startOrder">
+    <app-menu [IsInRestaurant]="true"></app-menu>
+</ng-container>

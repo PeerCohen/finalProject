@@ -114,6 +114,14 @@ import { CalandarEmployeeByManagerComponent } from './components/Calandar/caland
 import { ManagerMassegeComponent } from './components/management/manager-massege/manager-massege.component';
 import { MessegeEmloyeeComponent } from './components/management/messege-emloyee/messege-emloyee.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { RestaurantHomeComponent } from './components/in-resuarant/restaurant-home/restaurant-home.component';
+import { RestauranTableComponent } from './components/in-resuarant/restauran-table/restauran-table.component';
+import { LogoHeadComponent } from './components/logo-head/logo-head.component';
+import { CartInRestaurantComponent } from './components/in-resuarant/cart-in-restaurant/cart-in-restaurant.component';
+import { PreOrderInRestaurantComponent } from './components/in-resuarant/pre-order-in-restaurant/pre-order-in-restaurant.component';
+import { DialogForInventComponent } from './components/in-resuarant/dialog-for-invent/dialog-for-invent.component';
+import { PaymentInRestaurantComponent } from './components/in-resuarant/payment-in-restaurant/payment-in-restaurant.component';
+import { DialogForPaymentComponent } from './components/in-resuarant/dialog-for-payment/dialog-for-payment.component';
 
 
 
@@ -197,6 +205,14 @@ import {MatBadgeModule} from '@angular/material/badge';
     CalandarEmployeeByManagerComponent,
     ManagerMassegeComponent,
     MessegeEmloyeeComponent,
+    RestaurantHomeComponent,
+    RestauranTableComponent,
+    LogoHeadComponent,
+    CartInRestaurantComponent,
+    PreOrderInRestaurantComponent,
+    DialogForInventComponent,
+    PaymentInRestaurantComponent,
+    DialogForPaymentComponent,
     
 
 
