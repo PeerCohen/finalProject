@@ -122,6 +122,7 @@ import { PreOrderInRestaurantComponent } from './components/in-resuarant/pre-ord
 import { DialogForInventComponent } from './components/in-resuarant/dialog-for-invent/dialog-for-invent.component';
 import { PaymentInRestaurantComponent } from './components/in-resuarant/payment-in-restaurant/payment-in-restaurant.component';
 import { DialogForPaymentComponent } from './components/in-resuarant/dialog-for-payment/dialog-for-payment.component';
+import { DialogOfSpecialInventComponent } from './components/user/dialog-of-special-invent/dialog-of-special-invent.component';
 
 
 
@@ -213,6 +214,7 @@ import { DialogForPaymentComponent } from './components/in-resuarant/dialog-for-
     DialogForInventComponent,
     PaymentInRestaurantComponent,
     DialogForPaymentComponent,
+    DialogOfSpecialInventComponent,
     
 
 

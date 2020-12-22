@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { interval, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/Auth/auth.service';
@@ -14,6 +14,7 @@ import { OpenBottomSheetSigninComponent } from '../user/open-bottom-sheet-signin
   styleUrls: ['./selected-user-entrance.component.css']
 })
 export class SelectedUserEntranceComponent implements OnInit {
+  @Input() worker:boolean;
   mySub: Subscription;
   constructor(private _bottomSheet: MatBottomSheet,
     public userService: UserService,

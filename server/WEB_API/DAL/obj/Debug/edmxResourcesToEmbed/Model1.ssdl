@@ -57,10 +57,10 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdDose" Type="int" Nullable="false" />
     <Property Name="IdMenu" Type="int" Nullable="false" />
     <Property Name="amount" Type="int" Nullable="false" />
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="InventDose">
     <Key>
@@ -115,9 +115,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdVisiter" Type="int" Nullable="false" />
-    <Property Name="KindRequest" Type="nchar" MaxLength="10" />
-    <Property Name="Date" Type="datetime" />
+    <Property Name="kindOfevent" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="10" />
+    <Property Name="phone" Type="nchar" MaxLength="10" />
+    <Property Name="mail" Type="nchar" MaxLength="50" />
+    <Property Name="dateEvent" Type="date" />
     <Property Name="CountOfPeople" Type="int" />
   </EntityType>
   <EntityType Name="StatusDose">
@@ -182,7 +184,7 @@
     <Key>
       <PropertyRef Name="ld" />
     </Key>
-    <Property Name="ld" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="nchar" MaxLength="10" />
     <Property Name="LastName" Type="nchar" MaxLength="10" />
     <Property Name="Phone" Type="nchar" MaxLength="10" />
@@ -372,18 +374,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SpecialInvent_Visiters">
-    <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
-    <End Role="SpecialInvent" Type="Self.SpecialInvent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Visiters">
-        <PropertyRef Name="ld" />
-      </Principal>
-      <Dependent Role="SpecialInvent">
-        <PropertyRef Name="IdVisiter" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_StatusInvent_StatusInvent">
     <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
     <End Role="StatusInvent1" Type="Self.StatusInvent" Multiplicity="0..1" />
@@ -547,10 +537,6 @@
     <AssociationSet Name="FK_Rating_Menu" Association="Self.FK_Rating_Menu">
       <End Role="Menu" EntitySet="Menu" />
       <End Role="Rating" EntitySet="Rating" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SpecialInvent_Visiters" Association="Self.FK_SpecialInvent_Visiters">
-      <End Role="Visiters" EntitySet="Visiters" />
-      <End Role="SpecialInvent" EntitySet="SpecialInvent" />
     </AssociationSet>
     <AssociationSet Name="FK_StatusInvent_StatusInvent" Association="Self.FK_StatusInvent_StatusInvent">
       <End Role="StatusInvent" EntitySet="StatusInvent" />

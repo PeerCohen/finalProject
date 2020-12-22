@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Employee } from '../modals/employee';
 import { ManagerMessege } from '../modals/ManagerMessege';
+import { SpecialInvent } from '../modals/special-invent';
 import { UserCalandar } from '../modals/UserCalandar';
 
 
@@ -13,13 +14,15 @@ export class ManagerService {
 
   specialOrder = new Subject();
   subjectMenuManager:Subject<number>=new Subject();
+  BASE_URL: string = "http://localhost:51437/api/";
   URL: string = "http://localhost:51437/api/Employees";
   EmloyeeToMesseg: ManagerMessege = new ManagerMessege();
   constructor(private http: HttpClient) { }
 
-  setSpecialOrder(specialOrderFrom) {
-    this.specialOrder.next(specialOrderFrom)
-    console.log(this.specialOrder);
+  setSpecialOrder(dataSpecialOrder,) {
+    // this.specialOrder.next(specialOrderFrom)
+    // console.log(this.specialOrder,kind);
+    return this.http.post<SpecialInvent>(`${this.BASE_URL}SpecialInvent/AddSpecialInvent`,dataSpecialOrder);
   }
   addNewWorker(worker:Employee):Observable<Employee>{
     return this.http.post<Employee>(`${this.URL}/AddNewWorker/`,worker);

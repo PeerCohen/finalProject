@@ -29,11 +29,13 @@ namespace BL.cast
         {
             return new SpecialInventDTO()
             {
-                KindRequest = item.KindRequest,
-                CountOfPeople=item.CountOfPeople,
-                Date=item.Date,
-                Id=item.Id,
-                IdVisiter=item.IdVisiter
+                Id = item.Id,
+                CountOfPeople = item.CountOfPeople,
+                dateEvent = item.dateEvent,
+                kindOfevent = item.kindOfevent,
+                mail = item.mail,
+                name = item.name,
+                phone = item.phone,
 
             };
         }
@@ -59,6 +61,20 @@ namespace BL.cast
                 DateInvent = item.DateInvent,
                 IdTable = item.IdTable,
                 InventDetails = InventDetailsCast.ListToDAL(item.InventDetails.ToList())
+            };
+        }
+
+        public static SpecialInvent ToDALSpecialInvent(SpecialInventDTO item)
+        {
+            return new SpecialInvent()
+            {
+                Id = item.Id,
+                CountOfPeople = item.CountOfPeople,
+                dateEvent = item.dateEvent,
+                kindOfevent = item.kindOfevent,
+                mail = item.mail,
+                name = item.name,
+                phone = item.phone,
             };
         }
         //list to dal

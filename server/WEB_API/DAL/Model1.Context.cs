@@ -27,7 +27,6 @@ namespace DAL
     
         public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<Category> Category { get; set; }
-        public virtual DbSet<CommentVisiter> CommentVisiter { get; set; }
         public virtual DbSet<CurrentEmployee> CurrentEmployee { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<EmployeesTypes> EmployeesTypes { get; set; }
@@ -36,7 +35,6 @@ namespace DAL
         public virtual DbSet<managerMessage> managerMessage { get; set; }
         public virtual DbSet<Menu> Menu { get; set; }
         public virtual DbSet<Rating> Rating { get; set; }
-        public virtual DbSet<SpecialInvent> SpecialInvent { get; set; }
         public virtual DbSet<StatusDose> StatusDose { get; set; }
         public virtual DbSet<StatusInvent> StatusInvent { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
@@ -44,5 +42,7 @@ namespace DAL
         public virtual DbSet<UserCalander> UserCalander { get; set; }
         public virtual DbSet<VipTables> VipTables { get; set; }
         public virtual DbSet<Visiters> Visiters { get; set; }
+        public virtual DbSet<SpecialInvent> SpecialInvent { get; set; }
+        public virtual DbSet<CommentVisiter> CommentVisiter { get; set; }
     }
 }

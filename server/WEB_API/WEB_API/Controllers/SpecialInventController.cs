@@ -10,6 +10,7 @@ using BL;
 
 namespace WEB_API.Controllers
 {
+    [RoutePrefix("api/SpecialInvent")]
     public class SpecialInventController : ApiController
     {
         [HttpGet]
@@ -17,6 +18,17 @@ namespace WEB_API.Controllers
         public List<SpecialInventDTO> GetAllSpecialInvent()
         {
             return InventDoseBL.GetAllSpecialInvent(); 
+        }
+
+        public void Delete(int id)
+        {
+        }
+
+        [HttpPost]
+        [Route("AddSpecialInvent")]
+        public void Add([FromBody]SpecialInventDTO specialInvent)
+        {
+             InventDoseBL.AddSpecialInvent(specialInvent);
         }
     }
 }

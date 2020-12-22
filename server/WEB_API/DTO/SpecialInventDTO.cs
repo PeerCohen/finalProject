@@ -9,9 +9,11 @@ namespace DTO
     public class SpecialInventDTO
     {
         public int Id { get; set; }
-        public int IdVisiter { get; set; }
-        public string KindRequest { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> CountOfPeople { get; set; }
+        public string kindOfevent { get; set; }
+        public string name { get; set; }
+        public string phone { get; set; }
+        public string mail { get; set; }
+        public DateTime? dateEvent { get; set; }
+        public int? CountOfPeople { get; set; }
     }
 }

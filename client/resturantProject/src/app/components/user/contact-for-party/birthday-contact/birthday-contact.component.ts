@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BirthdayContactComponent implements OnInit {
 
+  kind:string="ימי הולדת";
   constructor() { }
 
   ngOnInit(): void {

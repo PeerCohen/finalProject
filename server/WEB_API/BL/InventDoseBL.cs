@@ -36,6 +36,10 @@ namespace BL
         {
             InventDoseDAL.Delete(InventDoseCast.ToDAL(InventDose));
         }
+        public static void DeleteSpecialInvent(SpecialInventDTO specialInvent)
+        {
+            InventDoseDAL.DeleteSpecialInvent(InventDoseCast.ToDALSpecialInvent(specialInvent));
+        }
         public static List<InventDoseDTO> GetById(int id)
         {
             return InventDoseCast.ListToDTO(InventDoseDAL.GetById(id));
@@ -43,6 +47,10 @@ namespace BL
         public static void Add(InventDoseDTO InventDose)
         {
             InventDoseDAL.Add(InventDoseCast.ToDAL(InventDose));
+        }
+        public static void AddSpecialInvent(SpecialInventDTO specialInvent)
+        {
+            InventDoseDAL.AddSpecialInvent(InventDoseCast.ToDALSpecialInvent(specialInvent));
         }
     }
 }

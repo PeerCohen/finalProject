@@ -20,15 +20,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CommentVisiter">
-      <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
-        <MappingFragment StoreEntitySet="CommentVisiter">
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="idvisiter" ColumnName="idvisiter" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CurrentEmployee">
       <EntityTypeMapping TypeName="restaurantModel.CurrentEmployee">
         <MappingFragment StoreEntitySet="CurrentEmployee">
@@ -122,17 +113,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SpecialInvent">
-      <EntityTypeMapping TypeName="restaurantModel.SpecialInvent">
-        <MappingFragment StoreEntitySet="SpecialInvent">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="IdVisiter" ColumnName="IdVisiter" />
-          <ScalarProperty Name="KindRequest" ColumnName="KindRequest" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="CountOfPeople" ColumnName="CountOfPeople" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="StatusDose">
       <EntityTypeMapping TypeName="restaurantModel.StatusDose">
         <MappingFragment StoreEntitySet="StatusDose">
@@ -209,6 +189,28 @@
           <ScalarProperty Name="Mail" ColumnName="Mail" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpecialInvent">
+      <EntityTypeMapping TypeName="restaurantModel.SpecialInvent">
+        <MappingFragment StoreEntitySet="SpecialInvent">
+          <ScalarProperty Name="CountOfPeople" ColumnName="CountOfPeople" />
+          <ScalarProperty Name="dateEvent" ColumnName="dateEvent" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="kindOfevent" ColumnName="kindOfevent" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentVisiter">
+      <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
+        <MappingFragment StoreEntitySet="CommentVisiter">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idvisiter" ColumnName="idvisiter" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BigOrderContactComponent implements OnInit {
 
+  kind:string="הזמנות גדולות";
   constructor() { }
 
   ngOnInit(): void {

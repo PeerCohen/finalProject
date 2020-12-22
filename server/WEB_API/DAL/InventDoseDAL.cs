@@ -50,8 +50,15 @@ namespace DAL
                 //    db.SaveChanges();
                 //}
                 //db.InventDetails.AddRange(db.InventDetails);
-                db.SaveChanges();
                 return inventDose;
+            }
+        }
+        public static void AddSpecialInvent(SpecialInvent specialInvent)
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+               db.SpecialInvent.Add(specialInvent);
+                db.SaveChanges();
             }
         }
         //update
@@ -70,6 +77,14 @@ namespace DAL
             using (restaurantEntities1 db = new restaurantEntities1())
             {
                 db.InventDose.Remove(inventDose);
+                db.SaveChanges();
+            }
+        }
+        public static void DeleteSpecialInvent(SpecialInvent specialInvent)
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                db.SpecialInvent.Remove(specialInvent);
                 db.SaveChanges();
             }
         }
