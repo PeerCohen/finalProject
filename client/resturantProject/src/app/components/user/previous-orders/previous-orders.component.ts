@@ -33,6 +33,7 @@ export class PreviousOrdersComponent implements OnInit {
   }
   sendComment() {
     this.visitersOrderManagementService.addComment(this.commentContent).subscribe(res => {
+      debugger;
       console.log(res);
     })
   }

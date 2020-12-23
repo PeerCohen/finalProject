@@ -9,15 +9,16 @@ using BL;
 
 namespace WEB_API.Controllers
 {
+    [RoutePrefix("api/CommentVisiter")]
     public class CommentVisiterController : ApiController
     {
         // GET: api/CommentVisiter
         [HttpGet]
         [Route("GetAllComment")]
-        //public List<CommentVisiterDTO> GetAllComment()
-        //{
-        //    //return CommentVisiterBL.GetAll();
-        //}
+        public List<CommentVisiterDTO> GetAllComment()
+        {
+            return CommentVisiterBL.GetAll();
+        }
 
         // GET: api/CommentVisiter/5
 
@@ -29,9 +30,10 @@ namespace WEB_API.Controllers
         // POST: api/CommentVisiter
         [HttpPost]
         [Route("AddComment")]
-        public void AddComment([FromBody]CommentVisiterDTO commentVisiter)
+        public bool AddComment([FromBody]CommentVisiterDTO commentVisiter)
         {
-            //CommentVisiterBL.Add(commentVisiter);
+             CommentVisiterBL.Add(commentVisiter);
+            return true;
         }
 
         // PUT: api/CommentVisiter/5

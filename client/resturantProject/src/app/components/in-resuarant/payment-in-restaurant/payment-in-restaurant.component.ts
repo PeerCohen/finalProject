@@ -5,6 +5,7 @@ import {
   IPayPalConfig,
   ICreateOrderRequest
 } from 'ngx-paypal';
+import { InRestaurantService } from 'src/app/shared/services/in-restaurant.service';
 import { DialogForInventComponent } from '../dialog-for-invent/dialog-for-invent.component';
 import { DialogForPaymentComponent } from '../dialog-for-payment/dialog-for-payment.component';
 @Component({
@@ -14,7 +15,9 @@ import { DialogForPaymentComponent } from '../dialog-for-payment/dialog-for-paym
 })
 export class PaymentInRestaurantComponent implements OnInit {
 
-  constructor(public router:Router,public dialog: MatDialog) { }
+  constructor(public router:Router,
+    public dialog: MatDialog,
+    public inRestaurant:InRestaurantService) { }
   
   public payPalConfig?: IPayPalConfig;
   showSuccess: boolean;
@@ -64,6 +67,8 @@ export class PaymentInRestaurantComponent implements OnInit {
 
   payment(){
     const dialogRef = this.dialog.open(DialogForPaymentComponent);
+    this.inRestaurant.fullCart=[];
+    this.inRestaurant.subjectCart.next([]);
     dialogRef.afterClosed().subscribe(res=>{
       this.router.navigate(['/in-restaurant-table']);
     })    

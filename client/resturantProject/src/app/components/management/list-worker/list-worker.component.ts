@@ -17,46 +17,48 @@ export class ListWorkerComponent implements OnInit {
   listWorker: Employee[] = [];
   error: any;
   succeeded: any;
-  isOpenNewAddWorkerForm:boolean=false;
+  isOpenNewAddWorkerForm: boolean = false;
   constructor(
     public managerService: ManagerService,
     public dialog: MatDialog,
     private _bottomSheet: MatBottomSheet,
     private userService: UserService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
-    this.getWorker()
+    this.getWorker();
+    this.managerService.subjectCustomer.subscribe(res => {
+      this.getWorker();
+    })
   }
-  openNewAddWorkerForm(){
-    this.isOpenNewAddWorkerForm=true;
+  openNewAddWorkerForm() {
+    this.isOpenNewAddWorkerForm = true;
   }
-  getEmit(close:boolean){
-    this.isOpenNewAddWorkerForm=close;
+  getEmit(close: boolean) {
+    this.isOpenNewAddWorkerForm = close;
   }
   getWorker() {
     return this.managerService.getWorker().subscribe(
       (res: any) => {
         this.listWorker = res;
         console.log(this.listWorker);
-        
+
       },
       (err) => {
         this.error = err;
       });
   }
-  openMessege(worker)
-  {
-    console.log(this. userService.CurrentUser)
-this.managerService.EmloyeeToMesseg.IdEmployee= worker.id;
-this.managerService.EmloyeeToMesseg.fromEmloyeeId= this.userService.CurrentUser.id;
-this.managerService.EmloyeeToMesseg.fromEmloyeeName= this.userService.CurrentUser.firstName;
-console.log(this.managerService.EmloyeeToMesseg)
+  openMessege(worker) {
+    console.log(this.userService.CurrentUser)
+    this.managerService.EmloyeeToMesseg.IdEmployee = worker.id;
+    this.managerService.EmloyeeToMesseg.fromEmloyeeId = this.userService.CurrentUser.id;
+    this.managerService.EmloyeeToMesseg.fromEmloyeeName = this.userService.CurrentUser.firstName;
+    console.log(this.managerService.EmloyeeToMesseg)
 
     this._bottomSheet.open(ManagerMassegeComponent);
   }
-  codeAddress(){
-    
+  codeAddress() {
+
   }
 
   deleteWorker(worker: Employee) {

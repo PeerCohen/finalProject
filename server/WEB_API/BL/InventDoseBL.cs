@@ -13,7 +13,17 @@ namespace BL
     {
         public static List<InventDoseDTO> GetAll()
         {
-            return InventDoseCast.ListToDTO(InventDoseDAL.GetAll());
+            var dal = InventDoseDAL.GetAll();
+            List<InventDoseDTO> dalList = new List<InventDoseDTO>();
+            foreach (var item in dal)
+            {
+                var i = InventDoseCast.ToDTO(item);
+                i.StatusName = item.StatusInvent!=null? item.StatusInvent.Kind:"";
+                i.VisiterName = item.Visiters.FirstName;
+                dalList.Add(i);
+            }
+            return dalList;
+
         }
         public static List<SpecialInventDTO> GetAllSpecialInvent()
         {

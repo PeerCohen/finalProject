@@ -8,10 +8,10 @@
             <th></th>
         </tr>
         <tr *ngFor="let o of listOrder">
-            <td></td>
-            <td>{{getVisiterName(o.idVisiter)}}</td>
+            <td>{{o|json}}</td>
+            <!-- <td>{{getVisiterName(o.idVisiter)}}</td>
             <td>{{getDoseName(o.inventDetails.idMenu)}}</td>
-            <td>{{o.inventDetails.amount}}</td>
+            <td>{{o.inventDetails.amount}}</td> -->
             <td>
                 <button mat-flat-button color="primary">בטיפול</button>
             </td>

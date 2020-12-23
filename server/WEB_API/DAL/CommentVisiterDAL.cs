@@ -9,13 +9,13 @@ namespace DAL
     public class CommentVisiterDAL
     {
         //get all
-        //    public static List<CommentVisiter> GetAll()
-        //    {
-        //        using (restaurantEntities db = new restaurantEntities())
-        //        {
-        //            return db.CommentVisiter.ToList();
-        //        }
-        //    }
+        public static List<CommentVisiter> GetAll()
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                return db.CommentVisiter.ToList();
+            }
+        }
         //    get by id
         //    public static CommentVisiter GetById(int id)
         //    {
@@ -28,14 +28,14 @@ namespace DAL
 
         //    }
         //    add
-        //    public static void Add(CommentVisiter CommentVisiter)
-        //    {
-        //        using (restaurantEntities db = new restaurantEntities())
-        //        {
-        //            db.CommentVisiter.Add(CommentVisiter);
-        //            db.SaveChanges();
-        //        }
-        //    }
+        public static void Add(CommentVisiter CommentVisiter)
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                db.CommentVisiter.Add(CommentVisiter);
+                db.SaveChanges();
+            }
+        }
         //    update
 
 

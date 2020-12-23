@@ -12,6 +12,7 @@ import { UserCalandar } from '../modals/UserCalandar';
 })
 export class ManagerService {
 
+  subjectCustomer=new Subject();
   specialOrder = new Subject();
   subjectMenuManager:Subject<number>=new Subject();
   BASE_URL: string = "http://localhost:51437/api/";

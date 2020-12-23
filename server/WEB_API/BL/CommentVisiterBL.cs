@@ -12,10 +12,10 @@ namespace BL
    public class CommentVisiterBL
     {
 
-        ////public static List<CommentVisiterDTO> GetAll()
-        ////{
-        ////    return CommentVisiterCast.ListToDTO(CommentVisiterDAL.GetAll());
-        ////}
+        public static List<CommentVisiterDTO> GetAll()
+        {
+            return CommentVisiterCast.ListToDTO(CommentVisiterDAL.GetAll());
+        }
 
 
         //public static void Delete(CommentVisiterDTO CommentVisiter)
@@ -26,9 +26,9 @@ namespace BL
         //{
         //    return CommentVisiterCast.ToDTO(CommentVisiterDAL.GetById(id));
         //}
-        //public static void Add(CommentVisiterDTO CommentVisiter)
-        //{
-        //    CommentVisiterDAL.Add(CommentVisiterCast.ToDAL(CommentVisiter));
-        //}
+        public static void Add(CommentVisiterDTO CommentVisiter)
+        {
+            CommentVisiterDAL.Add(CommentVisiterCast.ToDAL(CommentVisiter));
+        }
     }
 }

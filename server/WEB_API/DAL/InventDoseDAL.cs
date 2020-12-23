@@ -14,7 +14,7 @@ namespace DAL
         {
             using (restaurantEntities1 db = new restaurantEntities1())
             {
-                return db.InventDose.Include("InventDetails").ToList();
+                return db.InventDose.Include("Visiters").Include("StatusInvent").Include("InventDetails").ToList();
             }
         }
         public static List<SpecialInvent> GetAllSpecialInvent()

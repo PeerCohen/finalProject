@@ -8,4 +8,5 @@ export class InventDose {
       idVisiter: number;
       dateInvent: number;
       inventDetails: InventDetails[] = [];
+      currentRate:number=0;
 }

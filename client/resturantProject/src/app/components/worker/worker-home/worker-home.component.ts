@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class WorkerHomeComponent implements OnInit {
 
   constructor() { }
-  isWorker:boolean=true;
 
   ngOnInit(): void {
   }

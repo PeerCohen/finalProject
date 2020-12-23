@@ -49,7 +49,9 @@ export class FormPartyPageComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });   
     this.formGroupParty.reset();
-    this.managerService.setSpecialOrder(this.data);
+    this.managerService.setSpecialOrder(this.data).subscribe(res=>{
+      
+    });
     
     this.email.Subject =   " הפניית בקשה עבור "+this.kindOfevent;
     this.email.email = this.data.mail;

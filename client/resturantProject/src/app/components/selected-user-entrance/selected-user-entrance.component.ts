@@ -14,7 +14,7 @@ import { OpenBottomSheetSigninComponent } from '../user/open-bottom-sheet-signin
   styleUrls: ['./selected-user-entrance.component.css']
 })
 export class SelectedUserEntranceComponent implements OnInit {
-  @Input() worker:boolean;
+   worker:any;
   mySub: Subscription;
   constructor(private _bottomSheet: MatBottomSheet,
     public userService: UserService,
@@ -27,6 +27,7 @@ export class SelectedUserEntranceComponent implements OnInit {
   hidden = false;
   numNewMessege:number;
   ngOnInit(): void {
+    this.worker= localStorage.getItem('isEmployee');
    this.userService.singIn=this.userService.CurrentUser?true:false;
     // אם כבר היתה כניסה היום או לא
  this.userService.ifSingIn();

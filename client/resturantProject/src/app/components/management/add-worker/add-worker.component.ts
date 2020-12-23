@@ -17,7 +17,7 @@ export class AddWorkerComponent implements OnInit {
 
 
   formGroupAddWorker: FormGroup;
-  workerData: Employee;
+  workerData: Employee=new Employee();
   succeeded: any;
   error: any;
   constructor(public managerService: ManagerService) { }
@@ -33,15 +33,17 @@ export class AddWorkerComponent implements OnInit {
     });
   }
   addWorker() {
+    debugger;
     this.workerData.FirstName = this.formGroupAddWorker.controls.firstname.value;
     this.workerData.LastName = this.formGroupAddWorker.controls.lastname.value;
     this.workerData.Tz = this.formGroupAddWorker.controls.tz.value;
     this.workerData.Address = this.formGroupAddWorker.controls.address.value;
     this.workerData.Phone = this.formGroupAddWorker.controls.phone.value;
     debugger;
-    return this.managerService.addNewWorker(this.workerData).subscribe(
+     this.managerService.addNewWorker(this.workerData).subscribe(
       (res: any) => {
         this.succeeded = res;
+        this.managerService.subjectCustomer.next();
       },
       (err) => {
         this.error = err;

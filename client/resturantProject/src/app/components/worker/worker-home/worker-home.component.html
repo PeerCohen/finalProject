@@ -1,6 +1,6 @@
 <!-- <div class="tool-up"></div>
 <app-logo></app-logo> -->
-<app-header [Worker]="isWorker"></app-header>
+<app-header></app-header>
 <mat-tab-group mat-align-tabs="center">
     <mat-tab label="ניהול הזמנות">
         <ng-template mat-tab-label>
@@ -14,6 +14,7 @@
             <mat-icon>account_circle</mat-icon>
             פרופיל שלי
         </ng-template>
+        <app-my-presence></app-my-presence>
     </mat-tab>
     <mat-tab label=" הזמנות מיוחדות לטיפול ">
         <ng-template mat-tab-label>
