@@ -123,6 +123,7 @@ import { DialogForInventComponent } from './components/in-resuarant/dialog-for-i
 import { PaymentInRestaurantComponent } from './components/in-resuarant/payment-in-restaurant/payment-in-restaurant.component';
 import { DialogForPaymentComponent } from './components/in-resuarant/dialog-for-payment/dialog-for-payment.component';
 import { DialogOfSpecialInventComponent } from './components/user/dialog-of-special-invent/dialog-of-special-invent.component';
+import { DialogRatingComponent } from './components/user/dialog-rating/dialog-rating.component';
 
 
 
@@ -215,6 +216,7 @@ import { DialogOfSpecialInventComponent } from './components/user/dialog-of-spec
     PaymentInRestaurantComponent,
     DialogForPaymentComponent,
     DialogOfSpecialInventComponent,
+    DialogRatingComponent,
     
 
 

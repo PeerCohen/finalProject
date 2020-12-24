@@ -4,6 +4,7 @@ import { VisitersOrderManagementService } from 'src/app/shared/services/visiters
 import { UserService } from 'src/app/shared/services/user.service';
 import { InventDetails } from 'src/app/shared/modals/invent-details';
 import { InventDose } from 'src/app/shared/modals/invent-dose';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-previous-orders',
@@ -14,11 +15,15 @@ export class PreviousOrdersComponent implements OnInit {
   currentRate: number;
   preOrders: InventDose[] = [];
   commentContent: string;
+  
+  
 
 
 
   constructor(private visitersOrderManagementService: VisitersOrderManagementService,
-    public userService: UserService) { }
+    public userService: UserService,config: NgbRatingConfig) {
+      config.max = 5;
+     }
   currentUser = JSON.parse(localStorage.getItem("currentUser"))?.id;
 
   ngOnInit(): void {
