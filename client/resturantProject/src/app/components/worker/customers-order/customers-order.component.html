@@ -1,0 +1,21 @@
+<div class="talbe">
+    <table>
+        <tr class="order">
+            <th>סוג הזמנה </th>
+            <th>שם המזמין</th>
+            <th>שם מנה</th>
+            <th>כמות</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let o of listOrder">
+            <td>{{o|json}}</td>
+            <!-- <td>{{getVisiterName(o.idVisiter)}}</td>
+            <td>{{getDoseName(o.inventDetails.idMenu)}}</td>
+            <td>{{o.inventDetails.amount}}</td> -->
+            <td>
+                <button mat-flat-button color="primary">בטיפול</button>
+            </td>
+        </tr>
+    </table>
+
+</div>

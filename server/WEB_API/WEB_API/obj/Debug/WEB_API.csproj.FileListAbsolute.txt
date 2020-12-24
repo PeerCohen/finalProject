@@ -1,0 +1,364 @@
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\csc.exe
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\csc.exe.config
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\csc.rsp
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\csi.exe
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\csi.rsp
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.CSharp.Core.targets
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\System.AppContext.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\System.Collections.Immutable.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\System.Reflection.Metadata.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\vbc.exe
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\vbc.exe.config
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\vbc.rsp
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe.config
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\WEB_API.dll.config
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\WEB_API.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\WEB_API.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\DAL.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\EntityFramework.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\EntityFramework.SqlServer.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\Newtonsoft.Json.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\System.Net.Http.Formatting.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\System.Web.Http.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\System.Web.Http.WebHost.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\DAL.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\DAL.dll.config
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\Newtonsoft.Json.xml
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\System.Net.Http.Formatting.xml
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\System.Web.Http.xml
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\System.Web.Http.WebHost.xml
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\obj\Debug\WEB_API.csprojResolveAssemblyReference.cache
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\obj\Debug\WEB_API.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\obj\Debug\WEB_API.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\BL.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\DTO.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\BL.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\WEB_API\bin\DTO.pdb
+D:\final_project\WEB_API\WEB_API\bin\roslyn\csc.exe
+D:\final_project\WEB_API\WEB_API\bin\roslyn\csc.exe.config
+D:\final_project\WEB_API\WEB_API\bin\roslyn\csc.rsp
+D:\final_project\WEB_API\WEB_API\bin\roslyn\csi.exe
+D:\final_project\WEB_API\WEB_API\bin\roslyn\csi.rsp
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\final_project\WEB_API\WEB_API\bin\roslyn\System.AppContext.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\System.Collections.Immutable.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\System.Reflection.Metadata.dll
+D:\final_project\WEB_API\WEB_API\bin\roslyn\vbc.exe
+D:\final_project\WEB_API\WEB_API\bin\roslyn\vbc.exe.config
+D:\final_project\WEB_API\WEB_API\bin\roslyn\vbc.rsp
+D:\final_project\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe
+D:\final_project\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe.config
+D:\final_project\WEB_API\WEB_API\bin\WEB_API.dll.config
+D:\final_project\WEB_API\WEB_API\bin\WEB_API.dll
+D:\final_project\WEB_API\WEB_API\bin\WEB_API.pdb
+D:\final_project\WEB_API\WEB_API\bin\BL.dll
+D:\final_project\WEB_API\WEB_API\bin\DAL.dll
+D:\final_project\WEB_API\WEB_API\bin\DTO.dll
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\final_project\WEB_API\WEB_API\bin\Newtonsoft.Json.dll
+D:\final_project\WEB_API\WEB_API\bin\System.Net.Http.Formatting.dll
+D:\final_project\WEB_API\WEB_API\bin\System.Web.Http.dll
+D:\final_project\WEB_API\WEB_API\bin\System.Web.Http.WebHost.dll
+D:\final_project\WEB_API\WEB_API\bin\BL.pdb
+D:\final_project\WEB_API\WEB_API\bin\DAL.pdb
+D:\final_project\WEB_API\WEB_API\bin\DAL.dll.config
+D:\final_project\WEB_API\WEB_API\bin\DTO.pdb
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\final_project\WEB_API\WEB_API\bin\Newtonsoft.Json.xml
+D:\final_project\WEB_API\WEB_API\bin\System.Net.Http.Formatting.xml
+D:\final_project\WEB_API\WEB_API\bin\System.Web.Http.xml
+D:\final_project\WEB_API\WEB_API\bin\System.Web.Http.WebHost.xml
+D:\final_project\WEB_API\WEB_API\obj\Debug\WEB_API.csprojAssemblyReference.cache
+D:\final_project\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CoreCompileInputs.cache
+D:\final_project\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CopyComplete
+D:\final_project\WEB_API\WEB_API\obj\Debug\WEB_API.dll
+D:\final_project\WEB_API\WEB_API\obj\Debug\WEB_API.pdb
+E:\WEB_API\WEB_API\obj\Debug\WEB_API.csprojResolveAssemblyReference.cache
+E:\WEB_API\WEB_API\obj\Debug\WEB_API.dll
+E:\WEB_API\WEB_API\obj\Debug\WEB_API.pdb
+E:\WEB_API\WEB_API\bin\roslyn\csc.exe
+E:\WEB_API\WEB_API\bin\roslyn\csc.exe.config
+E:\WEB_API\WEB_API\bin\roslyn\csc.rsp
+E:\WEB_API\WEB_API\bin\roslyn\csi.exe
+E:\WEB_API\WEB_API\bin\roslyn\csi.rsp
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\WEB_API\WEB_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\WEB_API\WEB_API\bin\roslyn\System.AppContext.dll
+E:\WEB_API\WEB_API\bin\roslyn\System.Collections.Immutable.dll
+E:\WEB_API\WEB_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.dll
+E:\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\WEB_API\WEB_API\bin\roslyn\System.Reflection.Metadata.dll
+E:\WEB_API\WEB_API\bin\roslyn\vbc.exe
+E:\WEB_API\WEB_API\bin\roslyn\vbc.exe.config
+E:\WEB_API\WEB_API\bin\roslyn\vbc.rsp
+E:\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe
+E:\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe.config
+E:\WEB_API\WEB_API\bin\WEB_API.dll.config
+E:\WEB_API\WEB_API\bin\WEB_API.dll
+E:\WEB_API\WEB_API\bin\WEB_API.pdb
+E:\WEB_API\WEB_API\bin\BL.dll
+E:\WEB_API\WEB_API\bin\DAL.dll
+E:\WEB_API\WEB_API\bin\DTO.dll
+E:\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\WEB_API\WEB_API\bin\Newtonsoft.Json.dll
+E:\WEB_API\WEB_API\bin\System.Net.Http.Formatting.dll
+E:\WEB_API\WEB_API\bin\System.Web.Http.dll
+E:\WEB_API\WEB_API\bin\System.Web.Http.WebHost.dll
+E:\WEB_API\WEB_API\bin\BL.pdb
+E:\WEB_API\WEB_API\bin\DAL.pdb
+E:\WEB_API\WEB_API\bin\DAL.dll.config
+E:\WEB_API\WEB_API\bin\DTO.pdb
+E:\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\WEB_API\WEB_API\bin\Newtonsoft.Json.xml
+E:\WEB_API\WEB_API\bin\System.Net.Http.Formatting.xml
+E:\WEB_API\WEB_API\bin\System.Web.Http.xml
+E:\WEB_API\WEB_API\bin\System.Web.Http.WebHost.xml
+D:\final_project\WEB_API\WEB_API\bin\System.Web.Cors.dll
+D:\final_project\WEB_API\WEB_API\bin\System.Web.Http.Cors.dll
+D:\final_project\WEB_API\WEB_API\bin\System.Web.Http.Cors.xml
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.Owin.dll
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.Owin.Security.dll
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.Web.Infrastructure.dll
+D:\final_project\WEB_API\WEB_API\bin\Owin.dll
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.Owin.xml
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\final_project\WEB_API\WEB_API\bin\Microsoft.Owin.Security.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\csc.exe
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\csc.exe.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\csc.rsp
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\csi.exe
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\csi.rsp
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\System.AppContext.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\vbc.exe
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\vbc.exe.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\vbc.rsp
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\WEB_API.dll.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\WEB_API.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\WEB_API.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\BL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\DAL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\DTO.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.Owin.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Security.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Newtonsoft.Json.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Owin.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Net.Http.Formatting.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Web.Cors.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Web.Http.Cors.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Web.Http.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Web.Http.WebHost.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\BL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\DAL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\DAL.dll.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\DTO.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.Owin.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Security.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Net.Http.Formatting.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Web.Http.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Web.Http.Cors.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\Newtonsoft.Json.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\bin\System.Web.Http.WebHost.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csprojAssemblyReference.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CoreCompileInputs.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CopyComplete
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\obj\Debug\WEB_API.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\obj\Debug\WEB_API.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\csc.exe
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\csc.exe.config
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\csc.rsp
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\csi.exe
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\csi.rsp
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.AppContext.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\vbc.exe
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\vbc.exe.config
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\vbc.rsp
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\WEB_API.dll.config
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\WEB_API.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\WEB_API.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\BL.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\DAL.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\DTO.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Security.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Newtonsoft.Json.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Owin.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Net.Http.Formatting.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Web.Cors.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.Cors.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.WebHost.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\BL.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\DAL.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\DAL.dll.config
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\DTO.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Security.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Net.Http.Formatting.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.Cors.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\Newtonsoft.Json.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.WebHost.xml
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CopyComplete
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\csc.exe
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\csc.exe.config
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\csc.rsp
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\csi.exe
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\csi.rsp
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.AppContext.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\vbc.exe
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\vbc.exe.config
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\vbc.rsp
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\WEB_API.dll.config
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\WEB_API.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\WEB_API.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\BL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\DAL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\DTO.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Security.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Newtonsoft.Json.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Owin.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Net.Http.Formatting.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Web.Cors.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.Cors.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.WebHost.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\BL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\DAL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\DAL.dll.config
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\DTO.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Microsoft.Owin.Security.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Net.Http.Formatting.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.Cors.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\Newtonsoft.Json.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\bin\System.Web.Http.WebHost.xml
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.csproj.CopyComplete
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\WEB_API\obj\Debug\WEB_API.pdb

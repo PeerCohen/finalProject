@@ -1,0 +1,17 @@
+<div class="send">
+    <div class="img-delivery"><img src="../../assets/images/delivery.png"></div>
+    <h1 mat-dialog-title> טופס הזמנת משלוח </h1>
+    <h2>עבור : {{name}}</h2>
+    <hr />
+    <div mat-dialog-content>
+        <p>הזן כתובת יעד </p>
+        <app-address-sending></app-address-sending>
+    </div>
+    <div>
+        <button mat-stroked-button color="primary" (click)="onNoClick()">ביטול</button>
+        <button mat-stroked-button color="primary" (click)="onOkClick()" cdkFocusInitial>
+            <mat-icon color="primary">navigate_before
+            </mat-icon>אישור , המשך
+        </button>
+    </div>
+</div>

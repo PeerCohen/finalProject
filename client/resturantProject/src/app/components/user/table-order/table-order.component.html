@@ -1,0 +1,35 @@
+<form [formGroup]="orderTableFrom" ngsubmit="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>שם</mat-label>
+        <input matInput type="text" formControlName="name" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>טלפון</mat-label>
+        <input matInput type="tel" formControlName="tel" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>מייל</mat-label>
+        <input matInput formControlName="email" required>
+        <mat-error *ngIf="orderTableFrom.controls.email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>מספר האנשים</mat-label>
+        <input matInput type="number" formControlName="countOfPeople" required>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>תאריך</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field> -->
+    <mat-form-field appearance="fill">
+        <mat-label>שעה</mat-label>
+        <input matInput type="time" formControlName="time" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>הערות</mat-label>
+        <textarea matInput formControlName="note"></textarea>
+    </mat-form-field>
+    <p>להזמנת שולחן טלפונית חייגו :&nbsp;<a href="tel: 072-3929858">072-392-9858</a></p>
+    <button mat-flat-button color=primary type="submit">שלח</button>
+</form>

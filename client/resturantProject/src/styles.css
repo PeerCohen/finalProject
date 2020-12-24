@@ -1,0 +1,114 @@
+You can add global styles to this file,
+and also import other style files html,
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    direction: rtl;
+    text-align: right !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.icon-party {
+    display: inline;
+    color: #8c0f29;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.mat-tab-body-content {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.mat-form-field {
+    direction: ltr !important;
+    text-align: right;
+}
+
+.material-icons,
+.mat-icon {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    font-family: 'Material Icons';
+}
+
+ ::-webkit-scrollbar-thumb {
+    width: 8px;
+    height: 8px;
+    background-color: #dcdcdc;
+    ;
+}
+
+ ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: whitesmoke;
+}
+
+.title-party {
+    margin-right: 27%;
+    margin-bottom: 2%;
+    padding-bottom: 1%;
+    color: #636262;
+    border-bottom: solid;
+    border-bottom-color: #8c0f29;
+    width: 46%;
+    border-width: 2px;
+    font-size: x-large;
+}
+
+.Text-content-party {
+    font-size: 17px;
+}
+
+.contact {
+    margin-right: 21%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.swiper-pagination-bullet {
+    display: inline-block;
+    background: #fff;
+    opacity: .2;
+    margin: 0 6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50px;
+}
+
+.swiper-pagination {
+    margin: 0 0 23px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #fff;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 4px;
+}
+
+app-display-menu app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 18%;
+}
+
+app-menu app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 80%;
+}

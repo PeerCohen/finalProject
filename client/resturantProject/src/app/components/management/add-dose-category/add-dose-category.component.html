@@ -1,0 +1,38 @@
+<form [formGroup]="formGroupAddDose">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <div class="button-close">
+                    <button mat-icon-button color="primary" (click)="closeformAddDose()">
+                <mat-icon>close</mat-icon>
+            </button>
+                </div>
+                {{nameCategory}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                <mat-form-field appearance="outline">
+                    <mat-label>שם מנה : </mat-label>
+                    <input matInput formControlName="nameDose">
+                </mat-form-field>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label> מחיר למנה </mat-label>
+                <input matInput type="number" formControlName="price">
+                <span matSuffix>.00 ₪</span>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>תיאור מנה :</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+            <input type="file" (change)="onFileChanged($event)" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" formControlName="image" />
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-stroked-button color="primary" (click)="addDoseToCategory()">
+                <mat-icon>file_upload</mat-icon>
+                הוסף
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</form>

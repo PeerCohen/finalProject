@@ -1,0 +1,20 @@
+<mat-card *ngFor="let item of menuDetailsByCategory">
+    <mat-card-header>
+        <mat-card-title>{{item.nameDose}}</mat-card-title>
+        <mat-card-subtitle>
+            <div>{{item.description}}</div>
+            <div>{{' ₪ '+item.price}}</div>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div>
+            <img class='image' [src]="'http://localhost:51437/src/images/products/'+item.category+'/'+item.image">
+        </div>
+        <hr>
+        <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rateDose" [readonly]="true"></ngb-rating>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button (click)="addToCart(item)" class="add-to-cart" [disabled]="checkChooseDose()">הוספה לסל
+           </button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,76 @@
+<ng-container *ngIf="!loginIsOpen">
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel> הזן שם </ng-template>
+                <p>
+                    <mat-form-field>
+                        <mat-label> שם פרטי </mat-label>
+                        <input matInput formControlName="firstName" name="firstName" required>
+                    </mat-form-field>
+
+                </p>
+                <p>
+                    <mat-form-field>
+                        <mat-label> שם משפחה </mat-label>
+                        <input matInput formControlName="lastName" name="lastName" required>
+                    </mat-form-field>
+                </p>
+                <div>
+                    <button mat-flat-button color="primary" matStepperNext>הבא</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>הזן מייל</ng-template>
+                <mat-form-field>
+                    <mat-label>מייל</mat-label>
+                    <input matInput formControlName="mail" name="mail" required>
+                    <mat-error *ngIf="secondFormGroup.controls.mail.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <div>
+                    <button mat-flat-button color="primary" matStepperPrevious>חזרה</button>
+                    <button mat-flat-button color="primary" matStepperNext>הבא</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup ">
+                <ng-template matStepLabel>הזן סיסמא & קוד משתמש </ng-template>
+                <p>
+                    <mat-form-field>
+                        <mat-label>קוד משתמש</mat-label>
+                        <input matInput placeholder="Username" formControlName="username" name="username" required>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <mat-label>סיסמא</mat-label>
+                        <input matInput type="password" placeholder="Password" formControlName="password" name="password" required>
+                    </mat-form-field>
+                </p>
+                <div>
+                    <button mat-flat-button color="primary" matStepperPrevious>חזרה</button>
+                    <button mat-flat-button color="primary" matStepperNext>הבא</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>סיום</ng-template>
+            <div>
+                <button mat-flat-button color="primary" matStepperPrevious>חזור</button>
+                <button mat-flat-button color="primary" (click)="stepper.reset()">איפוס</button>
+                <button mat-flat-button color="primary" (click)="signUp()">הרשמה</button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+    <hr>
+    <div>
+        <p>יש לך חשבון ?</p>
+        <button mat-flat-button color="primary" (click)="loginIsOpen=true">התחברות</button>
+    </div>
+</ng-container>
+<ng-container *ngIf="loginIsOpen">
+    <app-login></app-login>
+</ng-container>

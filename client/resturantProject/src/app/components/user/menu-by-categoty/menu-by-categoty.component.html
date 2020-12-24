@@ -1,0 +1,10 @@
+<div class="main_sidebar">
+    <div class="category-div" *ngFor="let item of categoryList" (click)=" getMenuDetails(item.id) ">
+        <div class='image-div'>
+            <img class='image' [src]="'../../assets/images/category/'+item.id+'.jpg'">
+        </div>
+        <div class="text">
+            {{item.nameCategory}}
+        </div>
+    </div>
+</div>

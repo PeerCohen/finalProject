@@ -1,0 +1,23 @@
+<form class="party-form" [formGroup]="formGroupParty" (ngSubmit)="onSubmit(formGroupParty.value)">
+    <mat-form-field class="party-form-field">
+        <mat-label>שם</mat-label>
+        <input matInput formControlName="name" name="name">
+    </mat-form-field>
+    <mat-form-field class="party-form-field ">
+        <mat-label>טלפון</mat-label>
+        <input matInput formControlName="phone" name="phone" type="tel " id="phone " name="phone " pattern="[0-9]{3}-[0-9]{4}-[0-9]{3} " required>
+    </mat-form-field>
+    <mat-form-field class="party-form-field ">
+        <mat-label>מייל</mat-label>
+        <input matInput formControlName="mail" name="mail">
+    </mat-form-field>
+    <mat-form-field class="party-form-field " *ngIf="isDateEvent">
+        <mat-label>למתי האירוע</mat-label>
+        <input matInput formControlName="dateEvent" name="dateEvent">
+    </mat-form-field>
+    <mat-form-field class="party-form-field " *ngIf="iscountOfPeople">
+        <mat-label>מספר אנשים משוער</mat-label>
+        <input matInput formControlName="countOfPeople" name="countOfPeople">
+    </mat-form-field>
+    <button mat-flat-button color="primary" type="submit">שלח בקשה</button>
+</form>

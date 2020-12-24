@@ -1,0 +1,42 @@
+<ng-container *ngIf=isOpen>
+    <div *ngIf="!isOpenNewAddDoseForm" class="addDoseToCategory">
+        <button mat-flat-button color="primary" (click)="AddDoseToCategory()">הוספת מנה לתפריט</button>
+    </div>
+    <ng-container>
+        <div>
+            <app-add-dose-category *ngIf="isOpenNewAddDoseForm" (closeform)="getEmit($event)" [idCategory]="idCategory" [nameCategory]="nameCategory">
+            </app-add-dose-category>
+        </div>
+    </ng-container>
+    <mat-card *ngFor="let item of menuCategoryList">
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>{{item.nameDose}}</mat-card-title>
+            <mat-card-subtitle>
+                {{item.description}} {{' ₪ '+item.price}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div>
+                <img class='image' [src]="'http://localhost:51437/src/images/products/'+item.category+'/'+item.image">
+            </div>
+            <hr>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="action-button">
+                <div class="delete-action">
+                    <button mat-stroked-button color="primary" (click)="deleteDose(item)">
+                        מחיקת מנה
+                        <mat-icon color="primary">delete</mat-icon>
+                    </button>
+                </div>
+                <div class="edit-action" (click)="editDose(item)">
+                    <button mat-stroked-button color="primary">
+                        עריכת מנה
+                        <mat-icon color="primary">edit</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</ng-container>

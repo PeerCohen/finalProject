@@ -1,0 +1,22 @@
+    .mat-card {
+        margin-top: 4%;
+        width: 100%;
+    }
+    
+    .image1 {
+        border-radius: 28px;
+    }
+    
+    .star-rating {
+        color: gold;
+        font-size: 1.5rem;
+    }
+    
+    .add-to-cart {
+        font-size: larger;
+        background-color: #8c1829;
+        position: relative;
+        right: 40%;
+        top: -17px;
+        color: white;
+    }

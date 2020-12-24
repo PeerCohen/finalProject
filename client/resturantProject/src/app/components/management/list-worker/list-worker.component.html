@@ -1,0 +1,69 @@
+<div class="wapper">
+    <!-- <div>
+        <input id="address" type="textbox" value="Sydney, NSW">
+
+    </div> -->
+    <div class="new-worker">
+        <button mat-flat-button color="primary" *ngIf="!isOpenNewAddWorkerForm" (click)="openNewAddWorkerForm()">
+            הוספת עובד חדש
+            <mat-icon>person_add</mat-icon>
+        </button>
+        <div *ngIf="isOpenNewAddWorkerForm">
+            <app-add-worker (closeform)="getEmit($event)"></app-add-worker>
+        </div>
+    </div>
+    <table>
+        <tr class="title">
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>ת.ז</th>
+            <th>פלאפון</th>
+            <th>כתובת</th>
+            <th>דרג</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let worker of listWorker">
+            <td>
+                <div>{{worker.firstName}}</div>
+            </td>
+            <td>
+                <div>{{worker.lastName}}</div>
+            </td>
+            <td>
+                <div>{{worker.tz}}</div>
+            </td>
+            <td>
+                <div>{{worker.phone}}</div>
+            </td>
+            <td>
+                <div>{{worker.address}}</div>
+            </td>
+            <td>
+                <div>{{worker.idEmployeeType}}</div>
+            </td>
+
+            <td>
+                <div class="delete-action">
+                    <button mat-flat-button color="primary" (click)="deleteWorker(worker)">
+                        הסרה
+                    </button>
+                </div>
+            </td>
+            <td>
+                <div class="edit-action">
+                    <button mat-flat-button color="primary" (click)="editWorker(worker)">
+                        עריכה
+                    </button>
+                </div>
+            </td>
+            <td>
+                <div class="edit-action">
+                    <button mat-flat-button color="primary" (click)="openMessege(worker)">
+                        שליחת הודעה 
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

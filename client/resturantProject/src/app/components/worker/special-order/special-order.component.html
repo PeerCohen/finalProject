@@ -1,0 +1,42 @@
+<table>
+    <tr class="details">
+        <th>סוג ההזמנה</th>
+        <th>שם מזמין</th>
+        <th>תאריך אירוע</th>
+        <th>כמות מוזמנים</th>
+        <th>יצירת קשר</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let order of orderList">
+        <td>
+            <div></div>
+        </td>
+        <td>
+            <div>{{order.name}}</div>
+        </td>
+        <td>
+            <div>{{order.dateEvent}}</div>
+        </td>
+        <td>
+            <div>{{order.countOfPeople}}</div>
+        </td>
+        <td>
+            <div>{{order.phone && order.mail}}</div>
+        </td>
+        <td>
+            <div class="deal-order">
+                <button mat-flat-button color="primary">
+          לטיפול בהזמנה
+        </button>
+            </div>
+        </td>
+        <td>
+            <div class="ok-order">
+                <button mat-flat-button color="primary">
+          לאישור והנפקת ההזמנה
+        </button>
+            </div>
+        </td>
+    </tr>
+</table>

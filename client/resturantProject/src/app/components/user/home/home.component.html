@@ -1,0 +1,56 @@
+<app-header></app-header>
+<!-- <nav mat-tab-nav-bar>
+    <a mat-tab-link> ניסוי </a>
+    <a mat-tab-link> ניסוי </a>
+    <a mat-tab-link> ניסוי </a>
+    <a mat-tab-link> ניסוי </a>
+    <a mat-tab-link disabled>Disabled Link</a>
+</nav> -->
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="תפריט">
+        <ng-template mat-tab-label>
+            <mat-icon>home</mat-icon>
+            דף הבית
+        </ng-template>
+        <app-home-page></app-home-page>
+    </mat-tab>
+    <mat-tab label="תפריט">
+        <ng-template mat-tab-label>
+            <mat-icon>menu</mat-icon>
+            תפריט
+        </ng-template>
+        <app-display-menu></app-display-menu>
+    </mat-tab>
+    <mat-tab label="להתחיל הזמנה" id="startOrder">
+        <ng-template mat-tab-label>
+            <mat-icon>restaurant</mat-icon>
+            להתחיל הזמנה
+        </ng-template>
+        <app-option-order></app-option-order>
+    </mat-tab>
+
+    <mat-tab label=" יש לי קוד קופון ">
+        <ng-template mat-tab-label>
+            <mat-icon>local_offer </mat-icon>
+            מה חדש /מומלץ
+        </ng-template>
+        <app-new-menu></app-new-menu>
+    </mat-tab>
+
+    <mat-tab label="סל ההזמנות שלי ">
+        <ng-template mat-tab-label>
+            <mat-icon>shopping_cart</mat-icon>
+            הסל ההזמנות שלי
+        </ng-template>
+        <app-previous-orders></app-previous-orders>
+    </mat-tab>
+
+    <mat-tab label="אירועים מיוחדים">
+        <ng-template mat-tab-label>
+            <mat-icon>card_giftcard</mat-icon>
+            אירועים מיוחדים
+        </ng-template>
+
+        <app-party-event></app-party-event>
+    </mat-tab>
+</mat-tab-group>

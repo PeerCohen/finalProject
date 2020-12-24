@@ -1,0 +1,137 @@
+.img-category {
+    width: 93%;
+    position: relative;
+    top: 39px;
+    left: 13%;
+    border: solid;
+    border-width: 11px;
+}
+
+.container {
+    display: inline;
+    text-align: right;
+    position: absolute;
+    top: 269px;
+    left: -7%;
+}
+
+.name {
+    position: absolute;
+    top: 252px;
+    left: 40%;
+    display: block;
+    color: #414143;
+    font-size: 56px;
+    font-weight: 600;
+}
+
+mat-icon {
+    margin-left: 5%;
+}
+
+.menu {
+    position: relative;
+    text-align: center;
+    left: 28%;
+    top: -13px;
+    height: 53px;
+    /* background-color: #363638; */
+    color: #9a2d44;
+    width: 130%;
+    padding: 5%;
+}
+
+.galery {
+    position: relative;
+    top: 260px;
+    left: 2%;
+}
+
+#carouselExampleFade {
+    width: 23%;
+    position: absolute;
+    top: 250px;
+    left: 218px;
+}
+
+.galery button {
+    width: 80%;
+    font-size: 20px;
+    color: #ededef;
+    font-weight: 600;
+}
+
+.name-menu {
+    position: absolute;
+    top: 252px;
+    left: 40%;
+    display: block;
+    color: #414143;
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.img-menu {
+    width: 129%;
+    position: absolute;
+    top: 40px;
+    left: -3px;
+    border: solid;
+    border-color: #343436;
+    border-width: 23px;
+}
+
+.img-logo {
+    width: 8%;
+}
+
+.img-title {
+    width: 10%;
+}
+
+.image {
+    position: relative;
+    left: 7%;
+    top: 61px;
+    display: inline;
+}
+
+
+/* body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  } */

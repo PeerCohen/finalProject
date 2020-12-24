@@ -1,0 +1,28 @@
+<div *ngIf=!disableInvent class="wrapper-cart">
+    <p class="title-cart">סיכום הזמנה</p>
+    <p class="sub-title-cart">שם המזמין : {{userName}}</p>
+    <hr>
+    <div *ngFor="let item of itemsInCart;let index=index">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{item.nameDose}}</mat-card-title>
+                <mat-card-subtitle>
+                    <div> כמות הזמנת מנה : {{item.amount}} </div>
+                    <div>{{' ₪ '+item.price}}</div>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+                <button mat-icon-button color="primary" class="minus-icon">
+                    <mat-icon (click)="lessProduct(item)">remove_circle_outline</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" class="plus-icon">
+                    <mat-icon (click)="addProduct(item)">add_circle_outline</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" class="delete-icon">
+                    <mat-icon (click)="openDialogRemove(item.idMenu,index)">delete</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <button mat-flat-button color="primary" (click)="addInvent()"> אשר הזמנה</button>
+</div>

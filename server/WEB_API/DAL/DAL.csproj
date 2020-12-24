@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B6236D6-ED8E-4FA3-B1DA-B471D85A130C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryDAL.cs" />
+    <Compile Include="CommentVisiter.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommentVisiterDAL.cs" />
+    <Compile Include="CurrentEmployee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentEmployeeDAL.cs" />
+    <Compile Include="Employees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesDAL.cs" />
+    <Compile Include="EmployeesTypes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesTypesDAL.cs" />
+    <Compile Include="InventDetails.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InventDose.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InventDoseDAL.cs" />
+    <Compile Include="managerMessage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDAL.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rating.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RatingDAL.cs" />
+    <Compile Include="SpecialInvent.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatusDose.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatusDoseDAL.cs" />
+    <Compile Include="StatusInvent.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tables.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TablesDAL.cs" />
+    <Compile Include="UserCalander.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VipTables.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VipTablesDAL.cs" />
+    <Compile Include="Visiters.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VisitersDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\images\3698327.jpg" />
+    <Content Include="src\images\products\10\baklawa-150x150.jpg" />
+    <Content Include="src\images\products\10\cafe_shachor-150x150.jpg" />
+    <Content Include="src\images\products\10\espresso_kaful-150x150.jpg" />
+    <Content Include="src\images\products\10\espresso_katsar-150x150.jpg" />
+    <Content Include="src\images\products\10\soufle-150x150.jpg" />
+    <Content Include="src\images\products\10\tea_nana-150x150.jpg" />
+    <Content Include="src\images\products\10\tricolad-150x150.jpg" />
+    <Content Include="src\images\products\10\vafel_belgi-150x150.jpg" />
+    <Content Include="src\images\products\11\7290000284361.jpg" />
+    <Content Include="src\images\products\11\7290001594179.jpg" />
+    <Content Include="src\images\products\11\7290002871446.jpg" />
+    <Content Include="src\images\products\11\7290002871460.jpg" />
+    <Content Include="src\images\products\11\7290008909860.jpg" />
+    <Content Include="src\images\products\11\7290011018283.jpg" />
+    <Content Include="src\images\products\11\7290013585240.jpg" />
+    <Content Include="src\images\products\11\7290110110611.jpg" />
+    <Content Include="src\images\products\11\cola.png" />
+    <Content Include="src\images\products\11\Drinks27.png" />
+    <Content Include="src\images\products\11\prigat-zalul-ananas.png" />
+    <Content Include="src\images\products\11\prigat-zalul-anavim.png" />
+    <Content Include="src\images\products\1\humus_basar-150x150.jpg" />
+    <Content Include="src\images\products\1\humus_naki-150x150.jpg" />
+    <Content Include="src\images\products\1\humus_pitriot-150x150.jpg" />
+    <Content Include="src\images\products\1\humus_tchina-150x150.jpg" />
+    <Content Include="src\images\products\1\mivchar_salatei_habait-150x150.jpg" />
+    <Content Include="src\images\products\1\pitriot_chamot-150x150.jpg" />
+    <Content Include="src\images\products\1\tchina-150x150.jpg" />
+    <Content Include="src\images\products\2\chatsil_baladi-150x150.jpg" />
+    <Content Include="src\images\products\2\GAL_7338-150x150.jpg" />
+    <Content Include="src\images\products\2\salat_aravi_mana-150x150.jpg" />
+    <Content Include="src\images\products\2\salat_mukpatz_gehalim-150x150.jpg" />
+    <Content Include="src\images\products\2\salat_yarok-150x150.jpg" />
+    <Content Include="src\images\products\3\antricot-150x150.jpg" />
+    <Content Include="src\images\products\3\file1-150x150.jpg" />
+    <Content Include="src\images\products\3\file_avaz-150x150.jpg" />
+    <Content Include="src\images\products\3\IMG_4931-150x150.jpg" />
+    <Content Include="src\images\products\3\kabab1-150x150.jpg" />
+    <Content Include="src\images\products\3\kaved_avaz-150x150.jpg" />
+    <Content Include="src\images\products\3\kvedim-150x150.jpg" />
+    <Content Include="src\images\products\3\levavot1-150x150.jpg" />
+    <Content Include="src\images\products\3\pargit2-150x150.jpg" />
+    <Content Include="src\images\products\3\shuman_keves-150x150.jpg" />
+    <Content Include="src\images\products\4\1_2_kilo_knafaim-150x150.jpg" />
+    <Content Include="src\images\products\4\antricot_ikarit1-150x150.jpg" />
+    <Content Include="src\images\products\4\big_steak-150x150.jpg" />
+    <Content Include="src\images\products\4\file_ikarit1-150x150.jpg" />
+    <Content Include="src\images\products\4\medalionei_kaved_avaz-150x150.jpg" />
+    <Content Include="src\images\products\4\mix_gehalim-150x150.jpg" />
+    <Content Include="src\images\products\4\mix_gehalim_vip_zugi-150x150 %281%29.jpg" />
+    <Content Include="src\images\products\4\mix_gehalim_vip_zugi-150x150.jpg" />
+    <Content Include="src\images\products\4\shatu_antricot-150x150.jpg" />
+    <Content Include="src\images\products\4\shatu_file_bakar-150x150.jpg" />
+    <Content Include="src\images\products\4\shchitut-150x150.jpg" />
+    <Content Include="src\images\products\4\steak_pargit1-150x150.jpg" />
+    <Content Include="src\images\products\4\tslaot-150x150.jpg" />
+    <Content Include="src\images\products\5\GAL_7340-150x150.jpg" />
+    <Content Include="src\images\products\5\GAL_7341-150x150.jpg" />
+    <Content Include="src\images\products\5\hamburger-150x150.jpg" />
+    <Content Include="src\images\products\5\kaved_of_al_haplancha-150x150.jpg" />
+    <Content Include="src\images\products\5\margez1-150x150.jpg" />
+    <Content Include="src\images\products\5\shnitsel1-150x150.jpg" />
+    <Content Include="src\images\products\6\chips_gadol-150x150.jpg" />
+    <Content Include="src\images\products\6\falafel-150x150.jpg" />
+    <Content Include="src\images\products\6\home_fries-150x150.jpg" />
+    <Content Include="src\images\products\6\kruvit_metugenet-150x150.jpg" />
+    <Content Include="src\images\products\6\platat_cigarim_vepastelim-150x150.jpg" />
+    <Content Include="src\images\products\6\tabaot_batsal-150x150.jpg" />
+    <Content Include="src\images\products\7\amnon_shalem-150x150 %281%29.jpg" />
+    <Content Include="src\images\products\7\amnon_shalem-150x150.jpg" />
+    <Content Include="src\images\products\7\denis_shalem-150x150.jpg" />
+    <Content Include="src\images\products\7\lavrak_shalem-150x150.jpg" />
+    <Content Include="src\images\products\8\pasta_bulonez-150x150.jpg" />
+    <Content Include="src\images\products\8\spagethi_napolitana1-150x150.jpg" />
+    <Content Include="src\images\products\9\mjadara-150x150.jpg" />
+    <Content Include="src\images\products\9\pire-150x150.jpg" />
+    <Content Include="src\images\products\9\shipud_pitriot-150x150.jpg" />
+    <Content Include="src\images\products\9\tapuchei_adama-150x150.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

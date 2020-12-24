@@ -1,0 +1,15 @@
+mat-icon {
+    color: greenyellow;
+    font-size: 360%;
+    text-align: center;
+}
+
+div {
+    width: 250px;
+    height: 180px;
+    text-align: center;
+}
+
+p {
+    font-size: large;
+}

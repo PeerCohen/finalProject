@@ -1,0 +1,14 @@
+.user-enter {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.userName {
+    position: absolute;
+    left: 3%;
+}
+
+.userName mat-icon {
+    position: relative;
+    top: 6px;
+}

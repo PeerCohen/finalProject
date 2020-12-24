@@ -1,0 +1,23 @@
+<div class="talbe">
+    <table>
+        <tr>
+            <th class="headTitle">נוחכות עובדים ליום : {{today | date}} </th>
+        </tr>
+        <tr class="title">
+            <th>שם עובד</th>
+            <th>שעת כניסה</th>
+            <th>שעת יציאה</th>
+            <th>משמרת</th>
+            <th>סה"כ שעות עבודה יומי</th>
+        </tr>
+        <tr *ngFor="let w of listDailtWorker">
+            <td>{{w.idUser | nameUserByID  }}</td>
+            <td>{{w.entranceTime| date:'mm:ss' }} </td>
+            <td>{{w.leavingTime | date:'mm:ss'}}</td>
+            <td>{{w.shift}}</td>
+            <td>{{w.numWorkingHours}}</td>
+
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,29 @@
+.menu-by-categoty {
+    display: inline;
+}
+
+.menu-swiper {
+    display: inline;
+}
+
+.dose-category-order {
+    display: inline;
+    position: absolute;
+    top: 255px;
+    left: 14%;
+}
+
+.img-display {
+    width: 71%;
+    position: absolute;
+    top: 100px;
+    left: 3%;
+    border: solid;
+    border-color: #8c1829;
+    border-width: 17px;
+}
+
+app-menu-by-categoty .main_sidebar {
+    display: inline-block;
+    width: 18%;
+}

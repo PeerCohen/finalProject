@@ -1,0 +1,11 @@
+<div class="dialog">
+    <h1 mat-dialog-title>לתשומת לבך </h1>
+    <mat-icon color="primary">error_outline</mat-icon>
+    <hr />
+    <div mat-dialog-content>?להסיר את המוצר מההזמנה</div>
+    <div mat-dialog-actions class="button-option">
+        <button mat-flat-button color="primary" [mat-dialog-close]="data.close" (click)="MinusProductAmount()">כן ,
+            הסר</button>
+        <button mat-flat-button color="primary" mat-dialog-close>לא , חזור</button>
+    </div>
+</div>

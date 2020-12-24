@@ -1,0 +1,27 @@
+.img {
+    width: 35%;
+    border: solid;
+    color: #6e5c55;
+}
+
+.body {
+    text-align: center;
+}
+
+.body-text {
+    font-size: xxx-large;
+    padding: 2%;
+}
+
+.body-text p {
+    margin-top: 2%;
+}
+
+.body button {
+    position: relative;
+    top: -63px;
+    width: 13%;
+    height: 48px;
+    font-size: 20px;
+    font-weight: 600;
+}

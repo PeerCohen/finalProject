@@ -1,0 +1,16 @@
+<form [formGroup]="formGroupLogin" style="display: inline-grid;">
+    <span class="title">התחברות משתמש קיים</span>
+    <mat-form-field appearance="outline">
+        <mat-label>הזן קוד משתמש </mat-label>
+        <input matInput formControlName="username">
+        <mat-icon matSuffix>account_circle</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>הזן סיסמא</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="login()">התחבר</button>
+</form>

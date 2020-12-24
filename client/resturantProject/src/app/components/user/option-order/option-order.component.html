@@ -1,0 +1,21 @@
+<div class="container">
+    <ng-container *ngIf="!isOpen">
+        <div class="option">
+            <div class="img">
+                <img class="title-img" [src]="'../../assets/images/logo/title.PNG'" />
+                <img class="logo-img" [src]="'../../assets/images/logo/logo.PNG'" />
+            </div>
+            <div class="option-buttom">
+                <button class="inner-option-buttom" mat-raised-button color="primary" (click)="setTakeAway()">איסוף
+                    מהסניף</button>
+                <button class="inner-option-buttom" mat-raised-button color="primary" (click)="setSending()">מישלוח
+                    אלי</button>
+                <button class="inner-option-buttom" mat-raised-button color="primary" (click)="setTableOrder()">הזמן
+                    שולחן</button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container>
+        <app-menu [option]="optionOrder" *ngIf="isOpen"></app-menu>
+    </ng-container>
+</div>

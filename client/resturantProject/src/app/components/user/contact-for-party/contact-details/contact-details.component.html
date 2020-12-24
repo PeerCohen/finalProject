@@ -1,0 +1,13 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" style="width: max-content;">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                לפרטים לחץ כאן
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-giftcard-contact *ngIf="component=='giftcard'"></app-giftcard-contact>
+        <app-big-order-contact *ngIf="component=='big-orders'"></app-big-order-contact>
+        <app-birthday-contact *ngIf="component=='birthday'"></app-birthday-contact>
+        <app-catering-contact *ngIf="component=='catering'"></app-catering-contact>
+    </mat-expansion-panel>
+</mat-accordion>

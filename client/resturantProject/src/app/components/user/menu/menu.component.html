@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="kind-option" *ngIf="!IsInRestaurant">
+        <div class="in-kind-option">{{option}} </div>|
+        <div class="in-kind-option">
+            <mat-icon>hourglass_empty</mat-icon>{{optionDetails}}
+        </div>|
+        <div class="in-kind-option">
+            <mat-icon>phone</mat-icon> <a class="contact" href="tel:073-7584240">073-7584240</a>
+        </div>|
+        <div class="in-kind-option" matTooltip="שירות ההזמנות פעיל בין השעות 10:00 - 23:00 ">
+            <mat-icon>schedule</mat-icon> שעות פעילות
+
+        </div>
+    </div>
+    <div class="menu-by-categoty">
+        <app-menu-by-categoty></app-menu-by-categoty>
+    </div>
+    <div style="width: 35%;">
+        <app-dose-category [Restaurant]="IsInRestaurant"></app-dose-category>
+    </div>
+    <div *ngIf="IsInRestaurant">
+        <app-cart-in-restaurant></app-cart-in-restaurant>
+    </div>
+    <div *ngIf="!IsInRestaurant">
+        <app-mini-cart *ngIf="!cartIsEmpty() "></app-mini-cart>
+    </div>
+</div>

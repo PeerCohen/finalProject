@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+.img-delivery img {
+    width: 40%;
+    display: inline;
+    left: -28%;
+}
+
+.send {
+    text-align: center;
+}
+
+button {
+    font-size: medium;
+    font-weight: 600;
+    margin: 1%;
+}

@@ -1,0 +1,25 @@
+<div class="new-category">
+    <button class="addCategory" mat-flat-button color="primary" (click)="openAddCategoryDialog()"> הוספת קטגוריה חדשה
+        לתפריט</button>
+</div>
+<div class="main-sidebar">
+    <div *ngFor="let item of categoryList" class="category">
+        <div>
+            <div class='image-div'>
+                <img class='image' [src]="'../../assets/images/category/'+item.id+'.jpg'">
+            </div>
+            <div class="categoryName">
+                {{item.nameCategory}}
+            </div>
+        </div>
+        <div class="delete">
+            <button mat-button color="primary" (click)="openDeleteCategoryDialog(item)">מחיקה</button>
+        </div>
+        <div class="edit">
+            <button mat-button color="primary" (click)="openEditCategoryDialog(item)">עריכה</button>
+        </div>
+        <div class="categorydetails">
+            <button mat-button color="primary" (click)="getDoseCategory(item.id)">הצגת תפריט</button>
+        </div>
+    </div>
+</div>

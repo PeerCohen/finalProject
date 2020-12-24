@@ -1,0 +1,34 @@
+<mat-card *ngFor="let order of preOrders">
+    <mat-card-header>
+        <div *ngFor="let detail of order.inventDetails">
+            <mat-card-title>{{detail.idMenu}}</mat-card-title>
+            <mat-card-subtitle>
+                <p>כמות הזמנה: </p>
+                {{detail.amount}}
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <div>
+            <!-- <img class='image' [src]="'../../assets/images/products/'+order.+'/'+order.image"> -->
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <ngb-rating [(rate)]="order.currentRate">
+            <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index <2">&#9733;</span>
+            </ng-template>
+        </ngb-rating>
+    </mat-card-actions>
+</mat-card>
+<div class="comment">
+    <div class="title">הוספת תגובה למערכת </div>
+    <div class="textarea">
+        <mat-form-field appearance="outline">
+            <mat-label>תוכן</mat-label>
+            <textarea matInput [(ngModel)]="commentContent"></textarea>
+        </mat-form-field>
+    </div>
+    <button class="sent-comment" mat-flat-button color="primary" (click)="sendComment()"> שלח תגובה </button>
+
+</div>

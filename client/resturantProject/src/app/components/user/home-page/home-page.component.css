@@ -1,0 +1,31 @@
+body,
+html {
+    height: 100%;
+}
+
+.home-image {
+    background-image: url(/assets/images/homePage.jpg);
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.text {
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    font-size: 75px;
+    top: 57%;
+    left: 39%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 29%;
+    height: 78%;
+}
+
+.img {
+    position: relative;
+    bottom: -32%;
+}

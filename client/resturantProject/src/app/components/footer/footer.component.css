@@ -1,0 +1,38 @@
+.footer {
+    padding: 1%;
+    background-color: #ffffff;
+    color: #7a7a7a;
+    text-align: center;
+    position: static;
+    bottom: 0%;
+    border-top: solid;
+    border-top-color: #9a2d44;
+}
+
+.logo-img {
+    width: 29%;
+    border-bottom: solid;
+    border-bottom-color: #9a2d44;
+    height: 52px;
+    justify-content: center;
+    position: relative;
+    right: 37%;
+    margin-bottom: 2%;
+}
+
+.in-logo-img {
+    width: 20%;
+}
+
+.info {
+    padding-top: 1%;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.contact {
+    padding: 1%;
+    color: #7a7a7a;
+    font-size: 20px;
+    margin-left: 17%;
+}

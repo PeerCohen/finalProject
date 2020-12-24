@@ -1,0 +1,70 @@
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\BL.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\BL.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\DAL.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\DTO.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\EntityFramework.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\EntityFramework.SqlServer.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\DAL.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\DAL.dll.config
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\bin\Debug\DTO.pdb
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\obj\Debug\BL.dll
+W:\כתות ו\התמחויות\הנדסאות\מורה\שנה ב\C# מתקדם\שיעור 8 -web api\WEB_API\BL\obj\Debug\BL.pdb
+D:\final_project\WEB_API\BL\bin\Debug\BL.dll
+D:\final_project\WEB_API\BL\bin\Debug\BL.pdb
+D:\final_project\WEB_API\BL\bin\Debug\DAL.dll
+D:\final_project\WEB_API\BL\bin\Debug\DTO.dll
+D:\final_project\WEB_API\BL\bin\Debug\DAL.pdb
+D:\final_project\WEB_API\BL\bin\Debug\DAL.dll.config
+D:\final_project\WEB_API\BL\bin\Debug\DTO.pdb
+D:\final_project\WEB_API\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\final_project\WEB_API\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\final_project\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
+D:\final_project\WEB_API\BL\obj\Debug\BL.dll
+D:\final_project\WEB_API\BL\obj\Debug\BL.pdb
+E:\WEB_API\BL\bin\Debug\BL.dll
+E:\WEB_API\BL\bin\Debug\BL.pdb
+E:\WEB_API\BL\bin\Debug\DAL.dll
+E:\WEB_API\BL\bin\Debug\DTO.dll
+E:\WEB_API\BL\bin\Debug\DAL.pdb
+E:\WEB_API\BL\bin\Debug\DAL.dll.config
+E:\WEB_API\BL\bin\Debug\DTO.pdb
+E:\WEB_API\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+E:\WEB_API\BL\obj\Debug\BL.dll
+E:\WEB_API\BL\obj\Debug\BL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\BL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\BL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DTO.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.dll.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DTO.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\BL.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\BL.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\DAL.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\DTO.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\DAL.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\DAL.dll.config
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.dll
+C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\obj\Debug\BL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\BL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\BL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DAL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DTO.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DAL.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DAL.dll.config
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\bin\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.dll
+C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.pdb

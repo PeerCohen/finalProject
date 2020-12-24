@@ -1,0 +1,62 @@
+    .option {
+        background-image: url(/assets/images/option.jpg);
+        height: 700px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    
+    .img {
+        z-index: 3;
+        position: absolute;
+        left: 9%;
+        top: 38%;
+        background-color: white;
+        text-align: center;
+        transform: rotate(-8deg);
+        width: 17%;
+    }
+    
+    .logo-img {
+        width: 40%;
+        transform: rotate(0deg);
+        display: block;
+        position: relative;
+        right: 28%;
+    }
+    
+    .title-img {
+        width: 70%;
+        transform: rotate(0deg);
+        display: block;
+        position: relative;
+        right: 13%;
+    }
+    
+    .inner-option-buttom {
+        display: block;
+        background-color: #8c1829;
+        color: #f9ece3;
+        font-size: 20px;
+        font-weight: 700;
+        width: 86%;
+        height: 57px;
+        margin: 1%;
+        position: relative;
+        top: 31%;
+        left: -5%;
+        margin-bottom: 9%;
+    }
+    
+    .option-buttom {
+        width: 26%;
+        background: white;
+        position: relative;
+        left: -17%;
+        height: 100%;
+        text-align: center;
+        border-left: solid;
+        border-right: solid;
+        border-color: #9a2d44;
+    }

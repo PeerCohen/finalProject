@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>עריכת מנה </h2>
+<mat-dialog-content>
+  <h3>שם המנה</h3>
+  <input type="text" value={{menu.nameDose}}  [(ngModel)]="menu.nameDose">
+  <h3>מחיר</h3>
+  <input type="number" value={{menu.price}}  [(ngModel)]="menu.price">
+  <h3>תיאור המנה</h3>
+  <input type="text" value={{menu.description}}  [(ngModel)]="menu.description">
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>ביטול</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="editDoseDetails()">שינוי</button>
+</mat-dialog-actions>

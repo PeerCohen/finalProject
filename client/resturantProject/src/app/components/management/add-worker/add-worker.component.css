@@ -1,0 +1,19 @@
+.formAddWorker {
+    width: 35%;
+    text-align: center;
+}
+
+.button-close {
+    display: grid;
+}
+
+.title {
+    position: relative;
+    right: 82%;
+}
+
+.form {
+    text-align: center;
+    position: relative;
+    right: 30%;
+}

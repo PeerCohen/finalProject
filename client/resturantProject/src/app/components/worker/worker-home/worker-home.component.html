@@ -1,0 +1,37 @@
+<!-- <div class="tool-up"></div>
+<app-logo></app-logo> -->
+<<<<<<< HEAD
+<!-- <app-header [Worker]="isWorker"></app-header> -->
+=======
+<app-header></app-header>
+>>>>>>> 3633c1e141778640f3ba60af4c95726c3fc44546
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="ניהול הזמנות">
+        <ng-template mat-tab-label>
+            <mat-icon>playlist_add_check</mat-icon>
+            ניהול הזמנות לקוחות
+        </ng-template>
+        <app-customers-order></app-customers-order>
+    </mat-tab>
+    <mat-tab label="הפרופיל שלי ">
+        <ng-template mat-tab-label>
+            <mat-icon>account_circle</mat-icon>
+            פרופיל שלי
+        </ng-template>
+        <app-my-presence></app-my-presence>
+    </mat-tab>
+    <mat-tab label=" הזמנות מיוחדות לטיפול ">
+        <ng-template mat-tab-label>
+            <mat-icon>content_paste</mat-icon>
+            הזמנות מיוחדות לטיפול
+        </ng-template>
+        <app-special-order></app-special-order>
+    </mat-tab>
+    <mat-tab label=" סידור משמרת שלי">
+        <ng-template mat-tab-label>
+            <mat-icon>book_online</mat-icon>
+            סידור המשמרות שלי
+        </ng-template>
+        <app-calandar-to-employee></app-calandar-to-employee>
+    </mat-tab>
+</mat-tab-group>
