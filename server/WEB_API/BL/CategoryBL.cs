@@ -35,5 +35,46 @@ namespace BL
         {
             CategoryDAL.Add(CategoryCast.ToDAL(category));
         }
+        public static List<CategoryDTO> GetNewCategoryList()
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                List<MenuDTO> lNewMenu = MenuBL.GetANewMenu();
+                List<Category> Listnew = new List<Category>();
+                foreach (var item in lNewMenu)
+                {
+                    var r = Listnew.FirstOrDefault(x => x.Id == item.Category);
+                    if (r==null)
+                    {
+                        Listnew.Add(db.Category.FirstOrDefault(x => x.Id == item.Category));
+
+                    }
+                }
+                //List<Category> List = db.Category.Where(x => lNewMenu.Any(y => x.Id == y.Category)).ToList();
+                return CategoryCast.ListToDTO(Listnew);
+            }
+
+        }
+        public static List<CategoryDTO> GetFavoriteCategoryList()
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                List<MenuDTO> lfMenu = MenuBL.GetFavoriteMenu();
+                List<Category> Listnew = new List<Category>();
+                foreach (var item in lfMenu)
+                {
+                    var r = Listnew.FirstOrDefault(x => x.Id == item.Category);
+                    if (r == null)
+                    {
+                        Listnew.Add(db.Category.FirstOrDefault(x => x.Id == item.Category));
+
+                    }
+                }
+                //List<Category> List = db.Category.Where(x => lNewMenu.Any(y => x.Id == y.Category)).ToList();
+                return CategoryCast.ListToDTO(Listnew);
+            }
+
+        }
+        
     }
 }

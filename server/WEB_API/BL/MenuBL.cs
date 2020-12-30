@@ -68,7 +68,7 @@ namespace BL
         }
         //חישוב המנות עם הדירוג הגבוהה ביתר 
         public static List<MenuDTO> GetFavoriteMenu()
-        {
+         {
             using (restaurantEntities1 db = new restaurantEntities1())
             {
                 int? TotalsumRating = 0;
@@ -87,15 +87,37 @@ namespace BL
                         sumRating++;
                         TotalsumRating += r.rate;
                     }
-                    ratingM.MenuID = menu.Id;
-                    ratingM.Rate =TotalsumRating /sumRating;
-                    LRatingMene.Add(ratingM);
+                    if (TotalsumRating!=0)
+                    {
+                        ratingM.MenuID = menu.Id;
+                        ratingM.Rate = TotalsumRating / sumRating;
+                        LRatingMene.Add(ratingM);
+                    }
+                   
                 }
                 var c = LRatingMene.OrderByDescending(u => u.Rate).Take(5).ToList();
-                List<Menu> List = db.Menu.Where(x => LRatingMene.Any(y => x.Id == y.MenuID)).ToList();
+                List<Menu> List = new List<Menu>();
+                foreach (var item in c)
+                {
+                    Menu m = db.Menu.FirstOrDefault(t => t.Id == item.MenuID);
+                    if (List.FirstOrDefault(w => w.Id == m.Id) == null)
+                        List.Add(m);
+                }
                 return MenuCast.ListToDTO(List);
+
             }
         }
+        public static  List<MenuDTO> GetMenuNewByCategory(int Id)
+        {
+            List<MenuDTO> ListNewMenu = GetANewMenu().Where(w=>w .Category==Id).ToList();
+            return ListNewMenu;
+        }
+        public static List<MenuDTO> GetMenuFavoriteByCategory(int Id)
+        {
+            List<MenuDTO> ListNewMenu = GetFavoriteMenu().Where(w => w.Category == Id).ToList();
+            return ListNewMenu;
+        }
+        
     }
     public class RatingMenue
     {

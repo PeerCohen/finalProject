@@ -32,14 +32,14 @@ namespace WEB_API.Controllers
         // POST: api/Category
         [HttpPost]
         [Route("AddCategory")]
-        public void Post([FromBody]CategoryDTO category)
+        public void Post([FromBody] CategoryDTO category)
         {
             CategoryBL.Add(category);
         }
 
         [HttpPost]
         [Route("UpdateCategory")]
-        public void update([FromBody]CategoryDTO category)
+        public void update([FromBody] CategoryDTO category)
         {
             CategoryBL.Update(category);
         }
@@ -47,9 +47,24 @@ namespace WEB_API.Controllers
         // DELETE: api/Category/5
         [HttpPost]
         [Route("DeleteCategory")]
-        public void Delete([FromBody]CategoryDTO category)
+        public void Delete([FromBody] CategoryDTO category)
         {
             CategoryBL.Delete(category);
         }
+
+        [Route("GetNewCategoryList")]
+        public IHttpActionResult GetNewCategoryList()
+        {
+            return Ok(CategoryBL.GetNewCategoryList());
+        }
+        [Route("GetFavoriteCategoryList")]
+        public IHttpActionResult GetFavoriteCategoryList()
+        {
+            return Ok(CategoryBL.GetFavoriteCategoryList());
+
+        }
+
+
+
     }
 }

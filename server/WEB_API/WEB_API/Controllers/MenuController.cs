@@ -79,5 +79,15 @@ namespace WEB_API.Controllers
         {
             MenuBL.GetFavoriteMenu();
         }
+        [Route("GetMenuNewByCategory/{id}")]
+        public List<MenuDTO> GetMenuNewByCategory(int id)
+        {
+            return MenuBL.GetMenuNewByCategory(id);
+        }
+        [Route("GetMenuFavoriteByCategory/{id}")]
+        public List<MenuDTO> GetMenuFavoriteByCategory(int id)
+        {
+            return MenuBL.GetMenuFavoriteByCategory(id);
+        }
     }
 }
