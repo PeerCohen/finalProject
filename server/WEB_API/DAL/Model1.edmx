@@ -62,10 +62,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdDose" Type="int" Nullable="false" />
           <Property Name="IdMenu" Type="int" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="InventDose">
           <Key>
@@ -86,11 +86,11 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdEmployee" Type="int" />
-          <Property Name="Date" Type="datetime" />
+          <Property Name="Date" Type="date" />
           <Property Name="message" Type="nvarchar(max)" />
           <Property Name="subject" Type="nvarchar" MaxLength="50" />
-          <Property Name="fromEmloyeeId" Type="int" />
           <Property Name="fromEmloyeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="fromEmloyeeId" Type="int" />
           <Property Name="AlreadyRead" Type="bit" />
         </EntityType>
         <EntityType Name="Menu">
@@ -105,7 +105,6 @@
           <Property Name="Description" Type="nvarchar" MaxLength="2000" />
           <Property Name="image" Type="varchar(max)" />
           <Property Name="IsDelete" Type="bit" />
-          <Property Name="DateAdded" Type="datetime" />
         </EntityType>
         <EntityType Name="Rating">
           <Key>
@@ -121,9 +120,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdVisiter" Type="int" Nullable="false" />
-          <Property Name="KindRequest" Type="nchar" MaxLength="10" />
-          <Property Name="Date" Type="datetime" />
+          <Property Name="kindOfevent" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="10" />
+          <Property Name="phone" Type="nchar" MaxLength="10" />
+          <Property Name="mail" Type="nchar" MaxLength="50" />
+          <Property Name="dateEvent" Type="date" />
           <Property Name="CountOfPeople" Type="int" />
         </EntityType>
         <EntityType Name="StatusDose">
@@ -139,6 +140,16 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Kind" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Tables">
           <Key>
@@ -178,7 +189,7 @@
           <Key>
             <PropertyRef Name="ld" />
           </Key>
-          <Property Name="ld" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="nchar" MaxLength="10" />
           <Property Name="LastName" Type="nchar" MaxLength="10" />
           <Property Name="Phone" Type="nchar" MaxLength="10" />
@@ -368,18 +379,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SpecialInvent_Visiters">
-          <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
-          <End Role="SpecialInvent" Type="Self.SpecialInvent" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Visiters">
-              <PropertyRef Name="ld" />
-            </Principal>
-            <Dependent Role="SpecialInvent">
-              <PropertyRef Name="IdVisiter" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_StatusInvent_StatusInvent">
           <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
           <End Role="StatusInvent1" Type="Self.StatusInvent" Multiplicity="0..1" />
@@ -479,6 +478,7 @@
           <EntitySet Name="SpecialInvent" EntityType="Self.SpecialInvent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusDose" EntityType="Self.StatusDose" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusInvent" EntityType="Self.StatusInvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserCalander" EntityType="Self.UserCalander" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
@@ -543,10 +543,6 @@
             <End Role="Menu" EntitySet="Menu" />
             <End Role="Rating" EntitySet="Rating" />
           </AssociationSet>
-          <AssociationSet Name="FK_SpecialInvent_Visiters" Association="Self.FK_SpecialInvent_Visiters">
-            <End Role="Visiters" EntitySet="Visiters" />
-            <End Role="SpecialInvent" EntitySet="SpecialInvent" />
-          </AssociationSet>
           <AssociationSet Name="FK_StatusInvent_StatusInvent" Association="Self.FK_StatusInvent_StatusInvent">
             <End Role="StatusInvent" EntitySet="StatusInvent" />
             <End Role="StatusInvent1" EntitySet="StatusInvent" />
@@ -598,15 +594,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nameCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Menu" Relationship="Self.FK_Menu_Category" FromRole="Category" ToRole="Menu" />
-        </EntityType>
-        <EntityType Name="CommentVisiter">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="Comment" Type="String" MaxLength="4000" FixedLength="true" Unicode="true" />
-          <Property Name="idvisiter" Type="Int32" />
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Visiters" Relationship="Self.FK_CommentVisiter_Visiters" FromRole="CommentVisiter" ToRole="Visiters" />
         </EntityType>
         <EntityType Name="CurrentEmployee">
           <Key>
@@ -685,13 +672,13 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdEmployee" Type="Int32" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fromEmloyeeId" Type="Int32" />
           <Property Name="fromEmloyeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AlreadyRead" Type="Boolean" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_managerMessage_managerMessage" FromRole="managerMessage" ToRole="Employees" />
+          <Property Name="fromEmloyeeId" Type="Int32" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -708,7 +695,6 @@
           <NavigationProperty Name="Category1" Relationship="Self.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
           <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
           <NavigationProperty Name="Rating" Relationship="Self.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
-          <Property Name="DateAdded" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Rating">
           <Key>
@@ -719,17 +705,6 @@
           <Property Name="doseId" Type="Int32" />
           <Property Name="rate" Type="Int32" />
           <NavigationProperty Name="Menu" Relationship="Self.FK_Rating_Menu" FromRole="Rating" ToRole="Menu" />
-        </EntityType>
-        <EntityType Name="SpecialInvent">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdVisiter" Type="Int32" Nullable="false" />
-          <Property Name="KindRequest" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="CountOfPeople" Type="Int32" />
-          <NavigationProperty Name="Visiters" Relationship="Self.FK_SpecialInvent_Visiters" FromRole="SpecialInvent" ToRole="Visiters" />
         </EntityType>
         <EntityType Name="StatusDose">
           <Key>
@@ -748,6 +723,16 @@
           <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_StatusInvent" FromRole="StatusInvent" ToRole="InventDose" />
           <NavigationProperty Name="StatusInvent1" Relationship="Self.FK_StatusInvent_StatusInvent" FromRole="StatusInvent" ToRole="StatusInvent1" />
           <NavigationProperty Name="StatusInvent2" Relationship="Self.FK_StatusInvent_StatusInvent" FromRole="StatusInvent1" ToRole="StatusInvent" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Tables">
           <Key>
@@ -804,10 +789,9 @@
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="NameUser" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Address1" Relationship="Self.FK_Visiters_Address" FromRole="Visiters" ToRole="Address" />
-          <NavigationProperty Name="CommentVisiter" Relationship="Self.FK_CommentVisiter_Visiters" FromRole="Visiters" ToRole="CommentVisiter" />
           <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Visiters" FromRole="Visiters" ToRole="InventDose" />
-          <NavigationProperty Name="SpecialInvent" Relationship="Self.FK_SpecialInvent_Visiters" FromRole="Visiters" ToRole="SpecialInvent" />
           <NavigationProperty Name="Tables" Relationship="Self.FK_Visiters_Tables1" FromRole="Visiters" ToRole="Tables" />
+          <NavigationProperty Name="CommentVisiter" Relationship="restaurantModel.FK_CommentVisiter_Visiters" FromRole="Visiters" ToRole="CommentVisiter" />
         </EntityType>
         <Association Name="FK_Visiters_Address">
           <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
@@ -830,18 +814,6 @@
             </Principal>
             <Dependent Role="Menu">
               <PropertyRef Name="Category" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CommentVisiter_Visiters">
-          <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />
-          <End Role="CommentVisiter" Type="Self.CommentVisiter" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Visiters">
-              <PropertyRef Name="ld" />
-            </Principal>
-            <Dependent Role="CommentVisiter">
-              <PropertyRef Name="idvisiter" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1037,18 +1009,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SpecialInvent_Visiters">
-          <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
-          <End Role="SpecialInvent" Type="Self.SpecialInvent" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Visiters">
-              <PropertyRef Name="ld" />
-            </Principal>
-            <Dependent Role="SpecialInvent">
-              <PropertyRef Name="IdVisiter" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_StatusInvent_StatusInvent">
           <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
           <End Role="StatusInvent1" Type="Self.StatusInvent" Multiplicity="0..1" />
@@ -1088,7 +1048,6 @@
         <EntityContainer Name="restaurantEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Address" EntityType="Self.Address" />
           <EntitySet Name="Category" EntityType="Self.Category" />
-          <EntitySet Name="CommentVisiter" EntityType="Self.CommentVisiter" />
           <EntitySet Name="CurrentEmployee" EntityType="Self.CurrentEmployee" />
           <EntitySet Name="Employees" EntityType="Self.Employees" />
           <EntitySet Name="EmployeesTypes" EntityType="Self.EmployeesTypes" />
@@ -1097,9 +1056,9 @@
           <EntitySet Name="managerMessage" EntityType="Self.managerMessage" />
           <EntitySet Name="Menu" EntityType="Self.Menu" />
           <EntitySet Name="Rating" EntityType="Self.Rating" />
-          <EntitySet Name="SpecialInvent" EntityType="Self.SpecialInvent" />
           <EntitySet Name="StatusDose" EntityType="Self.StatusDose" />
           <EntitySet Name="StatusInvent" EntityType="Self.StatusInvent" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tables" EntityType="Self.Tables" />
           <EntitySet Name="UserCalander" EntityType="Self.UserCalander" />
           <EntitySet Name="VipTables" EntityType="Self.VipTables" />
@@ -1111,10 +1070,6 @@
           <AssociationSet Name="FK_Menu_Category" Association="Self.FK_Menu_Category">
             <End Role="Category" EntitySet="Category" />
             <End Role="Menu" EntitySet="Menu" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CommentVisiter_Visiters" Association="Self.FK_CommentVisiter_Visiters">
-            <End Role="Visiters" EntitySet="Visiters" />
-            <End Role="CommentVisiter" EntitySet="CommentVisiter" />
           </AssociationSet>
           <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
             <End Role="Employees" EntitySet="Employees" />
@@ -1180,10 +1135,6 @@
             <End Role="Menu" EntitySet="Menu" />
             <End Role="Rating" EntitySet="Rating" />
           </AssociationSet>
-          <AssociationSet Name="FK_SpecialInvent_Visiters" Association="Self.FK_SpecialInvent_Visiters">
-            <End Role="Visiters" EntitySet="Visiters" />
-            <End Role="SpecialInvent" EntitySet="SpecialInvent" />
-          </AssociationSet>
           <AssociationSet Name="FK_StatusInvent_StatusInvent" Association="Self.FK_StatusInvent_StatusInvent">
             <End Role="StatusInvent" EntitySet="StatusInvent" />
             <End Role="StatusInvent1" EntitySet="StatusInvent" />
@@ -1196,7 +1147,46 @@
             <End Role="Tables" EntitySet="Tables" />
             <End Role="Visiters" EntitySet="Visiters" />
           </AssociationSet>
+          <EntitySet Name="SpecialInvent" EntityType="restaurantModel.SpecialInvent" />
+          <EntitySet Name="CommentVisiter" EntityType="restaurantModel.CommentVisiter" />
+          <AssociationSet Name="FK_CommentVisiter_Visiters" Association="restaurantModel.FK_CommentVisiter_Visiters">
+            <End Role="Visiters" EntitySet="Visiters" />
+            <End Role="CommentVisiter" EntitySet="CommentVisiter" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="SpecialInvent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kindOfevent" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="dateEvent" Type="DateTime" Precision="0" />
+          <Property Name="CountOfPeople" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CommentVisiter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="Comment" Type="String" MaxLength="4000" FixedLength="true" Unicode="true" />
+          <Property Name="idvisiter" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Visiters" Relationship="restaurantModel.FK_CommentVisiter_Visiters" FromRole="CommentVisiter" ToRole="Visiters" />
+        </EntityType>
+        <Association Name="FK_CommentVisiter_Visiters">
+          <End Type="restaurantModel.Visiters" Role="Visiters" Multiplicity="0..1" />
+          <End Type="restaurantModel.CommentVisiter" Role="CommentVisiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiters">
+              <PropertyRef Name="ld" />
+            </Principal>
+            <Dependent Role="CommentVisiter">
+              <PropertyRef Name="idvisiter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1219,15 +1209,6 @@
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="nameCategory" ColumnName="nameCategory" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CommentVisiter">
-            <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
-              <MappingFragment StoreEntitySet="CommentVisiter">
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="idvisiter" ColumnName="idvisiter" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1289,12 +1270,12 @@
           <EntitySetMapping Name="managerMessage">
             <EntityTypeMapping TypeName="restaurantModel.managerMessage">
               <MappingFragment StoreEntitySet="managerMessage">
+                <ScalarProperty Name="fromEmloyeeId" ColumnName="fromEmloyeeId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="message" ColumnName="message" />
                 <ScalarProperty Name="subject" ColumnName="subject" />
-                <ScalarProperty Name="fromEmloyeeId" ColumnName="fromEmloyeeId" />
                 <ScalarProperty Name="fromEmloyeeName" ColumnName="fromEmloyeeName" />
                 <ScalarProperty Name="AlreadyRead" ColumnName="AlreadyRead" />
               </MappingFragment>
@@ -1303,7 +1284,6 @@
           <EntitySetMapping Name="Menu">
             <EntityTypeMapping TypeName="restaurantModel.Menu">
               <MappingFragment StoreEntitySet="Menu">
-                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="NameDose" ColumnName="NameDose" />
@@ -1325,17 +1305,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SpecialInvent">
-            <EntityTypeMapping TypeName="restaurantModel.SpecialInvent">
-              <MappingFragment StoreEntitySet="SpecialInvent">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="IdVisiter" ColumnName="IdVisiter" />
-                <ScalarProperty Name="KindRequest" ColumnName="KindRequest" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="CountOfPeople" ColumnName="CountOfPeople" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="StatusDose">
             <EntityTypeMapping TypeName="restaurantModel.StatusDose">
               <MappingFragment StoreEntitySet="StatusDose">
@@ -1349,6 +1318,17 @@
               <MappingFragment StoreEntitySet="StatusInvent">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Kind" ColumnName="Kind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="restaurantModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1401,6 +1381,28 @@
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialInvent">
+            <EntityTypeMapping TypeName="restaurantModel.SpecialInvent">
+              <MappingFragment StoreEntitySet="SpecialInvent">
+                <ScalarProperty Name="CountOfPeople" ColumnName="CountOfPeople" />
+                <ScalarProperty Name="dateEvent" ColumnName="dateEvent" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="kindOfevent" ColumnName="kindOfevent" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentVisiter">
+            <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
+              <MappingFragment StoreEntitySet="CommentVisiter">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idvisiter" ColumnName="idvisiter" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

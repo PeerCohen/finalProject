@@ -23,7 +23,6 @@ export class UserService {
   URLEm = "http://localhost:51437/api/Employees/";
   singIn: boolean = false;
   userName: any;
-  userNameAndId:Array<{id: number, name:string}>
   set CurrentUser(v: any) {
     if (v)
       localStorage.setItem(this.keys.USER_KEY, JSON.stringify(v));
@@ -92,10 +91,5 @@ export class UserService {
   EditReadMessege(m)
   {
     return this.httpClient.put<ManagerMessege>(this.URLEm + 'EditReadMessege/' , m);
-  }
-  getUserNameAndID()
-  {
-    return this.httpClient.get(this.URLEm + 'GetUserNameAndID' );
-
   }
 }

@@ -8,6 +8,4 @@ export class Menu {
     image:string;
     ImageBase64:string;
     amount:number=1;
-    IsDelete :boolean;
-     DateAdded :Date;
 }

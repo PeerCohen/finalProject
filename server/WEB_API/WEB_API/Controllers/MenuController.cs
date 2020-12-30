@@ -67,6 +67,7 @@ namespace WEB_API.Controllers
         {
             MenuBL.Delete(menu);
         }
+<<<<<<< HEAD
         [HttpGet]
         [Route("GetANewMenu")]
         public IHttpActionResult GetANewMenu()
@@ -89,5 +90,7 @@ namespace WEB_API.Controllers
         {
             return MenuBL.GetMenuFavoriteByCategory(id);
         }
+=======
+>>>>>>> 42e6d94f93a542ec2a6216a0dc4a45a9132dee0c
     }
 }

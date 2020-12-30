@@ -21,11 +21,9 @@ namespace BL.cast
                RateDose=item.RateDose,
                Category=item.Category,
                Description=item.Description,
-               image=item.image,
-                IsDelete=item.IsDelete,
-                DateAdded= item.DateAdded
+               image=item.image               
 
-    };
+            };
         }
 
         //list to dto
@@ -44,9 +42,7 @@ namespace BL.cast
                 RateDose = item.RateDose,
                 Category = item.Category,
                 Description = item.Description,
-                image = item.image,
-                IsDelete = item.IsDelete,
-                DateAdded = item.DateAdded
+                image = item.image
             };
         }
         //list to dal

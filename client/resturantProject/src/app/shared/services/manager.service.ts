@@ -33,7 +33,7 @@ export class ManagerService {
     return this.http.get<Employee[]>(`${this.URL}/GetAllWorker`);
   }
   getDailyWorker():Observable<UserCalandar[]>{
-    return this.http.get<UserCalandar[]>(`${this.URL}/GetACurrentDay`);
+    return this.http.get<UserCalandar[]>(`${this.URL}/GetDailyWorker`);
   }
   removeWorker(worker: Employee):Observable<Employee> {
     return this.http.post<Employee>(`${this.URL}/RemoveWorker/`,worker);

@@ -339,33 +339,8 @@ namespace BL
         {
             using (restaurantEntities1 db = new restaurantEntities1())
             {
-                List<managerMessage> L = db.managerMessage.Where(m => m.IdEmployee == IdUser).ToList();
+                List<managerMessage> L = db.managerMessage.Where(m =>  m.IdEmployee == IdUser).ToList();
                 return managerMessageDTO.ListToDTO(L);
-            }
-        }
-        public static List<UserCalandarDTO> GetACurrentDay()
-        {
-            using (restaurantEntities1 db = new restaurantEntities1())
-            {
-                List<UserCalander>  userC = db.UserCalander.Where(c =>  c.Date.Value.Year == DateTime.Today.Year &&
-                           c.Date.Value.Month == DateTime.Today.Month && c.Date.Value.Day == DateTime.Today.Day).ToList();
-                return UserCalandarC.ListToDTO(userC);
-            }
-        }
-        public static List<userIdName> GetUserNameAndID()
-        {
-            List<userIdName> user = new List<userIdName>();
-            using (restaurantEntities1 db = new restaurantEntities1())
-            {
-                List<Employees> emloL = db.Employees.ToList();
-                foreach (var item in emloL)
-                {
-                    userIdName u = new userIdName();
-                    u.id = item.Id;
-                    u.name = item.FirstName + ' ' + item.LastName;
-                    user.Add(u);
-                }
-                return user;
             }
         }
     }
@@ -380,10 +355,5 @@ namespace BL
         public string shift { get; set; }
         public List<int> employeeID { get; set; } = new List<int>();
         public List<string> employeeName { get; set; } = new List<string>();
-    }
-    public class userIdName
-    {
-        public int id { get; set; }
-        public string name { get; set; }
     }
 }

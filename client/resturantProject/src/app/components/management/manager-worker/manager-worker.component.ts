@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ManagerService } from 'src/app/shared/services/manager.service';
-import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-manager-worker',
@@ -12,14 +11,13 @@ export class ManagerWorkerComponent implements OnInit {
   today: number = Date.now();
   error: any;
 
-  constructor(public managerService:ManagerService, 
-    public userService: UserService) { }
+  constructor(public managerService:ManagerService) { }
 
   ngOnInit(): void {
     this.getDailyWorker();
   }
   getDailyWorker() {
-     this.managerService.getDailyWorker().subscribe(
+    return this.managerService.getDailyWorker().subscribe(
       (res: any) => {
         this.listDailtWorker = res;
         console.log(this.listDailtWorker);
@@ -28,16 +26,6 @@ export class ManagerWorkerComponent implements OnInit {
       (err) => {
         this.error = err;
       });
-
-      return this.userService.getUserNameAndID().subscribe(
-        (res: any) => {
-          this.userService.userNameAndId = res;
-          console.log( this.userService.userNameAndId);
-          
-        },
-        (err) => {
-          this.error = err;
-        });
   }
   
 }

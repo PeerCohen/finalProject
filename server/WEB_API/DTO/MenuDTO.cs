@@ -16,8 +16,6 @@ namespace DTO
         public string Description { get; set; }
         public string image { get; set; }
         public string ImageBase64 { get; set; }
-        public Nullable<bool> IsDelete { get; set; }
-        public Nullable<System.DateTime> DateAdded { get; set; }
 
     }
 }

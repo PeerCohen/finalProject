@@ -117,16 +117,5 @@ public IHttpActionResult POSTDeleteEmployeeShirt([FromBody] DateTime date, int I
         {
             return Ok(EmployeesBL.EditReadMessege(messege));
         }
-        [Route("GetACurrentDay")]
-        public IHttpActionResult GetACurrentDay()
-        {
-            return Ok(EmployeesBL.GetACurrentDay());
-        }
-        [Route("GetUserNameAndID" )]
-        public IHttpActionResult GetUserNameAndID()
-        {
-            return Ok(EmployeesBL.GetUserNameAndID());
-
-        }
     }
 }

@@ -123,9 +123,7 @@ import { DialogForInventComponent } from './components/in-resuarant/dialog-for-i
 import { PaymentInRestaurantComponent } from './components/in-resuarant/payment-in-restaurant/payment-in-restaurant.component';
 import { DialogForPaymentComponent } from './components/in-resuarant/dialog-for-payment/dialog-for-payment.component';
 import { DialogOfSpecialInventComponent } from './components/user/dialog-of-special-invent/dialog-of-special-invent.component';
-import {  NameUserByIDPipe, PipePipe } from './pipe/pipe.pipe';
-import { NewMenuComponent } from './components/user/new-menu/new-menu.component';
-import { DishesPopularComponent } from './components/user/dishes-popular/dishes-popular.component';
+import { DialogRatingComponent } from './components/user/dialog-rating/dialog-rating.component';
 
 
 
@@ -218,10 +216,8 @@ import { DishesPopularComponent } from './components/user/dishes-popular/dishes-
     PaymentInRestaurantComponent,
     DialogForPaymentComponent,
     DialogOfSpecialInventComponent,
-    PipePipe,
-    NameUserByIDPipe,
-    NewMenuComponent,
-    DishesPopularComponent
+    DialogRatingComponent,
+    
 
 
   ],
@@ -257,7 +253,7 @@ import { DishesPopularComponent } from './components/user/dishes-popular/dishes-
     NgxPayPalModule,
     GooglePlaceModule
   ],
-  providers: [VisitersGuard , EmployeeGuard ,ManagerGuard ,  NameUserByIDPipe],
+  providers: [VisitersGuard , EmployeeGuard ,ManagerGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

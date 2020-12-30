@@ -29,13 +29,13 @@ namespace BL.cast
         {
             return new SpecialInventDTO()
             {
-                //Id = item.Id,
-                //CountOfPeople = item.CountOfPeople,
-                //dateEvent = item.dateEvent,
-                //kindOfevent = item.kindOfevent,
-                //mail = item.mail,
-                //name = item.name,
-                //phone = item.phone,
+                Id = item.Id,
+                CountOfPeople = item.CountOfPeople,
+                dateEvent = item.dateEvent,
+                kindOfevent = item.kindOfevent,
+                mail = item.mail,
+                name = item.name,
+                phone = item.phone,
 
             };
         }
@@ -68,13 +68,13 @@ namespace BL.cast
         {
             return new SpecialInvent()
             {
-                //Id = item.Id,
-                //CountOfPeople = item.CountOfPeople,
-                //dateEvent = item.dateEvent,
-                //kindOfevent = item.kindOfevent,
-                //mail = item.mail,
-                //name = item.name,
-                //phone = item.phone,
+                Id = item.Id,
+                CountOfPeople = item.CountOfPeople,
+                dateEvent = item.dateEvent,
+                kindOfevent = item.kindOfevent,
+                mail = item.mail,
+                name = item.name,
+                phone = item.phone,
             };
         }
         //list to dal

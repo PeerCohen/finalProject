@@ -11,11 +11,11 @@
             <th>סה"כ שעות עבודה יומי</th>
         </tr>
         <tr *ngFor="let w of listDailtWorker">
-            <td>{{w.idUser | nameUserByID  }}</td>
-            <td>{{w.entranceTime| date:'mm:ss' }} </td>
-            <td>{{w.leavingTime | date:'mm:ss'}}</td>
-            <td>{{w.shift}}</td>
-            <td>{{w.numWorkingHours}}</td>
+            <td>w.IdUser</td>
+            <td>{{w.EntranceTime| date:'mm:ss' }} </td>
+            <td>w.LeavingTime</td>
+            <td>w.Shift</td>
+            <td>w.NumWorkingHours</td>
 
         </tr>
 

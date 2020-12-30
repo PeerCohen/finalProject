@@ -3,7 +3,6 @@ using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -57,6 +56,7 @@ namespace BL
             }
             MenuDAL.Add(MenuCast.ToDAL(menu));
         }
+<<<<<<< HEAD
         public static   List<MenuDTO> GetANewMenu()
         {
             using (restaurantEntities1 db = new restaurantEntities1())
@@ -123,5 +123,7 @@ namespace BL
     {
         public int MenuID { get; set; }
         public int? Rate { get; set; }
+=======
+>>>>>>> 42e6d94f93a542ec2a6216a0dc4a45a9132dee0c
     }
 }
