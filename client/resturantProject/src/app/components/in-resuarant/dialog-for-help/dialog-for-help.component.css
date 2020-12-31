@@ -1,13 +1,11 @@
-.v {
-    color: greenyellow;
-    font-size: 360%;
-    text-align: center;
-}
-
 .approval {
     width: 250px;
     height: 180px;
     text-align: center;
+}
+
+.approval mat-icon {
+    font-size: 50px;
 }
 
 .p {

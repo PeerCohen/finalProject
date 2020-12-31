@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-for-invent',
@@ -8,9 +8,12 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class DialogForInventComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {price: string}) { }
+  constructor(public dialogRef: MatDialogRef<DialogForInventComponent>,@Inject(MAT_DIALOG_DATA) public data: {price: string}) { }
 
   ngOnInit(): void {
+  }
+  close(): void {
+    this.dialogRef.close();
   }
 
 }

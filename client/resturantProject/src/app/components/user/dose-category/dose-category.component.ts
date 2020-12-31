@@ -5,6 +5,8 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { InRestaurantService } from 'src/app/shared/services/in-restaurant.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogForAddToCartComponent } from '../../in-resuarant/dialog-for-add-to-cart/dialog-for-add-to-cart.component';
 
 @Component({
   selector: 'app-dose-category',
@@ -13,7 +15,7 @@ import { InRestaurantService } from 'src/app/shared/services/in-restaurant.servi
 })
 export class DoseCategoryComponent implements OnInit {
 
-  @Input() Restaurant:boolean;
+  @Input() Restaurant: boolean;
   isMiniCartOpen: boolean;
   InputIdCategory: number;
   nameCategory: string;
@@ -24,7 +26,8 @@ export class DoseCategoryComponent implements OnInit {
     config: NgbRatingConfig,
     public categoryService: CategoryService,
     public visiterOrderManagment: VisitersOrderManagementService,
-    public inRestaurant :InRestaurantService) {
+    public inRestaurant: InRestaurantService,
+    public dialog: MatDialog) {
     config.max = 5;
   }
 
@@ -40,11 +43,11 @@ export class DoseCategoryComponent implements OnInit {
     return false;
   }
   addToCart(item: Menu) {
-     debugger;
-     if(this.Restaurant){
-      alert("הוסף מוצר בהצלחה")
+    debugger;
+    if (this.Restaurant) {
+      const dialogRef = this.dialog.open(DialogForAddToCartComponent)
       this.inRestaurant.addToCartInRestaurant(item)
-     }     
+     }
     // this.isMiniCartOpen=true;
     else if (this.visiterOrderManagment.addOrderToCart(item)) {
       alert("הוסף מוצר בהצלחה")

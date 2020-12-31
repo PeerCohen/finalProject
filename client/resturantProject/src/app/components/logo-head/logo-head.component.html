@@ -1,7 +1,7 @@
 <div class="tool-up">
     <div class="title" *ngIf="num">שולחן {{num}} </div>
     <button mat-flat-button>
-        <mat-icon color="primary">contact_support</mat-icon>
+        <mat-icon color="primary" (click)="callHelp()">contact_support</mat-icon>
         קרא למלצר
     </button>
 </div>

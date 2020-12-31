@@ -124,6 +124,8 @@ import { PaymentInRestaurantComponent } from './components/in-resuarant/payment-
 import { DialogForPaymentComponent } from './components/in-resuarant/dialog-for-payment/dialog-for-payment.component';
 import { DialogOfSpecialInventComponent } from './components/user/dialog-of-special-invent/dialog-of-special-invent.component';
 import { DialogRatingComponent } from './components/user/dialog-rating/dialog-rating.component';
+import { DialogForHelpComponent } from './components/in-resuarant/dialog-for-help/dialog-for-help.component';
+import { DialogForAddToCartComponent } from './components/in-resuarant/dialog-for-add-to-cart/dialog-for-add-to-cart.component';
 
 
 
@@ -217,6 +219,8 @@ import { DialogRatingComponent } from './components/user/dialog-rating/dialog-ra
     DialogForPaymentComponent,
     DialogOfSpecialInventComponent,
     DialogRatingComponent,
+    DialogForHelpComponent,
+    DialogForAddToCartComponent,
     
 
 

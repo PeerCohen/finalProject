@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogForHelpComponent } from '../in-resuarant/dialog-for-help/dialog-for-help.component';
 
 @Component({
   selector: 'app-logo-head',
@@ -7,9 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LogoHeadComponent implements OnInit {
   @Input() num: string;
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
-
+  callHelp(){
+      const dialogRef = this.dialog.open(DialogForHelpComponent)
+  }
 }
