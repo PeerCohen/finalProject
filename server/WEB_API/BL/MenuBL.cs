@@ -56,5 +56,74 @@ namespace BL
             }
             MenuDAL.Add(MenuCast.ToDAL(menu));
         }
+<<<<<<< HEAD
+        public static   List<MenuDTO> GetANewMenu()
+        {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                //Where(u => u.DateAdded < DateTime.Today.AddDays(-8)).
+                List <Menu> newM = db.Menu.Where(u => DateTime.Compare(u.DateAdded.Value, DateTime.Now ) < 8).ToList();
+                return MenuCast.ListToDTO(newM);
+            }
+        }
+        //חישוב המנות עם הדירוג הגבוהה ביתר 
+        public static List<MenuDTO> GetFavoriteMenu()
+         {
+            using (restaurantEntities1 db = new restaurantEntities1())
+            {
+                int? TotalsumRating = 0;
+                int? sumRating = 0;
+                List<RatingMenue> LRatingMene = new List<RatingMenue>();
+                RatingMenue ratingM = new RatingMenue();
+                List<Menu> menuList = db.Menu.ToList();
+                foreach (var menu in menuList)
+                {
+                    ratingM = new RatingMenue();
+                    TotalsumRating = 0;
+                    sumRating = 0;
+                    List<Rating> ratingList = db.Rating.Where(m => m.doseId == menu.Id).ToList();
+                    foreach (var r in ratingList)
+                    {
+                        sumRating++;
+                        TotalsumRating += r.rate;
+                    }
+                    if (TotalsumRating!=0)
+                    {
+                        ratingM.MenuID = menu.Id;
+                        ratingM.Rate = TotalsumRating / sumRating;
+                        LRatingMene.Add(ratingM);
+                    }
+                   
+                }
+                var c = LRatingMene.OrderByDescending(u => u.Rate).Take(5).ToList();
+                List<Menu> List = new List<Menu>();
+                foreach (var item in c)
+                {
+                    Menu m = db.Menu.FirstOrDefault(t => t.Id == item.MenuID);
+                    if (List.FirstOrDefault(w => w.Id == m.Id) == null)
+                        List.Add(m);
+                }
+                return MenuCast.ListToDTO(List);
+
+            }
+        }
+        public static  List<MenuDTO> GetMenuNewByCategory(int Id)
+        {
+            List<MenuDTO> ListNewMenu = GetANewMenu().Where(w=>w .Category==Id).ToList();
+            return ListNewMenu;
+        }
+        public static List<MenuDTO> GetMenuFavoriteByCategory(int Id)
+        {
+            List<MenuDTO> ListNewMenu = GetFavoriteMenu().Where(w => w.Category == Id).ToList();
+            return ListNewMenu;
+        }
+        
+    }
+    public class RatingMenue
+    {
+        public int MenuID { get; set; }
+        public int? Rate { get; set; }
+=======
+>>>>>>> 42e6d94f93a542ec2a6216a0dc4a45a9132dee0c
     }
 }

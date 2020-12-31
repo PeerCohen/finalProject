@@ -67,5 +67,30 @@ namespace WEB_API.Controllers
         {
             MenuBL.Delete(menu);
         }
+<<<<<<< HEAD
+        [HttpGet]
+        [Route("GetANewMenu")]
+        public IHttpActionResult GetANewMenu()
+        {
+            return Ok(MenuBL.GetANewMenu());
+        }
+        [HttpGet]
+        [Route("GetFavoriteMenu")]
+        public void GetFavoriteMenu()
+        {
+            MenuBL.GetFavoriteMenu();
+        }
+        [Route("GetMenuNewByCategory/{id}")]
+        public List<MenuDTO> GetMenuNewByCategory(int id)
+        {
+            return MenuBL.GetMenuNewByCategory(id);
+        }
+        [Route("GetMenuFavoriteByCategory/{id}")]
+        public List<MenuDTO> GetMenuFavoriteByCategory(int id)
+        {
+            return MenuBL.GetMenuFavoriteByCategory(id);
+        }
+=======
+>>>>>>> 42e6d94f93a542ec2a6216a0dc4a45a9132dee0c
     }
 }

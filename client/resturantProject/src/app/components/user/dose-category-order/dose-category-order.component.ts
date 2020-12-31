@@ -27,14 +27,38 @@ export class DoseCategoryOrderComponent implements OnInit {
   }
 
   getMenuDetails() {
-    this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(
-      (res: any) => {
-        this.menuDetailsByCategory = res;
-        console.log(this.menuDetailsByCategory)
-      },
-      (err) => {
-        this.error = err;
-      });
+    if(this.menuService.menuType="new")
+    {
+      this.menuService.getMenuNewByCategory(this.InputIdCategory).subscribe(
+        (res: any) => {
+          this.menuDetailsByCategory = res;
+          console.log(this.menuDetailsByCategory)
+        },
+        (err) => {
+          this.error = err;
+        });
+    }
+    if(this.menuService.menuType="favorite"){
+      this.menuService.getMenuFavoriteByCategory(this.InputIdCategory).subscribe(
+        (res: any) => {
+          this.menuDetailsByCategory = res;
+          console.log(this.menuDetailsByCategory)
+        },
+        (err) => {
+          this.error = err;
+        });
+    }
+    else{
+      this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(
+        (res: any) => {
+          this.menuDetailsByCategory = res;
+          console.log(this.menuDetailsByCategory)
+        },
+        (err) => {
+          this.error = err;
+        });
+    }
+
   }
 
   goToOptionOrder() {

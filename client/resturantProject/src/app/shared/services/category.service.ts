@@ -33,5 +33,12 @@ export class CategoryService {
   editCategory(data):Observable<Category>{
     return this.http.post<Category>(`${this.URL}/UpdateCategory`,data);
   }
+  getNewCategoryList():Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.URL}/GetNewCategoryList`);
+  }
+  getfaveriteCategoryList():Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.URL}/GetFavoriteCategoryList`);
+  }
+
   
 }
