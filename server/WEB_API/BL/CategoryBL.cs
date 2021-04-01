@@ -37,7 +37,7 @@ namespace BL
         }
         public static List<CategoryDTO> GetNewCategoryList()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 List<MenuDTO> lNewMenu = MenuBL.GetANewMenu();
                 List<Category> Listnew = new List<Category>();
@@ -57,7 +57,7 @@ namespace BL
         }
         public static List<CategoryDTO> GetFavoriteCategoryList()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 List<MenuDTO> lfMenu = MenuBL.GetFavoriteMenu();
                 List<Category> Listnew = new List<Category>();

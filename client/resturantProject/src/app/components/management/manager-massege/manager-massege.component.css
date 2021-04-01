@@ -1,3 +1,7 @@
 .sheet {
     text-align: center;
 }
+
+.button-close {
+    display: grid;
+}

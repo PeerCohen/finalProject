@@ -12,7 +12,7 @@ namespace DAL
         //get all
         public static List<Rating> GetAll()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.Rating.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
         public static Rating GetById(int id)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.Rating.Find(id);
             }
@@ -31,7 +31,7 @@ namespace DAL
         //add
         public static void Add(Rating Rating)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.Rating.Add(Rating);
                 db.SaveChanges();
@@ -41,7 +41,7 @@ namespace DAL
         public static void Update(Rating Rating)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.Entry(Rating).State = EntityState.Modified;
                 db.SaveChanges();
@@ -50,7 +50,7 @@ namespace DAL
         //delete
         public static void Delete(Rating Rating)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.Rating.Remove(Rating);
                 db.SaveChanges();
@@ -59,7 +59,7 @@ namespace DAL
 
         public static int GetRate(int? doseId)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 var d = db.Rating.Where(p => p.doseId == doseId).ToList();
                 var sum = d.Sum(p => p.rate);

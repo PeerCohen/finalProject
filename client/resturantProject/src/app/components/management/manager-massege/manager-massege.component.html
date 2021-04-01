@@ -1,5 +1,10 @@
 <div class="sheet">
     <form [formGroup]="formGroupLogin" style="display: inline-grid;">
+        <div class="button-close">
+            <button mat-icon-button color="primary" (click)="closeMassege($event)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
         <span class="title">שליחת הודעה</span>
         <mat-form-field appearance="outline">
             <mat-label>נושא </mat-label>
@@ -10,9 +15,9 @@
             <mat-label>הודעה</mat-label>
             <textarea matInput formControlName="message" [(ngModel)]="managerService.EmloyeeToMesseg.message" style="height: 200px;"></textarea>
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
-        </button>
+                <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+            </button>
         </mat-form-field>
-        <button mat-flat-button color="primary" (click)="send()">שלח</button>
+        <button mat-flat-button color="primary" (click)="send($event)">שלח</button>
     </form>
 </div>

@@ -12,7 +12,7 @@ namespace DAL
         //get all
         public static List<Category> GetAll()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.Category.ToList();
             }
@@ -21,7 +21,7 @@ namespace DAL
         public static Category GetById(int id)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.Category.Find(id);
             }
@@ -32,7 +32,7 @@ namespace DAL
         //add
         public static void Add(Category Category)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.Category.Add(Category);
                 db.SaveChanges();
@@ -42,7 +42,7 @@ namespace DAL
         public static void Update(Category Category)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 var c = db.Category.FirstOrDefault(p => p.Id == Category.Id);
                 c.nameCategory = Category.nameCategory;
@@ -52,9 +52,9 @@ namespace DAL
         //delete
         public static void Delete(Category Category)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
-                var c = db.Category.FirstOrDefault(p => p.Id == Category.Id);
+                var c = db.Category.FirstOrDefault(C => C.Id == Category.Id);
                 db.Category.Remove(c);
                 db.SaveChanges();
             }

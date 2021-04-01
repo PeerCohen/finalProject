@@ -40,26 +40,28 @@ namespace BL
         }
         public static void Add(MenuDTO menu)
         {
-            int index = menu.ImageBase64.IndexOf(',');
-            if (index > 0)
+            if (menu.ImageBase64 != null)
             {
-                menu.ImageBase64 = menu.ImageBase64.Substring(index + 1);
-            }
-            var bytes = Convert.FromBase64String(menu.ImageBase64);
-            using (var imageFile = new FileStream(
-                @"C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\src\images\products\"
-                + menu.Category + @"\" + menu.image, FileMode.Create
-                ))
-            {
-                imageFile.Write(bytes, 0, bytes.Length);
-                imageFile.Flush();
+                int index = menu.ImageBase64.IndexOf(',');
+                if (index > 0)
+                {
+                    menu.ImageBase64 = menu.ImageBase64.Substring(index + 1);
+                }
+                var bytes = Convert.FromBase64String(menu.ImageBase64);
+                using (var imageFile = new FileStream(
+                    @"C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\WEB_API\src\images\products\"
+                    + menu.Category + @"\" + menu.image, FileMode.Create
+                    ))
+                {
+                    imageFile.Write(bytes, 0, bytes.Length);
+                    imageFile.Flush();
+                }
             }
             MenuDAL.Add(MenuCast.ToDAL(menu));
         }
-<<<<<<< HEAD
         public static   List<MenuDTO> GetANewMenu()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 //Where(u => u.DateAdded < DateTime.Today.AddDays(-8)).
                 List <Menu> newM = db.Menu.Where(u => DateTime.Compare(u.DateAdded.Value, DateTime.Now ) < 8).ToList();
@@ -69,7 +71,7 @@ namespace BL
         //חישוב המנות עם הדירוג הגבוהה ביתר 
         public static List<MenuDTO> GetFavoriteMenu()
          {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 int? TotalsumRating = 0;
                 int? sumRating = 0;
@@ -123,7 +125,5 @@ namespace BL
     {
         public int MenuID { get; set; }
         public int? Rate { get; set; }
-=======
->>>>>>> 42e6d94f93a542ec2a6216a0dc4a45a9132dee0c
     }
 }

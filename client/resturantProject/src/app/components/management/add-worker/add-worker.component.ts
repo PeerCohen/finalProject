@@ -1,17 +1,24 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
 import { Employee } from 'src/app/shared/modals/employee';
 import { ManagerService } from 'src/app/shared/services/manager.service';
+import {ErrorStateMatcher} from '@angular/material/core';
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-add-worker',
   templateUrl: './add-worker.component.html',
   styleUrls: ['./add-worker.component.css']
 })
-export class AddWorkerComponent implements OnInit {
-
+export class AddWorkerComponent implements OnInit  {
   close: boolean = false;
   @Output() closeform = new EventEmitter();
 
@@ -27,13 +34,12 @@ export class AddWorkerComponent implements OnInit {
     this.formGroupAddWorker = new FormGroup({
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
-      tz: new FormControl('', Validators.required),
-      address: new FormControl('', Validators.required),
-      phone: new FormControl('', Validators.required),
+      tz: new FormControl('',Validators.required),
+      phone: new FormControl('',Validators.required),
     });
   }
   addWorker() {
-    debugger;
+    this.closeform.emit(this.close);
     this.workerData.FirstName = this.formGroupAddWorker.controls.firstname.value;
     this.workerData.LastName = this.formGroupAddWorker.controls.lastname.value;
     this.workerData.Tz = this.formGroupAddWorker.controls.tz.value;
@@ -49,6 +55,7 @@ export class AddWorkerComponent implements OnInit {
         this.error = err;
       });
   }
+  matcher = new MyErrorStateMatcher();
   closeformAddWorker() {
     this.closeform.emit(this.close);
   }

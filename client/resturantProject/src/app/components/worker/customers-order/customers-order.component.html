@@ -1,21 +1,59 @@
 <div class="talbe">
-    <table>
-        <tr class="order">
-            <th>סוג הזמנה </th>
-            <th>שם המזמין</th>
-            <th>שם מנה</th>
-            <th>כמות</th>
-            <th></th>
-        </tr>
-        <tr *ngFor="let o of listOrder">
-            <td>{{o|json}}</td>
-            <!-- <td>{{getVisiterName(o.idVisiter)}}</td>
-            <td>{{getDoseName(o.inventDetails.idMenu)}}</td>
-            <td>{{o.inventDetails.amount}}</td> -->
-            <td>
-                <button mat-flat-button color="primary">בטיפול</button>
-            </td>
-        </tr>
-    </table>
+    <div>
+        <h3>הזמנות למשלוחים</h3>
+        <table>
+            <tr class="order">
+                <th>שם המזמין</th>
+                <th>שם מנה</th>
+                <th>כמות</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let o of resurantOrderList">
+                <td></td>
+
+                <td>
+                    <button mat-flat-button color="primary">בטיפול</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h3> Take away הזמנות</h3>
+        <table>
+            <tr class="order">
+                <th>סוג הזמנה </th>
+                <th>שם המזמין</th>
+                <th>שם מנה</th>
+                <th>כמות</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let o of listOrder">
+                <td>{{o|json}}</td>
+                <!-- <td>{{getDoseName(o.inventDetails.idMenu)}}</td> -->
+                <!-- <td>{{o.inventDetails.amount}}</td> -->
+                <td>
+                    <button mat-flat-button color="primary">בטיפול</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h3>הזמנות לסועד במסעדה</h3>
+        <table>
+            <tr class="order">
+                <th>סוג הזמנה </th>
+                <th>שם המזמין</th>
+                <th>שם מנה</th>
+                <th>כמות</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let o of listOrder">
+
+                <td>
+                    <button mat-flat-button color="primary">בטיפול</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </div>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Swiper from 'swiper/bundle';
+import SwiperCore, { EffectFade } from 'swiper';
+
+SwiperCore.use([EffectFade]);
 
 @Component({
   selector: 'app-category-menu-swiper',

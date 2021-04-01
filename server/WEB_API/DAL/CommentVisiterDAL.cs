@@ -11,7 +11,7 @@ namespace DAL
         //get all
         public static List<CommentVisiter> GetAll()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.CommentVisiter.ToList();
             }
@@ -30,7 +30,7 @@ namespace DAL
         //    add
         public static void Add(CommentVisiter CommentVisiter)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.CommentVisiter.Add(CommentVisiter);
                 db.SaveChanges();

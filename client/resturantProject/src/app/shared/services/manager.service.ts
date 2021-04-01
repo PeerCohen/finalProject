@@ -38,6 +38,9 @@ export class ManagerService {
   removeWorker(worker: Employee):Observable<Employee> {
     return this.http.post<Employee>(`${this.URL}/RemoveWorker/`,worker);
   }
+  editWorker(worker: Employee):Observable<Employee> {
+    return this.http.post<Employee>(`${this.URL}/UpdateWorker/`,worker);
+  }
   sendManagerMassegeToEmloyee():Observable<ManagerMessege>
   {
     console.log(this.EmloyeeToMesseg)

@@ -100,6 +100,7 @@
     <Property Name="Description" Type="nvarchar" MaxLength="2000" />
     <Property Name="image" Type="varchar(max)" />
     <Property Name="IsDelete" Type="bit" />
+    <Property Name="DateAdded" Type="datetime" />
   </EntityType>
   <EntityType Name="Rating">
     <Key>
@@ -115,11 +116,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="kindOfevent" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="name" Type="nchar" MaxLength="10" />
+    <Property Name="kindOfevent" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="50" />
     <Property Name="phone" Type="nchar" MaxLength="10" />
     <Property Name="mail" Type="nchar" MaxLength="50" />
-    <Property Name="dateEvent" Type="date" />
+    <Property Name="dateEvent" Type="datetime" />
     <Property Name="CountOfPeople" Type="int" />
   </EntityType>
   <EntityType Name="StatusDose">
@@ -184,7 +185,7 @@
     <Key>
       <PropertyRef Name="ld" />
     </Key>
-    <Property Name="ld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ld" Type="int" Nullable="false" />
     <Property Name="FirstName" Type="nchar" MaxLength="10" />
     <Property Name="LastName" Type="nchar" MaxLength="10" />
     <Property Name="Phone" Type="nchar" MaxLength="10" />
@@ -193,6 +194,7 @@
     <Property Name="Mail" Type="nchar" MaxLength="100" />
     <Property Name="Password" Type="nchar" MaxLength="10" />
     <Property Name="NameUser" Type="nchar" MaxLength="10" />
+    <Property Name="lastDateEnter" Type="datetime" />
   </EntityType>
   <Association Name="FK_CommentVisiter_Visiters">
     <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />

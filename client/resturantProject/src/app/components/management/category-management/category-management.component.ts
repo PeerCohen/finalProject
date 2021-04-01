@@ -35,10 +35,16 @@ export class CategoryManagementComponent implements OnInit {
    })
   }
   openDeleteCategoryDialog(dataCategory) {
-    this.dialog.open(DeleteCategoryDialogComponent, { data: dataCategory });
+    var dialog=this.dialog.open(DeleteCategoryDialogComponent, { data: dataCategory });
+    dialog.afterClosed().subscribe(res=>{
+      this.getCategoryList();
+    })
   }
   openEditCategoryDialog(dataCategory) {
-    this.dialog.open(EditCategoryDialogComponent, { data: dataCategory });
+    var dialog=this.dialog.open(EditCategoryDialogComponent, { data: dataCategory });
+    dialog.afterClosed().subscribe(res=>{
+      this.getCategoryList();
+    })
   }
   getCategoryList() {
     return this.categoryService.getCategoryList().subscribe(
@@ -53,6 +59,8 @@ export class CategoryManagementComponent implements OnInit {
   }
   getDoseCategory(idCategory: number) {
     this.managerService.subjectMenuManager.next(idCategory);
+    document.documentElement.scrollTop = 0; 
+
   }
 
 }

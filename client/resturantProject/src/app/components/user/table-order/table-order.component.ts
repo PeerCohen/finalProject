@@ -14,9 +14,9 @@ export class TableOrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderTableFrom = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      tel: new FormControl([Validators.required, Validators.length==10]),
+      tel: new FormControl([' ',Validators.required, Validators.length==10]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      countOfPeople: new FormControl([Validators.required, Validators.length<20]),
+      countOfPeople: new FormControl(['',Validators.required, Validators.length<20]),
       date: new FormControl(new Date()),
       time: new FormControl('', [Validators.required]),
       note: new FormControl('', [Validators.required, Validators.maxLength(20)]),

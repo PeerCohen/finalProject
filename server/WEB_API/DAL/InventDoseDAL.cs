@@ -12,14 +12,14 @@ namespace DAL
         //get all
         public static List<InventDose> GetAll()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.InventDose.Include("Visiters").Include("StatusInvent").Include("InventDetails").ToList();
             }
         }
         public static List<SpecialInvent> GetAllSpecialInvent()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.SpecialInvent.ToList();
             }
@@ -27,7 +27,7 @@ namespace DAL
         //get by id
         public static List<InventDose> GetById(int id)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 var invents = db.InventDose.Where(v => v.IdVisiter == id).Include("InventDetails").ToList();
                 invents.ForEach(v =>v.InventDetails = v.InventDetails.ToList());
@@ -37,7 +37,7 @@ namespace DAL
         //add
         public static InventDose Add(InventDose inventDose)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 inventDose.DateInvent = DateTime.Now;
                var inventDose1 = db.InventDose.Add(inventDose);
@@ -55,7 +55,7 @@ namespace DAL
         }
         public static void AddSpecialInvent(SpecialInvent specialInvent)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                db.SpecialInvent.Add(specialInvent);
                 db.SaveChanges();
@@ -65,7 +65,7 @@ namespace DAL
         public static void Update(InventDose inventDose)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.Entry(inventDose).State = EntityState.Modified;
                 db.SaveChanges();
@@ -74,7 +74,7 @@ namespace DAL
         //delete
         public static void Delete(InventDose inventDose)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.InventDose.Remove(inventDose);
                 db.SaveChanges();
@@ -82,7 +82,7 @@ namespace DAL
         }
         public static void DeleteSpecialInvent(SpecialInvent specialInvent)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.SpecialInvent.Remove(specialInvent);
                 db.SaveChanges();

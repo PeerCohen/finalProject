@@ -52,10 +52,10 @@ export class AddDoseCategoryComponent implements OnInit {
     this.doseData.price = this.formGroupAddDose.controls.price.value;
     this.doseData.category = this.idCategory;
     this.doseData.description = this.formGroupAddDose.controls.description.value;
-    debugger;
     return this.menuService.addDose(this.doseData).subscribe(
       (res: any) => {
         this.succeeded = res;
+        this.closeform.emit(this.close);
       },
       (err) => {
         this.error = err;

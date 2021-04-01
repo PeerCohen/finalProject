@@ -38,7 +38,7 @@ namespace BL
         }
         public static object getDailyWorker()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 UserCalander userCalandar = db.UserCalander.FirstOrDefault(u => u.Date == DateTime.Today);
 
@@ -49,7 +49,7 @@ namespace BL
         public static object SineIn(string name, string password)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 // עם המשתשמש מסוג עובד 
                 Employees employees = db.Employees.FirstOrDefault
@@ -93,7 +93,7 @@ namespace BL
         public static UserCalandarDTO SingOut(int id, DateTime date)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 Employees emm = db.Employees.FirstOrDefault(e => e.Id == id);
                 if (emm != null)
@@ -119,7 +119,7 @@ namespace BL
         // שמירת המשמרות של עובד לתאריך מסוים 
         public static string AddShifttoNextWeekEmployee(List<calandar> calandarList, int userID)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 foreach (var item in calandarList)
                 {
@@ -149,7 +149,7 @@ namespace BL
         // שליפת כל היומ שהם לא מנהלים 
         public static List<CalandarToManager> GetEmloyeesCalandarToManger(DateTime startOfWeek)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 DateTime endOfWeek = startOfWeek.AddDays(6);
                 List<UserCalander> lc = db.UserCalander.Where(c => c.Date >= startOfWeek && c.Date <= endOfWeek).ToList();
@@ -213,7 +213,7 @@ namespace BL
         //שינוי משמרות לפי תאריך לעובד מסוים ע"י מנהל 
         public static string PutShiftToEmployee(DateTime date, int IdUser)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                             u.IdUser == IdUser && u.Date.Value.Year == date.Year &&
@@ -233,7 +233,7 @@ namespace BL
         // קבלת דוח עובד 
         public static List<CalandarToManager> GetEmloyeesCalandarByManaer(DateTime startOfWeek, int idE)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 DateTime endOfWeek = startOfWeek.AddDays(6);
                 List<UserCalander> lc = db.UserCalander.Where(c => c.Date >= startOfWeek && c.Date <= endOfWeek && c.IdUser == idE).ToList();
@@ -291,7 +291,7 @@ namespace BL
         // מחיקת עובד ממשרת מסוימת ע" מנהל
         public static string DeleteEmployeeShirt(DateTime date, int IdUser)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 UserCalander userCalandar = db.UserCalander.FirstOrDefault(u =>
                             u.IdUser == IdUser && u.Date.Value.Year == date.Year &&
@@ -307,7 +307,7 @@ namespace BL
         // הוספת הודעה 
         public static managerMessageDTO SendManagerMassegeToEmloyee(managerMessageDTO messege)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 managerMessage m = managerMessageDTO.ConvertDonationToTabel(messege);
                 db.managerMessage.Add(m);
@@ -317,7 +317,7 @@ namespace BL
         }
         public static managerMessageDTO EditReadMessege(managerMessageDTO messege)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 messege.AlreadyRead = true;
                 managerMessage m = managerMessageDTO.ConvertDonationToTabel(messege);
@@ -329,7 +329,7 @@ namespace BL
         }
         public static int GetNumberMessege(int IdUser)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 List<managerMessage> L = db.managerMessage.Where(m => m.AlreadyRead == false && m.IdEmployee == IdUser).ToList();
                 return L.Count();
@@ -337,7 +337,7 @@ namespace BL
         }
         public static List<managerMessageDTO> GetAllMessege(int IdUser)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 List<managerMessage> L = db.managerMessage.Where(m =>  m.IdEmployee == IdUser).ToList();
                 return managerMessageDTO.ListToDTO(L);

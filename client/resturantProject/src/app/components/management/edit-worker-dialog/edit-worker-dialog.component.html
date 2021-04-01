@@ -1,6 +1,17 @@
 <h2 mat-dialog-title>עריכת פרטי עובד </h2>
 <mat-dialog-content class="mat-typography">
-
+    <h3>שם פרטי</h3>
+    <input type="text" value={{emp.FirstName}} [(ngModel)]="emp.FirstName">
+    <h3>שם משפחה</h3>
+    <input type="text" value={{emp.LastName}} [(ngModel)]="emp.LastName">
+    <h3> כתובת מגורים</h3>
+    <input type="text" value={{emp.Address}} [(ngModel)]="emp.Address">
+    <h3>פלאפון</h3>
+    <input type="text" value={{emp.Phone}} [(ngModel)]="emp.Phone">
+    <h3>ת.ז</h3>
+    <input type="text" value={{emp.Tz}} [(ngModel)]="emp.Tz">
+    <h3>דרג</h3>
+    <input type="text" value={{emp.idEmployeeType}} [(ngModel)]="emp.idEmployeeType">
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>ביטול</button>

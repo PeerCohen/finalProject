@@ -32,11 +32,9 @@ export class MenuService {
   updateDose(menu:Menu):Observable<any>{ 
     return this.http.post<any>(`${this.URL}/UpdateDoseOfMenu/`,menu);
   }
-  addDose(menu:Menu):Observable<any>{ 
-    debugger;
+  addDose(menu:Menu):Observable<any>{
     return this.http.post<any>(`${this.URL}/AddDoseOfMenu/`,menu);
   }
-<<<<<<< HEAD
   getANewMenu():Observable<Array<Menu>>
   {
     return this.http.get<Array<Menu>>(`${this.URL}/GetANewMenu`);
@@ -52,6 +50,4 @@ export class MenuService {
   getMenuFavoriteByCategory(id:number):Observable<Menu[]> {
     return this.http.get<Menu[]>(`${this.URL}/GetMenuFavoriteByCategory/${id}`);
   }
-=======
->>>>>>> 42e6d94f93a542ec2a6216a0dc4a45a9132dee0c
 }

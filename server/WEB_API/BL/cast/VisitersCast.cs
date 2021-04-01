@@ -25,7 +25,8 @@ namespace BL.cast
                 Mail = item.Mail,
                 Password = item.Password,
                 NameUser = item.NameUser,
-            };
+                lastDateEnter = DateTime.Now,
+        };
         }
 
         //list to dto
@@ -46,6 +47,7 @@ namespace BL.cast
                 Mail = item.Mail,
                 Password = item.Password,
                 NameUser = item.NameUser,
+                lastDateEnter = DateTime.Today,
             };
         }
         //list to dal

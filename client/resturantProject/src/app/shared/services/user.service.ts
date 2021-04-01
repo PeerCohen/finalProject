@@ -23,6 +23,7 @@ export class UserService {
   URLEm = "http://localhost:51437/api/Employees/";
   singIn: boolean = false;
   userName: any;
+  lastEnterDate: any;
   set CurrentUser(v: any) {
     if (v)
       localStorage.setItem(this.keys.USER_KEY, JSON.stringify(v));
@@ -73,20 +74,23 @@ export class UserService {
     }
     // שמירת שם משתמש כדי להציג את שמו למעלה 
     if (this.CurrentUser && this.CurrentUser?.hasOwnProperty('idEmployeeType')) {
+      debugger;
+      this.lastEnterDate= this.CurrentUser.lastDateEnter;
       this.userName = this.CurrentUser.firstName;
+      
+      debugger;
     } else {
+      this.lastEnterDate= this.CurrentUser?.lastDateEnter;
       this.userName = this.CurrentUser?.firstName;
     }
   }
   getNumberMessege()
   {
     return this.httpClient.get<number>(this.URLEm + 'GetNumberMessege/' + this.CurrentUser.id + '/');
-
   }
   getAllMessege(): Observable<Array<ManagerMessege>>
   {
     return this.httpClient.get<Array<ManagerMessege>>(this.URLEm + 'GetAllMessege/' + this.CurrentUser.id + '/');
-
   }
   EditReadMessege(m)
   {

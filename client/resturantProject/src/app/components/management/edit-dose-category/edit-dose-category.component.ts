@@ -61,21 +61,28 @@ export class EditDoseCategoryComponent implements OnInit {
     return this.menuService.removeDose(Dose).subscribe(
       (res: any) => {
         this.succeeded = res;
+        this.getMenuCategoryListById();
       },
       (err) => {
         this.error = err;
       });
   }
   editDose(Dose) {
-    debugger;
-    this.dialog.open(UpdateDoseDialogComponent, { data: Dose });
+    var dialog=this.dialog.open(UpdateDoseDialogComponent, { data: Dose });
+    dialog.afterClosed().subscribe(res=>{
+      this.getMenuCategoryListById();
+    })
   }
   AddDoseToCategory() {
     this.isOpenNewAddDoseForm = true;
+    this.getMenuCategoryListById();
+
   }
   
   getEmit(close:boolean){
     this.isOpenNewAddDoseForm=close;
+    this.getMenuCategoryListById();
+
   }
 }
 

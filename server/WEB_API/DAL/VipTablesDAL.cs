@@ -13,7 +13,7 @@ namespace DAL
         //get all
         public static List<VipTables> GetAll()
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.VipTables.ToList();
             }
@@ -22,7 +22,7 @@ namespace DAL
         public static VipTables GetById(int id)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 return db.VipTables.Find(id);
             }
@@ -32,7 +32,7 @@ namespace DAL
         //add
         public static void Add(VipTables vipTables)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.VipTables.Add(vipTables);
                 db.SaveChanges();
@@ -42,7 +42,7 @@ namespace DAL
         public static void Update(VipTables vipTables)
         {
 
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.Entry(vipTables).State = EntityState.Modified;
                 db.SaveChanges();
@@ -51,7 +51,7 @@ namespace DAL
         //delete
         public static void Delete(VipTables vipTables)
         {
-            using (restaurantEntities1 db = new restaurantEntities1())
+            using (restaurantEntities db = new restaurantEntities())
             {
                 db.VipTables.Remove(vipTables);
                 db.SaveChanges();

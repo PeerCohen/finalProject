@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 
 namespace BL.cast
 {
@@ -15,16 +15,21 @@ namespace BL.cast
         //one to dto
         public static UserCalandarDTO ToDTO(UserCalander item)
         {
-            return new UserCalandarDTO()
+            if (item!=null)
             {
-                idUserCalandar = item.idUserCalandar,
-                IdUser = item.IdUser,
-                Date = item.Date,
-                EntranceTime = item.EntranceTime,
-                LeavingTime = item.LeavingTime,
-                NumWorkingHours = item.NumWorkingHours,
-                Shift = item.Shift,
-            };
+                return new UserCalandarDTO()
+                {
+                    idUserCalandar = item.idUserCalandar,
+                    IdUser = item.IdUser,
+                    Date = item.Date,
+                    EntranceTime = item.EntranceTime,
+                    LeavingTime = item.LeavingTime,
+                    NumWorkingHours = item.NumWorkingHours,
+                    Shift = item.Shift,
+                };
+            }
+            return null;
+
         }
 
         //list to dto

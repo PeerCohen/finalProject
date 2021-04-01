@@ -32,24 +32,19 @@
     <mat-tab label=" יש לי קוד קופון ">
         <ng-template mat-tab-label>
             <mat-icon>local_offer </mat-icon>
-<<<<<<< HEAD
             מה חדש
-                </ng-template>
-        <app-new-menu></app-new-menu>
-=======
-            מה חדש /מומלץ
         </ng-template>
->>>>>>> 42e6d94f93a542ec2a6216a0dc4a45a9132dee0c
+        <app-new-menu></app-new-menu>
     </mat-tab>
 
     <mat-tab label=" יש לי קוד קופון ">
         <ng-template mat-tab-label>
             <mat-icon>favorite</mat-icon>
-            המנות שאכי אוהבים 
-                </ng-template>
+            המנות שהכי אוהבים
+        </ng-template>
         <app-favorite-dose></app-favorite-dose>
     </mat-tab>
-    <mat-tab label="סל ההזמנות שלי ">
+    <mat-tab label="סל ההזמנות שלי " ng-disabled="loginUser">
         <ng-template mat-tab-label>
             <mat-icon>shopping_cart</mat-icon>
             הסל ההזמנות שלי
@@ -62,7 +57,7 @@
             <mat-icon>card_giftcard</mat-icon>
             אירועים מיוחדים
         </ng-template>
-
+        <app-category-menu-swiper></app-category-menu-swiper>
         <app-party-event></app-party-event>
     </mat-tab>
 </mat-tab-group>

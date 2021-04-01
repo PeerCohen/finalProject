@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -14,29 +15,35 @@ import { OpenBottomSheetSigninComponent } from '../user/open-bottom-sheet-signin
   styleUrls: ['./selected-user-entrance.component.css']
 })
 export class SelectedUserEntranceComponent implements OnInit {
-   worker:any;
+  worker: any;
+  manager: any;
+  degree:boolean=false;
   mySub: Subscription;
   constructor(private _bottomSheet: MatBottomSheet,
+    public router: Router,
     public userService: UserService,
     private authService: AuthService,
   ) {              // זה הפונקציה המופעל באופן אוטומיתי כל שניה 
     this.mySub = interval(1000).subscribe((func => {
       this.getNumberMessege();
-    })); }
+    }));
+  }
   value = '';
   hidden = false;
-  numNewMessege:number;
+  numNewMessege: number;
   ngOnInit(): void {
-    this.worker= localStorage.getItem('isEmployee');
-   this.userService.singIn=this.userService.CurrentUser?true:false;
+    if (localStorage.getItem('isEmployee') || localStorage.getItem('isManager'))
+      this.degree = true;
+    this.worker = localStorage.getItem('isEmployee');
+    this.manager = localStorage.getItem('isManager');
+    this.userService.singIn = this.userService.CurrentUser ? true : false;
     // אם כבר היתה כניסה היום או לא
- this.userService.ifSingIn();
+    this.userService.ifSingIn();
   }
-  // פונקציה שמקבלת את מס ההודעות שלא נקרו של המשתמש הנוכחי 
-  getNumberMessege()
-  {
+  // פונקציה שמקבלת את מס ההודעות שלא נקראו של המשתמש הנוכחי 
+  getNumberMessege() {
     this.userService.getNumberMessege().subscribe(res => {
-     this. numNewMessege= res ; 
+      this.numNewMessege = res;
     })
   }
   openBottomSheetSignin() {
@@ -53,7 +60,9 @@ export class SelectedUserEntranceComponent implements OnInit {
     this.userService.getOut(new Date()).subscribe(
       res => {
         let ans = res;
-        console.log('יצאה בשעה');
+        console.log('יציאה בשעה');
+        console.log(this.userService.userName);
+        console.log(this.userService.lastEnterDate);        
         this.userService.singIn = true;
         this.userService.userName = '';
         localStorage.setItem('isManager', 'false');

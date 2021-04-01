@@ -126,6 +126,10 @@ import { DialogOfSpecialInventComponent } from './components/user/dialog-of-spec
 import { DialogRatingComponent } from './components/user/dialog-rating/dialog-rating.component';
 import { DialogForHelpComponent } from './components/in-resuarant/dialog-for-help/dialog-for-help.component';
 import { DialogForAddToCartComponent } from './components/in-resuarant/dialog-for-add-to-cart/dialog-for-add-to-cart.component';
+import { NewMenuComponent } from './components/user/new-menu/new-menu.component';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { SwiperModule } from 'swiper/angular';
+
 
 
 
@@ -221,11 +225,14 @@ import { DialogForAddToCartComponent } from './components/in-resuarant/dialog-fo
     DialogRatingComponent,
     DialogForHelpComponent,
     DialogForAddToCartComponent,
+    NewMenuComponent,
+    CategoryMenuSwiperComponent
     
 
 
   ],
   imports: [
+    SwiperModule,
     MatBadgeModule,
     BrowserModule,
     AppRoutingModule,
@@ -257,7 +264,7 @@ import { DialogForAddToCartComponent } from './components/in-resuarant/dialog-fo
     NgxPayPalModule,
     GooglePlaceModule
   ],
-  providers: [VisitersGuard , EmployeeGuard ,ManagerGuard],
+  providers: [VisitersGuard , EmployeeGuard ,ManagerGuard, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
