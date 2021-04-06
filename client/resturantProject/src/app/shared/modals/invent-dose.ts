@@ -9,4 +9,7 @@ export class InventDose {
       dateInvent: number;
       inventDetails: InventDetails[] = [];
       currentRate:number=0;
-}
+      statusName:string;
+      MenuName:string;
+      visiterName:string;
+ }

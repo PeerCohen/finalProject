@@ -129,6 +129,8 @@ import { DialogForAddToCartComponent } from './components/in-resuarant/dialog-fo
 import { NewMenuComponent } from './components/user/new-menu/new-menu.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { SwiperModule } from 'swiper/angular';
+import { ErrorDialogCounthandleDoseComponent } from './components/worker/error-dialog-counthandle-dose/error-dialog-counthandle-dose.component';
+import { CalendarDialogComponent } from './components/worker/calendar-dialog/calendar-dialog.component';
 
 
 
@@ -226,7 +228,9 @@ import { SwiperModule } from 'swiper/angular';
     DialogForHelpComponent,
     DialogForAddToCartComponent,
     NewMenuComponent,
-    CategoryMenuSwiperComponent
+    CategoryMenuSwiperComponent,
+    ErrorDialogCounthandleDoseComponent,
+    CalendarDialogComponent
     
 
 

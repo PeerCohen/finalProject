@@ -1,33 +1,25 @@
 <div>
-    <div  class="">
+    <div class="">
         <span><div class="menu-by-categoty" (click)=openDetalis()>
             <div style="display: inline;">
             <div class="main_sidebar">
                 
-                <div class=" notification category-div" *ngFor="let item of categoryList" (click)=" getMenuDetails(item.id) ">
+                <div class="notification category-div" *ngFor="let item of categoryList" (click)=" getMenuDetails(item.id) ">
                     <span class="badge">מומלץ!!</span>
-                    <div class='image-div'>
-                        <img class='image' [src]="'../../assets/images/category/'+item.id+'.jpg'">
-                    </div>
-                    <div class="text">
-                        {{item.nameCategory}}
-                    </div>
-                </div>
-            </div> 
+        <div class='image-div'>
+            <img class='image' [src]="'../../assets/images/category/'+item.id+'.jpg'">
         </div>
-            <!-- <app-menu-by-categoty style="display: inline;"></app-menu-by-categoty> -->
-        </div></span>
-     
+        <div class="text">
+            {{item.nameCategory}}
+        </div>
     </div>
-    
-    <div class="div-display">
-        <img class="img-display" [src]="'../../assets/images/menu-swiper.jpg'" />
-    </div>
-    
-    <div class="menu-swiper" style="display: inline">
-        <!-- new !!!!!!! -->
-        <!-- <app-menu-swiper style="display: inline;"></app-menu-swiper> -->
-    </div>
+</div>
+</div>
+<!-- <app-menu-by-categoty style="display: inline;"></app-menu-by-categoty> -->
+</div>
+</span>
+
+</div>
 </div>
 <div class="dose-category-order" *ngIf="open">
     <app-dose-category-order></app-dose-category-order>

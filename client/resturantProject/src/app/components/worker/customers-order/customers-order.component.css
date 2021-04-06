@@ -43,3 +43,7 @@ button {
     margin: 2%;
     font-size: large;
 }
+
+.title {
+    text-align: center;
+}

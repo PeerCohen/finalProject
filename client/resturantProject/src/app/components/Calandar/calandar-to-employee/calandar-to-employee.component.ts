@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import * as moment from 'moment';
 import { EmloyeeService } from 'src/app/shared/services/emloyee.service';
+import { CalendarDialogComponent } from '../../worker/calendar-dialog/calendar-dialog.component';
 import { CalandarToManager } from '../calandar-to-manager/calandar-to-manager.component';
 
 
@@ -12,7 +14,7 @@ import { CalandarToManager } from '../calandar-to-manager/calandar-to-manager.co
 export class CalandarToEmployeeComponent implements OnInit {
   calandar: calanadar[] = new Array();
   
-  constructor(private emloyeeService: EmloyeeService) { }
+  constructor(private emloyeeService: EmloyeeService,public dialog: MatDialog) { }
   cangeShift(shift, index) {
     if (shift === 'eveningTrue') {
       this.calandar[index].shift = 'evening';
@@ -25,7 +27,9 @@ export class CalandarToEmployeeComponent implements OnInit {
   }
   SendCalandar() {
     this.emloyeeService.AddShiftToNextWeekEmployee(this.calandar).
-    subscribe(res => {console.log('!!!השינויים  נשמרו ')});
+    subscribe(res => {      
+        const dialogRef = this.dialog.open(CalendarDialogComponent)      
+      console.log('!!!השינויים  נשמרו ')});
   }
   // קבלת התאריך של היום ראשון של השבוע הבא
    get_next_week_start() {

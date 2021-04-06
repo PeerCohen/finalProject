@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CalandarToManagerComponent } from './calandar-to-manager.component';
 
@@ -6,7 +6,7 @@ describe('CalandarToManagerComponent', () => {
   let component: CalandarToManagerComponent;
   let fixture: ComponentFixture<CalandarToManagerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CalandarToManagerComponent ]
     })

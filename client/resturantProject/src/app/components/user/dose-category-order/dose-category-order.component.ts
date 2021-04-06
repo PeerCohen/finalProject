@@ -15,7 +15,9 @@ export class DoseCategoryOrderComponent implements OnInit {
   menuDetailsByCategory: any;
   error: any;
 
-  constructor(config: NgbRatingConfig, public menuService: MenuService, public router: Router) {
+  constructor(config: NgbRatingConfig,
+     public menuService: MenuService,
+      public router: Router) {
     config.max = 5;
   }
 

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { OptionEnterUserComponent } from './option-enter-user.component';
 
@@ -6,7 +6,7 @@ describe('OptionEnterUserComponent', () => {
   let component: OptionEnterUserComponent;
   let fixture: ComponentFixture<OptionEnterUserComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ OptionEnterUserComponent ]
     })

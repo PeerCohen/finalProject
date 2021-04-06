@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { OpenBottomSheetSigninComponent } from './open-bottom-sheet-signin.component';
 
@@ -6,7 +6,7 @@ describe('OpenBottomSheetSigninComponent', () => {
   let component: OpenBottomSheetSigninComponent;
   let fixture: ComponentFixture<OpenBottomSheetSigninComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ OpenBottomSheetSigninComponent ]
     })

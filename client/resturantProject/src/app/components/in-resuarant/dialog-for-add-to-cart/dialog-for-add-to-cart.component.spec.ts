@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DialogForAddToCartComponent } from './dialog-for-add-to-cart.component';
 
@@ -6,7 +6,7 @@ describe('DialogForAddToCartComponent', () => {
   let component: DialogForAddToCartComponent;
   let fixture: ComponentFixture<DialogForAddToCartComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DialogForAddToCartComponent ]
     })

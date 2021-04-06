@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CategoryMenuSwiperComponent } from './category-menu-swiper.component';
 
@@ -6,7 +6,7 @@ describe('CategoryMenuSwiperComponent', () => {
   let component: CategoryMenuSwiperComponent;
   let fixture: ComponentFixture<CategoryMenuSwiperComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CategoryMenuSwiperComponent ]
     })

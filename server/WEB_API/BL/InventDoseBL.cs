@@ -18,8 +18,8 @@ namespace BL
             foreach (var item in dal)
             {
                 var i = InventDoseCast.ToDTO(item);
-                i.StatusName = item.StatusInvent!=null? item.StatusInvent.Kind:"";
-                i.VisiterName = item.Visiters.FirstName;
+                i.StatusName = item.StatusInvent!=null?item.StatusInvent.Kind.Trim():"";
+                i.VisiterName = item.Visiters.FirstName.Trim();
                 dalList.Add(i);
             }
             return dalList;

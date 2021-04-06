@@ -1,23 +1,28 @@
 <div class="talbe">
-    <div>
-        <h3>הזמנות למשלוחים</h3>
-        <table>
-            <tr class="order">
-                <th>שם המזמין</th>
-                <th>שם מנה</th>
-                <th>כמות</th>
-                <th></th>
-            </tr>
-            <tr *ngFor="let o of resurantOrderList">
-                <td></td>
-
-                <td>
-                    <button mat-flat-button color="primary">בטיפול</button>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div>
+    <table>
+        <tr class="title">
+            <h3>הזמנות למשלוחים</h3>
+        </tr>
+        <tr class="order">
+            <th></th>
+            <th>תאריך הזמנה</th>
+            <th>מספר הזמנה</th>
+            <th>שם מנה</th>
+            <th>כמות</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let o of sendOrderList">
+            <td>{{o.dateInvent}}</td>
+            <td>{{o.id}}</td>
+            <td>{{o.visiterName}}</td>
+            <td *ngFor="let m of o.inventDetails">{{m.amount}}</td>
+            <td>
+                <button mat-flat-button color="primary">בטיפול</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--    <div>
         <h3> Take away הזמנות</h3>
         <table>
             <tr class="order">
@@ -27,12 +32,11 @@
                 <th>כמות</th>
                 <th></th>
             </tr>
-            <tr *ngFor="let o of listOrder">
-                <td>{{o|json}}</td>
-                <!-- <td>{{getDoseName(o.inventDetails.idMenu)}}</td> -->
-                <!-- <td>{{o.inventDetails.amount}}</td> -->
+            <tr *ngFor="let o of takeawayOrderList">
+                <td> </td>
+                
                 <td>
-                    <button mat-flat-button color="primary">בטיפול</button>
+                    <button mat-flat-button color="primary" *ngIf="countOfhandle>=5?handleTakeAwat(o):showError()">בטיפול</button>
                 </td>
             </tr>
         </table>
@@ -47,7 +51,7 @@
                 <th>כמות</th>
                 <th></th>
             </tr>
-            <tr *ngFor="let o of listOrder">
+            <tr *ngFor="let o of resurantOrderList">
 
                 <td>
                     <button mat-flat-button color="primary">בטיפול</button>
@@ -56,4 +60,4 @@
         </table>
     </div>
 
-</div>
+</div> -->

@@ -75,12 +75,12 @@ namespace BL
             {
                 int? TotalsumRating = 0;
                 int? sumRating = 0;
-                List<RatingMenue> LRatingMene = new List<RatingMenue>();
-                RatingMenue ratingM = new RatingMenue();
+                List<RatingMenu> LRatingMenu = new List<RatingMenu>();
+                RatingMenu ratingM = new RatingMenu();
                 List<Menu> menuList = db.Menu.ToList();
                 foreach (var menu in menuList)
                 {
-                    ratingM = new RatingMenue();
+                    ratingM = new RatingMenu();
                     TotalsumRating = 0;
                     sumRating = 0;
                     List<Rating> ratingList = db.Rating.Where(m => m.doseId == menu.Id).ToList();
@@ -93,11 +93,11 @@ namespace BL
                     {
                         ratingM.MenuID = menu.Id;
                         ratingM.Rate = TotalsumRating / sumRating;
-                        LRatingMene.Add(ratingM);
+                        LRatingMenu.Add(ratingM);
                     }
                    
                 }
-                var c = LRatingMene.OrderByDescending(u => u.Rate).Take(5).ToList();
+                var c = LRatingMenu.OrderByDescending(u => u.Rate).Take(5).ToList();
                 List<Menu> List = new List<Menu>();
                 foreach (var item in c)
                 {
@@ -121,7 +121,7 @@ namespace BL
         }
         
     }
-    public class RatingMenue
+    public class RatingMenu
     {
         public int MenuID { get; set; }
         public int? Rate { get; set; }
