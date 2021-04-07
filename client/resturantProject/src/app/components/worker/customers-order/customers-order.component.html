@@ -3,19 +3,73 @@
         <tr class="title">
             <h3>הזמנות למשלוחים</h3>
         </tr>
-        <tr class="order">
-            <th></th>
+        <tr class="subTitle">
             <th>תאריך הזמנה</th>
             <th>מספר הזמנה</th>
-            <th>שם מנה</th>
-            <th>כמות</th>
+            <th>שם המזמין</th>
+            <th>מנה</th>
             <th></th>
         </tr>
         <tr *ngFor="let o of sendOrderList">
-            <td>{{o.dateInvent}}</td>
+            <td>{{o.dateInvent|date : "d/M/yy HH:mm"}}</td>
             <td>{{o.id}}</td>
             <td>{{o.visiterName}}</td>
-            <td *ngFor="let m of o.inventDetails">{{m.amount}}</td>
+            <div *ngFor="let m of o.inventDetails">
+                <td>{{m.menuName}}</td>
+                <td>כמות: {{m.amount}}</td>
+            </div>
+            <td>
+                <button mat-flat-button color="primary">בטיפול</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="talbe">
+    <table>
+        <tr class="title">
+            <h3>הזמנות במסעדה</h3>
+        </tr>
+        <tr class="subTitle">
+            <th>תאריך הזמנה</th>
+            <th>מספר הזמנה</th>
+            <th>שם המזמין</th>
+            <th>מנה</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let o of resurantOrderList">
+            <td>{{o.dateInvent|date : "d/M/yy HH:mm"}}</td>
+            <td>{{o.id}}</td>
+            <td>{{o.visiterName}}</td>
+            <div *ngFor="let m of o.inventDetails">
+                <td>{{m.menuName}}</td>
+                <td>x{{m.amount}}</td>
+            </div>
+            <td>
+                <button mat-flat-button color="primary">בטיפול</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="talbe">
+    <table>
+        <tr class="title">
+            <h3>הזמנות take away</h3>
+        </tr>
+        <tr class="subTitle">
+            <th>תאריך הזמנה</th>
+            <th>מספר הזמנה</th>
+            <th>שם המזמין</th>
+            <th>מנה</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let o of takeawayOrderList">
+            <td>{{o.dateInvent|date : "d/M/yy HH:mm"}}</td>
+            <td>{{o.id}}</td>
+            <td>{{o.visiterName}}</td>
+            <div *ngFor="let m of o.inventDetails">
+                <td>{{m.menuName}}</td>
+                <td>x{{m.amount}} </td>
+            </div>
             <td>
                 <button mat-flat-button color="primary">בטיפול</button>
             </td>

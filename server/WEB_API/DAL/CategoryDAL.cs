@@ -54,7 +54,10 @@ namespace DAL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                var c = db.Category.FirstOrDefault(C => C.Id == Category.Id);
+                var m = db.Menu.FirstOrDefault(x => x.Category == Category.Id);
+                if(m!=null)
+                    db.Menu.Remove(m);
+                var c = db.Category.FirstOrDefault(C => C.Id == Category.Id);                
                 db.Category.Remove(c);
                 db.SaveChanges();
             }

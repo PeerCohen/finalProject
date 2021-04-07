@@ -20,6 +20,11 @@ namespace BL
                 var i = InventDoseCast.ToDTO(item);
                 i.StatusName = item.StatusInvent!=null?item.StatusInvent.Kind.Trim():"";
                 i.VisiterName = item.Visiters.FirstName.Trim();
+                foreach(var menu in i.InventDetails)
+                {
+                  var m= MenuDAL.GetById(menu.IdMenu);
+                    menu.MenuName = m.NameDose;
+                }
                 dalList.Add(i);
             }
             return dalList;
