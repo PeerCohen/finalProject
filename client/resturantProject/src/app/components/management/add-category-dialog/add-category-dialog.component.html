@@ -5,14 +5,11 @@
         <input type="text" [(ngModel)]="categoryName" />
     </div>
     <div class="add-image-div">
-        <mat-icon>add_photo_alternate</mat-icon>
         <input type="file" (change)="onFileChanged($event)" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" formControlName="image" />
     </div>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button mat-dialog-close>
-     ביטול<mat-icon>
-        clear
-      </mat-icon></button>
+</button>
     <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="addNewCategory()">הופסה<mat-icon>add</mat-icon></button>
 </mat-dialog-actions>

@@ -4,6 +4,7 @@ export class InventDose {
       id: number;
       idEmployee: number;
       status: number;
+      IdStatusDose:number
       idTable: number;
       idVisiter: number;
       dateInvent: number;

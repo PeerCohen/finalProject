@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-   public static class InventDoseBL
+    public static class InventDoseBL
     {
         public static List<InventDoseDTO> GetAll()
         {
@@ -18,11 +18,11 @@ namespace BL
             foreach (var item in dal)
             {
                 var i = InventDoseCast.ToDTO(item);
-                i.StatusName = item.StatusInvent!=null?item.StatusInvent.Kind.Trim():"";
+                i.StatusName = item.StatusInvent != null ? item.StatusInvent.Kind.Trim() : "";
                 i.VisiterName = item.Visiters.FirstName.Trim();
-                foreach(var menu in i.InventDetails)
+                foreach (var menu in i.InventDetails)
                 {
-                  var m= MenuDAL.GetById(menu.IdMenu);
+                    var m = MenuDAL.GetById(menu.IdMenu);
                     menu.MenuName = m.NameDose;
                 }
                 dalList.Add(i);
@@ -30,10 +30,28 @@ namespace BL
             return dalList;
 
         }
+        public static List<InventDoseDTO> GetAllById(int id)
+        {
+            var listDose = GetAll();
+           return listDose.Where(item => item.IdStatusDose == id).ToList();
+            List<InventDoseDTO> List = new List<InventDoseDTO>();
+            foreach (var item in listDose)
+            {
+                if (item.IdStatusDose == id)
+                    List.Add(item);
+            }
+            return List;
+        }
         public static List<SpecialInventDTO> GetAllSpecialInvent()
         {
             return InventDoseCast.ListToDTOSpecial(InventDoseDAL.GetAllSpecialInvent());
         }
+
+        public static void UpdateStatus(InventDoseDTO InventDose)
+        {
+            InventDoseDAL.UpdateIdStatus(InventDoseCast.ToDAL(InventDose));
+        }
+
         public static void Update(InventDoseDTO InventDose)
         {
             InventDoseDAL.Update(InventDoseCast.ToDAL(InventDose));

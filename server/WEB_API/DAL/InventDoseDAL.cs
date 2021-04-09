@@ -30,7 +30,7 @@ namespace DAL
             using (restaurantEntities db = new restaurantEntities())
             {
                 var invents = db.InventDose.Where(v => v.IdVisiter == id).Include("InventDetails").ToList();
-                invents.ForEach(v =>v.InventDetails = v.InventDetails.ToList());
+                invents.ForEach(v => v.InventDetails = v.InventDetails.ToList());
                 return invents;
             }
         }
@@ -40,7 +40,7 @@ namespace DAL
             using (restaurantEntities db = new restaurantEntities())
             {
                 inventDose.DateInvent = DateTime.Now;
-               var inventDose1 = db.InventDose.Add(inventDose);
+                var inventDose1 = db.InventDose.Add(inventDose);
                 db.SaveChanges();
                 //foreach (var item in inventDose.InventDetails)
                 //{
@@ -53,15 +53,29 @@ namespace DAL
                 return inventDose;
             }
         }
+        
+
         public static void AddSpecialInvent(SpecialInvent specialInvent)
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-               db.SpecialInvent.Add(specialInvent);
+                db.SpecialInvent.Add(specialInvent);
                 db.SaveChanges();
             }
         }
         //update
+        public static void UpdateIdStatus(InventDose inventDose)
+        {
+            using (restaurantEntities db = new restaurantEntities())
+            {
+                var dose = db.InventDose.FirstOrDefault(d => d.Id == inventDose.Id);
+                if (dose.IdStatusDose == 3)
+                    dose.IdStatusDose = 1;
+                else
+                    dose.IdStatusDose = 2;
+                db.SaveChanges();
+            }
+        }
         public static void Update(InventDose inventDose)
         {
 

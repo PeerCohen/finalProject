@@ -131,6 +131,7 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { SwiperModule } from 'swiper/angular';
 import { ErrorDialogCounthandleDoseComponent } from './components/worker/error-dialog-counthandle-dose/error-dialog-counthandle-dose.component';
 import { CalendarDialogComponent } from './components/worker/calendar-dialog/calendar-dialog.component';
+import { DialodhandleComponent } from './components/worker/dialodhandle/dialodhandle.component';
 
 
 
@@ -230,7 +231,8 @@ import { CalendarDialogComponent } from './components/worker/calendar-dialog/cal
     NewMenuComponent,
     CategoryMenuSwiperComponent,
     ErrorDialogCounthandleDoseComponent,
-    CalendarDialogComponent
+    CalendarDialogComponent,
+    DialodhandleComponent
     
 
 

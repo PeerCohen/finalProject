@@ -1,1 +1,30 @@
-<p>handling-orders works!</p>
+<div *ngIf="prepaerlistOrder.length==0">
+    לא נמצאו הזמנות בטיפולך
+    <mat-icon>info</mat-icon>
+</div>
+<div class="talbe" *ngIf="prepaerlistOrder.length!=0">
+    <table>
+        <tr class="title">
+            <h3>הזמנות בהכנה</h3>
+        </tr>
+        <tr class="subTitle">
+            <th>תאריך הזמנה</th>
+            <th>מספר הזמנה</th>
+            <th>שם המזמין</th>
+            <th>מנה</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let o of prepaerlistOrder">
+            <td>{{o.dateInvent|date : "d/M/yy HH:mm"}}</td>
+            <td>{{o.id}}</td>
+            <td>{{o.visiterName}}</td>
+            <div *ngFor="let m of o.inventDetails">
+                <td>{{m.menuName}}</td>
+                <td><span>כמות :</span> {{m.amount}}</td>
+            </div>
+            <td>
+                <button mat-flat-button color="primary" (click)="finish(o)">סיום הזמנה</button>
+            </td>
+        </tr>
+    </table>
+</div>

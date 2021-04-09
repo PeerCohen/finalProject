@@ -2,21 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Menu } from '../modals/menu';
+import { InventDose } from '../modals/invent-dose';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
+  
 
   subjectMenu:Subject<number>=new Subject();
   menuType="regular";
   URL: string = "http://localhost:51437/api/Menu";
+  URL_INVENT="http://localhost:51437/api/InventDose";
 
   constructor(private http: HttpClient) { }
 
   // getAllMenuDetails():Observable<Menu> {
   //   return this.http.get<Menu>(`${this.URL}/GetAllMenuDetails`);
   // }
+  updateStatusDose(order: InventDose):Observable<any> {
+    return this.http.post<InventDose>(`${this.URL_INVENT}/updateStatusDose/`,order);
+  }
   getRatingByCategory(id:number):Observable<Menu[]> {
     return this.http.get<Menu[]>(`${this.URL}/GetMenuByRating/${id}`);
   }

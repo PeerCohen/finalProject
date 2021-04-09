@@ -1,0 +1,39 @@
+body {
+    direction: rtl;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #fbf8f8;
+    direction: rtl;
+}
+
+th,
+td {
+    text-align: right;
+    padding: 16px;
+}
+
+.talbe {
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:last-child {
+    border-bottom: black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.title h3 {
+    text-align: center !important;
+    font-size: x-large;
+    color: #9a2d44;
+    font-weight: 600;
+}

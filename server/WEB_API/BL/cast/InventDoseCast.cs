@@ -18,7 +18,7 @@ namespace BL.cast
                 Id = item.Id,
                 IdVisiter = item.IdVisiter,
                 IdEmployee = item.IdEmployee,
-                Status = item.Id,
+                IdStatusDose = item.IdStatusDose,
                 IdTable = item.IdTable,
                 DateInvent = item.DateInvent,
                 InventDetails = InventDetailsCast.ListToDTO(item.InventDetails.ToList())
@@ -57,7 +57,7 @@ namespace BL.cast
                 Id = item.Id,
                 IdVisiter = item.IdVisiter,
                 IdEmployee = item.IdEmployee,
-                IdStatusDose = item.Status,
+                IdStatusDose = item.IdStatusDose,
                 DateInvent = item.DateInvent,
                 IdTable = item.IdTable,
                 InventDetails = InventDetailsCast.ListToDAL(item.InventDetails.ToList())

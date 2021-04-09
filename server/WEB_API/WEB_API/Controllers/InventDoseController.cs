@@ -33,13 +33,35 @@ namespace WEB_API.Controllers
         {
             return InventDoseBL.GetAll();
         }
+        [HttpGet]
+        [Route("GetAllPrepaerInventDose/{id}")]
+        public List<InventDoseDTO> GetAllPrepaerInventDose(int id)
+        {
+            return InventDoseBL.GetAllById(id);
+        }
+        [HttpGet]
+        [Route("GetAllWaitingInventDose")]
+        public List<InventDoseDTO> GetAllWaitingInventDose()
+        {
+            return InventDoseBL.GetAllById(3);
+            var list= InventDoseBL.GetAll();
+            List<InventDoseDTO> List = new List<InventDoseDTO>();
+            foreach (var item in list)
+            {
+                if (item.IdStatusDose == 3)
+                    List.Add(item);
+            }
+            return List;
+           // var list =InventDoseBL.GetAllById(3);
+            //return list;
+        }
 
         // POST: api/InventDose
         [HttpPost]
-        [Route("")]
+        [Route("updateStatusDose")]
         public void Post([FromBody]InventDoseDTO inventDose)
         {
-            InventDoseBL.Add(inventDose);
+            InventDoseBL.UpdateStatus(inventDose);
         }
 
         // PUT: api/InventDose/5

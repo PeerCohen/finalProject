@@ -27,6 +27,10 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+span {
+    font-weight: 600;
+}
+
 tr:last-child {
     border-bottom: black;
     border-bottom-width: 1px;
@@ -62,4 +66,8 @@ button {
     font-size: x-large;
     color: #9a2d44;
     font-weight: 600;
+}
+
+.takeOrder {
+    text-align: center !important;
 }
