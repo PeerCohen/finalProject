@@ -20,12 +20,25 @@ export class ManagerService {
   EmloyeeToMesseg: ManagerMessege = new ManagerMessege();
   constructor(private http: HttpClient) { }
 
-  setSpecialOrder(dataSpecialOrder,) {
+  getUserComment(): Observable<any>{
+    return this.http.get<any>(`${this.BASE_URL}/CommentVisiter/GetAllComment`);
+  }
+  setSpecialOrder(dataSpecialOrder) {
     // this.specialOrder.next(specialOrderFrom)
     // console.log(this.specialOrder,kind);
     return this.http.post<SpecialInvent>(`${this.BASE_URL}SpecialInvent/AddSpecialInvent`,dataSpecialOrder);
   }
+  deleteSpecialOrder(o:SpecialInvent):Observable<any>{
+    return this.http.post<any>(`${this.BASE_URL}SpecialInvent/deleteSpecialInvent`,o);
+  }
+  updateSpecialOrder(o:SpecialInvent):Observable<any>{
+    return this.http.post<any>(`${this.BASE_URL}SpecialInvent/updateSpecialInvent`,o);
+  }
+  getSpecialOrder():Observable<SpecialInvent[]>{
+    return this.http.get<SpecialInvent[]>(`${this.BASE_URL}SpecialInvent/GetAllSpecialInvent`);
+  }
   addNewWorker(worker:Employee):Observable<Employee>{
+    debugger;
     return this.http.post<Employee>(`${this.URL}/AddNewWorker/`,worker);
     debugger;
   }

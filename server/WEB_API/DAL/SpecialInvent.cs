@@ -21,5 +21,6 @@ namespace DAL
         public string mail { get; set; }
         public Nullable<System.DateTime> dateEvent { get; set; }
         public Nullable<int> CountOfPeople { get; set; }
+        public Nullable<bool> isContact { get; set; }
     }
 }

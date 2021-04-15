@@ -15,10 +15,12 @@ export class CartInRestaurantComponent implements OnInit {
   Totalprice: number = 0;
   doneInvent: any;
   isAcceptance: boolean;
+  cartBox: boolean;
 
   constructor(public inRestaurant: InRestaurantService, public dialog: MatDialog, public router: Router) { }
 
   ngOnInit(): void {
+    
     this.itemsInCart = this.inRestaurant.fullCart;
     this.inRestaurant.subjectCart.subscribe(res=>{
       debugger;
@@ -39,8 +41,13 @@ export class CartInRestaurantComponent implements OnInit {
   saveInvent() {
     this.doneInvent =[...this.itemsInCart] ;
     console.log(this.doneInvent);
-    this.itemsInCart = [];
+    this.cartBox=false;
+   // this.itemsInCart = [];
     this.isAcceptance = true;
+  }
+  changeMode(){
+    this.isAcceptance = false;
+    this.cartBox=true;
   }
   openDialogRemoveInRes(i, index) {
 
@@ -56,6 +63,7 @@ export class CartInRestaurantComponent implements OnInit {
     }
   }
   setPayment() {
+    this.itemsInCart = [];
     this.router.navigate(['/paymentInRes']);
   }
   isOpen() {

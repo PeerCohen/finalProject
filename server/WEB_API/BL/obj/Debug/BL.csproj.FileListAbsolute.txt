@@ -32,18 +32,6 @@ E:\WEB_API\BL\bin\Debug\DTO.pdb
 E:\WEB_API\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 E:\WEB_API\BL\obj\Debug\BL.dll
 E:\WEB_API\BL\obj\Debug\BL.pdb
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\BL.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\BL.pdb
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DTO.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.pdb
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.dll.config
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DTO.pdb
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csprojAssemblyReference.cache
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.pdb
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\BL.dll
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\BL.pdb
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\BL\bin\Debug\DAL.dll
@@ -68,3 +56,15 @@ C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.dll
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\BL\obj\Debug\BL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\BL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\BL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DTO.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DAL.dll.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\bin\Debug\DTO.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\BL\obj\Debug\BL.pdb

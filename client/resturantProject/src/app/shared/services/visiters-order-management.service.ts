@@ -31,16 +31,30 @@ export class VisitersOrderManagementService {
     debugger;
     //this.cart.remove(item);
   }
-  addComment(comment:string): Observable<any>{
-    var newComment=new Comment();
-    newComment.Comment=comment;
-    newComment.idvisiter=this.idCurrentUser ;
+  addComment(comment:Comment): Observable<any>{
+    //var newComment=new Comment();
+   // newComment.Comment=comment;
+    //newComment.idvisiter=this.idCurrentUser ;
     debugger;
-    return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,newComment);
+    return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,comment);
   }
 
   getAllOrder(idVisiter: number): Observable<InventDose[]> {
     return this.httpClient.get<InventDose[]>(`${this.BaseUrl}/InventDose/GetInvent/${idVisiter}`);
+  }
+  rating(r:InventDose): Observable<any> {
+    debugger;
+    return this.httpClient.post<any>(`${this.BaseUrl}/InventDose/updateRating`, r);
+  }
+  getfeedbackForOrderDose(): Observable<any> {
+    debugger;
+    return this.httpClient.get<any>(`${this.BaseUrl}/InventDose/favoriteDose`);
+  }
+  addfeedbackForOrderDose(o: InventDose,feedback:string): Observable<any> {
+    debugger;
+   // return this.httpClient.put<UserCalandar>(this.URLEm + 'SineOut/' + this.CurrentUser.id + , date);
+
+    return this.httpClient.post<any>(`${this.BaseUrl}/InventDose/addfeedback`, o);
   }
   addInvent() {
     var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;

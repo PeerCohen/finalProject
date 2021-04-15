@@ -80,7 +80,8 @@ export class CustomersOrderComponent implements OnInit {
       })
   }
   readyMenu(order: InventDose) {
-    if (this.prepaerlistOrder.length > 7)
+    debugger;
+    if (this.prepaerlistOrder && this.prepaerlistOrder.length > 7)
       var dialogRefError = this.dialog.open(ErrorDialogCounthandleDoseComponent);
     else {
       var dialogRefSuccess = this.dialog.open(DialodhandleComponent);

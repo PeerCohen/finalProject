@@ -1,5 +1,8 @@
 export class Comment {
-    Comment: string;
-    idvisiter: number;
+    comment: string;
+    name: number;
     id: number;
+    date: Date;
+    mark:number;
+
 }

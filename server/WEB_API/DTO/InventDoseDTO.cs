@@ -15,9 +15,13 @@ namespace DTO
         public Nullable<int> IdTable { get; set; }
         public System.TimeSpan HourInvention { get; set; }
         public int IdVisiter { get; set; }
-        public Nullable<int> IdStatusInvent { get; set; }
+        public int IdStatusInvent { get; set; }
         public string StatusName { get; set; }
         public string VisiterName { get; set; }
+        public string Feedback { get; set; }
+        public int? rate { get; set; }
+        public List<InventDetailsDTO> InventDetailslist { get; set; }
+
         public ICollection<InventDetailsDTO> InventDetails { get; set; }
     }
 }

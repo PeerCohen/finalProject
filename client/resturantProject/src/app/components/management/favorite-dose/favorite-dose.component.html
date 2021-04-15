@@ -1,4 +1,25 @@
-<div>
+<div *ngFor="let item of listBestDose">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{item.visiterName}}
+                <mat-icon color="primary">favorite</mat-icon>
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{item.date|date:"d/M/yy"}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <hr>
+        <mat-card-content>
+            <div>" {{item.feedback}} "</div>
+            <ngb-rating class="star-rating" *ngIf="item" [rate]="item.rate" [readonly]="true"></ngb-rating>
+            <div class="nameDose">{{item.menu.nameDose}}</div>
+            <div>
+                <img class='image' [src]="'http://localhost:51437/src/images/products/'+item.menu.category+'/'+item.menu.image">
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<!-- <div>
     <div class="">
         <span><div class="menu-by-categoty" (click)=openDetalis()>
             <div style="display: inline;">
@@ -14,13 +35,13 @@
         </div>
     </div>
 </div>
-</div>
+</div> -->
 <!-- <app-menu-by-categoty style="display: inline;"></app-menu-by-categoty> -->
-</div>
+<!-- </div>
 </span>
 
 </div>
 </div>
 <div class="dose-category-order" *ngIf="open">
     <app-dose-category-order></app-dose-category-order>
-</div>
+</div> -->

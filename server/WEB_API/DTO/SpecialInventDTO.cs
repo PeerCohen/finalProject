@@ -15,5 +15,7 @@ namespace DTO
         public string mail { get; set; }
         public DateTime? dateEvent { get; set; }
         public int? CountOfPeople { get; set; }
+        public bool? isContact { get; set; }
+
     }
 }

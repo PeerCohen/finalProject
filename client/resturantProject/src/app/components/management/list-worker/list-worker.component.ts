@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { Employee } from 'src/app/shared/modals/employee';
@@ -22,7 +23,8 @@ export class ListWorkerComponent implements OnInit {
     public managerService: ManagerService,
     public dialog: MatDialog,
     private _bottomSheet: MatBottomSheet,
-    private userService: UserService
+    private userService: UserService,
+    @Inject(DOCUMENT) private _document: Document
   ) { }
 
   ngOnInit(): void {
@@ -65,6 +67,8 @@ export class ListWorkerComponent implements OnInit {
     return this.managerService.removeWorker(worker).subscribe(
       (res: any) => {
         this.succeeded = res;
+        this.getWorker();
+       // this._document.defaultView.location.reload();
       },
       (err) => {
         this.error = err;

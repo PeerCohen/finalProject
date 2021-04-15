@@ -24,6 +24,13 @@
     border-width: 17px;
 }
 
+app-dose-category-order {
+    position: absolute;
+    top: 4%;
+    right: 40%;
+    width: 36%;
+}
+
 app-menu-by-categoty .main_sidebar {
     display: inline-block;
     width: 18%;

@@ -7,7 +7,7 @@
         <div *ngIf='userService.singIn' class="userName">
             <mat-icon>account_circle </mat-icon>
             שלום {{userService.userName}}
-            <div *ngIf="!degree">| תאריך כניסה אחרונה :{{userService.CurrentUser.lastDateEnter |date : "d/M/yy HH:mm" }}</div>
+            <div *ngIf="!degree"> תאריך כניסה אחרונה :{{userService.CurrentUser.lastDateEnter |date : "d/M/yy HH:mm" }}</div>
         </div>
         <span *ngIf="degree">{{worker?"כניסת עובד":"כניסת מנהל"}}</span>
         <button mat-button class="user-enter" *ngIf='!userService.singIn' (click)="openBottomSheetSignin()">הרשם</button>

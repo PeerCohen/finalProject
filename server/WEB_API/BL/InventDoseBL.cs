@@ -2,10 +2,12 @@
 using DAL;
 using DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WEB_API.Models;
 
 namespace BL
 {
@@ -18,18 +20,21 @@ namespace BL
             foreach (var item in dal)
             {
                 var i = InventDoseCast.ToDTO(item);
-                i.StatusName = item.StatusInvent != null ? item.StatusInvent.Kind.Trim() : "";
-                i.VisiterName = item.Visiters.FirstName.Trim();
+                i.StatusName = InventDoseDAL.GetByIdStatusInvent(i.IdStatusInvent).Kind.Trim();
+                i.VisiterName = VisitersDAL.GetById(i.IdVisiter).FirstName;                
+                i.InventDetails = InventDetailsCast.ListToDTO(InventDoseDAL.GetByIdInventDetails(i.Id));
                 foreach (var menu in i.InventDetails)
                 {
-                    var m = MenuDAL.GetById(menu.IdMenu);
-                    menu.MenuName = m.NameDose;
+                    
+                    var m = MenuBL.GetById(menu.IdMenu);
+                    menu.MenuName = m.NameDose;   
                 }
                 dalList.Add(i);
             }
             return dalList;
 
         }
+
         public static List<InventDoseDTO> GetAllById(int id)
         {
             var listDose = GetAll();
@@ -51,12 +56,35 @@ namespace BL
         {
             InventDoseDAL.UpdateIdStatus(InventDoseCast.ToDAL(InventDose));
         }
-
+        public static void Addfeedback(InventDoseDTO InventDose)
+        {
+            InventDoseDAL.Addfeedback(InventDoseCast.ToDAL(InventDose));
+        }
         public static void Update(InventDoseDTO InventDose)
         {
             InventDoseDAL.Update(InventDoseCast.ToDAL(InventDose));
         }
-
+        public static List<FavoriteDose> getDoseByfeedback()
+        {
+            List<FavoriteDose> favorite=new List<FavoriteDose>();            
+            var list = InventDoseCast.ListToDTO(InventDoseDAL.GetDoseByfeedback());
+            foreach (var item in list)
+            {
+                var f = new FavoriteDose();
+                var name = VisitersDAL.GetById(item.IdVisiter);
+                f.VisiterName=name.FirstName.Trim() +" "+ name.LastName.Trim();
+                f.Feedback = item.Feedback.Trim();
+                f.date = item.DateInvent;
+                f.rate = item.rate;
+                item.InventDetails = InventDetailsCast.ListToDTO(InventDoseDAL.GetByIdInventDetails(item.Id));
+                foreach (var menu in item.InventDetails)
+                {
+                   f.Menu =MenuBL.GetById(menu.IdMenu);
+                }
+                favorite.Add(f);
+            }
+            return favorite;
+        }
         public static List<InventDoseDTO> GetCurrentInvents()
         {
             StatusDoseDTO status = StatusDoseBL.GetByDescription("הוזמן");
@@ -73,9 +101,27 @@ namespace BL
         {
             InventDoseDAL.DeleteSpecialInvent(InventDoseCast.ToDALSpecialInvent(specialInvent));
         }
+        public static void updateSpecialInvent(SpecialInventDTO specialInvent)
+        {
+            InventDoseDAL.UpdateSpecialInvent(InventDoseCast.ToDALSpecialInvent(specialInvent));
+        }
         public static List<InventDoseDTO> GetById(int id)
         {
-            return InventDoseCast.ListToDTO(InventDoseDAL.GetById(id));
+            var list= InventDoseDAL.GetById(id);
+            List<InventDoseDTO> dalList = new List<InventDoseDTO>();
+            foreach (var item in list)
+            {
+                var i = InventDoseCast.ToDTO(item);
+                i.StatusName = StatusDoseBL.GetByIdStatusInventDose(i.IdStatusInvent).Trim();
+                i.InventDetails = InventDetailsCast.ListToDTO(InventDoseDAL.GetByIdInventDetails(i.Id));
+                foreach (var menu in i.InventDetails)
+                {
+                    var m = MenuDAL.GetById(menu.IdMenu);
+                    menu.MenuName = m.NameDose;
+                }
+                dalList.Add(i);
+            }
+            return dalList;
         }
         public static void Add(InventDoseDTO InventDose)
         {

@@ -45,6 +45,7 @@
     <Compile Include="CurrentEmployeeDTO.cs" />
     <Compile Include="EmployeesDTO.cs" />
     <Compile Include="EmployeesTypesDTO.cs" />
+    <Compile Include="FavoriteDose.cs" />
     <Compile Include="InventDetailsDTO.cs" />
     <Compile Include="InventDoseDTO.cs" />
     <Compile Include="managerMessageDTO.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="RatingDTO.cs" />
     <Compile Include="SpecialInventDTO.cs" />
     <Compile Include="StatusDoseDTO.cs" />
+    <Compile Include="StatusInventDose.cs" />
     <Compile Include="TablesDTO.cs" />
     <Compile Include="UserCalandarDTO.cs" />
     <Compile Include="VipTablesDTO.cs" />

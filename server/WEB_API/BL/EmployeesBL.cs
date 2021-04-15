@@ -112,7 +112,14 @@ namespace BL
                         return null;
 
                 }
-                return null;
+                Visiters visiter = db.Visiters.FirstOrDefault(e => e.ld == id);
+                if (visiter != null)
+                {
+                    visiter.lastDateEnter = date;
+                    db.Entry(visiter).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                    return null;
 
             }
         }

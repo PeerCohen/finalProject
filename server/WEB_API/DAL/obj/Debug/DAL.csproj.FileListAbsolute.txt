@@ -30,17 +30,6 @@ E:\WEB_API\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\WEB_API\DAL\obj\Debug\DAL.dll
 E:\WEB_API\DAL\obj\Debug\DAL.pdb
 D:\final_project\WEB_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.dll.config
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.pdb
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.xml
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CopyComplete
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.dll
-C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.pdb
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DAL\bin\Debug\DAL.dll.config
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DAL\bin\Debug\DAL.dll
 C:\Users\Shira\Desktop\פאר כהן\finalProject\server\WEB_API\DAL\bin\Debug\DAL.pdb
@@ -65,3 +54,14 @@ C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DAL\obj
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DAL\obj\Debug\DAL.pdb
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.dll.config
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.pdb
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.dll
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.pdb

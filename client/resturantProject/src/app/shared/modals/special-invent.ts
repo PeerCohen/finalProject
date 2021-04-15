@@ -5,4 +5,5 @@ export class SpecialInvent {
     mail: string;
     dateEvent: Date;
     countOfPeople: number;
+    isContact:boolean;
 }

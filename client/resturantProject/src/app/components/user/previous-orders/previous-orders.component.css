@@ -15,9 +15,23 @@
         color: rgba(236, 222, 140, 0.863);
     }
     
+    .slider mat-slider {
+        width: 300px;
+    }
+    
+    mat-card-actions {
+        text-align: center !important;
+    }
+    
+    mat-card-actions button {
+        display: block;
+        margin: 2%;
+    }
+    
     .comment {
-        position: relative;
-        right: 77%;
+        position: absolute;
+        position: -webkit-sticky;
+        right: 68%;
         border: solid;
         border-color: #9a2d44;
         font-size: larger;
@@ -34,10 +48,20 @@
         font-size: 17px;
     }
     
+    mat-card {
+        width: 35%;
+        margin-bottom: 4%;
+        margin-right: 27%;
+    }
+    
+    span {
+        display: block;
+        font-size: 18px;
+    }
+    
     .title {
         position: relative;
-        display: inline;
-        top: -39px;
+        top: -60px;
         background-color: white;
         font-size: 22px;
         font-weight: 600;

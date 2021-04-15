@@ -60,7 +60,13 @@ namespace DAL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                var e = db.Employees.FirstOrDefault(p => p.Id == employees.Id);
+                var u = db.UserCalander.Where(x => x.IdUser == employees.Id).ToList();
+                if (u != null)
+                    foreach (var item in u)
+                    {
+                        db.UserCalander.Remove(item);
+                    }
+                var e = db.Employees.Single(p => p.Id == employees.Id);
                 db.Employees.Remove(e);
                 db.SaveChanges();
             }

@@ -23,10 +23,11 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="Comment" Type="String" MaxLength="4000" FixedLength="true" Unicode="true" />
-    <Property Name="idvisiter" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="3000" FixedLength="true" Unicode="true" />
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="Visiters" Relationship="Self.FK_CommentVisiter_Visiters" FromRole="CommentVisiter" ToRole="Visiters" />
+    <Property Name="mark" Type="Int32" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="CurrentEmployee">
     <Key>
@@ -89,11 +90,11 @@
     <Property Name="IdTable" Type="Int32" />
     <Property Name="HourInvention" Type="Time" Nullable="false" Precision="7" />
     <Property Name="IdVisiter" Type="Int32" Nullable="false" />
-    <Property Name="IdStatusInvent" Type="Int32" />
+    <Property Name="IdStatusInvent" Type="Int32" Nullable="false" />
+    <Property Name="Feedback" Type="String" MaxLength="4000" FixedLength="true" Unicode="true" />
+    <Property Name="rate" Type="Int32" />
     <NavigationProperty Name="Employees" Relationship="Self.FK_InventDose_Employees" FromRole="InventDose" ToRole="Employees" />
     <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_InventDose" FromRole="InventDose" ToRole="InventDetails" />
-    <NavigationProperty Name="InventDose1" Relationship="Self.FK_InventDose_InventDose" FromRole="InventDose" ToRole="InventDose1" />
-    <NavigationProperty Name="InventDose2" Relationship="Self.FK_InventDose_InventDose" FromRole="InventDose1" ToRole="InventDose" />
     <NavigationProperty Name="StatusDose" Relationship="Self.FK_InventDose_StatusDose" FromRole="InventDose" ToRole="StatusDose" />
     <NavigationProperty Name="StatusInvent" Relationship="Self.FK_InventDose_StatusInvent" FromRole="InventDose" ToRole="StatusInvent" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_InventDose_Tables" FromRole="InventDose" ToRole="Tables" />
@@ -125,10 +126,10 @@
     <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="IsDelete" Type="Boolean" />
+    <Property Name="DateAdded" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Category1" Relationship="Self.FK_Menu_Category" FromRole="Menu" ToRole="Category" />
     <NavigationProperty Name="InventDetails" Relationship="Self.FK_InventDetails_Menu" FromRole="Menu" ToRole="InventDetails" />
     <NavigationProperty Name="Rating" Relationship="Self.FK_Rating_Menu" FromRole="Menu" ToRole="Rating" />
-    <Property Name="DateAdded" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Rating">
     <Key>
@@ -151,6 +152,7 @@
     <Property Name="mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="dateEvent" Type="DateTime" Precision="3" />
     <Property Name="CountOfPeople" Type="Int32" />
+    <Property Name="isContact" Type="Boolean" />
   </EntityType>
   <EntityType Name="StatusDose">
     <Key>
@@ -234,11 +236,10 @@
     <Property Name="Mail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="NameUser" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="lastDateEnter" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Address1" Relationship="Self.FK_Visiters_Address" FromRole="Visiters" ToRole="Address" />
-    <NavigationProperty Name="CommentVisiter" Relationship="Self.FK_CommentVisiter_Visiters" FromRole="Visiters" ToRole="CommentVisiter" />
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Visiters" FromRole="Visiters" ToRole="InventDose" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_Visiters_Tables1" FromRole="Visiters" ToRole="Tables" />
-    <Property Name="lastDateEnter" Type="DateTime" Precision="3" />
   </EntityType>
   <Association Name="FK_Visiters_Address">
     <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
@@ -261,18 +262,6 @@
       </Principal>
       <Dependent Role="Menu">
         <PropertyRef Name="Category" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_CommentVisiter_Visiters">
-    <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />
-    <End Role="CommentVisiter" Type="Self.CommentVisiter" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Visiters">
-        <PropertyRef Name="ld" />
-      </Principal>
-      <Dependent Role="CommentVisiter">
-        <PropertyRef Name="idvisiter" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -396,18 +385,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_InventDose_InventDose">
-    <End Role="InventDose" Type="Self.InventDose" Multiplicity="1" />
-    <End Role="InventDose1" Type="Self.InventDose" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="InventDose">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="InventDose1">
-        <PropertyRef Name="Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_InventDose_StatusDose">
     <End Role="StatusDose" Type="Self.StatusDose" Multiplicity="0..1" />
     <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
@@ -421,7 +398,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_InventDose_StatusInvent">
-    <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="0..1" />
+    <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
     <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="StatusInvent">
@@ -532,10 +509,6 @@
       <End Role="Category" EntitySet="Category" />
       <End Role="Menu" EntitySet="Menu" />
     </AssociationSet>
-    <AssociationSet Name="FK_CommentVisiter_Visiters" Association="Self.FK_CommentVisiter_Visiters">
-      <End Role="Visiters" EntitySet="Visiters" />
-      <End Role="CommentVisiter" EntitySet="CommentVisiter" />
-    </AssociationSet>
     <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
@@ -575,10 +548,6 @@
     <AssociationSet Name="FK_InventDetails_Menu" Association="Self.FK_InventDetails_Menu">
       <End Role="Menu" EntitySet="Menu" />
       <End Role="InventDetails" EntitySet="InventDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InventDose_InventDose" Association="Self.FK_InventDose_InventDose">
-      <End Role="InventDose" EntitySet="InventDose" />
-      <End Role="InventDose1" EntitySet="InventDose" />
     </AssociationSet>
     <AssociationSet Name="FK_InventDose_StatusDose" Association="Self.FK_InventDose_StatusDose">
       <End Role="StatusDose" EntitySet="StatusDose" />

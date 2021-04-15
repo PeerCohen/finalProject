@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/shared/services/menu.service';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from 'src/app/shared/services/user.service';
 
 
 @Component({
@@ -14,9 +15,11 @@ export class DoseCategoryOrderComponent implements OnInit {
   InputIdCategory: any;
   menuDetailsByCategory: any;
   error: any;
+  selected: any;
 
   constructor(config: NgbRatingConfig,
      public menuService: MenuService,
+     public userService:UserService,
       public router: Router) {
     config.max = 5;
   }
@@ -27,7 +30,11 @@ export class DoseCategoryOrderComponent implements OnInit {
       this.getMenuDetails();
     })
   }
-
+  focusTab(index = 2) {
+    alert();
+    const tabCount = 7;
+    this.userService.indexTab = (index) % tabCount;
+  }
   getMenuDetails() {
     if(this.menuService.menuType="new")
     {
@@ -43,7 +50,7 @@ export class DoseCategoryOrderComponent implements OnInit {
     if(this.menuService.menuType="favorite"){
       this.menuService.getMenuFavoriteByCategory(this.InputIdCategory).subscribe(
         (res: any) => {
-          this.menuDetailsByCategory = res;
+         // this.menuDetailsByCategory = res;
           console.log(this.menuDetailsByCategory)
         },
         (err) => {
@@ -53,7 +60,7 @@ export class DoseCategoryOrderComponent implements OnInit {
     else{
       this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(
         (res: any) => {
-          this.menuDetailsByCategory = res;
+          //this.menuDetailsByCategory = res;
           console.log(this.menuDetailsByCategory)
         },
         (err) => {

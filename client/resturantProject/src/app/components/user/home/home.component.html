@@ -6,7 +6,8 @@
     <a mat-tab-link> ניסוי </a>
     <a mat-tab-link disabled>Disabled Link</a>
 </nav> -->
-<mat-tab-group mat-align-tabs="center">
+<!-- <button (click)="focusTab()">focusTab</button> -->
+<mat-tab-group mat-align-tabs="center" [selectedIndex]="userService.indexTab">
     <mat-tab label="תפריט">
         <ng-template mat-tab-label>
             <mat-icon>home</mat-icon>

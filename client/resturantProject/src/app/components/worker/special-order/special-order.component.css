@@ -3,12 +3,23 @@ table {
     border-spacing: 0;
     width: 100%;
     border: 1px solid #fbf8f8;
+    direction: rtl;
+}
+
+.editContactC {
+    background-color: #d7eace !important;
+}
+
+.v {
+    color: #26af15;
+    font-size: 244%;
 }
 
 th,
 td {
-    text-align: left;
+    /* text-align: left; */
     padding: 16px;
+    direction: rtl;
 }
 
 .table {

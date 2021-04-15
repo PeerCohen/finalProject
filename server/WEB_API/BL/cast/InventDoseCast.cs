@@ -19,9 +19,13 @@ namespace BL.cast
                 IdVisiter = item.IdVisiter,
                 IdEmployee = item.IdEmployee,
                 IdStatusDose = item.IdStatusDose,
+                IdStatusInvent = item.IdStatusInvent,
                 IdTable = item.IdTable,
                 DateInvent = item.DateInvent,
-                InventDetails = InventDetailsCast.ListToDTO(item.InventDetails.ToList())
+                Feedback=item.Feedback,
+                rate=item.rate,
+                //InventDetails = { },
+                //InventDetails = InventDetailsCast.ListToDTO(item.InventDetails.ToList())
             };
         }
         //for special
@@ -32,10 +36,11 @@ namespace BL.cast
                 Id = item.Id,
                 CountOfPeople = item.CountOfPeople,
                 dateEvent = item.dateEvent,
-                kindOfevent = item.kindOfevent,
+                kindOfevent = item.kindOfevent.Trim(),
                 mail = item.mail,
-                name = item.name,
+                name = item.name.Trim(),
                 phone = item.phone,
+                isContact=item.isContact,
 
             };
         }
@@ -60,6 +65,8 @@ namespace BL.cast
                 IdStatusDose = item.IdStatusDose,
                 DateInvent = item.DateInvent,
                 IdTable = item.IdTable,
+                Feedback=item.Feedback,
+                rate=item.rate,
                 InventDetails = InventDetailsCast.ListToDAL(item.InventDetails.ToList())
             };
         }
@@ -75,6 +82,7 @@ namespace BL.cast
                 mail = item.mail,
                 name = item.name,
                 phone = item.phone,
+                isContact = item.isContact,
             };
         }
         //list to dal

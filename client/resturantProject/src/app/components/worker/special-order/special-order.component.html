@@ -1,42 +1,57 @@
 <table>
     <tr class="details">
+        <th></th>
         <th>סוג ההזמנה</th>
         <th>שם מזמין</th>
         <th>תאריך אירוע</th>
         <th>כמות מוזמנים</th>
-        <th>יצירת קשר</th>
+        <th> פרטי יצירת קשר</th>
         <th></th>
         <th></th>
     </tr>
-    <tr *ngFor="let order of orderList">
+    <tr *ngFor="let order of orderList; index as i;" id="row{{i}}" [ngClass]="order.isContact==true?'editContactC':null">
         <td>
-            <div></div>
+            <mat-icon *ngIf="order.isContact==true" class="v">
+                task_alt
+            </mat-icon>
+        </td>
+        <td>
+            <div>{{order.kindOfevent}}</div>
         </td>
         <td>
             <div>{{order.name}}</div>
         </td>
         <td>
-            <div>{{order.dateEvent}}</div>
+            <div>{{order.dateEvent? (order.dateEvent|date :"d/M/yy") : "___"}}</div>
         </td>
         <td>
-            <div>{{order.countOfPeople}}</div>
+            <div>{{order.countOfPeople? order.countOfPeople : "___"}}</div>
         </td>
         <td>
-            <div>{{order.phone && order.mail}}</div>
+            <div>{{order.phone}} </div>
         </td>
-        <td>
+        <td>{{order.mail}}</td>
+        <!-- <td>
             <div class="deal-order">
                 <button mat-flat-button color="primary">
-          לטיפול בהזמנה
-        </button>
+                    לטיפול בהזמנה
+                </button>
+            </div>
+        </td> -->
+        <td *ngIf="!order.isContact">
+            <div class="ok-order" id="btn{{i}}">
+                <button mat-flat-button color="primary" (click)="handleRequest(order,$event)">
+                    עריכת תיאום והנפקת ההזמנה
+                </button>
             </div>
         </td>
-        <td>
+        <td *ngIf="order.isContact==true">
             <div class="ok-order">
-                <button mat-flat-button color="primary">
-          לאישור והנפקת ההזמנה
-        </button>
+                <button mat-flat-button color="primary" (click)="removeOrder(order)">
+                    סיום עיסקה
+                </button>
             </div>
         </td>
     </tr>
+
 </table>

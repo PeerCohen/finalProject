@@ -17,13 +17,25 @@ namespace WEB_API.Controllers
         [Route("GetAllSpecialInvent")]
         public List<SpecialInventDTO> GetAllSpecialInvent()
         {
-            return InventDoseBL.GetAllSpecialInvent(); 
+            var s= InventDoseBL.GetAllSpecialInvent();
+            return s; 
         }
 
         public void Delete(int id)
         {
         }
-
+        [HttpPost]
+        [Route("deleteSpecialInvent")]
+        public void deleteSpecialOrder([FromBody]SpecialInventDTO specialInvent)
+        {
+            InventDoseBL.DeleteSpecialInvent(specialInvent);
+        }
+        [HttpPost]
+        [Route("updateSpecialInvent")]
+        public void updateSpecialOrder([FromBody]SpecialInventDTO specialInvent)
+        {
+            InventDoseBL.updateSpecialInvent(specialInvent);
+        }
         [HttpPost]
         [Route("AddSpecialInvent")]
         public void Add([FromBody]SpecialInventDTO specialInvent)

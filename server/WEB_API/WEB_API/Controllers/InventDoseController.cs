@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using WEB_API.Models;
 
 namespace WEB_API.Controllers
 {
@@ -25,7 +26,8 @@ namespace WEB_API.Controllers
         [Route("GetInvent/{id}")]
         public List<InventDoseDTO> Get(int id)
         {
-            return InventDoseBL.GetById(id);
+            var l= InventDoseBL.GetById(id);
+            return l;
         }
         [HttpGet]
         [Route("GetAllInventDose")]
@@ -63,7 +65,18 @@ namespace WEB_API.Controllers
         {
             InventDoseBL.UpdateStatus(inventDose);
         }
-
+        [HttpGet]
+        [Route("favoriteDose")]
+        public List<FavoriteDose> getfeedbackDose()
+        {
+             return InventDoseBL.getDoseByfeedback();
+        }
+        [HttpPost]
+        [Route("addfeedback")]
+        public void Addfeedback([FromBody]InventDoseDTO inventDose)
+        {
+            InventDoseBL.Addfeedback(inventDose);
+        }
         // PUT: api/InventDose/5
         public void Put(int id, [FromBody]string value)
         {

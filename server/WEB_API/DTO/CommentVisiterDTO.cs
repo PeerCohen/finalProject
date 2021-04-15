@@ -8,9 +8,12 @@ namespace DTO
 {
    public class CommentVisiterDTO
     {
+        
         public string Comment { get; set; }
-        public Nullable<int> idvisiter { get; set; }
         public int id { get; set; }
+        public int? mark { get; set; }
+        public DateTime? date { get; set; }
+        public string Name { get; set; }
 
     }
 }
