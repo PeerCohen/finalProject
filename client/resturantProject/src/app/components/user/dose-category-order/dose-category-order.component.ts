@@ -31,7 +31,6 @@ export class DoseCategoryOrderComponent implements OnInit {
     })
   }
   focusTab(index = 2) {
-    alert();
     const tabCount = 7;
     this.userService.indexTab = (index) % tabCount;
   }

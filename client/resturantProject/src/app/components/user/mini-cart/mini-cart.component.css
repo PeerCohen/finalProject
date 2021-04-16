@@ -8,6 +8,14 @@
     text-align: center;
 }
 
+.wrapper-cart button:last-child {
+    margin-right: 2%;
+}
+
+.totalPrice {
+    font-size: large;
+}
+
 .mat-card {
     border: solid;
     border-width: thin;

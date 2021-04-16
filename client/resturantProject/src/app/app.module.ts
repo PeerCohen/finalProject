@@ -133,6 +133,7 @@ import { CalendarDialogComponent } from './components/worker/calendar-dialog/cal
 import { DialodhandleComponent } from './components/worker/dialodhandle/dialodhandle.component';
 import { UserCommentComponent } from './components/management/user-comment/user-comment.component';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { PackOrderforPaymentComponent } from './components/user/pack-orderfor-payment/pack-orderfor-payment.component';
 
 
 
@@ -233,7 +234,8 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     ErrorDialogCounthandleDoseComponent,
     CalendarDialogComponent,
     DialodhandleComponent,
-    UserCommentComponent
+    UserCommentComponent,
+    PackOrderforPaymentComponent
     
 
 

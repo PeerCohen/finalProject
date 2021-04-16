@@ -15,9 +15,9 @@ namespace DAL
     public partial class CommentVisiter
     {
         public string Comment { get; set; }
+        public string Name { get; set; }
         public int id { get; set; }
         public Nullable<int> mark { get; set; }
         public Nullable<System.DateTime> date { get; set; }
-        public string Name { get; set; }
     }
 }

@@ -41,13 +41,13 @@ export class CartInRestaurantComponent implements OnInit {
   saveInvent() {
     this.doneInvent =[...this.itemsInCart] ;
     console.log(this.doneInvent);
-    this.cartBox=false;
+    this.inRestaurant.presentCart=false;
    // this.itemsInCart = [];
     this.isAcceptance = true;
   }
   changeMode(){
     this.isAcceptance = false;
-    this.cartBox=true;
+    this.inRestaurant.presentCart=true;
   }
   openDialogRemoveInRes(i, index) {
 

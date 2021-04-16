@@ -24,7 +24,7 @@
         </mat-icon>
     </button>
 </div>
-<div class="wrapper-cart" *ngIf="isOpen()||cartBox">
+<div class="wrapper-cart" *ngIf="inRestaurant.presentCart">
     <p class="title-cart">סיכום הזמנה</p>
     <p class="sub-title-cart">שולחן מספר : {{numInvent}}</p>
     <hr>

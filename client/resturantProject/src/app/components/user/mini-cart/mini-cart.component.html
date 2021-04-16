@@ -1,4 +1,4 @@
-<div *ngIf=!disableInvent class="wrapper-cart">
+<div *ngIf="!(visitersOrderManagementService.disableInventCart)" class="wrapper-cart">
     <p class="title-cart">סיכום הזמנה</p>
     <p class="sub-title-cart">שם המזמין : {{userName}}</p>
     <hr>
@@ -24,5 +24,8 @@
             </mat-card-actions>
         </mat-card>
     </div>
+    <p class="totalPrice"> סה"כ תשלום הההזמנה: {{getTotal()}} ₪</p>
     <button mat-flat-button color="primary" (click)="addInvent()"> אשר הזמנה</button>
+    <button mat-flat-button color="primary">
+        בטל הזמנה </button>
 </div>

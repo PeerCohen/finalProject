@@ -17,6 +17,9 @@ export class VisitersOrderManagementService {
   subjectCart = new Subject();
   cart: InventDetails[] = [];
   fullCart:any[]=[];
+  Totalprice: number=0;
+  disableInventCart: boolean;
+  idStatusInvent: number=0;
 
   constructor(public httpClient: HttpClient, private userService: UserService) {
     // if(this.userService.InventDose.inventDetails!=null)
@@ -61,13 +64,17 @@ export class VisitersOrderManagementService {
     var vis = new InventDose();
     var user = JSON.parse(localStorage.getItem("currentUser")).id;
     vis.idVisiter = user;
-    vis.status = 3;
+    vis.IdStatusInvent = this.idStatusInvent;
+    vis.IdStatusDose=3;
+
     vis.inventDetails = [];
+
 
     inventDetails.forEach(element => {
       vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
     });
     this.httpClient.get(`${this.URL}/sendMail`);
+    debugger;
     return this.httpClient.post(`${this.URL}/AddDose`, vis);
   }
   castMenuToInvetDetails(item: Menu) {
@@ -80,7 +87,9 @@ export class VisitersOrderManagementService {
   addOrderToCart(item: Menu) {
     if (this.userService.CurrentUser) {
       item.amount=1;
+      this.disableInventCart=false;
       this.fullCart.push(item);
+      this.Totalprice+=item.price;
       this.cart.push(this.castMenuToInvetDetails(item));
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
       // let dose: InventDose = { ...this.userService.InventDose };
@@ -93,14 +102,14 @@ export class VisitersOrderManagementService {
       return false;
   }
   MinusProductAmount(itemId) {
-    let item = this.cart.find(p => p.idMenu == itemId);
+    let item = this.fullCart.find(p => p.id == itemId);
     if (item && item.amount > 0) {
       item.amount--;
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
     }
   }
   plusProductAmount(itemId) {
-    let item = this.fullCart.find(p => p.idMenu == itemId);
+    let item = this.fullCart.find(p => p.id == itemId);
     if (item) {
       item.amount++;
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);

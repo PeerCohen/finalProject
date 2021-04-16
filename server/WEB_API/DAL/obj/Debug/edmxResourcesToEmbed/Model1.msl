@@ -23,8 +23,8 @@
     <EntitySetMapping Name="CommentVisiter">
       <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
         <MappingFragment StoreEntitySet="CommentVisiter">
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="mark" ColumnName="mark" />
           <ScalarProperty Name="date" ColumnName="date" />

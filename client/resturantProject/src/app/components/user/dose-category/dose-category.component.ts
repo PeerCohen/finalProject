@@ -50,7 +50,8 @@ export class DoseCategoryComponent implements OnInit {
      }
     // this.isMiniCartOpen=true;
     else if (this.visiterOrderManagment.addOrderToCart(item)) {
-      alert("הוסף מוצר בהצלחה")
+      const dialogRef = this.dialog.open(DialogForAddToCartComponent)
+
     }
     else
       alert("אינך משתמש רשום")

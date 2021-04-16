@@ -63,6 +63,7 @@ namespace BL.cast
                 IdVisiter = item.IdVisiter,
                 IdEmployee = item.IdEmployee,
                 IdStatusDose = item.IdStatusDose,
+                IdStatusInvent=item.IdStatusInvent,
                 DateInvent = item.DateInvent,
                 IdTable = item.IdTable,
                 Feedback=item.Feedback,
