@@ -44,8 +44,8 @@
                 <button mat-icon-button color="primary" class="plus-icon">
                     <mat-icon (click)="addProductInRes(item)">add_circle_outline</mat-icon>
                 </button>
-                <button mat-icon-button color="primary" class="delete-icon">
-                    <mat-icon (click)="openDialogRemoveInRes(item.idMenu,index)">delete</mat-icon>
+                <button mat-icon-button color="primary" class="delete-icon" (click)="openDialogRemoveInRes(item.idMenu,index)">
+                    <mat-icon >delete</mat-icon>
                 </button>
                 <label>סה"כ : {{item.price*item.amount}} ₪</label>
             </mat-card-actions>
@@ -55,6 +55,6 @@
     <button mat-flat-button color="primary" (click)="addInventInRes()">
         <mat-icon>task_alt</mat-icon> אשר הזמנה
     </button>
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary" (click)="removeOrder()">
         בטל הזמנה </button>
 </div>

@@ -134,7 +134,8 @@ import { DialodhandleComponent } from './components/worker/dialodhandle/dialodha
 import { UserCommentComponent } from './components/management/user-comment/user-comment.component';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { PackOrderforPaymentComponent } from './components/user/pack-orderfor-payment/pack-orderfor-payment.component';
-
+import { DialogSaveTableRequestComponent } from './components/user/dialog-save-table-request/dialog-save-table-request.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -235,12 +236,16 @@ import { PackOrderforPaymentComponent } from './components/user/pack-orderfor-pa
     CalendarDialogComponent,
     DialodhandleComponent,
     UserCommentComponent,
-    PackOrderforPaymentComponent
+    PackOrderforPaymentComponent,
+    DialogSaveTableRequestComponent
     
 
 
   ],
   imports: [
+    
+    MatDatepickerModule,
+    MatNativeDateModule,
     SwiperModule,
     MatBadgeModule,
     BrowserModule,
@@ -264,7 +269,6 @@ import { PackOrderforPaymentComponent } from './components/user/pack-orderfor-pa
     NgbModule,
     MatTableModule,
     MatSidenavModule,
-    MatDatepickerModule,
     MatButtonToggleModule,
     MatBottomSheetModule,
     MatToolbarModule,

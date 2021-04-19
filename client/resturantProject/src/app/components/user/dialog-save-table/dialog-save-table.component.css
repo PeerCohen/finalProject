@@ -4,21 +4,21 @@
 
 img {
     width: 55%;
-    border-left: solid;
-    border-left-color: #e96b85ad;
-    border-left-width: 17px;
+    position: relative;
+    top: -26%;
 }
 
 p {
-    position: absolute;
-    left: 36%;
-    top: 8%;
+    position: relative;
+    left: 11%;
+    top: 76px;
     font-size: x-large;
-    width: 8%;
+    width: 25%;
     text-align: center;
 }
 
 .img {
     text-align: end;
     background-color: whitesmoke;
+    height: 199px;
 }

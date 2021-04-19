@@ -1,36 +1,36 @@
 <div>
-<h1 mat-dialog-title>ההודעות שלי ...</h1>
-<div mat-dialog-content >
-    <button mat-flat-button color="primary" (click)="openMessege()" >
-        להגיב
-    </button>
-    <table  dir="rtl" >
-        <tr class="day" >
+    <h1 mat-dialog-title>...ההודעות שלי </h1>
+
+    <table dir="rtl">
+        <tr class="day">
             <th>הודעה מ..</th>
             <th>תאריך </th>
             <th>נושא</th>
             <th>הודעה</th>
             <th></th>
+            <th></th>
         </tr>
-        <tr *ngFor="let m of listMessege; index as i;" >
+        <tr *ngFor="let m of listMessege; index as i;">
             <!-- <div > -->
             <td [ngClass]="m.alreadyRead==true ? 'bordered': 'greyedOut'">{{m.fromEmloyeeName}}</td>
-            <td [ngClass]="m.alreadyRead ? 'bordered': 'greyedOut'">{{m.date |date :' h:mm  , d/M/yy '}}</td>
+            <td [ngClass]="m.alreadyRead ? 'bordered': 'greyedOut'">{{m.date |date :' h:mm , d/M/yy '}}</td>
             <td [ngClass]="m.alreadyRead==true ? 'bordered': 'greyedOut'">{{m.subject}}</td>
             <td [ngClass]="m.alreadyRead==true ? 'bordered': 'greyedOut'">{{m.message}}</td>
             <td (click)="showAllMessege(m, i)">+</td>
             <div *ngIf="show[i]">
-                
+
                 <mat-card>
                     <strong>{{m.subject}}</strong>
                     <p>{{m.message}}</p>
                 </mat-card>
-                    
- 
-
             </div>
-        <!-- </div> -->
+            <div mat-dialog-content>
+                <button mat-stroked-button color="primary" (click)="openMessege(m.fromEmloyeeId)">
+                    הגב
+                </button>
+            </div>
+            <!-- </div> -->
         </tr>
     </table>
-</div>
+
 </div>

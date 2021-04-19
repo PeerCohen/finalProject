@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { InRestaurantService } from 'src/app/shared/services/in-restaurant.service';
+import { RemoveProductComponent } from '../../user/dialogs/remove-product/remove-product.component';
 import { DialogForInventComponent } from '../dialog-for-invent/dialog-for-invent.component';
 
 @Component({
@@ -16,6 +17,7 @@ export class CartInRestaurantComponent implements OnInit {
   doneInvent: any;
   isAcceptance: boolean;
   cartBox: boolean;
+  closeCart: any;
 
   constructor(public inRestaurant: InRestaurantService, public dialog: MatDialog, public router: Router) { }
 
@@ -45,12 +47,27 @@ export class CartInRestaurantComponent implements OnInit {
    // this.itemsInCart = [];
     this.isAcceptance = true;
   }
+  removeOrder(){
+    this.itemsInCart = [];
+    this.inRestaurant.fullCart=[];
+    this.inRestaurant.presentCart=false;
+  }
+  openDialogRemoveInRes(itemId, index) {
+    var num=1;
+    console.log(this.itemsInCart.length)
+    var dialog = this.dialog.open(RemoveProductComponent, { data: { itemId, index,num, close: this.closeCart } });
+    dialog.afterClosed().subscribe(result => {
+      this.closeCart = result;
+      if (this.itemsInCart.length == 0)
+      this.inRestaurant.presentCart=false;
+      console.log(this.closeCart);
+      console.log(this.itemsInCart.length)
+
+    });
+  }
   changeMode(){
     this.isAcceptance = false;
     this.inRestaurant.presentCart=true;
-  }
-  openDialogRemoveInRes(i, index) {
-
   }
   addProductInRes(item) {
     item.amount++;

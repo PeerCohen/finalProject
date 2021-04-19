@@ -20,6 +20,7 @@ export class VisitersOrderManagementService {
   Totalprice: number=0;
   disableInventCart: boolean;
   idStatusInvent: number=0;
+  disablePrePaymentCart: boolean;
 
   constructor(public httpClient: HttpClient, private userService: UserService) {
     // if(this.userService.InventDose.inventDetails!=null)

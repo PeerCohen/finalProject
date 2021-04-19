@@ -74,7 +74,7 @@ namespace BL
                 var name = VisitersDAL.GetById(item.IdVisiter);
                 f.VisiterName=name.FirstName.Trim() +" "+ name.LastName.Trim();
                 f.Feedback = item.Feedback.Trim();
-                f.date = item.DateInvent;
+                f.date = DateTime.Now;
                 f.rate = item.rate;
                 item.InventDetails = InventDetailsCast.ListToDTO(InventDoseDAL.GetByIdInventDetails(item.Id));
                 foreach (var menu in item.InventDetails)

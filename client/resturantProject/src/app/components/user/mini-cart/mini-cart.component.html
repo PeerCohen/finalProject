@@ -26,6 +26,9 @@
     </div>
     <p class="totalPrice"> סה"כ תשלום הההזמנה: {{getTotal()}} ₪</p>
     <button mat-flat-button color="primary" (click)="addInvent()"> אשר הזמנה</button>
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary" (click)="removeOrder()">
         בטל הזמנה </button>
+</div>
+<div *ngIf="visitersOrderManagementService.disablePrePaymentCart">
+    <app-pack-orderfor-payment></app-pack-orderfor-payment>
 </div>

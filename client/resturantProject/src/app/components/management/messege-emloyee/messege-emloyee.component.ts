@@ -24,10 +24,11 @@ listMessege: ManagerMessege[]= new Array();
      console.log(this.listMessege)
     })
   }
-  openMessege()
+  openMessege(fromEmloyeeId:number)
   {
     console.log(this. userService.CurrentUser)
-this.managerService.EmloyeeToMesseg.IdEmployee= this.listMessege[0].fromEmloyeeId ;
+this.managerService.EmloyeeToMesseg.IdEmployee=fromEmloyeeId ;
+debugger;
 this.managerService.EmloyeeToMesseg.fromEmloyeeId= this.userService.CurrentUser.id;
 this.managerService.EmloyeeToMesseg.fromEmloyeeName= this.userService.CurrentUser.firstName;
 console.log(this.managerService.EmloyeeToMesseg)

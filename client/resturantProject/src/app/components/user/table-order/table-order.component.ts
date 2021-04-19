@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogSaveTableRequestComponent } from '../dialog-save-table-request/dialog-save-table-request.component';
 
 @Component({
   selector: 'app-table-order',
@@ -9,12 +11,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class TableOrderComponent implements OnInit {
 
   orderTableFrom: FormGroup;
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.orderTableFrom = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      tel: new FormControl([' ',Validators.required, Validators.length==10]),
+      tel: new FormControl(' ',Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       countOfPeople: new FormControl(['',Validators.required, Validators.length<20]),
       date: new FormControl(new Date()),
@@ -23,7 +25,11 @@ export class TableOrderComponent implements OnInit {
     })
   }
 
+  onFormSubmit(){
+    debugger;
+    const dialogRef = this.dialog.open(DialogSaveTableRequestComponent,{ data: this.orderTableFrom.controls.date.value })
 
+  }
   getErrorMessage() {
     if (this.orderTableFrom.controls.email.hasError('required')) {
       return 'You must enter a value';

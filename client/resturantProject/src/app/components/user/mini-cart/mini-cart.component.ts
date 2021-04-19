@@ -23,6 +23,7 @@ export class MiniCartComponent implements OnInit {
   disableInvent: boolean = false;
   closeCart: any;
   Totalprice: number;
+  isAcceptance: boolean;
 
 
   constructor(
@@ -56,20 +57,28 @@ export class MiniCartComponent implements OnInit {
     this.visitersOrderManagementService.plusProductAmount(item.id);
   }
   addInvent() {
-    this.visitersOrderManagementService.addInvent().subscribe(res => {
-    })
-    this.router.navigate(['/payment']);
+    //this.router.navigate(['/prePayment']);
+    // this.visitersOrderManagementService.addInvent().subscribe(res => {
+    // })
+    // this.router.navigate(['/payment']);
+    this.visitersOrderManagementService.disablePrePaymentCart=true;  
     this.visitersOrderManagementService.disableInventCart=true;
-    this.visitersOrderManagementService.fullCart=[];
+    // this.visitersOrderManagementService.fullCart=[];
   }
   lessProduct(item) {
     if (item.amount > 1)
      // item.amount--;
     this.visitersOrderManagementService.MinusProductAmount(item.id);
   }
+  removeOrder(){
+    this.itemsInCart = [];
+    this.visitersOrderManagementService.fullCart=[];
+    this.visitersOrderManagementService.disableInventCart = true;
+
+  }
   openDialogRemove(itemId, index) {
     console.log(this.itemsInCart.length)
-    var dialog = this.dialog.open(RemoveProductComponent, { data: { itemId, index, close: this.closeCart } });
+    var dialog = this.dialog.open(RemoveProductComponent, { data: { itemId, index, 0:0, close: this.closeCart } });
     dialog.afterClosed().subscribe(result => {
       this.closeCart = result;
       if (this.itemsInCart.length == 0)
