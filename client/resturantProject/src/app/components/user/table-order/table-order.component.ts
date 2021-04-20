@@ -9,9 +9,15 @@ import { DialogSaveTableRequestComponent } from '../dialog-save-table-request/di
   styleUrls: ['./table-order.component.css']
 })
 export class TableOrderComponent implements OnInit {
+  minDate: Date;
+  maxDate: Date;
 
   orderTableFrom: FormGroup;
-  constructor(public dialog:MatDialog) { }
+  constructor(public dialog:MatDialog) {
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear-currentYear);
+    this.maxDate = new Date(currentYear + 7, 0, 21);
+   }
 
   ngOnInit(): void {
     this.orderTableFrom = new FormGroup({
@@ -25,15 +31,22 @@ export class TableOrderComponent implements OnInit {
     })
   }
 
+
   onFormSubmit(){
-    debugger;
     const dialogRef = this.dialog.open(DialogSaveTableRequestComponent,{ data: this.orderTableFrom.controls.date.value })
 
   }
+  getErrorMessageDate(){
+    if (this.orderTableFrom.controls.date.hasError('required')) {
+      return 'שדה חובה';
+    }
+    if(this.orderTableFrom.controls.date.value<Date.now()-1)
+    return 'תאריך '
+  }
   getErrorMessage() {
     if (this.orderTableFrom.controls.email.hasError('required')) {
-      return 'You must enter a value';
+      return 'שדה חובה';
     }
-    return this.orderTableFrom.controls.email.hasError('email') ? 'Not a valid email' : '';
+    return this.orderTableFrom.controls.email.hasError('email') ? 'מייל לא חוקי' : '';
   }
 }

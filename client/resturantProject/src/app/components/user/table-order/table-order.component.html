@@ -18,9 +18,10 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>תאריך</mat-label>
-        <input matInput [matDatepicker]="picker1" formControlName="date" required>
+        <input matInput matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker1" formControlName="date" required>
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="orderTableFrom.controls.email.invalid">{{getErrorMessageDate()}}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>שעה</mat-label>
