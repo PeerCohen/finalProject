@@ -57,10 +57,10 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdDose" Type="int" Nullable="false" />
     <Property Name="IdMenu" Type="int" Nullable="false" />
     <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="InventDose">
     <Key>
@@ -81,11 +81,11 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdEmployee" Type="int" />
-    <Property Name="Date" Type="date" />
+    <Property Name="Date" Type="datetime" />
     <Property Name="message" Type="nvarchar(max)" />
     <Property Name="subject" Type="nvarchar" MaxLength="50" />
-    <Property Name="fromEmloyeeName" Type="nvarchar" MaxLength="50" />
     <Property Name="fromEmloyeeId" Type="int" />
+    <Property Name="fromEmloyeeName" Type="nvarchar" MaxLength="50" />
     <Property Name="AlreadyRead" Type="bit" />
   </EntityType>
   <EntityType Name="Menu">
@@ -116,11 +116,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="kindOfevent" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="name" Type="nchar" MaxLength="50" />
-    <Property Name="phone" Type="nchar" MaxLength="10" />
-    <Property Name="mail" Type="nchar" MaxLength="50" />
-    <Property Name="dateEvent" Type="datetime" />
+    <Property Name="IdVisiter" Type="int" Nullable="false" />
+    <Property Name="KindRequest" Type="nchar" MaxLength="10" />
+    <Property Name="Date" Type="datetime" />
     <Property Name="CountOfPeople" Type="int" />
   </EntityType>
   <EntityType Name="StatusDose">
@@ -136,16 +134,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Kind" Type="nchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Tables">
     <Key>
@@ -185,7 +173,7 @@
     <Key>
       <PropertyRef Name="ld" />
     </Key>
-    <Property Name="ld" Type="int" Nullable="false" />
+    <Property Name="ld" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FirstName" Type="nchar" MaxLength="10" />
     <Property Name="LastName" Type="nchar" MaxLength="10" />
     <Property Name="Phone" Type="nchar" MaxLength="10" />
@@ -194,7 +182,6 @@
     <Property Name="Mail" Type="nchar" MaxLength="100" />
     <Property Name="Password" Type="nchar" MaxLength="10" />
     <Property Name="NameUser" Type="nchar" MaxLength="10" />
-    <Property Name="lastDateEnter" Type="datetime" />
   </EntityType>
   <Association Name="FK_CommentVisiter_Visiters">
     <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />
@@ -376,6 +363,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_SpecialInvent_Visiters">
+    <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
+    <End Role="SpecialInvent" Type="Self.SpecialInvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visiters">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="SpecialInvent">
+        <PropertyRef Name="IdVisiter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_StatusInvent_StatusInvent">
     <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
     <End Role="StatusInvent1" Type="Self.StatusInvent" Multiplicity="0..1" />
@@ -475,7 +474,6 @@
     <EntitySet Name="SpecialInvent" EntityType="Self.SpecialInvent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusDose" EntityType="Self.StatusDose" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusInvent" EntityType="Self.StatusInvent" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserCalander" EntityType="Self.UserCalander" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
@@ -539,6 +537,10 @@
     <AssociationSet Name="FK_Rating_Menu" Association="Self.FK_Rating_Menu">
       <End Role="Menu" EntitySet="Menu" />
       <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecialInvent_Visiters" Association="Self.FK_SpecialInvent_Visiters">
+      <End Role="Visiters" EntitySet="Visiters" />
+      <End Role="SpecialInvent" EntitySet="SpecialInvent" />
     </AssociationSet>
     <AssociationSet Name="FK_StatusInvent_StatusInvent" Association="Self.FK_StatusInvent_StatusInvent">
       <End Role="StatusInvent" EntitySet="StatusInvent" />

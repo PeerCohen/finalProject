@@ -50,3 +50,15 @@ C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DTO\obj
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DTO\obj\Debug\DTO.dll
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DTO\obj\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\bin\Debug\DTO.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\bin\Debug\DTO.pdb
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\bin\Debug\DAL.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\bin\Debug\EntityFramework.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\bin\Debug\DAL.pdb
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\bin\Debug\DAL.dll.config
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\bin\Debug\EntityFramework.xml
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\obj\Debug\DTO.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DTO\obj\Debug\DTO.pdb

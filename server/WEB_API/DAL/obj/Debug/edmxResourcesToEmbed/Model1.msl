@@ -63,10 +63,10 @@
     <EntitySetMapping Name="InventDetails">
       <EntityTypeMapping TypeName="restaurantModel.InventDetails">
         <MappingFragment StoreEntitySet="InventDetails">
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdDose" ColumnName="IdDose" />
           <ScalarProperty Name="IdMenu" ColumnName="IdMenu" />
           <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,8 +92,8 @@
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="message" ColumnName="message" />
           <ScalarProperty Name="subject" ColumnName="subject" />
-          <ScalarProperty Name="fromEmloyeeName" ColumnName="fromEmloyeeName" />
           <ScalarProperty Name="fromEmloyeeId" ColumnName="fromEmloyeeId" />
+          <ScalarProperty Name="fromEmloyeeName" ColumnName="fromEmloyeeName" />
           <ScalarProperty Name="AlreadyRead" ColumnName="AlreadyRead" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -101,7 +101,6 @@
     <EntitySetMapping Name="Menu">
       <EntityTypeMapping TypeName="restaurantModel.Menu">
         <MappingFragment StoreEntitySet="Menu">
-          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="NameDose" ColumnName="NameDose" />
@@ -110,6 +109,7 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -127,11 +127,9 @@
       <EntityTypeMapping TypeName="restaurantModel.SpecialInvent">
         <MappingFragment StoreEntitySet="SpecialInvent">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="kindOfevent" ColumnName="kindOfevent" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="mail" ColumnName="mail" />
-          <ScalarProperty Name="dateEvent" ColumnName="dateEvent" />
+          <ScalarProperty Name="IdVisiter" ColumnName="IdVisiter" />
+          <ScalarProperty Name="KindRequest" ColumnName="KindRequest" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="CountOfPeople" ColumnName="CountOfPeople" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -149,17 +147,6 @@
         <MappingFragment StoreEntitySet="StatusInvent">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Kind" ColumnName="Kind" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="restaurantModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -203,7 +190,6 @@
     <EntitySetMapping Name="Visiters">
       <EntityTypeMapping TypeName="restaurantModel.Visiters">
         <MappingFragment StoreEntitySet="Visiters">
-          <ScalarProperty Name="lastDateEnter" ColumnName="lastDateEnter" />
           <ScalarProperty Name="ld" ColumnName="ld" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
