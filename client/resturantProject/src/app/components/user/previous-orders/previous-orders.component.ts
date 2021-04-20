@@ -39,9 +39,7 @@ export class PreviousOrdersComponent implements OnInit {
   }
   saveRating(o:InventDose,num:number){
     o.currentRate=num;
-    debugger;
     this.visitersOrderManagementService.rating(o).subscribe(res => {
-      debugger;
       console.log(res);
     })
   }
@@ -54,7 +52,6 @@ this.comment.comment=this.commentContent;
 this.comment.mark= Math.round(this.value / 1000);;
 this.comment.name=this.userService.CurrentUser.firstName+this.userService.CurrentUser.lastName;
     this.visitersOrderManagementService.addComment(this.comment).subscribe(res => {
-      debugger;
       console.log(res);
     })
   }

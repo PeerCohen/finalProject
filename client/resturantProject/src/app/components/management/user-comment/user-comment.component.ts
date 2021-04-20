@@ -13,7 +13,6 @@ export class UserCommentComponent implements OnInit {
   constructor(public managerService:ManagerService) { }
 
   ngOnInit(): void {
-    debugger;
     this.managerService.getUserComment().subscribe((res=>
       {
         this.list=res;

@@ -7,6 +7,7 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { InRestaurantService } from 'src/app/shared/services/in-restaurant.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogForAddToCartComponent } from '../../in-resuarant/dialog-for-add-to-cart/dialog-for-add-to-cart.component';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-dose-category',
@@ -27,6 +28,7 @@ export class DoseCategoryComponent implements OnInit {
     public categoryService: CategoryService,
     public visiterOrderManagment: VisitersOrderManagementService,
     public inRestaurant: InRestaurantService,
+    public user:UserService,
     public dialog: MatDialog) {
     config.max = 5;
   }
@@ -43,15 +45,16 @@ export class DoseCategoryComponent implements OnInit {
     return false;
   }
   addToCart(item: Menu) {
-    debugger;
     if (this.Restaurant) {
-      const dialogRef = this.dialog.open(DialogForAddToCartComponent)
       this.inRestaurant.addToCartInRestaurant(item)
-     }
-    // this.isMiniCartOpen=true;
-    else if (this.visiterOrderManagment.addOrderToCart(item)) {
       const dialogRef = this.dialog.open(DialogForAddToCartComponent)
-
+      
+    }
+    // this.isMiniCartOpen=true;
+    else if (this.user.CurrentUser) {
+      this.visiterOrderManagment.addOrderToCart(item)
+      const dialogRef = this.dialog.open(DialogForAddToCartComponent)
+      
     }
     else
       alert("אינך משתמש רשום")

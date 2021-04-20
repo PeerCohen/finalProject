@@ -69,7 +69,7 @@ const routes: Routes = [
   {
     path: "managerHome",
     component: ManagerHomeComponent,
-    //canActivate: [EmployeeGuard],
+    canActivate: [EmployeeGuard],
   },
   {
     path: "selectedUserEntrance",

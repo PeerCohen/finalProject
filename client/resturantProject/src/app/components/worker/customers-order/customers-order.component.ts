@@ -80,7 +80,6 @@ export class CustomersOrderComponent implements OnInit {
       })
   }
   readyMenu(order: InventDose) {
-    debugger;
     if (this.prepaerlistOrder && this.prepaerlistOrder.length > 7)
       var dialogRefError = this.dialog.open(ErrorDialogCounthandleDoseComponent);
     else {
@@ -90,8 +89,6 @@ export class CustomersOrderComponent implements OnInit {
     }
 
 
-
-    debugger;
 
     // var index;
     // if (order.statusName == "הזמנת שולחן") {
@@ -118,7 +115,6 @@ export class CustomersOrderComponent implements OnInit {
   // 3	איסוף מהסניף                                      
   // 4	בסניף                                             
   sortOrder() {
-    debugger;
     this.waitinglistOrder.forEach(o => {
       if (o.statusName == "בסניף")
         this.resurantOrderList.push(o);

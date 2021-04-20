@@ -28,7 +28,6 @@ listMessege: ManagerMessege[]= new Array();
   {
     console.log(this. userService.CurrentUser)
 this.managerService.EmloyeeToMesseg.IdEmployee=fromEmloyeeId ;
-debugger;
 this.managerService.EmloyeeToMesseg.fromEmloyeeId= this.userService.CurrentUser.id;
 this.managerService.EmloyeeToMesseg.fromEmloyeeName= this.userService.CurrentUser.firstName;
 console.log(this.managerService.EmloyeeToMesseg)

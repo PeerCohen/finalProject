@@ -50,7 +50,7 @@ namespace BL
 
                     }
                 }
-                //List<Category> List = db.Category.Where(x => lNewMenu.Any(y => x.Id == y.Category)).ToList();
+                //List<Category> List = db.Category.Where(x => lFNewMenu.Any(y => x.Id == y.Category)).ToList();
                 return CategoryCast.ListToDTO(Listnew);
             }
 

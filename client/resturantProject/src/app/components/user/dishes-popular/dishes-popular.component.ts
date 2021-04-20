@@ -12,7 +12,6 @@ export class DishesPopularComponent implements OnInit {
   constructor(public menuService:MenuService) { }
   popularBishes : Menu[] = new Array();
   ngOnInit(): void {
-    debugger
     this.menuService.getPopularBishes().subscribe(res=> {console.log(res); 
       this.popularBishes=res;
     })

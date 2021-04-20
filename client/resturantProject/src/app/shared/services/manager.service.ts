@@ -38,9 +38,7 @@ export class ManagerService {
     return this.http.get<SpecialInvent[]>(`${this.BASE_URL}SpecialInvent/GetAllSpecialInvent`);
   }
   addNewWorker(worker:Employee):Observable<Employee>{
-    debugger;
     return this.http.post<Employee>(`${this.URL}/AddNewWorker/`,worker);
-    debugger;
   }
   getWorker():Observable<Employee[]>{
     return this.http.get<Employee[]>(`${this.URL}/GetAllWorker`);

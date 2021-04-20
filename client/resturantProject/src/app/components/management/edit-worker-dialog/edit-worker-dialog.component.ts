@@ -22,7 +22,6 @@ export class EditWorkerDialogComponent implements OnInit {
   Succeeded: any;
   error: any;
   constructor(public managerService:ManagerService,@Inject(MAT_DIALOG_DATA) public data: any) {
-    debugger;
     this.emp.Id=data.id;
     this.emp.FirstName = data.firstName;
     this.emp.LastName = data.lastName;

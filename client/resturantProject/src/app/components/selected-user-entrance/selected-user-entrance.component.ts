@@ -56,7 +56,6 @@ export class SelectedUserEntranceComponent implements OnInit {
     this._bottomSheet.open(MessegeEmloyeeComponent);
   }
   getOut() {
-    debugger
     this.userService.getOut(new Date()).subscribe(
       res => {
         let ans = res;
@@ -69,7 +68,8 @@ export class SelectedUserEntranceComponent implements OnInit {
         localStorage.setItem('isEmployee', 'false');
         localStorage.setItem('isVisiter', 'false');
         localStorage.clear();
-        window.location.reload();
+        this.router.navigate(['/home']);
+        //window.location.reload();
       }
     );
   }

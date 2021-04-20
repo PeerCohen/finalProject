@@ -5,11 +5,11 @@
     <hr />
     <div mat-dialog-content>
         <p>הזן כתובת יעד </p>
-        <app-address-sending></app-address-sending>
+        <app-address-sending (close)="getEmit($event)"></app-address-sending>
     </div>
     <div>
-        <button mat-stroked-button color="primary" (click)="onNoClick()">ביטול</button>
-        <button mat-stroked-button color="primary" (click)="onOkClick()" cdkFocusInitial>
+        <button mat-stroked-button color="primary" (click)="cancel()">ביטול</button>
+        <button mat-stroked-button color="primary" (click)="goForOrder()" cdkFocusInitial>
             <mat-icon color="primary">navigate_before
             </mat-icon>אישור , המשך
         </button>

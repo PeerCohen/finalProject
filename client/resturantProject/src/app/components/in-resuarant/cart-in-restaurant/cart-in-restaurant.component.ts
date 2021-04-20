@@ -25,7 +25,6 @@ export class CartInRestaurantComponent implements OnInit {
     
     this.itemsInCart = this.inRestaurant.fullCart;
     this.inRestaurant.subjectCart.subscribe(res=>{
-      debugger;
       this.itemsInCart = this.inRestaurant.fullCart;
     })
     this.Totalprice = this.inRestaurant.Totalprice;

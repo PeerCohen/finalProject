@@ -53,7 +53,6 @@ export class MiniCartComponent implements OnInit {
   }
   addProduct(item) {
     //item.amount++;
-    debugger;
     this.visitersOrderManagementService.plusProductAmount(item.id);
   }
   addInvent() {

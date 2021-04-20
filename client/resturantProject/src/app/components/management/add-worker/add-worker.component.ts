@@ -48,7 +48,6 @@ export class AddWorkerComponent implements OnInit  {
     this.workerData.Tz = this.formGroupAddWorker.controls.tz.value;
     this.workerData.Address = this.formGroupAddWorker.controls.address.value;
     this.workerData.Phone = this.formGroupAddWorker.controls.phone.value;
-    debugger;
      this.managerService.addNewWorker(this.workerData).subscribe(
       (res: any) => {
         this.succeeded = res;

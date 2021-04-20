@@ -76,7 +76,6 @@ export class ListWorkerComponent implements OnInit {
   }
   editWorker(worker) {
     var dialog =this.dialog.open(EditWorkerDialogComponent, { data: worker });
-    debugger    
     dialog.afterClosed().subscribe(res=>{
       this.getWorker();
     })

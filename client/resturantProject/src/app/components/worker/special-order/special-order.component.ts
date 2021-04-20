@@ -21,21 +21,18 @@ export class SpecialOrderComponent implements OnInit {
 
   }
   setStyle(event){
-    var id=event.target.id
-    var row=document.getElementById(id);
-    debugger;
+    var id=event.target.id ;
+    var row=document.getElementById(id);   
       row.style.backgroundColor="red";
   }
   handleRequest(o:SpecialInvent,event){
     this.editContact='editContactC';
     this.managerService.updateSpecialOrder(o).subscribe((res) => { window.location.reload();
       var idBtn=event.target.id
-      debugger;
       var row=document.getElementById(idBtn.slice(3,1));
       row.style.backgroundColor="red";
   })}
   removeOrder(o){
-    debugger;
     this.managerService.deleteSpecialOrder(o).subscribe((res) => {
       window.location.reload();
     })

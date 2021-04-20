@@ -24,7 +24,6 @@ export class InRestaurantService {
   removeProduct(idProduct){
 
     let item = this.fullCart.find(p => p.idMenu == idProduct)
-    debugger;
     //this.cart.remove(item);
   }
   addToCartInRestaurant(item: Menu) {
@@ -32,7 +31,6 @@ export class InRestaurantService {
     item.amount = 1;
     this.fullCart.push(item);
     this.Totalprice+=item.price;
-    debugger;
     this.cart.push(this.castMenuToInvetDetails(item));
     this.subjectCart.next(this.cart);
     return this.cart;

@@ -74,11 +74,8 @@ export class UserService {
     }
     // שמירת שם משתמש כדי להציג את שמו למעלה 
     if (this.CurrentUser && this.CurrentUser?.hasOwnProperty('idEmployeeType')) {
-      debugger;
       this.lastEnterDate= this.CurrentUser.lastDateEnter;
       this.userName = this.CurrentUser.firstName;
-      
-      debugger;
     } else {
       this.lastEnterDate= this.CurrentUser?.lastDateEnter;
       this.userName = this.CurrentUser?.firstName;

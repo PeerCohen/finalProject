@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -9,18 +9,26 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class DialogSendingComponent implements OnInit {
   name:string;
+  address:string;
 
-  constructor(public userService:UserService,public dialogRef: MatDialogRef<DialogSendingComponent>,
-    ) { }
+  constructor(public userService:UserService,public dialogRef: MatDialogRef<DialogSendingComponent>
+    ,@Inject(MAT_DIALOG_DATA) public data: any) { 
+    data=this.address
+   }
+   getEmit(close:boolean){
+
+  }
 
   ngOnInit(): void {
     this.name=this.userService.userName;
   }
 
-  onOkClick(){
+  goForOrder(){
+
+    this.data=this.address
 
   }
-    onNoClick(): void {
+  cancel(): void {
       this.dialogRef.close();    
   }
 }

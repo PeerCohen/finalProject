@@ -55,7 +55,6 @@ export class FormPartyPageComponent implements OnInit {
     
     this.email.Subject =   " הפניית בקשה עבור "+this.kindOfevent;
     this.email.email = this.data.mail;
-    debugger
     this.email.Body = ' שלום '+ this.data.name +'\n'+"  בקשתך התקבלה במערכת אנו ניצור איכם קשר בהקדם"+'\n'+"תודה !";
     this.empSer.sendMail(this.email).subscribe(res => console.log('שליחת המייל הצליחה '));
     console.warn('Your order has been submitted', this.data);

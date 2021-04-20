@@ -29,7 +29,6 @@ export class RemoveProductComponent implements OnInit {
   }
 
   MinusProductAmount() {
-    debugger;
 if(!this.display){
   this.itemsInCart.splice(this.index, 1);
   this.visitersOrderManagementService.removeProduct(this.id);    

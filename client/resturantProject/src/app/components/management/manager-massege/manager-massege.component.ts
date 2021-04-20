@@ -31,7 +31,6 @@ export class ManagerMassegeComponent implements OnInit {
     this.massegeManager.message = this.formGroupLogin.controls["message"].value;
   }
   closeMassege(event: MouseEvent) {
-    debugger;
     this._bottomSheetRef.dismiss();
     event.preventDefault();
   }

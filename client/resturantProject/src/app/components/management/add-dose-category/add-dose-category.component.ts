@@ -38,7 +38,6 @@ export class AddDoseCategoryComponent implements OnInit {
     const reader = new FileReader();
     this.doseData.image = file.name;
     reader.addEventListener('load', (event: any) => {
-      debugger;
       this.doseData.ImageBase64 = event.target.result;
     });
 

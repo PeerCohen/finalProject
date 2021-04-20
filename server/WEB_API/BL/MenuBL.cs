@@ -64,7 +64,7 @@ namespace BL
             using (restaurantEntities db = new restaurantEntities())
             {
                 //Where(u => u.DateAdded < DateTime.Today.AddDays(-8)).
-                List <Menu> newM = db.Menu.Where(u => DateTime.Compare(u.DateAdded.Value, DateTime.Now ) < 8).ToList();
+                List <Menu> newM = db.Menu.Where(u => DateTime.Compare(u.DateAdded.Value, DateTime.Now ) >1).ToList();
                 return MenuCast.ListToDTO(newM);
             }
         }

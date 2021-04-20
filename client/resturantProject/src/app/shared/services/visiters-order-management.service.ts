@@ -32,14 +32,12 @@ export class VisitersOrderManagementService {
   removeProduct(idProduct){
 
     let item = this.cart.find(p => p.idMenu == idProduct)
-    debugger;
     //this.cart.remove(item);
   }
   addComment(comment:Comment): Observable<any>{
     //var newComment=new Comment();
    // newComment.Comment=comment;
     //newComment.idvisiter=this.idCurrentUser ;
-    debugger;
     return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,comment);
   }
 
@@ -47,15 +45,12 @@ export class VisitersOrderManagementService {
     return this.httpClient.get<InventDose[]>(`${this.BaseUrl}/InventDose/GetInvent/${idVisiter}`);
   }
   rating(r:InventDose): Observable<any> {
-    debugger;
     return this.httpClient.post<any>(`${this.BaseUrl}/InventDose/updateRating`, r);
   }
   getfeedbackForOrderDose(): Observable<any> {
-    debugger;
     return this.httpClient.get<any>(`${this.BaseUrl}/InventDose/favoriteDose`);
   }
   addfeedbackForOrderDose(o: InventDose,feedback:string): Observable<any> {
-    debugger;
    // return this.httpClient.put<UserCalandar>(this.URLEm + 'SineOut/' + this.CurrentUser.id + , date);
 
     return this.httpClient.post<any>(`${this.BaseUrl}/InventDose/addfeedback`, o);
@@ -75,7 +70,6 @@ export class VisitersOrderManagementService {
       vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
     });
     this.httpClient.get(`${this.URL}/sendMail`);
-    debugger;
     return this.httpClient.post(`${this.URL}/AddDose`, vis);
   }
   castMenuToInvetDetails(item: Menu) {
@@ -87,6 +81,7 @@ export class VisitersOrderManagementService {
 
   addOrderToCart(item: Menu) {
     if (this.userService.CurrentUser) {
+      debugger;
       item.amount=1;
       this.disableInventCart=false;
       this.fullCart.push(item);

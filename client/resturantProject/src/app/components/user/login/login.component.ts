@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
     this.userService.SingIn(this.loginData).subscribe(async res => {
       const propaty = res;
       console.log(propaty)
-      debugger
       // אם המשתמש הוא מסוג עובד
       if (propaty.hasOwnProperty('idEmployeeType')) {
         // אם המשתמש הואא מסוג מנהל
