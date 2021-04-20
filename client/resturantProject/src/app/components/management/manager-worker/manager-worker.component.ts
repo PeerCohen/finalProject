@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserCalandar } from 'src/app/shared/modals/UserCalandar';
 import { ManagerService } from 'src/app/shared/services/manager.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ManagerService } from 'src/app/shared/services/manager.service';
   styleUrls: ['./manager-worker.component.css']
 })
 export class ManagerWorkerComponent implements OnInit {
-  listDailtWorker: any[]=[];
+  listDailtWorker: UserCalandar[] =new Array();
   today: number = Date.now();
   error: any;
 
@@ -15,17 +16,20 @@ export class ManagerWorkerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDailyWorker();
+        console.log(this.listDailtWorker);
+
   }
   getDailyWorker() {
-    return this.managerService.getDailyWorker().subscribe(
-      (res: any) => {
+     this.managerService.getDailyWorker().subscribe(
+      res=> {
         this.listDailtWorker = res;
         console.log(this.listDailtWorker);
-        
       },
-      (err) => {
-        this.error = err;
-      });
+      // (err) => {
+      //   this.error = err;
+      // }
+      );
+
   }
   
 }

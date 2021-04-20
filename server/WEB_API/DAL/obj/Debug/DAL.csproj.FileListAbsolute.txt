@@ -53,6 +53,21 @@ C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DAL\obj
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DAL\obj\Debug\DAL.dll
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DAL\obj\Debug\DAL.pdb
 C:\Users\Shira\Desktop\פאר - פרויקט\finalProject\server\WEB_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+<<<<<<< HEAD
+C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\bin\Debug\DAL.dll.config
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\bin\Debug\DAL.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\bin\Debug\DAL.pdb
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\obj\Debug\DAL.dll
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\obj\Debug\DAL.pdb
+C:\Users\Shira\Desktop\פאר\finalProject\server\WEB_API\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+=======
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.dll.config
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\DAL.dll
@@ -64,3 +79,4 @@ C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\bin\Debug\Entit
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.dll
 C:\Users\user-pc\Documents\GitHub\finalPoject\server\WEB_API\DAL\obj\Debug\DAL.pdb
+>>>>>>> a1064408f1a245e71be558c7d7ef40b330cc507a

@@ -25,8 +25,10 @@ export class DoseCategoryOrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   console.log(this.menuService.subjectMenu)  
     this.menuService.subjectMenu.subscribe((res: number) => {
       this.InputIdCategory = res;
+      console.log(this.InputIdCategory);
       this.getMenuDetails();
     })
   }
@@ -35,8 +37,10 @@ export class DoseCategoryOrderComponent implements OnInit {
     this.userService.indexTab = (index) % tabCount;
   }
   getMenuDetails() {
-    if(this.menuService.menuType="new")
+    debugger;
+    if(this.menuService.menuType==="new")
     {
+      console.log(this.InputIdCategory);
       this.menuService.getMenuNewByCategory(this.InputIdCategory).subscribe(
         (res: any) => {
           this.menuDetailsByCategory = res;
@@ -46,7 +50,7 @@ export class DoseCategoryOrderComponent implements OnInit {
           this.error = err;
         });
     }
-    if(this.menuService.menuType="favorite"){
+    if(this.menuService.menuType==="favorite"){
       this.menuService.getMenuFavoriteByCategory(this.InputIdCategory).subscribe(
         (res: any) => {
          // this.menuDetailsByCategory = res;

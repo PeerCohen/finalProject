@@ -47,13 +47,14 @@ namespace BL
         {
             return EmployeesCast.ToDTO(EmployeesDAL.Login(username, password));
         }
-        public static object getDailyWorker()
+        public static List<UserCalandarDTO> getDailyWorker()
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                UserCalander userCalandar = db.UserCalander.FirstOrDefault(u => u.Date == DateTime.Today);
-
-                return UserCalandarC.ToDTO(userCalandar);
+                List<UserCalander> userCalandar = db.UserCalander.Where(u => u.Date.Value.Year == DateTime.Today.Year &&
+                u.Date.Value.Month == DateTime.Today.Month && u.Date.Value.Day== DateTime.Today.Day ).ToList();
+ 
+                return UserCalandarC.ListToDTO(userCalandar);
             }
         }
         // פונקצית כניסה עובד או לקוח אם הןא עובד נוסף עוד יום ביון העובד עם שעת הכניסה הנוכחי  

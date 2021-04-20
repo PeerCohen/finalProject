@@ -72,10 +72,10 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdDose" Type="Int32" Nullable="false" />
     <Property Name="IdMenu" Type="Int32" Nullable="false" />
     <Property Name="amount" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDetails_InventDose" FromRole="InventDetails" ToRole="InventDose" />
     <NavigationProperty Name="Menu" Relationship="Self.FK_InventDetails_Menu" FromRole="InventDetails" ToRole="Menu" />
   </EntityType>
@@ -106,11 +106,11 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdEmployee" Type="Int32" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
     <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="fromEmloyeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="fromEmloyeeId" Type="Int32" />
+    <Property Name="fromEmloyeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="AlreadyRead" Type="Boolean" />
     <NavigationProperty Name="Employees" Relationship="Self.FK_managerMessage_managerMessage" FromRole="managerMessage" ToRole="Employees" />
   </EntityType>
@@ -146,13 +146,15 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="kindOfevent" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="dateEvent" Type="DateTime" Precision="3" />
+    <Property Name="IdVisiter" Type="Int32" Nullable="false" />
+    <Property Name="KindRequest" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
     <Property Name="CountOfPeople" Type="Int32" />
+<<<<<<< HEAD
+    <NavigationProperty Name="Visiters" Relationship="Self.FK_SpecialInvent_Visiters" FromRole="SpecialInvent" ToRole="Visiters" />
+=======
     <Property Name="isContact" Type="Boolean" />
+>>>>>>> a1064408f1a245e71be558c7d7ef40b330cc507a
   </EntityType>
   <EntityType Name="StatusDose">
     <Key>
@@ -171,16 +173,6 @@
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_StatusInvent" FromRole="StatusInvent" ToRole="InventDose" />
     <NavigationProperty Name="StatusInvent1" Relationship="Self.FK_StatusInvent_StatusInvent" FromRole="StatusInvent" ToRole="StatusInvent1" />
     <NavigationProperty Name="StatusInvent2" Relationship="Self.FK_StatusInvent_StatusInvent" FromRole="StatusInvent1" ToRole="StatusInvent" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Tables">
     <Key>
@@ -227,7 +219,7 @@
     <Key>
       <PropertyRef Name="ld" />
     </Key>
-    <Property Name="ld" Type="Int32" Nullable="false" />
+    <Property Name="ld" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -239,6 +231,7 @@
     <Property Name="lastDateEnter" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Address1" Relationship="Self.FK_Visiters_Address" FromRole="Visiters" ToRole="Address" />
     <NavigationProperty Name="InventDose" Relationship="Self.FK_InventDose_Visiters" FromRole="Visiters" ToRole="InventDose" />
+    <NavigationProperty Name="SpecialInvent" Relationship="Self.FK_SpecialInvent_Visiters" FromRole="Visiters" ToRole="SpecialInvent" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_Visiters_Tables1" FromRole="Visiters" ToRole="Tables" />
   </EntityType>
   <Association Name="FK_Visiters_Address">
@@ -445,6 +438,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_SpecialInvent_Visiters">
+    <End Role="Visiters" Type="Self.Visiters" Multiplicity="1" />
+    <End Role="SpecialInvent" Type="Self.SpecialInvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visiters">
+        <PropertyRef Name="ld" />
+      </Principal>
+      <Dependent Role="SpecialInvent">
+        <PropertyRef Name="IdVisiter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_StatusInvent_StatusInvent">
     <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
     <End Role="StatusInvent1" Type="Self.StatusInvent" Multiplicity="0..1" />
@@ -496,7 +501,6 @@
     <EntitySet Name="SpecialInvent" EntityType="Self.SpecialInvent" />
     <EntitySet Name="StatusDose" EntityType="Self.StatusDose" />
     <EntitySet Name="StatusInvent" EntityType="Self.StatusInvent" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Tables" EntityType="Self.Tables" />
     <EntitySet Name="UserCalander" EntityType="Self.UserCalander" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" />
@@ -568,6 +572,10 @@
     <AssociationSet Name="FK_Rating_Menu" Association="Self.FK_Rating_Menu">
       <End Role="Menu" EntitySet="Menu" />
       <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecialInvent_Visiters" Association="Self.FK_SpecialInvent_Visiters">
+      <End Role="Visiters" EntitySet="Visiters" />
+      <End Role="SpecialInvent" EntitySet="SpecialInvent" />
     </AssociationSet>
     <AssociationSet Name="FK_StatusInvent_StatusInvent" Association="Self.FK_StatusInvent_StatusInvent">
       <End Role="StatusInvent" EntitySet="StatusInvent" />
