@@ -31,17 +31,6 @@ namespace BL.cast
         //for special
         public static SpecialInventDTO ToDTOSpecial(SpecialInvent item)
         {
-<<<<<<< HEAD
-        //    return new SpecialInventDTO()
-        //    {
-        //        Id = item.Id,
-        //        CountOfPeople = item.CountOfPeople,
-        //        //dateEvent = item.dateEvent,
-        //        //kindOfevent = item.kindOfevent,
-        //        //mail = item.mail,
-        //        //name = item.name,
-        //        //phone = item.phone,
-=======
             return new SpecialInventDTO()
             {
                 Id = item.Id,
@@ -52,10 +41,8 @@ namespace BL.cast
                 name = item.name.Trim(),
                 phone = item.phone,
                 isContact=item.isContact,
->>>>>>> a1064408f1a245e71be558c7d7ef40b330cc507a
-
-        //    };
-        //}
+           };
+        }
         ////list to dto
         public static List<InventDoseDTO> ListToDTO(List<InventDose> list)
         {
@@ -98,7 +85,7 @@ namespace BL.cast
                 isContact = item.isContact,
             };
         }
-        list to dal
+        //list to dal
         public static List<InventDose> ListToDAL(List<InventDoseDTO> list)
         {
             return list.Select(x => ToDAL(x)).ToList();

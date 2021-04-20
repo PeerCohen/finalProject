@@ -17,7 +17,7 @@ import { OpenBottomSheetSigninComponent } from '../user/open-bottom-sheet-signin
 export class SelectedUserEntranceComponent implements OnInit {
   worker: any;
   manager: any;
-  degree:boolean=false;
+  degree: boolean = false;
   mySub: Subscription;
   constructor(private _bottomSheet: MatBottomSheet,
     public router: Router,
@@ -59,17 +59,22 @@ export class SelectedUserEntranceComponent implements OnInit {
     this.userService.getOut(new Date()).subscribe(
       res => {
         let ans = res;
+        debugger;
         console.log('יציאה בשעה');
         console.log(this.userService.userName);
-        console.log(this.userService.lastEnterDate);        
+        console.log(this.userService.lastEnterDate);
         this.userService.singIn = true;
         this.userService.userName = '';
         localStorage.setItem('isManager', 'false');
         localStorage.setItem('isEmployee', 'false');
-        localStorage.setItem('isVisiter', 'false');
+        if (localStorage.getItem('isVisiter')) {
+          localStorage.setItem('isVisiter', 'false');
+          window.location.reload();
+        }
         localStorage.clear();
         this.router.navigate(['/home']);
-        //window.location.reload();
+
+
       }
     );
   }

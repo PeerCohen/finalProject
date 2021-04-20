@@ -11,8 +11,17 @@ export class UserCommentComponent implements OnInit {
   list: Comment[]=[];
 
   constructor(public managerService:ManagerService) { }
-
+  deleteCard(l:Comment){
+    this.managerService.deleteUserComment(l).subscribe((res=>
+      {
+       this.getcomment();
+        console.log(res)
+      }))
+  }
   ngOnInit(): void {
+    this.getcomment();
+  }
+  getcomment(){
     this.managerService.getUserComment().subscribe((res=>
       {
         this.list=res;

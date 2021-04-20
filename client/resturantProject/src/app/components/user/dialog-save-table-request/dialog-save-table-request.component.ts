@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class DialogSaveTableRequestComponent implements OnInit {
   date: any;
 
-  constructor(public userService:UserService,@Inject(MAT_DIALOG_DATA) public data: any) { 
+  constructor(public userService:UserService,public dialogRef: MatDialogRef<DialogSaveTableRequestComponent>,@Inject(MAT_DIALOG_DATA) public data: any) { 
     this.date=data.data;
    }
 
@@ -19,5 +19,6 @@ export class DialogSaveTableRequestComponent implements OnInit {
 close(){
   const tabCount = 7;
   this.userService.indexTab = (0) % tabCount;
+  this.dialogRef.close();
 }
 }

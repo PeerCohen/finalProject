@@ -81,7 +81,6 @@ export class VisitersOrderManagementService {
 
   addOrderToCart(item: Menu) {
     if (this.userService.CurrentUser) {
-      debugger;
       item.amount=1;
       this.disableInventCart=false;
       this.fullCart.push(item);

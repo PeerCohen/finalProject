@@ -27,21 +27,25 @@ export class SpecialOrderComponent implements OnInit {
   }
   handleRequest(o:SpecialInvent,event){
     this.editContact='editContactC';
-    this.managerService.updateSpecialOrder(o).subscribe((res) => { window.location.reload();
+    this.managerService.updateSpecialOrder(o).subscribe((res) => { 
+      this.getSpecialOrders();
       var idBtn=event.target.id
       var row=document.getElementById(idBtn.slice(3,1));
       row.style.backgroundColor="red";
   })}
   removeOrder(o){
     this.managerService.deleteSpecialOrder(o).subscribe((res) => {
-      window.location.reload();
+      this.getSpecialOrders();
     })
   }
   ngOnInit(): void {
-    this.managerService.getSpecialOrder().subscribe((res: SpecialInvent[]) => {
-      this.orderList = res;
-      console.log(this.orderList);
-    })
+    this.getSpecialOrders();
+    }
+    getSpecialOrders(){
+      this.managerService.getSpecialOrder().subscribe((res: SpecialInvent[]) => {
+        this.orderList = res;
+        console.log(this.orderList);
+    });
     // this.managerService.specialOrder.subscribe((res: number) => {
     //   this.orderList = res;
     //   console.log(this.orderList);

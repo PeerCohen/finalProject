@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { Comment } from '../modals/comment';
 import { Employee } from '../modals/employee';
 import { ManagerMessege } from '../modals/ManagerMessege';
 import { SpecialInvent } from '../modals/special-invent';
@@ -20,6 +21,9 @@ export class ManagerService {
   EmloyeeToMesseg: ManagerMessege = new ManagerMessege();
   constructor(private http: HttpClient) { }
 
+  deleteUserComment(c:Comment): Observable<any>{
+    return this.http.post<any>(`${this.BASE_URL}/CommentVisiter/removeComment`,c);
+  }
   getUserComment(): Observable<any>{
     return this.http.get<any>(`${this.BASE_URL}/CommentVisiter/GetAllComment`);
   }

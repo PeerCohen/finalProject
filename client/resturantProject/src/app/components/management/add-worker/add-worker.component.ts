@@ -38,6 +38,7 @@ export class AddWorkerComponent implements OnInit  {
       tz: new FormControl('',Validators.required),
       phone: new FormControl('',Validators.required),
       address:new FormControl('',Validators.required),
+      degree:new FormControl('',Validators.required),      
 
     });
   }
@@ -48,6 +49,8 @@ export class AddWorkerComponent implements OnInit  {
     this.workerData.Tz = this.formGroupAddWorker.controls.tz.value;
     this.workerData.Address = this.formGroupAddWorker.controls.address.value;
     this.workerData.Phone = this.formGroupAddWorker.controls.phone.value;
+    this.workerData.idEmployeeType = this.formGroupAddWorker.controls.degree.value;
+
      this.managerService.addNewWorker(this.workerData).subscribe(
       (res: any) => {
         this.succeeded = res;

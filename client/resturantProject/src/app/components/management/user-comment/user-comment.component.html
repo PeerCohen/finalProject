@@ -17,5 +17,10 @@
                 דירוג בציון : {{l.mark==0?'לא דורג':l.mark+'%'}}
             </div>
         </mat-card-content>
+        <mat-card-actions>
+            <button mat-stroked-button color="primary" (click)="deleteCard(l)">
+                <mat-icon >delete</mat-icon>
+            </button>
+        </mat-card-actions>
     </mat-card>
 </div>

@@ -50,9 +50,9 @@ export class MenuService {
   {
     return this.http.get<Array<Menu>>(`${this.URL}/GetFavoriteMenu`);
   }
-  getMenuNewByCategory(id:number):Observable<Menu[]> {
-    return this.http.get<Menu[]>(`${this.URL}/GetMenuNewByCategory/${id}`);
-  }
+  // getMenuNewByCategory(id:number):Observable<Menu[]> {
+  //   return this.http.get<Menu[]>(`${this.URL}/GetMenuNewByCategory/${id}`);
+  // }
   getMenuFavoriteByCategory(id:number):Observable<Menu[]> {
     return this.http.get<Menu[]>(`${this.URL}/GetMenuFavoriteByCategory/${id}`);
   }

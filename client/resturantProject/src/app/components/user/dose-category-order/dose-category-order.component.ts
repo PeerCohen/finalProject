@@ -29,7 +29,7 @@ export class DoseCategoryOrderComponent implements OnInit {
     this.menuService.subjectMenu.subscribe((res: number) => {
       this.InputIdCategory = res;
       console.log(this.InputIdCategory);
-      this.getMenuDetails();
+     this.getMenuDetails();
     })
   }
   focusTab(index = 2) {
@@ -37,11 +37,30 @@ export class DoseCategoryOrderComponent implements OnInit {
     this.userService.indexTab = (index) % tabCount;
   }
   getMenuDetails() {
-    debugger;
-    if(this.menuService.menuType==="new")
-    {
-      console.log(this.InputIdCategory);
-      this.menuService.getMenuNewByCategory(this.InputIdCategory).subscribe(
+    // if(this.menuService.menuType==="new")
+    // {
+    //   console.log(this.InputIdCategory);
+    //   this.menuService.getMenuNewByCategory(this.InputIdCategory).subscribe(
+    //     (res: any) => {
+    //       this.menuDetailsByCategory = res;
+    //       console.log(this.menuDetailsByCategory)
+    //     },
+    //     (err) => {
+    //       this.error = err;
+    //     });
+    // }
+    // if(this.menuService.menuType==="favorite"){
+    //   this.menuService.getMenuFavoriteByCategory(this.InputIdCategory).subscribe(
+    //     (res: any) => {
+    //      // this.menuDetailsByCategory = res;
+    //       console.log(this.menuDetailsByCategory)
+    //     },
+    //     (err) => {
+    //       this.error = err;
+    //     });
+    // }
+    // else{
+      this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(
         (res: any) => {
           this.menuDetailsByCategory = res;
           console.log(this.menuDetailsByCategory)
@@ -49,27 +68,6 @@ export class DoseCategoryOrderComponent implements OnInit {
         (err) => {
           this.error = err;
         });
-    }
-    if(this.menuService.menuType==="favorite"){
-      this.menuService.getMenuFavoriteByCategory(this.InputIdCategory).subscribe(
-        (res: any) => {
-         // this.menuDetailsByCategory = res;
-          console.log(this.menuDetailsByCategory)
-        },
-        (err) => {
-          this.error = err;
-        });
-    }
-    else{
-      this.menuService.getMenuByCategory(this.InputIdCategory).subscribe(
-        (res: any) => {
-          //this.menuDetailsByCategory = res;
-          console.log(this.menuDetailsByCategory)
-        },
-        (err) => {
-          this.error = err;
-        });
-    }
 
   }
 

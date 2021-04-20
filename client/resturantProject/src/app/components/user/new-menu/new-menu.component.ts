@@ -19,9 +19,9 @@ export class NewMenuComponent implements OnInit {
 newMenue: Menu[]= new Array();
 open = false;
   ngOnInit(): void {
- this.menuService.getANewMenu().subscribe(res=>{  console.log(res);
-  debugger;
-this.newMenue= res});
+//  this.menuService.getANewMenu().subscribe(res=>{  console.log(res);
+//   debugger;
+// this.newMenue= res});
 console.log(this.newMenue)
 this.getCategoryList();
   }

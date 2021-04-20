@@ -6,5 +6,7 @@
     </div>
     <h2>שם המזמין: {{name}}</h2>
     <hr />
-    <app-table-order></app-table-order>
+    <app-table-order (closeform)="getEmit($event)"></app-table-order>
+    <button mat-flat-button color=primary (click)="goBack()">ביטול וחזרה</button>
+
 </div>

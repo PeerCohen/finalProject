@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
 import { DialogSaveTableComponent } from '../dialog-save-table/dialog-save-table.component';
 import { DialogSendingComponent } from '../dialog-sending/dialog-sending.component';
@@ -14,7 +15,7 @@ export class OptionOrderComponent implements OnInit {
   isOpen: boolean = false;
   addressVisiter: any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,15 +23,15 @@ export class OptionOrderComponent implements OnInit {
   setTableOrder() {
     const dialogRef = this.dialog.open(DialogSaveTableComponent);
     dialogRef.afterClosed().subscribe(result => {
-      this.addressVisiter = result
-      this.optionOrder = "הזמנת שולחן";
-      this.isOpen = true;
+      this.router.navigate(['/home']);
+      // this.addressVisiter = result
+      // this.optionOrder = "הזמנת שולחן";
+      // this.isOpen = true;
     });
 
   }
   setSending() {
     const dialogRef = this.dialog.open(DialogSendingComponent);
-    debugger;
     dialogRef.afterClosed().subscribe(result => {
       this.addressVisiter = result
       this.optionOrder = "משלוח";

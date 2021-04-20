@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DialogSaveTableRequestComponent } from '../dialog-save-table-request/dialog-save-table-request.component';
 
 @Component({
@@ -11,9 +12,11 @@ import { DialogSaveTableRequestComponent } from '../dialog-save-table-request/di
 export class TableOrderComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
+  @Output() closeform = new EventEmitter();
+  close: boolean = false;
 
   orderTableFrom: FormGroup;
-  constructor(public dialog:MatDialog) {
+  constructor(public dialog:MatDialog,private router: Router) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear-currentYear);
     this.maxDate = new Date(currentYear + 7, 0, 21);
@@ -34,7 +37,14 @@ export class TableOrderComponent implements OnInit {
 
   onFormSubmit(){
     const dialogRef = this.dialog.open(DialogSaveTableRequestComponent,{ data: this.orderTableFrom.controls.date.value })
-
+    dialogRef.afterClosed().subscribe(result => {
+    this.router.navigate(['/home']);
+    this.closeform.emit(this.close);
+    });
+  }
+  goBack(){
+    this.router.navigate(['/home']);
+    this.closeform.emit(this.close);
   }
   getErrorMessageDate(){
     if (this.orderTableFrom.controls.date.hasError('required')) {
