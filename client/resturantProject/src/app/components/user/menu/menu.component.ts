@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
   @Input() isMiniCartOpen: boolean = false;
   optionDetails: string;
   InRestaurant:boolean;
+  address: string='';
 
 
   constructor(private visitersOrderManagementService: VisitersOrderManagementService) {
@@ -34,11 +35,14 @@ export class MenuComponent implements OnInit {
     else if (this.option == "משלוח") {
       this.optionDetails = "זמן הכנה עד כ: 30 דקות";
       this.visitersOrderManagementService.idStatusInvent=2;
+      this.address=this.visitersOrderManagementService.addressUserOrder
 
     }
-    else 
+    else {
       this.optionDetails = " ";
       this.visitersOrderManagementService.idStatusInvent=1;
+    }
+      
 
   }
   cartIsEmpty() {

@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/services/user.service';
+import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
 
 @Component({
   selector: 'app-dialog-sending',
@@ -11,12 +13,13 @@ export class DialogSendingComponent implements OnInit {
   name:string;
   address:string;
 
-  constructor(public userService:UserService,public dialogRef: MatDialogRef<DialogSendingComponent>
+  constructor(public visiterOrder:VisitersOrderManagementService,private router: Router,public userService:UserService,public dialogRef: MatDialogRef<DialogSendingComponent>
     ,@Inject(MAT_DIALOG_DATA) public data: any) { 
     data=this.address
    }
-   getEmit(close:boolean){
-
+   getEmit(close:string){
+console.log(close);
+this.visiterOrder.addressUserOrder=close;
   }
 
   ngOnInit(): void {
@@ -26,9 +29,10 @@ export class DialogSendingComponent implements OnInit {
   goForOrder(){
 
     this.data=this.address
+    this.dialogRef.close(false);
 
   }
   cancel(): void {
-      this.dialogRef.close();    
+    this.dialogRef.close(true);  
   }
 }

@@ -24,6 +24,7 @@ export class MenuByCategotyComponent implements OnInit {
     this.getCategoryList()
   }
   getMenuDetails(id: number) {
+    this.menuService.displayImg=true;
     this.categoryId = id;
     this.menuService.subjectMenu.next(this.categoryId);
   }

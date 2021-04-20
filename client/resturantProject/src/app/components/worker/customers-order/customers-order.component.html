@@ -11,6 +11,7 @@
             <th>מספר הזמנה</th>
             <th>שם המזמין</th>
             <th>מנה</th>
+            <th> כתובת משלוח</th>
             <th></th>
         </tr>
         <tr *ngFor="let o of sendOrderList">
@@ -21,6 +22,7 @@
                 <td>{{m.menuName}}</td>
                 <td><span>כמות :</span> {{m.amount}}</td>
             </div>
+            <td>{{o.address}}</td>
             <td>
                 <button mat-flat-button color="primary" (click)="readyMenu(o)">בטיפול</button>
             </td>

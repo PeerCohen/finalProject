@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/shared/services/menu.service';
 
 @Component({
   selector: 'app-display-menu',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisplayMenuComponent implements OnInit {
 
   open: boolean = false;
-  constructor() { }
+  constructor(public menuService:MenuService) { }
 
   ngOnInit(): void {
   }

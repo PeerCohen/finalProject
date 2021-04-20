@@ -59,7 +59,6 @@ export class SelectedUserEntranceComponent implements OnInit {
     this.userService.getOut(new Date()).subscribe(
       res => {
         let ans = res;
-        debugger;
         console.log('יציאה בשעה');
         console.log(this.userService.userName);
         console.log(this.userService.lastEnterDate);

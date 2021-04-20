@@ -16,9 +16,8 @@ label {
 }
 
 .edit {
-    position: relative;
-    left: -43%;
-    top: -236px;
+    /* left: -40%; */
+    margin-top: 2%;
 }
 
 .pay {

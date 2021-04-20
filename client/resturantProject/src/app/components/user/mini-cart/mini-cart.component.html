@@ -2,7 +2,7 @@
     <p class="title-cart">סיכום הזמנה</p>
     <p class="sub-title-cart">שם המזמין : {{userName}}</p>
     <hr>
-    <div *ngFor="let item of itemsInCart;let index=index">
+    <div *ngFor="let item of visitersOrderManagementService.fullCart;let index=index">
         <mat-card>
             <mat-card-header>
                 <mat-card-title>{{item.nameDose}}</mat-card-title>

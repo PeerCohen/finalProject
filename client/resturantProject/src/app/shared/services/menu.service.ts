@@ -14,6 +14,7 @@ export class MenuService {
   menuType="regular";
   URL: string = "http://localhost:51437/api/Menu";
   URL_INVENT="http://localhost:51437/api/InventDose";
+  displayImg: boolean;
 
   constructor(private http: HttpClient) { }
 

@@ -1,4 +1,4 @@
 <mat-form-field appearance="outline">
     <mat-label>כתובת</mat-label>
-    <input matInput ngx-google-places-autocomplete #placesRef="ngx-places" [(ngModel)]="address" (onAddressChange)="handleAddressChange($event)" />
+    <input matInput ngx-google-places-autocomplete #placesRef="ngx-places" [(ngModel)]="visiter.addressUserOrder" (onAddressChange)="handleAddressChange($event)" />
 </mat-form-field>

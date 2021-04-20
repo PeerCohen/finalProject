@@ -14,5 +14,7 @@ export class InventDose {
       statusName:string;
       MenuName:string;
       visiterName:string;
-      feedback:string
+      feedback:string;
+      address:string;
+
  }

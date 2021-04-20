@@ -8,7 +8,7 @@
         <app-address-sending (close)="getEmit($event)"></app-address-sending>
     </div>
     <div>
-        <button mat-stroked-button color="primary" (click)="cancel()">ביטול</button>
+        <button mat-stroked-button color="primary" [mat-dialog-close]="data.close" (click)="cancel()">ביטול</button>
         <button mat-stroked-button color="primary" (click)="goForOrder()" cdkFocusInitial>
             <mat-icon color="primary">navigate_before
             </mat-icon>אישור , המשך

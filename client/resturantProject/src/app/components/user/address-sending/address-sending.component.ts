@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, ViewChild } from '@angular/core';
-import { EventEmitter } from 'events';
+import { Component, OnInit, Output, ViewChild ,EventEmitter} from '@angular/core';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
+import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
 
 @Component({
   selector: 'app-address-sending',
@@ -13,7 +13,7 @@ export class AddressSendingComponent implements OnInit {
   address:string='';
   @Output() close = new EventEmitter();
 
-  constructor() {
+  constructor(public visiter:VisitersOrderManagementService) {
     
    }
 

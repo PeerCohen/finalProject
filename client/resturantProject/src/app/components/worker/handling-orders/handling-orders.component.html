@@ -8,6 +8,7 @@
             <h3>הזמנות בהכנה</h3>
         </tr>
         <tr class="subTitle">
+            <th>סוג הזמנה</th>
             <th>תאריך הזמנה</th>
             <th>מספר הזמנה</th>
             <th>שם המזמין</th>
@@ -15,6 +16,7 @@
             <th></th>
         </tr>
         <tr *ngFor="let o of prepaerlistOrder">
+            <td>{{o.statusName}} {{o.address}}</td>
             <td>{{o.dateInvent|date : "d/M/yy HH:mm"}}</td>
             <td>{{o.id}}</td>
             <td>{{o.visiterName}}</td>

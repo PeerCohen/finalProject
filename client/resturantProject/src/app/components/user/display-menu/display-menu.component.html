@@ -2,6 +2,11 @@
     <div class="menu-by-categoty">
         <app-menu-by-categoty></app-menu-by-categoty>
     </div>
+    <div class="div-display" *ngIf="!menuService.displayImg">
+        <img class="img-menu" [src]="' ../../assets/images/display-menu/תפריט.png'">
+        <div class="background"></div>
+        <img class="img-display" [src]="'../../assets/images/menu-swiper.jpg'" />
+    </div>
     <div class="dose-category-order">
         <app-dose-category-order></app-dose-category-order>
         <!-- <app-dose-category></app-dose-category> -->

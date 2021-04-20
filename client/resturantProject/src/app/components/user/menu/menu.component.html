@@ -1,6 +1,7 @@
 <div class="row">
     <div class="kind-option" *ngIf="!IsInRestaurant">
         <div class="in-kind-option">{{option}} </div>|
+        <div class="in-kind-option" *ngIf="address!=''">כתובת: {{address}} </div>|
         <div class="in-kind-option">
             <mat-icon>hourglass_empty</mat-icon>{{optionDetails}}
         </div>|

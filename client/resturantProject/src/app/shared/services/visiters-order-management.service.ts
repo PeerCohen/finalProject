@@ -21,6 +21,7 @@ export class VisitersOrderManagementService {
   disableInventCart: boolean;
   idStatusInvent: number=0;
   disablePrePaymentCart: boolean;
+  addressUserOrder:string='';
 
   constructor(public httpClient: HttpClient, private userService: UserService) {
     // if(this.userService.InventDose.inventDetails!=null)
@@ -62,7 +63,7 @@ export class VisitersOrderManagementService {
     vis.idVisiter = user;
     vis.IdStatusInvent = this.idStatusInvent;
     vis.IdStatusDose=3;
-
+    vis.address=this.addressUserOrder;
     vis.inventDetails = [];
 
 
