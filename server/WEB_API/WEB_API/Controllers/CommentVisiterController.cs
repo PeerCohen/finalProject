@@ -17,7 +17,9 @@ namespace WEB_API.Controllers
         [Route("GetAllComment")]
         public List<CommentVisiterDTO> GetAllComment()
         {
-            return CommentVisiterBL.GetAll();
+            var l=CommentVisiterBL.GetAll();
+            return l;
+                
         }
 
         // GET: api/CommentVisiter/5

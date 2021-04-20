@@ -1,4 +1,4 @@
-<form [formGroup]="orderTableFrom" ngsubmit="onSubmit()">
+<form [formGroup]="orderTableFrom" (ngSubmit)="onFormSubmit()">
     <mat-form-field appearance="fill">
         <mat-label>שם</mat-label>
         <input matInput type="text" formControlName="name" required>
@@ -16,12 +16,12 @@
         <mat-label>מספר האנשים</mat-label>
         <input matInput type="number" formControlName="countOfPeople" required>
     </mat-form-field>
-    <!-- <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label>תאריך</mat-label>
         <input matInput [matDatepicker]="picker1" formControlName="date" required>
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field> -->
+    </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>שעה</mat-label>
         <input matInput type="time" formControlName="time" required>

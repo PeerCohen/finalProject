@@ -29,12 +29,17 @@ export class MenuComponent implements OnInit {
 
     if (this.option == "איסוף מהסניף") {
       this.optionDetails = "זמן הגעה עד כ: 105 דקות";
+      this.visitersOrderManagementService.idStatusInvent=3;
     }
     else if (this.option == "משלוח") {
       this.optionDetails = "זמן הכנה עד כ: 30 דקות";
+      this.visitersOrderManagementService.idStatusInvent=2;
+
     }
     else 
       this.optionDetails = " ";
+      this.visitersOrderManagementService.idStatusInvent=1;
+
   }
   cartIsEmpty() {
     return this.visitersOrderManagementService.cartIsEmpty();

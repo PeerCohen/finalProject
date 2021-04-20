@@ -2,11 +2,13 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import {
   IPayPalConfig,
   ICreateOrderRequest
 } from 'ngx-paypal';
+import { DialogForPaymentComponent } from '../../in-resuarant/dialog-for-payment/dialog-for-payment.component';
 
 @Component({
   selector: 'app-payment',
@@ -15,7 +17,7 @@ import {
 })
 
 export class PaymentComponent implements OnInit {
-  constructor(public router:Router){}
+  constructor(public router:Router,public dialog :MatDialog){}
     
 
   public payPalConfig?: IPayPalConfig;
@@ -68,7 +70,8 @@ export class PaymentComponent implements OnInit {
     this.router.navigate(['/home'])
   }
   payment(){
-    alert("בוצע בהצלחה")
+    const dialogRef = this.dialog.open(DialogForPaymentComponent);
+
     this.router.navigate(['/home'])
   }
 }

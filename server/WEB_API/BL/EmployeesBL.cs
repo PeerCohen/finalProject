@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using WEB_API.Models;
+
 
 namespace BL
 {
@@ -30,6 +32,15 @@ namespace BL
         public static void Add(EmployeesDTO employeesTypes)
         {
             EmployeesDAL.Add(EmployeesCast.ToDAL(employeesTypes));
+        }
+        public static void addmessageForHelp(string message, int num)
+        {
+            List<HelpMessage> messageList = new List<HelpMessage>();
+            var m = new HelpMessage();
+            m.message = message;
+            m.numTable = num;
+            messageList.Add(m);
+
         }
 
         public static EmployeesDTO login(string username, string password)
@@ -112,6 +123,13 @@ namespace BL
                     else
                         return null;
 
+                }
+                Visiters visiter = db.Visiters.FirstOrDefault(e => e.ld == id);
+                if (visiter != null)
+                {
+                    visiter.lastDateEnter = date;
+                    db.Entry(visiter).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
                 }
                 return null;
 
@@ -340,7 +358,7 @@ namespace BL
         {
             using (restaurantEntities db = new restaurantEntities())
             {
-                List<managerMessage> L = db.managerMessage.Where(m =>  m.IdEmployee == IdUser).ToList();
+                List<managerMessage> L = db.managerMessage.Where(m => m.IdEmployee == IdUser).ToList();
                 return managerMessageDTO.ListToDTO(L);
             }
         }

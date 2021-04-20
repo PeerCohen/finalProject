@@ -18,15 +18,20 @@ namespace BL.cast
                 Id = item.Id,
                 IdVisiter = item.IdVisiter,
                 IdEmployee = item.IdEmployee,
-                Status = item.Id,
+                IdStatusDose = item.IdStatusDose,
+                IdStatusInvent = item.IdStatusInvent,
                 IdTable = item.IdTable,
                 DateInvent = item.DateInvent,
-                InventDetails = InventDetailsCast.ListToDTO(item.InventDetails.ToList())
+                Feedback=item.Feedback,
+                rate=item.rate,
+                //InventDetails = { },
+                //InventDetails = InventDetailsCast.ListToDTO(item.InventDetails.ToList())
             };
         }
         //for special
         public static SpecialInventDTO ToDTOSpecial(SpecialInvent item)
         {
+<<<<<<< HEAD
         //    return new SpecialInventDTO()
         //    {
         //        Id = item.Id,
@@ -36,6 +41,18 @@ namespace BL.cast
         //        //mail = item.mail,
         //        //name = item.name,
         //        //phone = item.phone,
+=======
+            return new SpecialInventDTO()
+            {
+                Id = item.Id,
+                CountOfPeople = item.CountOfPeople,
+                dateEvent = item.dateEvent,
+                kindOfevent = item.kindOfevent.Trim(),
+                mail = item.mail,
+                name = item.name.Trim(),
+                phone = item.phone,
+                isContact=item.isContact,
+>>>>>>> a1064408f1a245e71be558c7d7ef40b330cc507a
 
         //    };
         //}
@@ -57,9 +74,12 @@ namespace BL.cast
                 Id = item.Id,
                 IdVisiter = item.IdVisiter,
                 IdEmployee = item.IdEmployee,
-                IdStatusDose = item.Status,
+                IdStatusDose = item.IdStatusDose,
+                IdStatusInvent=item.IdStatusInvent,
                 DateInvent = item.DateInvent,
                 IdTable = item.IdTable,
+                Feedback=item.Feedback,
+                rate=item.rate,
                 InventDetails = InventDetailsCast.ListToDAL(item.InventDetails.ToList())
             };
         }
@@ -75,6 +95,7 @@ namespace BL.cast
                 mail = item.mail,
                 name = item.name,
                 phone = item.phone,
+                isContact = item.isContact,
             };
         }
         list to dal

@@ -43,7 +43,7 @@
 
                     <mat-form-field appearance="outline">
                         <mat-label>כתובת</mat-label>
-                        <input matInput ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" />
+                        <input matInput formControlName="address" ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" />
 
                     </mat-form-field>
                     <br />

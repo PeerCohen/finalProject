@@ -23,6 +23,7 @@ td {
     direction: rtl;
 }
 
+
 /* tr:nth-child(even) {
     background-color: #f2f2f2;
 } */
@@ -39,10 +40,11 @@ td {
     top: 25px;
     right: 52%;
 }
-.bordered{
-background-color:gray;
 
+.bordered {
+    background-color: rgb(202, 199, 199);
 }
-.greyedOut{
+
+.greyedOut {
     background-color: #fbf8f8;
 }

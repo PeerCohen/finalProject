@@ -8,6 +8,16 @@
     text-align: center;
 }
 
+.wrapper-cart button:last-child {
+    margin-right: 2%;
+}
+
+.edit {
+    position: absolute;
+    left: 5%;
+    bottom: 39%;
+}
+
 .mat-card {
     border: solid;
     border-width: thin;

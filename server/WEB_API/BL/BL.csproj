@@ -66,6 +66,7 @@
     <Compile Include="CurrentEmployeeBL.cs" />
     <Compile Include="EmployeesBL.cs" />
     <Compile Include="EmployeesTypesBL.cs" />
+    <Compile Include="HelpMessage.cs" />
     <Compile Include="InventDoseBL.cs" />
     <Compile Include="MenuBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

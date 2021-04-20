@@ -13,6 +13,11 @@ html {
     user-select: none;
 }
 
+.mat-dialog-container {
+    -webkit-appearance: none;
+    height: auto !important;
+}
+
 .icon-party {
     display: inline;
     color: #8c0f29;

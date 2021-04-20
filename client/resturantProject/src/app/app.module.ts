@@ -93,7 +93,6 @@ import { AddressSendingComponent } from './components/user/address-sending/addre
 import { DisplayMenuComponent } from './components/user/display-menu/display-menu.component';
 import { DoseCategoryOrderComponent } from './components/user/dose-category-order/dose-category-order.component';
 import { MenuSwiperComponent } from './components/user/menu-swiper/menu-swiper.component';
-import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { OpenBottomSheetLoginComponent } from './components/user/open-bottom-sheet-login/open-bottom-sheet-login.component';
 import { OpenBottomSheetSigninComponent } from './components/user/open-bottom-sheet-signin/open-bottom-sheet-signin.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -131,8 +130,12 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { SwiperModule } from 'swiper/angular';
 import { ErrorDialogCounthandleDoseComponent } from './components/worker/error-dialog-counthandle-dose/error-dialog-counthandle-dose.component';
 import { CalendarDialogComponent } from './components/worker/calendar-dialog/calendar-dialog.component';
-
-
+import { DialodhandleComponent } from './components/worker/dialodhandle/dialodhandle.component';
+import { UserCommentComponent } from './components/management/user-comment/user-comment.component';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { PackOrderforPaymentComponent } from './components/user/pack-orderfor-payment/pack-orderfor-payment.component';
+import { DialogSaveTableRequestComponent } from './components/user/dialog-save-table-request/dialog-save-table-request.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -230,12 +233,19 @@ import { CalendarDialogComponent } from './components/worker/calendar-dialog/cal
     NewMenuComponent,
     CategoryMenuSwiperComponent,
     ErrorDialogCounthandleDoseComponent,
-    CalendarDialogComponent
+    CalendarDialogComponent,
+    DialodhandleComponent,
+    UserCommentComponent,
+    PackOrderforPaymentComponent,
+    DialogSaveTableRequestComponent
     
 
 
   ],
   imports: [
+    
+    MatDatepickerModule,
+    MatNativeDateModule,
     SwiperModule,
     MatBadgeModule,
     BrowserModule,
@@ -259,7 +269,6 @@ import { CalendarDialogComponent } from './components/worker/calendar-dialog/cal
     NgbModule,
     MatTableModule,
     MatSidenavModule,
-    MatDatepickerModule,
     MatButtonToggleModule,
     MatBottomSheetModule,
     MatToolbarModule,

@@ -1,11 +1,11 @@
 <div>
     <div class="">
-        <span><div class="menu-by-categoty" (click)=openDetalis()>
+        <span><div class="menu-by-categoty" (click)="openDetalis()">
             <div style="display: inline;">
             <div class="main_sidebar">
                 
                 <div class=" notification category-div" *ngFor="let item of categoryList" (click)=" getMenuDetails(item.id) ">
-                    <span class="badge">חדש!!</span>
+                    <span class="badge">חדש!!!</span>
         <div class='image-div'>
             <img class='image' [src]="'../../assets/images/category/'+item.id+'.jpg'">
         </div>
@@ -22,6 +22,8 @@
 </div>
 
 <div class="div-display">
+    <img class="img-menu" [src]="' ../../assets/images/display-menu/תפריט.png'">
+    <div class="background"></div>
     <img class="img-display" [src]="'../../assets/images/menu-swiper.jpg'" />
 </div>
 
@@ -31,5 +33,5 @@
 </div>
 </div>
 <div class="dose-category-order" *ngIf="open">
-    <app-dose-category></app-dose-category>
+    <app-dose-category-order></app-dose-category-order>
 </div>

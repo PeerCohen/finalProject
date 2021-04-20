@@ -1,3 +1,6 @@
+<div class="takeOrder">
+    <button mat-flat-button color="primary" (click)="showlistOfprepaer()">רשימת הזמנות בטיפול</button>
+</div>
 <div class="talbe">
     <table>
         <tr class="title">
@@ -16,10 +19,10 @@
             <td>{{o.visiterName}}</td>
             <div *ngFor="let m of o.inventDetails">
                 <td>{{m.menuName}}</td>
-                <td>כמות: {{m.amount}}</td>
+                <td><span>כמות :</span> {{m.amount}}</td>
             </div>
             <td>
-                <button mat-flat-button color="primary">בטיפול</button>
+                <button mat-flat-button color="primary" (click)="readyMenu(o)">בטיפול</button>
             </td>
         </tr>
     </table>
@@ -42,10 +45,10 @@
             <td>{{o.visiterName}}</td>
             <div *ngFor="let m of o.inventDetails">
                 <td>{{m.menuName}}</td>
-                <td>x{{m.amount}}</td>
+                <td><span>כמות :</span>{{m.amount}}</td>
             </div>
             <td>
-                <button mat-flat-button color="primary">בטיפול</button>
+                <button mat-flat-button color="primary" (click)="readyMenu(o)">בטיפול</button>
             </td>
         </tr>
     </table>
@@ -68,10 +71,10 @@
             <td>{{o.visiterName}}</td>
             <div *ngFor="let m of o.inventDetails">
                 <td>{{m.menuName}}</td>
-                <td>x{{m.amount}} </td>
+                <td><span>כמות :</span>{{m.amount}} </td>
             </div>
             <td>
-                <button mat-flat-button color="primary">בטיפול</button>
+                <button mat-flat-button color="primary" (click)="readyMenu(o)">בטיפול</button>
             </td>
         </tr>
     </table>

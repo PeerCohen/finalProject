@@ -1,0 +1,27 @@
+mat-card {
+    width: 35%;
+    height: 160px;
+    margin: 5%;
+    background: #f7f7f770;
+}
+
+.date {
+    position: absolute;
+    right: 78%;
+    margin-bottom: 5%;
+}
+
+mat-card-content {
+    margin-top: 4%;
+}
+
+mat-card-content .userMark {
+    font-size: initial;
+    text-align: center;
+}
+
+mat-card-content .comment {
+    font-size: initial;
+    text-align: center;
+    margin-bottom: 5%;
+}

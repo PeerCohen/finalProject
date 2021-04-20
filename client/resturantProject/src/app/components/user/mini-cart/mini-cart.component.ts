@@ -17,15 +17,17 @@ import { Router } from '@angular/router';
 export class MiniCartComponent implements OnInit {
 
 
-  itemsInCart: InventDetails[];
+  itemsInCart: any[]=[];
   menuDetails: Menu[] = [];
   userName: string;
   disableInvent: boolean = false;
   closeCart: any;
+  Totalprice: number;
+  isAcceptance: boolean;
 
 
   constructor(
-    private visitersOrderManagementService: VisitersOrderManagementService,
+    public visitersOrderManagementService: VisitersOrderManagementService,
     private userService: UserService, private menu: MenuService,
     private dialog: MatDialog,
     private router: Router
@@ -39,28 +41,48 @@ export class MiniCartComponent implements OnInit {
     this.userName = currentUser.firstName + " " + currentUser.lastName;
 
   }
+  getTotal() {
+    if (this.itemsInCart&&this.itemsInCart.length>0) {
+      this.Totalprice = 0;
+      this.itemsInCart.forEach(item => {
+        this.Totalprice += item.price * item.amount
+      });
+      return this.Totalprice;
+    }
 
+  }
   addProduct(item) {
-    item.amount++;
-    this.visitersOrderManagementService.plusProductAmount(item.idMenu);
+    //item.amount++;
+    debugger;
+    this.visitersOrderManagementService.plusProductAmount(item.id);
   }
   addInvent() {
-    this.visitersOrderManagementService.addInvent().subscribe(res => {
-    })
-    this.router.navigate(['/payment']);
+    //this.router.navigate(['/prePayment']);
+    // this.visitersOrderManagementService.addInvent().subscribe(res => {
+    // })
+    // this.router.navigate(['/payment']);
+    this.visitersOrderManagementService.disablePrePaymentCart=true;  
+    this.visitersOrderManagementService.disableInventCart=true;
+    // this.visitersOrderManagementService.fullCart=[];
   }
   lessProduct(item) {
     if (item.amount > 1)
-      item.amount--;
-    this.visitersOrderManagementService.MinusProductAmount(item.idMenu);
+     // item.amount--;
+    this.visitersOrderManagementService.MinusProductAmount(item.id);
+  }
+  removeOrder(){
+    this.itemsInCart = [];
+    this.visitersOrderManagementService.fullCart=[];
+    this.visitersOrderManagementService.disableInventCart = true;
+
   }
   openDialogRemove(itemId, index) {
     console.log(this.itemsInCart.length)
-    var dialog = this.dialog.open(RemoveProductComponent, { data: { itemId, index, close: this.closeCart } });
+    var dialog = this.dialog.open(RemoveProductComponent, { data: { itemId, index, 0:0, close: this.closeCart } });
     dialog.afterClosed().subscribe(result => {
       this.closeCart = result;
       if (this.itemsInCart.length == 0)
-        this.disableInvent = true;
+        this.visitersOrderManagementService.disableInventCart = true;
       console.log(this.closeCart);
       console.log(this.itemsInCart.length)
 

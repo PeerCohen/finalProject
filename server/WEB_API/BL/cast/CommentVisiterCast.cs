@@ -15,8 +15,10 @@ namespace BL.cast
             return new CommentVisiterDTO()
             {
                 id = item.id,
-                idvisiter = item.idvisiter,
-                Comment = item.Comment
+                date = item.date,
+                mark = item.mark,
+                Comment = item.Comment,
+                Name=item.Name
 
             };
         }
@@ -31,8 +33,10 @@ namespace BL.cast
             return new CommentVisiter()
             {
                 id = item.id,
-                idvisiter = item.idvisiter,
-                Comment = item.Comment
+                date = DateTime.Today,
+                mark=item.mark,
+                Comment = item.Comment,
+                Name=item.Name
             };
         }
         //list to dal

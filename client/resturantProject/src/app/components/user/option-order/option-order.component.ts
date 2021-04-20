@@ -32,6 +32,7 @@ export class OptionOrderComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogSendingComponent);
     dialogRef.afterClosed().subscribe(result => {
       this.addressVisiter = result
+      debugger;
       this.optionOrder = "משלוח";
       this.isOpen = true;
     });

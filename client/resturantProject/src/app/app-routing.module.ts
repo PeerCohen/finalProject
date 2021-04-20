@@ -28,14 +28,19 @@ import { ManagerMassegeComponent } from './components/management/manager-massege
 import { RestaurantHomeComponent } from './components/in-resuarant/restaurant-home/restaurant-home.component';
 import { RestauranTableComponent } from './components/in-resuarant/restauran-table/restauran-table.component';
 import { PaymentInRestaurantComponent } from './components/in-resuarant/payment-in-restaurant/payment-in-restaurant.component';
+import { PackOrderforPaymentComponent } from './components/user/pack-orderfor-payment/pack-orderfor-payment.component';
 
 
 
 const routes: Routes = [
   {
+    path: "prePayment",
+    component: PackOrderforPaymentComponent,
+
+  },
+  {
     path: "swiper",
     component: MenuSwiperComponent,
-
   },
   {
     path: "option-order",

@@ -17,7 +17,6 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Visiters()
         {
-            this.CommentVisiter = new HashSet<CommentVisiter>();
             this.InventDose = new HashSet<InventDose>();
         }
     
@@ -33,8 +32,6 @@ namespace DAL
         public Nullable<System.DateTime> lastDateEnter { get; set; }
     
         public virtual Address Address1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CommentVisiter> CommentVisiter { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InventDose> InventDose { get; set; }
         public virtual Tables Tables { get; set; }

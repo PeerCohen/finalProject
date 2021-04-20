@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { InventDose } from '../modals/invent-dose';
 
 @Injectable({
@@ -14,5 +14,11 @@ export class EmployeeManagerService {
   getAllVisiterOrder():Observable<InventDose[]>{
   return this.http.get<InventDose[]>(`${this.URL}/GetAllInventDose`);
 }
+  getAllWaitingVisiterOrder():Observable<InventDose[]>{
+    return this.http.get<InventDose[]>(`${this.URL}/GetAllWaitingInventDose`);
+  }
+  getAllPrepaerVisiterOrder(id):Observable<InventDose[]>{
+    return this.http.get<InventDose[]>(`${this.URL}/GetAllPrepaerInventDose/${id}`);
+  }
 
 }

@@ -17,6 +17,10 @@ export class VisitersOrderManagementService {
   subjectCart = new Subject();
   cart: InventDetails[] = [];
   fullCart:any[]=[];
+  Totalprice: number=0;
+  disableInventCart: boolean;
+  idStatusInvent: number=0;
+  disablePrePaymentCart: boolean;
 
   constructor(public httpClient: HttpClient, private userService: UserService) {
     // if(this.userService.InventDose.inventDetails!=null)
@@ -31,29 +35,47 @@ export class VisitersOrderManagementService {
     debugger;
     //this.cart.remove(item);
   }
-  addComment(comment:string): Observable<any>{
-    var newComment=new Comment();
-    newComment.Comment=comment;
-    newComment.idvisiter=this.idCurrentUser ;
+  addComment(comment:Comment): Observable<any>{
+    //var newComment=new Comment();
+   // newComment.Comment=comment;
+    //newComment.idvisiter=this.idCurrentUser ;
     debugger;
-    return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,newComment);
+    return this.httpClient.post<any>(`${this.BaseUrl}/CommentVisiter/AddComment`,comment);
   }
 
   getAllOrder(idVisiter: number): Observable<InventDose[]> {
     return this.httpClient.get<InventDose[]>(`${this.BaseUrl}/InventDose/GetInvent/${idVisiter}`);
+  }
+  rating(r:InventDose): Observable<any> {
+    debugger;
+    return this.httpClient.post<any>(`${this.BaseUrl}/InventDose/updateRating`, r);
+  }
+  getfeedbackForOrderDose(): Observable<any> {
+    debugger;
+    return this.httpClient.get<any>(`${this.BaseUrl}/InventDose/favoriteDose`);
+  }
+  addfeedbackForOrderDose(o: InventDose,feedback:string): Observable<any> {
+    debugger;
+   // return this.httpClient.put<UserCalandar>(this.URLEm + 'SineOut/' + this.CurrentUser.id + , date);
+
+    return this.httpClient.post<any>(`${this.BaseUrl}/InventDose/addfeedback`, o);
   }
   addInvent() {
     var inventDetails = JSON.parse(localStorage.getItem("currentInvent")).inventDetails;
     var vis = new InventDose();
     var user = JSON.parse(localStorage.getItem("currentUser")).id;
     vis.idVisiter = user;
-    vis.status = 3;
+    vis.IdStatusInvent = this.idStatusInvent;
+    vis.IdStatusDose=3;
+
     vis.inventDetails = [];
+
 
     inventDetails.forEach(element => {
       vis.inventDetails.push({ amount: element.amount, idMenu: element.idMenu })
     });
     this.httpClient.get(`${this.URL}/sendMail`);
+    debugger;
     return this.httpClient.post(`${this.URL}/AddDose`, vis);
   }
   castMenuToInvetDetails(item: Menu) {
@@ -66,7 +88,9 @@ export class VisitersOrderManagementService {
   addOrderToCart(item: Menu) {
     if (this.userService.CurrentUser) {
       item.amount=1;
+      this.disableInventCart=false;
       this.fullCart.push(item);
+      this.Totalprice+=item.price;
       this.cart.push(this.castMenuToInvetDetails(item));
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
       // let dose: InventDose = { ...this.userService.InventDose };
@@ -79,14 +103,14 @@ export class VisitersOrderManagementService {
       return false;
   }
   MinusProductAmount(itemId) {
-    let item = this.cart.find(p => p.idMenu == itemId);
+    let item = this.fullCart.find(p => p.id == itemId);
     if (item && item.amount > 0) {
       item.amount--;
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);
     }
   }
   plusProductAmount(itemId) {
-    let item = this.fullCart.find(p => p.idMenu == itemId);
+    let item = this.fullCart.find(p => p.id == itemId);
     if (item) {
       item.amount++;
       this.userService.setInvetDetails(this.userService.InventDose, this.cart);

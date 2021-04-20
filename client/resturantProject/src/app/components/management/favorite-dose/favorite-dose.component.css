@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 .menu-by-categoty {
     display: inline;
 }
@@ -27,7 +31,8 @@ app-menu-by-categoty .main_sidebar {
     display: inline-block;
     width: 18%;
 }
-.menu-by-categoty{
+
+.menu-by-categoty {
     display: inline-block;
     width: 18%;
 }
@@ -49,6 +54,36 @@ app-menu-by-categoty .main_sidebar {
     padding-bottom: 10%;
     padding-top: 10%;
     border-bottom-color: #9a2d44;
+}
+
+mat-card {
+    width: 45%;
+    margin-bottom: 5%;
+}
+
+mat-card-content {
+    text-align: center;
+}
+
+mat-card-content div:first-child {
+    font-size: 23px;
+    margin-block: 2%;
+}
+
+mat-icon {
+    position: absolute;
+    font-size: 200%;
+    right: 92%;
+}
+
+.nameDose {
+    font-size: initial;
+    margin-bottom: 3%;
+}
+
+.star-rating {
+    color: gold;
+    font-size: 1.5rem;
 }
 
 .category-div:hover {
@@ -73,8 +108,7 @@ mat-list-option {
     height: 95px;
 }
 
-  
-  .notification .badge {
+.notification .badge {
     position: absolute;
     /* top: -10px;
     right: -10px; */
@@ -82,4 +116,4 @@ mat-list-option {
     /* border-radius: 50%; */
     background-color: #B22222;
     color: white;
-  }
+}

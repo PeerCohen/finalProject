@@ -1,0 +1,21 @@
+<div *ngFor="let l of list">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>
+                <mat-icon color="primary">push_pin</mat-icon>
+                <div class="date">{{l.date|date:"d/M/yy"}}</div>
+                <br>
+                <div>{{l.name}}</div>
+            </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="comment">
+                " {{l.comment}} "
+            </div>
+            <div class="userMark">
+                דירוג בציון : {{l.mark==0?'לא דורג':l.mark+'%'}}
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

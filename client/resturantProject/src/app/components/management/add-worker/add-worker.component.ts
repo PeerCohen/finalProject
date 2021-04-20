@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
@@ -27,7 +28,7 @@ export class AddWorkerComponent implements OnInit  {
   workerData: Employee=new Employee();
   succeeded: any;
   error: any;
-  constructor(public managerService: ManagerService) { }
+  constructor(public managerService: ManagerService,) { }
 
   ngOnInit(): void {
 
@@ -36,6 +37,8 @@ export class AddWorkerComponent implements OnInit  {
       lastname: new FormControl('', Validators.required),
       tz: new FormControl('',Validators.required),
       phone: new FormControl('',Validators.required),
+      address:new FormControl('',Validators.required),
+
     });
   }
   addWorker() {

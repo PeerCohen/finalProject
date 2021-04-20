@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/shared/modals/category';
+import { FavoriteDose } from 'src/app/shared/modals/favorite-dose';
 import { Menu } from 'src/app/shared/modals/menu';
 import { CategoryService } from 'src/app/shared/services/category.service';
 import { MenuService } from 'src/app/shared/services/menu.service';
+import { VisitersOrderManagementService } from 'src/app/shared/services/visiters-order-management.service';
 
 @Component({
   selector: 'app-favorite-dose',
@@ -10,6 +12,7 @@ import { MenuService } from 'src/app/shared/services/menu.service';
   styleUrls: ['./favorite-dose.component.css']
 })
 export class FavoriteDoseComponent implements OnInit {
+  listBestDose: FavoriteDose;
   //   categoryList: any;
   //   error: any;
   //   doseRatingList: any;
@@ -42,7 +45,7 @@ export class FavoriteDoseComponent implements OnInit {
   //       });
   //   }
   // }
-  constructor(public menuService: MenuService, public categoryService: CategoryService) { }
+  constructor(public menuService: MenuService, public categoryService: CategoryService,public visiterOrderservice:VisitersOrderManagementService) { }
   categoryList: Category[] = [];
   categoryId: number;
   error;
@@ -50,6 +53,10 @@ export class FavoriteDoseComponent implements OnInit {
   newMenue: Menu[] = new Array();
   open = false;
   ngOnInit(): void {
+this.visiterOrderservice.getfeedbackForOrderDose().subscribe((res=>{
+  this.listBestDose=res;
+  console.log(res)
+}));
     this.getCategoryList();
   }
   openDetalis() {

@@ -24,8 +24,10 @@
       <EntityTypeMapping TypeName="restaurantModel.CommentVisiter">
         <MappingFragment StoreEntitySet="CommentVisiter">
           <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="idvisiter" ColumnName="idvisiter" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="date" ColumnName="date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -81,6 +83,8 @@
           <ScalarProperty Name="HourInvention" ColumnName="HourInvention" />
           <ScalarProperty Name="IdVisiter" ColumnName="IdVisiter" />
           <ScalarProperty Name="IdStatusInvent" ColumnName="IdStatusInvent" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -131,6 +135,7 @@
           <ScalarProperty Name="KindRequest" ColumnName="KindRequest" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="CountOfPeople" ColumnName="CountOfPeople" />
+          <ScalarProperty Name="isContact" ColumnName="isContact" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -199,6 +204,7 @@
           <ScalarProperty Name="Mail" ColumnName="Mail" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+          <ScalarProperty Name="lastDateEnter" ColumnName="lastDateEnter" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

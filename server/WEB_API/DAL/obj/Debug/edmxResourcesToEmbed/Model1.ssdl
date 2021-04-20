@@ -21,9 +21,11 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="Comment" Type="nchar" MaxLength="4000" />
-    <Property Name="idvisiter" Type="int" />
+    <Property Name="Comment" Type="nchar" MaxLength="3000" />
+    <Property Name="Name" Type="nchar" MaxLength="50" />
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mark" Type="int" />
+    <Property Name="date" Type="date" />
   </EntityType>
   <EntityType Name="CurrentEmployee">
     <Key>
@@ -53,6 +55,12 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Position" Type="varchar" MaxLength="50" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'restaurant.dbo.HelpMessage' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="HelpMessage">
+          <Property Name="id" Type="int" />
+          <Property Name="helpMessage" Type="nchar" MaxLength="50" />
+        </EntityType>-->
   <EntityType Name="InventDetails">
     <Key>
       <PropertyRef Name="Id" />
@@ -73,7 +81,9 @@
     <Property Name="IdTable" Type="int" />
     <Property Name="HourInvention" Type="time" Precision="7" Nullable="false" />
     <Property Name="IdVisiter" Type="int" Nullable="false" />
-    <Property Name="IdStatusInvent" Type="int" />
+    <Property Name="IdStatusInvent" Type="int" Nullable="false" />
+    <Property Name="Feedback" Type="nchar" MaxLength="4000" />
+    <Property Name="rate" Type="int" />
   </EntityType>
   <EntityType Name="managerMessage">
     <Key>
@@ -120,6 +130,7 @@
     <Property Name="KindRequest" Type="nchar" MaxLength="10" />
     <Property Name="Date" Type="datetime" />
     <Property Name="CountOfPeople" Type="int" />
+    <Property Name="isContact" Type="bit" />
   </EntityType>
   <EntityType Name="StatusDose">
     <Key>
@@ -183,18 +194,6 @@
     <Property Name="Password" Type="nchar" MaxLength="10" />
     <Property Name="NameUser" Type="nchar" MaxLength="10" />
   </EntityType>
-  <Association Name="FK_CommentVisiter_Visiters">
-    <End Role="Visiters" Type="Self.Visiters" Multiplicity="0..1" />
-    <End Role="CommentVisiter" Type="Self.CommentVisiter" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Visiters">
-        <PropertyRef Name="ld" />
-      </Principal>
-      <Dependent Role="CommentVisiter">
-        <PropertyRef Name="idvisiter" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_CurrentEmployee_Employees">
     <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
     <End Role="CurrentEmployee" Type="Self.CurrentEmployee" Multiplicity="*" />
@@ -267,18 +266,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_InventDose_InventDose">
-    <End Role="InventDose" Type="Self.InventDose" Multiplicity="1" />
-    <End Role="InventDose1" Type="Self.InventDose" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="InventDose">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="InventDose1">
-        <PropertyRef Name="Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_InventDose_StatusDose">
     <End Role="StatusDose" Type="Self.StatusDose" Multiplicity="0..1" />
     <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
@@ -292,7 +279,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_InventDose_StatusInvent">
-    <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="0..1" />
+    <End Role="StatusInvent" Type="Self.StatusInvent" Multiplicity="1" />
     <End Role="InventDose" Type="Self.InventDose" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="StatusInvent">
@@ -478,10 +465,6 @@
     <EntitySet Name="UserCalander" EntityType="Self.UserCalander" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VipTables" EntityType="Self.VipTables" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Visiters" EntityType="Self.Visiters" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_CommentVisiter_Visiters" Association="Self.FK_CommentVisiter_Visiters">
-      <End Role="Visiters" EntitySet="Visiters" />
-      <End Role="CommentVisiter" EntitySet="CommentVisiter" />
-    </AssociationSet>
     <AssociationSet Name="FK_CurrentEmployee_Employees" Association="Self.FK_CurrentEmployee_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="CurrentEmployee" EntitySet="CurrentEmployee" />
@@ -505,10 +488,6 @@
     <AssociationSet Name="FK_InventDose_Employees" Association="Self.FK_InventDose_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="InventDose" EntitySet="InventDose" />
-    </AssociationSet>
-    <AssociationSet Name="FK_InventDose_InventDose" Association="Self.FK_InventDose_InventDose">
-      <End Role="InventDose" EntitySet="InventDose" />
-      <End Role="InventDose1" EntitySet="InventDose" />
     </AssociationSet>
     <AssociationSet Name="FK_InventDose_StatusDose" Association="Self.FK_InventDose_StatusDose">
       <End Role="StatusDose" EntitySet="StatusDose" />

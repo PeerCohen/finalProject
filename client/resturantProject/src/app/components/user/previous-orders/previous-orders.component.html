@@ -1,34 +1,47 @@
-<mat-card *ngFor="let order of preOrders">
-    <mat-card-header>
-        <div *ngFor="let detail of order.inventDetails">
-            <mat-card-title>{{detail.idMenu}}</mat-card-title>
-            <mat-card-subtitle>
-                <p>כמות הזמנה: </p>
-                {{detail.amount}}
-            </mat-card-subtitle>
-        </div>
-    </mat-card-header>
-    <mat-card-content>
-        <div>
-            <!-- <img class='image' [src]="'../../assets/images/products/'+order.+'/'+order.image"> -->
-        </div>
-    </mat-card-content>
-    <mat-card-actions>
-        <ngb-rating [(rate)]="order.currentRate">
-            <ng-template let-fill="fill" let-index="index">
-                <span class="star" [class.filled]="fill === 100" [class.bad]="index <2">&#9733;</span>
-            </ng-template>
-        </ngb-rating>
-    </mat-card-actions>
-</mat-card>
 <div class="comment">
-    <div class="title">הוספת תגובה למערכת </div>
+    <div class="title">הוספת חוות דעת למערכת </div>
     <div class="textarea">
         <mat-form-field appearance="outline">
             <mat-label>תוכן</mat-label>
             <textarea matInput [(ngModel)]="commentContent"></textarea>
         </mat-form-field>
     </div>
-    <button class="sent-comment" mat-flat-button color="primary" (click)="sendComment()"> שלח תגובה </button>
+    <div class="slider">
+        <mat-slider [(ngModel)]="value" thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000"></mat-slider>
+    </div>
+    <button class="sent-comment" mat-flat-button color="primary" (click)="sendComment()"> שלח </button>
 
 </div>
+<mat-card *ngFor="let order of preOrders">
+    <mat-card-header>
+        <mat-card-title>
+            <span>
+                מספר הזמנה :{{order.id}}
+            </span>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <span>תאריך הזמנה: {{order.dateInvent|date : "d/M/yy HH:mm"}}</span>
+            <span>סטטוס: {{order.statusName}}</span>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <hr>
+        <div *ngFor="let detail of order.inventDetails">
+            <ol></ol>
+            <span>שם מנה :{{detail.menuName}}</span>
+            <span>כמות הזמנה: {{detail.amount}}</span>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <ngb-rating [(rate)]="order.currentRate" (click)="saveRating(order,order.currentRate)">
+            <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index <2">&#9733;</span>
+            </ng-template>
+        </ngb-rating>
+
+        <button mat-flat-button color="primary" (click)="addFeedback(order)">הוסף המלצה <mat-icon>thumb_up</mat-icon> </button>
+    </mat-card-actions>
+    <div *ngIf="order.feedback">
+        הומלץ ע"י : {{order.feedback}}
+    </div>
+</mat-card>

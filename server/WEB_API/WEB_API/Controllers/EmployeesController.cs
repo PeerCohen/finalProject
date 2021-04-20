@@ -47,6 +47,12 @@ namespace WEB_API.Controllers
             EmployeesBL.Add(employeesDTO);
         }
         [HttpPost]
+        [Route("messageForHelp")]
+        public void addmessageForHelp(string message)
+        {
+           // EmployeesBL.addmessageForHelp(message);
+        }
+        [HttpPost]
         [Route("RemoveWorker")]
         public void RemoveWorker([FromBody] EmployeesDTO employeesDTO)
         {

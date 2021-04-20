@@ -18,7 +18,7 @@ export class UserService {
     INVENT_KEY: "currentInvent"
   };
   invent: InventDose;
-
+  indexTab:number
   URL: string = "http://localhost:51437/api/Visiters/";
   URLEm = "http://localhost:51437/api/Employees/";
   singIn: boolean = false;

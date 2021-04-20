@@ -16,9 +16,15 @@
     </div>
     <label> סה"כ תשלום : {{Totalprice}} ₪</label>
     <button mat-flat-button color="primary" (click)="setPayment()">
-        <mat-icon>payment</mat-icon> לתשלום</button>
+        <mat-icon>payment</mat-icon> לתשלום
+    </button>
+    <button class="edit" mat-flat-button color="primary" (click)="changeMode()">
+        <mat-icon>
+            edit
+        </mat-icon>
+    </button>
 </div>
-<div class="wrapper-cart" *ngIf="isOpen()">
+<div class="wrapper-cart" *ngIf="inRestaurant.presentCart">
     <p class="title-cart">סיכום הזמנה</p>
     <p class="sub-title-cart">שולחן מספר : {{numInvent}}</p>
     <hr>
@@ -38,14 +44,17 @@
                 <button mat-icon-button color="primary" class="plus-icon">
                     <mat-icon (click)="addProductInRes(item)">add_circle_outline</mat-icon>
                 </button>
-                <button mat-icon-button color="primary" class="delete-icon">
-                    <mat-icon (click)="openDialogRemoveInRes(item.idMenu,index)">delete</mat-icon>
+                <button mat-icon-button color="primary" class="delete-icon" (click)="openDialogRemoveInRes(item.idMenu,index)">
+                    <mat-icon >delete</mat-icon>
                 </button>
                 <label>סה"כ : {{item.price*item.amount}} ₪</label>
             </mat-card-actions>
         </mat-card>
     </div>
     <p> סה"כ תשלום הההזמנה: {{getTotal()}} ₪</p>
-    <button mat-flat-button color="primary" (click)="addInventInRes()"> 
-        <mat-icon>task_alt</mat-icon> אשר הזמנה </button>
+    <button mat-flat-button color="primary" (click)="addInventInRes()">
+        <mat-icon>task_alt</mat-icon> אשר הזמנה
+    </button>
+    <button mat-flat-button color="primary" (click)="removeOrder()">
+        בטל הזמנה </button>
 </div>

@@ -40,7 +40,7 @@ export class FormPartyPageComponent implements OnInit {
     this.data.countOfPeople = this.formGroupParty.controls["countOfPeople"].value;
     this.data.dateEvent= this.formGroupParty.controls["dateEvent"].value;
     this.data.kindOfevent =this.kindOfevent;
-    this.data.mail= this.formGroupParty.controls["mail"].value;
+    this.data.mail= this.formGroupParty.controls["mail"].value;    
     this.data.name = this.formGroupParty.controls["name"].value;
     this.data.phone= this.formGroupParty.controls["phone"].value;
     const dialogRef = this.dialog.open(DialogOfSpecialInventComponent);
@@ -55,6 +55,7 @@ export class FormPartyPageComponent implements OnInit {
     
     this.email.Subject =   " הפניית בקשה עבור "+this.kindOfevent;
     this.email.email = this.data.mail;
+    debugger
     this.email.Body = ' שלום '+ this.data.name +'\n'+"  בקשתך התקבלה במערכת אנו ניצור איכם קשר בהקדם"+'\n'+"תודה !";
     this.empSer.sendMail(this.email).subscribe(res => console.log('שליחת המייל הצליחה '));
     console.warn('Your order has been submitted', this.data);

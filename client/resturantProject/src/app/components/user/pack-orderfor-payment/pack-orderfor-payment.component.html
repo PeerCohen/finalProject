@@ -1,0 +1,28 @@
+<!-- <div class="tool-up"></div>
+<app-logo></app-logo> -->
+<div class="pre-order">
+    <p class="title-order"> הזמנה שלי :</p>
+    <hr>
+    <div *ngFor="let item of doneInvent;let index=index">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{item.nameDose}}</mat-card-title>
+                <mat-card-subtitle>
+                    <div> כמות הזמנת מנה : {{item.amount}} </div>
+                    <div> מחיר : {{item.amount*item.price}} </div>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <label> סה"כ תשלום : {{Totalprice}} ₪</label>
+    <button class="pay" mat-flat-button color="primary" (click)="setPayment()">
+        <mat-icon>payment</mat-icon> לתשלום
+    </button>
+    <button class="edit" mat-flat-button color="primary" (click)="goBack()">
+        <mat-icon>
+            edit
+        </mat-icon>
+    </button>
+</div>
